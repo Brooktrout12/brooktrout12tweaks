@@ -8,8 +8,8 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
-URL = 'https://brooktrout12.github.io/Brooktrout12Tweaks/'
-GITHUB = 'https://github.com/Brooktrout12/Brooktrout12Tweaks'
+URL = 'https://brooktrout12.github.io/brooktrout12tweaks/'
+GITHUB = 'https://github.com/Brooktrout12/brooktrout12tweaks'
 
 def parse(text):
     fields = {}; key = None
