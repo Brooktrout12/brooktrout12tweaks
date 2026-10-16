@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "packaged_audio_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "frames": 39047,
+  "sample_rate": 44100,
+  "channels": 2,
+  "minimum_is_silent": true,
+  "maximum_bit_identical_to_original": true,
+  "levels_checked": 101,
+  "all_signed_16_bit_values_checked_per_level": 65536,
+  "maximum_rounding_error_pcm_units": 0.5,
+  "independent_ffmpeg_decode_at_percent": [
+    0,
+    1,
+    44,
+    50,
+    99,
+    100
+  ],
+  "invalid_inputs_leave_buffer_unchanged": true,
+  "device_runtime_tested": false
+}

@@ -1,0 +1,4 @@
+PASS: capacity selection, source precedence, multiple device sizes, >100%, missing data, invalid data, no normalized-capacity input, and pack units
+PASS: raw current charge in mAh, independent capacity metrics, source priority, valid zero, and invalid/missing fields
+PASS: signed battery current in mA, exact 32/64-bit decoding, charging/zero/discharging, bounds, invalid data, and source fallback
+Warning text and section-removal regression tests passed.

@@ -1,0 +1,11 @@
+Package: com.brooktrout12.instantclear18
+Name: InstantClear18
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Clear Notification Center with one tap on the x, without confirmation.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate
+Priority: optional
+Tag: purpose::extension

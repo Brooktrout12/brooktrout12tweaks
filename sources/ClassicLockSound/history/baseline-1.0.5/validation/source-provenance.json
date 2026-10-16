@@ -1,0 +1,8 @@
+{
+  "baseline_source": "ClassicLockSound-brooktrout12-1.0.4-source.zip",
+  "baseline_source_sha256": "53550898b6b2b6dbf6c2a2534aa7a774efb2ad7f25b45f8b8728059f19c7cc8b",
+  "baseline_version": "1.0.4",
+  "version": "1.0.5",
+  "package_sha256": "ad4202085a402ad07f750ad790660c2b436969173fe24972019da236d664d3f3",
+  "source_patch": "IOS17-18.patch"
+}

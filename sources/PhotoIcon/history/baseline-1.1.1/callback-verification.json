@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "setters": [
+    {
+      "architecture": "arm64",
+      "method": "-[PIHostController setOnReady:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnSave:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnCancel:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnChoosePhoto:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PIHostController setOnReady:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnSave:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnCancel:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnChoosePhoto:]",
+      "blocks_runtime_copy": true,
+      "generic_property_copy": false,
+      "objc_message": false,
+      "pass": true
+    }
+  ],
+  "device_runtime_tested": false
+}

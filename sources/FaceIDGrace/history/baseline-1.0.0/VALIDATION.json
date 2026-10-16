@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "package": "FaceIDGrace_1.0.0_rootless.deb",
+  "sha256": "5c3515d1b80f3d36a71d960b79280129b23b562fbbdc33f977b260d84d1da299",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.plist"
+  ],
+  "slices": [
+    {
+      "architecture": "arm64",
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    }
+  ],
+  "on_device_tested": false
+}

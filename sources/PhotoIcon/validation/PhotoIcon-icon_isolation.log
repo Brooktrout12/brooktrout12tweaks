@@ -1,0 +1,156 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "architecture": "arm64",
+      "check": "updateImageContentsWithImage$imageAppearance$isRealContentsImage$animated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "updateImageContentsWithImage$imageAppearance$isRealContentsImage$animated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "applyImageSublayer$animated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "applyImageSublayer$animated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "updateImageAnimated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "updateImageAnimated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "setIcon$location$animated$ clears photo before native reuse/rebind",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "setIcon$location$animated$ suppresses reentrant photo attachment",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "prepareForReuse clears photo before native reuse/rebind",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "prepareForReuse suppresses reentrant photo attachment",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "cleanup releases both per-view associations",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "custom layer and app identifier are associated with the view",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "app binding is checked before and after image preparation",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "no model-wide icon reload is emitted",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "check": "Clock native contentsImage remains unhooked",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "updateImageContentsWithImage$imageAppearance$isRealContentsImage$animated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "updateImageContentsWithImage$imageAppearance$isRealContentsImage$animated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "applyImageSublayer$animated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "applyImageSublayer$animated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "updateImageAnimated$ preserves every native argument",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "updateImageAnimated$ overlays only after native update",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "setIcon$location$animated$ clears photo before native reuse/rebind",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "setIcon$location$animated$ suppresses reentrant photo attachment",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "prepareForReuse clears photo before native reuse/rebind",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "prepareForReuse suppresses reentrant photo attachment",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "cleanup releases both per-view associations",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "custom layer and app identifier are associated with the view",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "app binding is checked before and after image preparation",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "no model-wide icon reload is emitted",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "check": "Clock native contentsImage remains unhooked",
+      "pass": true
+    }
+  ],
+  "device_runtime_tested": false
+}

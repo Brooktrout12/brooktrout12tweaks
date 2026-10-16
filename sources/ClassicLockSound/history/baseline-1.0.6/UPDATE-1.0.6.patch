@@ -1,0 +1,112 @@
+--- a/control
++++ b/control
+@@ -1,6 +1,6 @@
+ Package: com.brooktrout12.classiclocksound
+ Name: ClassicLockSound
+-Version: 1.0.5
++Version: 1.0.6
+ Architecture: iphoneos-arm64
+ Description: Restores the classic iOS 7-9 lock sound without modifying Apple's system audio files.
+ Maintainer: brooktrout12
+--- a/scripts/build-linux.sh
++++ b/scripts/build-linux.sh
+@@ -9,4 +9,4 @@
+ python3 scripts/verify_audio.py
+ make clean
+ make -j2 package TARGET_CODESIGN="$bt_project/scripts/sign-linux.sh"
+-python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.5_iphoneos-arm64.deb
++python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.6_iphoneos-arm64.deb
+--- a/scripts/verify_audio.py
++++ b/scripts/verify_audio.py
+@@ -1,37 +1,48 @@
+ #!/usr/bin/env python3
+-"""Verify that the packaged CAF is exactly the reattached, unmodified file."""
++"""Verify the corrected WAV is preserved sample-for-sample in the installed CAF."""
+ from pathlib import Path
+ import hashlib
+ import json
+ import subprocess
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-ORIGINAL = ROOT / "assets/lock-original.caf"
++SOURCE = ROOT / "assets/lock-corrected.wav"
+ RESOURCE = ROOT / "layout/Library/Application Support/ClassicLockSound/lock.caf"
+-EXPECTED = "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543"
++SOURCE_SHA256 = "8fad6338e6fe6b4d3d645ec4240b226c25c970a6d8ae544b0dbbf101ca682c74"
++CAF_SHA256 = "f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918"
+ 
+-original = ORIGINAL.read_bytes()
+-packaged = RESOURCE.read_bytes()
+-assert original == packaged, "The resource must match the attachment exactly"
+-assert hashlib.sha256(packaged).hexdigest() == EXPECTED
+-assert packaged.startswith(b"caff\x00\x01")
+-probe = json.loads(subprocess.check_output([
+-    "ffprobe", "-v", "error", "-show_streams", "-of", "json", str(RESOURCE)
+-], text=True))
+-assert len(probe["streams"]) == 1
+-stream = probe["streams"][0]
+-assert stream["codec_name"] == "pcm_s16le"
+-assert int(stream["sample_rate"]) == 44100 and stream["channels"] == 2
+-assert int(stream["duration_ts"]) == 39047
++def decoded_pcm(path):
++    return subprocess.check_output([
++        "ffmpeg", "-v", "error", "-i", str(path), "-map", "0:a:0",
++        "-c:a", "pcm_s16le", "-f", "s16le", "-"
++    ])
++
++assert hashlib.sha256(SOURCE.read_bytes()).hexdigest() == SOURCE_SHA256
++assert hashlib.sha256(RESOURCE.read_bytes()).hexdigest() == CAF_SHA256
++assert RESOURCE.read_bytes().startswith(bytes.fromhex("636166660001"))
++for path in (SOURCE, RESOURCE):
++    probe = json.loads(subprocess.check_output([
++        "ffprobe", "-v", "error", "-show_streams", "-of", "json", str(path)
++    ], text=True))
++    assert len(probe["streams"]) == 1
++    stream = probe["streams"][0]
++    assert stream["codec_name"] == "pcm_s16le"
++    assert int(stream["sample_rate"]) == 44100 and stream["channels"] == 2
++    assert int(stream["duration_ts"]) == 39029
++source_pcm = decoded_pcm(SOURCE)
++assert source_pcm == decoded_pcm(RESOURCE), "CAF audio samples differ from corrected WAV"
++assert len(source_pcm) == 39029 * 2 * 2
+ print(json.dumps({
+     "result": "PASS",
+-    "original_sha256": EXPECTED,
+-    "packaged_audio_sha256": EXPECTED,
+-    "matches_reattached_file_byte_for_byte": True,
++    "source_wav_sha256": SOURCE_SHA256,
++    "packaged_audio_sha256": CAF_SHA256,
++    "decoded_pcm_sha256": hashlib.sha256(source_pcm).hexdigest(),
++    "sample_for_sample_identical": True,
+     "volume_adjustment": False,
++    "resampling": False,
+     "sample_rate": 44100,
+     "channels": 2,
+-    "frames": 39047,
+-    "bytes": len(packaged),
++    "frames": 39029,
++    "bytes": RESOURCE.stat().st_size,
+     "device_runtime_tested": False
+ }, indent=2))
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -146,7 +146,7 @@
+     package = pathlib.Path(sys.argv[1]).resolve()
+     architecture = subprocess.check_output(['dpkg-deb','-f',str(package),'Architecture'], text=True).strip()
+     assert architecture == 'iphoneos-arm64'
+-    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.5'), ('Description',"Restores the classic iOS 7-9 lock sound without modifying Apple's system audio files.")]:
++    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.6'), ('Description',"Restores the classic iOS 7-9 lock sound without modifying Apple's system audio files.")]:
+         actual = subprocess.check_output(['dpkg-deb','-f',str(package),field], text=True).strip()
+         assert actual == expected, (field, actual)
+     with tempfile.TemporaryDirectory() as folder:
+@@ -156,8 +156,8 @@
+         files = {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()}
+         resource = root/'var/jb/Library/Application Support/ClassicLockSound/lock.caf'
+         assert files == {str((base/name).relative_to(root)) for name in ('ClassicLockSound.dylib','ClassicLockSound.plist')} | {str(resource.relative_to(root))}
+-        expected_sound_hash = '90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543'
+-        assert hashlib.sha256(resource.read_bytes()).hexdigest() == expected_sound_hash, 'Expected the exact reattached CAF, without any gain change'
++        expected_sound_hash = 'f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918'
++        assert hashlib.sha256(resource.read_bytes()).hexdigest() == expected_sound_hash, 'Expected the CAF converted from the corrected WAV, without any gain change'
+         assert resource.read_bytes().startswith(b'caff\x00\x01'), 'Expected CAF version 1'
+         # No install/uninstall scripts and no packaged files outside /var/jb.
+         controls = subprocess.check_output(['dpkg-deb','--ctrl-tarfile',str(package)])

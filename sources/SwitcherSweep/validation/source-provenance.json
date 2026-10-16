@@ -1,0 +1,8 @@
+{
+  "baseline_source": "SwitcherSweep-brooktrout12-1.0.7-source.zip",
+  "baseline_source_sha256": "ca89a64c4263b2ca349aa9f3fe8c67563d699a0058a503597567c3aab01dc33b",
+  "baseline_version": "1.0.7",
+  "version": "1.0.8",
+  "package_sha256": "e7b360986bd88fa4229fcd19218ae8374121cd477aa5e2e93ccb622437f47c19",
+  "source_patch": "IOS17-18.patch"
+}

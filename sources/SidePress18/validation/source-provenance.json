@@ -1,0 +1,8 @@
+{
+  "baseline_source": "SidePress18_1.0.0_source.zip",
+  "baseline_source_sha256": "a10fbeefff8c79c6b2f17c1f020494a694060c69835b48ff18c323f51f885901",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "0afe6d618f69b920deeb0ec6da8f920d973d8a42703d35bd029c1ec071827665",
+  "source_patch": "IOS17-18.patch"
+}

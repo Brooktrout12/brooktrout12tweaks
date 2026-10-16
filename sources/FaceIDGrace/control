@@ -1,0 +1,10 @@
+Package: com.brooktrout12.faceidgrace
+Name: FaceIDGrace
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Restore native Require Passcode delay choices with Face ID enabled.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 17.0), firmware (<< 19.0)
+Tag: role::enduser

@@ -1,0 +1,16 @@
+{
+  "baseline_version": "1.0.7",
+  "version": "1.0.8",
+  "baseline_source": "ClassicLockSound-1.0.7-source.zip",
+  "baseline_source_sha256": "911092216503e9fe9a421f76c227e5223232258f1083352ae09caf356d4b15a6",
+  "changed_text_files": [
+    "control",
+    "prefs/BTLockSoundPrefsController.m",
+    "prefs/Resources/Info.plist",
+    "scripts/build-linux.sh",
+    "scripts/verify_package.py"
+  ],
+  "restored_original_caf_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "icon_master_sha256": "d8e627dc5d5cd9e1f1425019c840e3695e4b12878133ad127410896e8228fac2",
+  "package_sha256": "033a9de1fe39a8a1b82debaf974b7cd201eafa49dcfa9e90c75da20149ce9aeb"
+}

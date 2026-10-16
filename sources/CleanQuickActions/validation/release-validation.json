@@ -1,0 +1,43 @@
+{
+  "project": "CleanQuickActions",
+  "display_name": "Clean Quick Actions",
+  "package_id": "com.brooktrout12.cleanquickactions",
+  "previous_version": "1.0.0",
+  "version": "1.0.1",
+  "package": "com.brooktrout12.cleanquickactions_1.0.1_iphoneos-arm64.deb",
+  "sha256": "38e0a0e32e6ea7e3f7ed89d462b2f6042b6ada38ae009ea16de565494a4206fa",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 7,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/Info.plist": {
+      "CFBundleShortVersionString": "1.0.1",
+      "CFBundleVersion": "2"
+    }
+  },
+  "on_device_tested": false
+}

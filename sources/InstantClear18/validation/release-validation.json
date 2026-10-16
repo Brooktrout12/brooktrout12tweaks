@@ -1,0 +1,38 @@
+{
+  "project": "InstantClear18",
+  "display_name": "InstantClear18",
+  "package_id": "com.brooktrout12.instantclear18",
+  "previous_version": "1.0.0",
+  "version": "1.0.1",
+  "package": "com.brooktrout12.instantclear18_1.0.1_iphoneos-arm64.deb",
+  "sha256": "6a3a8134179886ae0fc2e8b6a0bc9e6aa1ccfb00a1de887ebae9d7c526ef25c0",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 2,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {},
+  "on_device_tested": false
+}

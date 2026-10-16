@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "PhotoIcon.dylib",
+      "architecture": "arm64",
+      "uuid": "42c4e0f0-06b5-313e-a139-52bc01152b41",
+      "match": true
+    },
+    {
+      "binary": "PhotoIcon.dylib",
+      "architecture": "arm64e",
+      "uuid": "155dd5ad-ae65-30fd-8066-fb8131b36920",
+      "match": true
+    },
+    {
+      "binary": "PhotoIconSystem.dylib",
+      "architecture": "arm64",
+      "uuid": "f2b6ef58-cb78-3153-973a-00b89c52cd2f",
+      "match": true
+    },
+    {
+      "binary": "PhotoIconSystem.dylib",
+      "architecture": "arm64e",
+      "uuid": "205f4b34-696e-370a-ae22-aa09c671b95d",
+      "match": true
+    }
+  ]
+}

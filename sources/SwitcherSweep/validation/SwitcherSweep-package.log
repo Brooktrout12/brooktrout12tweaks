@@ -1,0 +1,76 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.switchersweep_1.0.8_iphoneos-arm64.deb",
+  "sha256": "e7b360986bd88fa4229fcd19218ae8374121cd477aa5e2e93ccb622437f47c19",
+  "slices": [
+    {
+      "architecture": "arm64",
+      "uuid": "37720eed-9e64-329a-a799-ce5228aae2ca",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_constant_strings": 0,
+      "custom_objc_class_records": 0,
+      "compiled_block_literals": false,
+      "diagnostic_writer_present": false,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 22,
+          "identifier": "com.brooktrout12.switchersweep"
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "uuid": "2f87bc85-b184-338a-b463-92015c5d85c4",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_constant_strings": 37,
+      "custom_objc_class_records": 0,
+      "compiled_block_literals": false,
+      "diagnostic_writer_present": false,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 22,
+          "identifier": "com.brooktrout12.switchersweep"
+        }
+      ]
+    }
+  ],
+  "springboard_only": true,
+  "rootless_only_payload": true,
+  "no_maintainer_scripts": true,
+  "no_raw_process_kill_or_global_C_hooks": true,
+  "device_runtime_tested": false
+}

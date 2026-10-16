@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.brooktrout12.dawn18.preferences</string>
+	<key>CFBundleName</key>
+	<string>Dawn18Prefs</string>
+	<key>CFBundleDisplayName</key>
+	<string>Dawn 18</string>
+	<key>CFBundleExecutable</key>
+	<string>Dawn18Prefs</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.1</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>NSPrincipalClass</key>
+	<string>D18RootController</string>
+	<key>MinimumOSVersion</key>
+	<string>17.0</string>
+</dict>
+</plist>

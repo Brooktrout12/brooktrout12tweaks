@@ -1,0 +1,25 @@
+{
+  "baseline_version": "1.0.6",
+  "version": "1.0.7",
+  "baseline_source": "ClassicLockSound-1.0.6-source.zip",
+  "baseline_source_sha256": "614067174868bb735c182176124c44dc3c2c3765ece0e472cd649c1f548dca9a",
+  "changed_text_files": [
+    "BTPreferences.h",
+    "BTVolume.c",
+    "BTVolume.h",
+    "Makefile",
+    "Tweak.m",
+    "control",
+    "layout/Library/PreferenceLoader/Preferences/ClassicLockSound.plist",
+    "prefs/BTLockSoundPrefsController.m",
+    "prefs/Makefile",
+    "prefs/Resources/Info.plist",
+    "scripts/build-linux.sh",
+    "scripts/sign-linux.sh",
+    "scripts/verify_audio.py",
+    "scripts/verify_package.py"
+  ],
+  "restored_original_caf_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "icon_master_sha256": "d8e627dc5d5cd9e1f1425019c840e3695e4b12878133ad127410896e8228fac2",
+  "package_sha256": "2f1802f7554cdfbcc6bb8add8586eee407ec0ddb5e5a7198517ee9d808cca4ab"
+}

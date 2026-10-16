@@ -1,0 +1,117 @@
+--- a/Appearance.m
++++ b/Appearance.m
+@@ -1,3 +1,4 @@
++#import "Compatibility.h"
+ // Dawn 18 — Brooktrout12. Original implementation; no Dawn/Cephei code.
+ #import <UIKit/UIKit.h>
+ #import <objc/runtime.h>
+@@ -371,7 +372,7 @@
+ static void D18Start(void *context) {
+     (void)context;
+     @autoreleasepool {
+-        if (NSProcessInfo.processInfo.operatingSystemVersion.majorVersion != 18) return;
++        if (!BTSupportsIOS17And18()) return;
+ #if !D18_APPLICATIONS
+         D18ClassKinds = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, NULL, NULL);
+         if (!D18ClassKinds) return;
+--- a/Compatibility.h
++++ b/Compatibility.h
+@@ -0,0 +1,8 @@
++#pragma once
++#import <Foundation/Foundation.h>
++
++// Keep future major versions opt-in; all 17.x and 18.x point releases qualify.
++static inline BOOL BTSupportsIOS17And18(void) {
++    NSInteger major = NSProcessInfo.processInfo.operatingSystemVersion.majorVersion;
++    return major == 17 || major == 18;
++}
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ ARCHS = arm64 arm64e
+-TARGET = iphone:clang:16.5:15.0
++TARGET = iphone:clang:16.5:17.0
+ THEOS_PACKAGE_SCHEME = rootless
+ FINALPACKAGE = 1
+ DEBUG = 0
+--- a/Resources/Info.plist
++++ b/Resources/Info.plist
+@@ -1,13 +1,24 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+-<plist version="1.0"><dict>
+-    <key>CFBundleIdentifier</key><string>com.brooktrout12.dawn18.preferences</string>
+-    <key>CFBundleName</key><string>Dawn18Prefs</string>
+-    <key>CFBundleDisplayName</key><string>Dawn 18</string>
+-    <key>CFBundleExecutable</key><string>Dawn18Prefs</string>
+-    <key>CFBundlePackageType</key><string>BNDL</string>
+-    <key>CFBundleShortVersionString</key><string>1.0.0</string>
+-    <key>CFBundleVersion</key><string>1</string>
+-    <key>NSPrincipalClass</key><string>D18RootController</string>
+-    <key>MinimumOSVersion</key><string>18.0</string>
+-</dict></plist>
++<plist version="1.0">
++<dict>
++	<key>CFBundleIdentifier</key>
++	<string>com.brooktrout12.dawn18.preferences</string>
++	<key>CFBundleName</key>
++	<string>Dawn18Prefs</string>
++	<key>CFBundleDisplayName</key>
++	<string>Dawn 18</string>
++	<key>CFBundleExecutable</key>
++	<string>Dawn18Prefs</string>
++	<key>CFBundlePackageType</key>
++	<string>BNDL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>1.0.1</string>
++	<key>CFBundleVersion</key>
++	<string>2</string>
++	<key>NSPrincipalClass</key>
++	<string>D18RootController</string>
++	<key>MinimumOSVersion</key>
++	<string>17.0</string>
++</dict>
++</plist>
+--- a/control
++++ b/control
+@@ -1,13 +1,13 @@
+ Package: com.brooktrout12.dawn18
+ Name: Dawn 18
+-Version: 1.0.0
++Version: 1.0.1
+ Architecture: iphoneos-arm64
+-Description: Independent light and dark appearance controls for iOS 18.
++Description: Independent light and dark appearance controls for iOS 17 and 18.
+  Native settings for applications, folders, notifications, banners, widgets,
+  dock, notification buttons and App Library. No Cephei dependency.
+ Maintainer: Brooktrout12
+ Author: Brooktrout12
+ Section: Tweaks
+-Depends: firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)
++Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)
+ Conflicts: com.ethanrdoesmc.dawn
+ Tag: role::enduser
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -106,10 +106,10 @@
+             key, value = line.split(": ", 1)
+             fields[key] = value
+     require(fields["Package"] == "com.brooktrout12.dawn18", "Wrong package ID")
+-    require(fields["Version"] == "1.0.0", "Keep package version at 1.0.0 during stabilization")
++    require(fields["Version"] == "1.0.1", "Unexpected package version")
+     require(fields["Architecture"] == "iphoneos-arm64", "Wrong package architecture")
+     require(fields["Author"] == fields["Maintainer"] == "Brooktrout12", "Wrong attribution")
+-    require("firmware (>= 18.0)" in fields["Depends"] and "firmware (<< 19.0)" in fields["Depends"], "Missing iOS 18 bounds")
++    require("firmware (>= 17.0)" in fields["Depends"] and "firmware (<< 19.0)" in fields["Depends"], "Missing iOS 17/18 bounds")
+     require("preferenceloader" in fields["Depends"] and "mobilesubstrate" in fields["Depends"], "Missing runtime dependencies")
+     require("ws.hbang" not in fields["Depends"] and "cephei" not in fields["Depends"].lower(), "Unexpected Cephei dependency")
+     require(fields["Conflicts"] == "com.ethanrdoesmc.dawn", "Must prevent simultaneous original Dawn installation")
+@@ -133,7 +133,7 @@
+     info = plistlib.loads(contents[prefs + "Info.plist"])
+     require(info["CFBundleExecutable"] == "Dawn18Prefs" and info["NSPrincipalClass"] == "D18RootController", "Wrong preference bundle entry point")
+     require(info["CFBundleShortVersionString"] == fields["Version"], "Bundle version mismatch")
+-    require(info["CFBundleVersion"] == "1", "Keep the bundle build version unchanged")
++    require(info["CFBundleVersion"] == "2", "Bundle build version mismatch")
+     registration = plistlib.loads(contents[entry])["entry"]
+     require(registration["bundle"] == "Dawn18Prefs" and registration["detail"] == "D18RootController" and registration["isController"], "Wrong Settings registration")
+     require(registration["label"] == "Dawn 18" and registration["icon"] == "icon.png", "Wrong Settings label/icon")

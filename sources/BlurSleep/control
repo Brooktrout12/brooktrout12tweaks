@@ -1,0 +1,9 @@
+Package: com.brooktrout12.blursleep
+Name: BlurSleep
+Version: 1.0.2
+Architecture: iphoneos-arm64
+Description: Gaussian blur and fade-to-black sleep animation with an adjustable duration in Settings.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.6)

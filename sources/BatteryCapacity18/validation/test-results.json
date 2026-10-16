@@ -1,0 +1,14 @@
+[
+  {
+    "project": "BatteryCapacity18",
+    "check": "package",
+    "exit_code": 0,
+    "log": "BatteryCapacity18-package.log"
+  },
+  {
+    "project": "BatteryCapacity18",
+    "check": "policy",
+    "exit_code": 0,
+    "log": "BatteryCapacity18-policy.log"
+  }
+]

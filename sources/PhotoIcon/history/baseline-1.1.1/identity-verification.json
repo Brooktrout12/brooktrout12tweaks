@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.photoicon_1.1.1_iphoneos-arm64.deb",
+  "sha256": "9929c6e6fd8807411d3d36fba314d2e0d448c0ae9a5d29cbcbd5292117bf2ab9",
+  "package_identifier": "com.brooktrout12.photoicon",
+  "author": "Brooktrout12",
+  "maintainer": "Brooktrout12",
+  "code_signature_identifiers": [
+    "com.brooktrout12.photoicon",
+    "com.brooktrout12.photoicon.system"
+  ],
+  "scanned_decompressed_package_members": [
+    "DEBIAN/postinst",
+    "DEBIAN/control",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIcon.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIconSystem.plist",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIconSystem.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIcon.plist"
+  ],
+  "scanned_source_files": 64,
+  "legacy_personal_name_occurrences": 0,
+  "scan_encodings": [
+    "utf-8",
+    "utf-16-le",
+    "utf-16-be",
+    "utf-32-le",
+    "utf-32-be"
+  ],
+  "saved_data_directory": "/var/mobile/Library/Application Support/PhotoIcon",
+  "device_runtime_tested": false
+}

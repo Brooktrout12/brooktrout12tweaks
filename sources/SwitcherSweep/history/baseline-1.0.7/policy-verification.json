@@ -1,0 +1,17 @@
+[
+  {
+    "result": "PASS",
+    "system_components_excluded": true,
+    "music_apps_included": true,
+    "screen_geometries_checked": 5,
+    "presentation_scenarios_checked": 12,
+    "tap_scenarios_checked": 8,
+    "animation_finishes_before_commit": true,
+    "device_runtime_tested": false
+  },
+  {
+    "result": "PASS",
+    "pending_delivery_scenarios": 19,
+    "device_runtime_tested": false
+  }
+]

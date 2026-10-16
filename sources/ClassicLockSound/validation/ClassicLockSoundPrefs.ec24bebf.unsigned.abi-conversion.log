@@ -1,0 +1,176 @@
+Reading file...
+
+Patching
+
+convert len:166464
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__objc_methlist
+__cstring
+__objc_methname
+__ustring
+__objc_classname__TEXT
+__objc_methtype
+__const
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7AA8
+cfstr value: Classic Lock Sound
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7ABB
+cfstr value: Volume
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7D5A
+cfstr value: 0
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7AC2
+cfstr value: footerText
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7ACD
+cfstr value: Lock sound volume
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7ADF
+cfstr value: LockVolumeValue
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7AEF
+cfstr value: LockVolume
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7AFA
+cfstr value: com.brooktrout12.classiclocksound
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B1C
+cfstr value: defaults
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B25
+cfstr value: VolumePercent
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B33
+cfstr value: key
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B37
+cfstr value: default
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B3F
+cfstr value: min
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B43
+cfstr value: max
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B47
+cfstr value: enabled
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B4F
+cfstr value: showValue
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B59
+cfstr value: isContinuous
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B66
+cfstr value: Reset to 100%
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7EBA
+cfstr value: C
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B74
+cfstr value: %d%%
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B79
+cfstr value: value
+cfstr ISA after 0xC0156AE100000013
+cfstr ISA 0x4010000000000013
+cfstr offset: 0x7B7F
+cfstr value: com.brooktrout12.classiclocksound/volume-changed
+cfstr ISA after 0xC0156AE100000013
+__objc_classlist__DATA_CONST
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_const
+__objc_selrefs
+__objc_classrefs__DATA
+__objc_superrefs__DATA
+__objc_data
+--- MAIN CLASS ---
+objc_class isa:		0x800000000C1A0
+objc_class superclass:	0x4008000000000019
+objc_class cache:	0x4010000000000018
+objc_class vtable:	0x00
+objc_class data:	0x800000000C048
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE10000C1A0
+objc_class superclass:	0xC00DB5AB00000019
+objc_class cache:	0x4010000000000018
+objc_class vtable:	0x00
+objc_class data:	0x800000000C048
+class_ro_t flags:	0x128X
+class_ro_t instanceStart:	0x16X
+class_ro_t instanceSize:	0x16X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	BTLockSoundPrefsController
+class_ro_t baseMethodList:	0x802DC31000007A58
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x400800000000001B
+objc_class superclass:	0x400800000000001A
+objc_class cache:	0x4010000000000018
+objc_class vtable:	0x00
+objc_class data:	0xC000
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE10000001B
+objc_class superclass:	0xC00DB5AB0000001A
+objc_class cache:	0x4010000000000018
+objc_class vtable:	0x00
+objc_class data:	0xC000
+class_ro_t flags:	0x129X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	BTLockSoundPrefsController
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/classiclocksound_slider_fix/ClassicLockSound/.theos/obj/ClassicLockSoundPrefs.bundle/ClassicLockSoundPrefs.ec24bebf.unsigned

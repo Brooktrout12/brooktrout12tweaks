@@ -1,0 +1,14 @@
+[
+  {
+    "project": "SwitcherSweep",
+    "check": "package",
+    "exit_code": 0,
+    "log": "SwitcherSweep-package.log"
+  },
+  {
+    "project": "SwitcherSweep",
+    "check": "policy",
+    "exit_code": 0,
+    "log": "SwitcherSweep-policy.log"
+  }
+]

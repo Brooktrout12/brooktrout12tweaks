@@ -1,0 +1,8 @@
+{
+  "baseline_source": "3DBadgeClear18_1.0.0_source.zip",
+  "baseline_source_sha256": "f692fb5f9f98c7382facc8a923d33ae59dd23fb9df193c3b0a3bae45db086383",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "829ac14e248325fe85e3609a0e51fed3dd6534a07cafa81da9664916ecd4a494",
+  "source_patch": "IOS17-18.patch"
+}

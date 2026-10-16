@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "BatteryCapacity18.dylib",
+      "architecture": "arm64",
+      "uuid": "7756244a-0757-3974-83f1-842e9cf998dd",
+      "match": true
+    },
+    {
+      "binary": "BatteryCapacity18.dylib",
+      "architecture": "arm64e",
+      "uuid": "d133ad8a-3cc6-3ee3-913a-dafd5a7cff2c",
+      "match": true
+    },
+    {
+      "binary": "BatteryCapacity18Prefs",
+      "architecture": "arm64",
+      "uuid": "a9807c10-0f9f-37d6-af1f-351946e478df",
+      "match": true
+    },
+    {
+      "binary": "BatteryCapacity18Prefs",
+      "architecture": "arm64e",
+      "uuid": "8d997890-a798-3724-b26a-43fbda3b097a",
+      "match": true
+    }
+  ]
+}

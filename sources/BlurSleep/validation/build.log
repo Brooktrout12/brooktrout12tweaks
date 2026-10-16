@@ -1,0 +1,41 @@
+PASS: iOS 18.6 hook-selection regression, input bounds, manual-lock eligibility, shared deadline, wake cancellation, stale timer isolation.
+[0;36m==> [1;39mCleaning…[m
+[1;31m> [1;3;39mMaking clean in prefs…[m
+[0;36m==> [1;39mCleaning…[m
+[1;31m> [1;3;39mMaking all for tweak BlurSleep…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64)…[m
+[0;32m==> [1;39mCompiling BSAnimationState.c (arm64)…[m
+[0;33m==> [1;39mLinking tweak BlurSleep (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for BlurSleep…[m
+[0;34m==> [1;39mStripping BlurSleep (arm64)…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64e)…[m
+[0;32m==> [1;39mCompiling BSAnimationState.c (arm64e)…[m
+[0;33m==> [1;39mLinking tweak BlurSleep (arm64e)…[m
+ld: warning: object file /workspace/scratch/5e23bc121934/BlurSleep/.theos/obj/arm64e/Tweak.m.63332ec7.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/5e23bc121934/BlurSleep/.theos/obj/arm64e/BSAnimationState.c.63332ec7.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for BlurSleep…[m
+[0;34m==> [1;39mStripping BlurSleep (arm64e)…[m
+[0;34m==> [1;39mMerging tweak BlurSleep…[m
+[0;34m==> [1;39mSigning BlurSleep…[m
+[1;31m> [1;3;39mMaking all in prefs…[m
+[1;31m> [1;3;39mMaking all for bundle BlurSleepPrefs…[m
+[0;35m==> [1;39mCopying resource directories into the bundle wrapper…[m
+[0;32m==> [1;39mCompiling BSRootListController.m (arm64)…[m
+[0;32m==> [1;39mCompiling ../BSAnimationState.c (arm64)…[m
+[0;33m==> [1;39mLinking bundle BlurSleepPrefs (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for BlurSleepPrefs…[m
+[0;34m==> [1;39mStripping BlurSleepPrefs (arm64)…[m
+[0;32m==> [1;39mCompiling BSRootListController.m (arm64e)…[m
+[0;32m==> [1;39mCompiling ../BSAnimationState.c (arm64e)…[m
+[0;33m==> [1;39mLinking bundle BlurSleepPrefs (arm64e)…[m
+ld: warning: object file /workspace/scratch/5e23bc121934/BlurSleep/.theos/obj/arm64e/BSRootListController.m.57dc96e2.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/5e23bc121934/BlurSleep/.theos/obj/arm64e/../BSAnimationState.c.57dc96e2.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for BlurSleepPrefs…[m
+[0;34m==> [1;39mStripping BlurSleepPrefs (arm64e)…[m
+[0;34m==> [1;39mMerging bundle BlurSleepPrefs…[m
+[0;34m==> [1;39mSigning BlurSleepPrefs…[m
+[1;31m> [1;3;39mMaking stage for tweak BlurSleep…[m
+[1;31m> [1;3;39mMaking stage in prefs…[m
+[1;31m> [1;3;39mMaking stage for bundle BlurSleepPrefs…[m
+[0;36m==> [1;36mNotice:[m Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.blursleep:iphoneos-arm64' in `./packages/com.brooktrout12.blursleep_1.0.2_iphoneos-arm64.deb'

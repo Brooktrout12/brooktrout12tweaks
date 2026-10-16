@@ -1,0 +1,257 @@
+--- a/control
++++ b/control
+@@ -1,6 +1,6 @@
+ Package: com.brooktrout12.classiclocksound
+ Name: ClassicLockSound
+-Version: 1.0.7
++Version: 1.0.8
+ Architecture: iphoneos-arm64
+ Description: Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.
+ Maintainer: brooktrout12
+--- a/prefs/BTLockSoundPrefsController.m
++++ b/prefs/BTLockSoundPrefsController.m
+@@ -1,135 +1,80 @@
+ #import <UIKit/UIKit.h>
+ #import <Preferences/PSListController.h>
+ #import <Preferences/PSSpecifier.h>
+-#import <Preferences/PSTableCell.h>
+ #import "../BTPreferences.h"
+-
+-@interface BTLockVolumeCell : PSTableCell
+-@property(nonatomic, strong) UISlider *volumeSlider;
+-@property(nonatomic, strong) UILabel *percentageLabel;
+-@property(nonatomic) int lastSavedPercent;
+-@end
+-
+-@implementation BTLockVolumeCell
+-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)identifier
+-                    specifier:(PSSpecifier *)specifier {
+-    self = [super initWithStyle:style reuseIdentifier:identifier specifier:specifier];
+-    if (!self) return nil;
+-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+-    self.textLabel.text = nil;
+-    UILabel *title = [UILabel new];
+-    title.text = @"Lock sound volume";
+-    title.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+-    title.adjustsFontForContentSizeCategory = YES;
+-    title.adjustsFontSizeToFitWidth = YES;
+-    title.minimumScaleFactor = 0.7;
+-    self.percentageLabel = [UILabel new];
+-    self.percentageLabel.font = [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody]
+-        scaledFontForFont:[UIFont monospacedDigitSystemFontOfSize:17 weight:UIFontWeightSemibold]];
+-    self.percentageLabel.adjustsFontForContentSizeCategory = YES;
+-    self.percentageLabel.textAlignment = NSTextAlignmentRight;
+-    [self.percentageLabel setContentCompressionResistancePriority:UILayoutPriorityRequired
+-        forAxis:UILayoutConstraintAxisHorizontal];
+-    self.volumeSlider = [UISlider new];
+-    self.volumeSlider.minimumValue = 0;
+-    self.volumeSlider.maximumValue = 100;
+-    self.volumeSlider.continuous = YES;
+-    self.volumeSlider.minimumValueImage = [UIImage systemImageNamed:@"speaker.slash.fill"];
+-    self.volumeSlider.maximumValueImage = [UIImage systemImageNamed:@"speaker.wave.3.fill"];
+-    self.volumeSlider.accessibilityLabel = @"Lock sound volume";
+-    [self.volumeSlider addTarget:self action:@selector(volumeChanged:)
+-        forControlEvents:UIControlEventValueChanged];
+-    [self.volumeSlider addTarget:self action:@selector(commitVolume:)
+-        forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
+-    for (UIView *view in @[title, self.percentageLabel, self.volumeSlider]) {
+-        view.translatesAutoresizingMaskIntoConstraints = NO;
+-        [self.contentView addSubview:view];
+-    }
+-    UILayoutGuide *margins = self.contentView.layoutMarginsGuide;
+-    [NSLayoutConstraint activateConstraints:@[
+-        [title.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor],
+-        [title.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:14],
+-        [title.trailingAnchor constraintLessThanOrEqualToAnchor:self.percentageLabel.leadingAnchor constant:-12],
+-        [self.percentageLabel.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor],
+-        [self.percentageLabel.firstBaselineAnchor constraintEqualToAnchor:title.firstBaselineAnchor],
+-        [self.volumeSlider.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor],
+-        [self.volumeSlider.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor],
+-        [self.volumeSlider.topAnchor constraintEqualToAnchor:title.bottomAnchor constant:8],
+-        [self.volumeSlider.heightAnchor constraintEqualToConstant:36]
+-    ]];
+-    self.lastSavedPercent = BTReadVolume();
+-    self.volumeSlider.value = self.lastSavedPercent;
+-    [self updatePercentage];
+-    return self;
+-}
+-- (void)updatePercentage {
+-    int percent = BTVolumePercent(self.volumeSlider.value);
+-    NSString *text = [NSString stringWithFormat:@"%d%%", percent];
+-    self.percentageLabel.text = text;
+-    self.volumeSlider.accessibilityValue = text;
+-}
+-- (void)volumeChanged:(UISlider *)slider {
+-    [self updatePercentage];
+-    /* Touch drags update the label immediately and save once on release.
+-       VoiceOver, Switch Control and keyboard changes save immediately. */
+-    if (!slider.isTracking) [self commitVolume:slider];
+-}
+-- (void)commitVolume:(UISlider *)slider {
+-    int percent = BTVolumePercent(slider.value);
+-    slider.value = percent;
+-    [self updatePercentage];
+-    if (percent != self.lastSavedPercent) {
+-        BTWriteVolume(percent);
+-        self.lastSavedPercent = percent;
+-    }
+-}
+-- (void)refreshCellContentsWithSpecifier:(PSSpecifier *)specifier {
+-    [super refreshCellContentsWithSpecifier:specifier];
+-    self.textLabel.text = nil;
+-    if (self.volumeSlider && !self.volumeSlider.isTracking) {
+-        self.lastSavedPercent = BTReadVolume();
+-        self.volumeSlider.value = self.lastSavedPercent;
+-        [self updatePercentage];
+-    }
+-}
+-@end
+ 
+ @interface BTLockSoundPrefsController : PSListController
+ @end
++
+ @implementation BTLockSoundPrefsController
+ - (NSMutableArray *)specifiers {
+     if (!_specifiers) {
+         self.title = @"Classic Lock Sound";
+         NSMutableArray *items = [NSMutableArray array];
+         PSSpecifier *group = [PSSpecifier groupSpecifierWithName:@"Volume"];
+-        [group setProperty:@"0% is silent. 100% uses the original recording at full level. Your iPhone’s ringer volume and Silent Mode still apply. Changes take effect on the next lock." forKey:@"footerText"];
++        [group setProperty:@"0% is silent. 100% uses the original recording at full level. Your iPhone’s ringer volume and Silent Mode still apply. Release the slider to apply the change to the next lock." forKey:@"footerText"];
+         [items addObject:group];
++
++        // Keep the percentage in a native value row. Do not reload or replace
++        // the slider row while a finger is tracking its thumb.
++        PSSpecifier *value = [PSSpecifier preferenceSpecifierNamed:@"Lock sound volume" target:self
++            set:NULL get:@selector(readVolumeText:) detail:Nil cell:PSTitleValueCell edit:Nil];
++        value.identifier = @"LockVolumeValue";
++        [items addObject:value];
++
++        // 1.0.7 embedded UISlider in a PSStaticTextCell, which is a display row.
++        // Let Preferences own the interactive PSSliderCell, including hit
++        // testing, layout, enabled state, tracking and accessibility.
+         PSSpecifier *slider = [PSSpecifier preferenceSpecifierNamed:@"Lock sound volume" target:self
+-            set:NULL get:NULL detail:Nil cell:PSStaticTextCell edit:Nil];
++            set:@selector(setVolume:specifier:) get:@selector(readVolume:)
++            detail:Nil cell:PSSliderCell edit:Nil];
+         slider.identifier = @"LockVolume";
+-        [slider setProperty:BTLockVolumeCell.class forKey:@"cellClass"];
+-        [slider setProperty:@100 forKey:@"height"];
++        [slider setProperty:@"com.brooktrout12.classiclocksound" forKey:@"defaults"];
++        [slider setProperty:@"VolumePercent" forKey:@"key"];
++        [slider setProperty:@100 forKey:@"default"];
++        [slider setProperty:@0 forKey:@"min"];
++        [slider setProperty:@100 forKey:@"max"];
++        [slider setProperty:@YES forKey:@"enabled"];
++        [slider setProperty:@NO forKey:@"showValue"];
++        [slider setProperty:@NO forKey:@"isContinuous"];
+         [items addObject:slider];
++
+         PSSpecifier *reset = [PSSpecifier preferenceSpecifierNamed:@"Reset to 100%" target:self
+             set:NULL get:NULL detail:Nil cell:PSButtonCell edit:Nil];
+         reset.buttonAction = @selector(resetVolume);
+         [items addObject:reset];
+         PSSpecifier *about = [PSSpecifier emptyGroupSpecifier];
+-        [about setProperty:@"Classic Lock Sound 1.0.7 · Brooktrout12\niOS 17–18 · Rootless" forKey:@"footerText"];
++        [about setProperty:@"Classic Lock Sound 1.0.8 · Brooktrout12\niOS 17–18 · Rootless" forKey:@"footerText"];
+         [items addObject:about];
+         _specifiers = items;
+     }
+     return _specifiers;
+ }
++
++- (NSNumber *)readVolume:(PSSpecifier *)specifier {
++    (void)specifier;
++    return @(BTReadVolume());
++}
++
++- (NSString *)readVolumeText:(PSSpecifier *)specifier {
++    (void)specifier;
++    return [NSString stringWithFormat:@"%d%%", BTReadVolume()];
++}
++
++- (void)setVolume:(NSNumber *)value specifier:(PSSpecifier *)specifier {
++    if (![value isKindOfClass:NSNumber.class]) return;
++    int percent = BTVolumePercent(value.doubleValue);
++    [specifier setProperty:@(percent) forKey:@"value"];
++    if (percent != BTReadVolume()) BTWriteVolume(percent);
++    PSSpecifier *display = [self specifierForID:@"LockVolumeValue"];
++    if (display) [self reloadSpecifier:display animated:NO];
++}
++
+ - (void)viewWillAppear:(BOOL)animated {
+     [super viewWillAppear:animated];
+     [self reloadSpecifiers];
+ }
+-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+-    if ([[self specifierAtIndexPath:indexPath].identifier isEqualToString:@"LockVolume"])
+-        return MAX(100, [UIFont preferredFontForTextStyle:UIFontTextStyleBody].lineHeight + 72);
+-    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+-}
++
+ - (void)resetVolume {
+     BTWriteVolume(100);
+     [self reloadSpecifiers];
+--- a/prefs/Resources/Info.plist
++++ b/prefs/Resources/Info.plist
+@@ -6,7 +6,7 @@
+ <key>CFBundleDisplayName</key><string>Classic Lock Sound</string>
+ <key>CFBundleExecutable</key><string>ClassicLockSoundPrefs</string>
+ <key>CFBundlePackageType</key><string>BNDL</string>
+-<key>CFBundleShortVersionString</key><string>1.0.7</string>
++<key>CFBundleShortVersionString</key><string>1.0.8</string>
+ <key>CFBundleVersion</key><string>1</string>
+ <key>CFBundleIconFile</key><string>icon.png</string>
+ <key>CFBundleIconFiles</key><array><string>icon.png</string><string>icon@2x.png</string><string>icon@3x.png</string></array>
+--- a/scripts/build-linux.sh
++++ b/scripts/build-linux.sh
+@@ -9,4 +9,4 @@
+ python3 scripts/verify_audio.py
+ make clean
+ make -j1 package TARGET_CODESIGN="$bt_project/scripts/sign-linux.sh"
+-python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.7_iphoneos-arm64.deb
++python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.8_iphoneos-arm64.deb
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -91,9 +91,13 @@
+         assert '/System/Library/PrivateFrameworks/Preferences.framework/Preferences' in dependencies
+         assert '/System/Library/Frameworks/UIKit.framework/UIKit' in dependencies
+         for required in (b'_OBJC_CLASS_$_BTLockSoundPrefsController\0',
+-                         b'_OBJC_CLASS_$_BTLockVolumeCell\0', b'_OBJC_CLASS_$_UISlider\0',
++                         b'setVolume:specifier:\0', b'readVolume:\0', b'readVolumeText:\0',
++                         b'LockVolume\0', b'LockVolumeValue\0',
+                          b'_CFPreferencesSetAppValue\0', b'_CFNotificationCenterPostNotification\0'):
+             assert required in data, 'Missing Settings control or preference writer'
++        for removed in (b'_OBJC_CLASS_$_BTLockVolumeCell\0', b'_OBJC_CLASS_$_UISlider\0',
++                        b'cellClass\0', b'heightForRowAtIndexPath:\0'):
++            assert removed not in data, 'Custom slider construction/layout must be absent'
+     else:
+         assert '/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI' in dependencies
+     assert '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox' not in dependencies
+@@ -135,7 +139,7 @@
+                     assert isa & 0x800D6AE100000000 == 0x800D6AE100000000, 'arm64e class metadata was not converted'
+                     assert superclass & 0xC00DB5AB00000000 == 0xC00DB5AB00000000
+                     converted_classes += 1
+-        assert converted_classes == (4 if preferences else 0), 'Unexpected class/metaclass count'
++        assert converted_classes == (2 if preferences else 0), 'Unexpected class/metaclass count'
+         # Allemande updates authenticated constant-string/class records, not
+         # the CPU subtype header. A versioned-subtype flag is not its output.
+         for name, start, length in sections:
+@@ -166,7 +170,7 @@
+     package = pathlib.Path(sys.argv[1]).resolve()
+     architecture = subprocess.check_output(['dpkg-deb','-f',str(package),'Architecture'], text=True).strip()
+     assert architecture == 'iphoneos-arm64'
+-    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.7'), ('Description','Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.')]:
++    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.8'), ('Description','Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.')]:
+         actual = subprocess.check_output(['dpkg-deb','-f',str(package),field], text=True).strip()
+         assert actual == expected, (field, actual)
+     dependencies = subprocess.check_output(['dpkg-deb','-f',str(package),'Depends'], text=True)
+@@ -187,7 +191,7 @@
+         assert files == expected, files ^ expected
+         info = plistlib.loads((bundle/'Info.plist').read_bytes())
+         assert info['NSPrincipalClass'] == 'BTLockSoundPrefsController'
+-        assert info['MinimumOSVersion'] == '17.0' and info['CFBundleShortVersionString'] == '1.0.7'
++        assert info['MinimumOSVersion'] == '17.0' and info['CFBundleShortVersionString'] == '1.0.8'
+         entry = plistlib.loads(loader.read_bytes())['entry']
+         assert entry['bundle'] == 'ClassicLockSoundPrefs' and entry['detail'] == info['NSPrincipalClass']
+         assert entry['icon'] == '/var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle/icon.png'

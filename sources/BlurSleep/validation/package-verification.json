@@ -1,0 +1,138 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.blursleep_1.0.2_iphoneos-arm64.deb",
+  "sha256": "07a5b531d7802955c4fdb5f1937737878ffe25383d8dfb6e4d90a25f1543d25c",
+  "slices": [
+    {
+      "binary": "BlurSleep.dylib",
+      "architecture": "arm64",
+      "uuid": "b4aa3a84-e52b-3627-a41d-4f4025521ff8",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 0,
+      "converted_constant_strings": 0,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 22,
+          "identifier": "com.brooktrout12.blursleep"
+        }
+      ],
+      "block_literals": false
+    },
+    {
+      "binary": "BlurSleep.dylib",
+      "architecture": "arm64e",
+      "uuid": "ec69fd1a-a328-3107-a953-35f391f33106",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 6,
+      "converted_constant_strings": 101,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 22,
+          "identifier": "com.brooktrout12.blursleep"
+        }
+      ],
+      "block_literals": false
+    },
+    {
+      "binary": "BlurSleepPrefs",
+      "architecture": "arm64",
+      "uuid": "19614712-5e17-34b7-9c5c-6a35a4bb830c",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 0,
+      "converted_constant_strings": 0,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.blursleep.prefs"
+        }
+      ],
+      "block_literals": false
+    },
+    {
+      "binary": "BlurSleepPrefs",
+      "architecture": "arm64e",
+      "uuid": "b1f2ecca-8dca-3b32-a471-3bb980bd488f",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 2,
+      "converted_constant_strings": 43,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.blursleep.prefs"
+        }
+      ],
+      "block_literals": false
+    }
+  ],
+  "rootless_payload_only": true,
+  "minimum_ios": "17.0",
+  "duration_seconds": {
+    "minimum": 0.15,
+    "default": 0.55,
+    "maximum": 2.0
+  },
+  "no_maintainer_scripts": true,
+  "device_runtime_tested": false
+}

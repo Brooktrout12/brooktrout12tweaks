@@ -1,0 +1,62 @@
+{
+  "com.brooktrout12.3dbadgeclear18": {
+    "source": "sources/BadgeClear18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.batterycapacity18": {
+    "source": "sources/BatteryCapacity18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.classiclocksound": {
+    "source": "sources/ClassicLockSound",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.cleanquickactions": {
+    "source": "sources/CleanQuickActions",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.dawn18": {
+    "source": "sources/Dawn18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.faceidgrace": {
+    "source": "sources/FaceIDGrace",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.instantclear18": {
+    "source": "sources/InstantClear18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.instantpasscode18": {
+    "source": "sources/InstantPasscode18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.photoicon": {
+    "source": "sources/PhotoIcon",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.sidepress18": {
+    "source": "sources/SidePress18",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.switchersweep": {
+    "source": "sources/SwitcherSweep",
+    "status": "Release build; see project notes for device validation."
+  },
+  "com.brooktrout12.blursleep": {
+    "source": "sources/BlurSleep",
+    "status": "Experimental \u2014 physical-device verification remains necessary."
+  },
+  "com.chatgpt.jbbatterywatch": {
+    "source": "sources/JB_Battery_Watch",
+    "status": "Experimental \u2014 physical-device verification remains necessary."
+  },
+  "local.kilian.ytshortsforegroundonly": {
+    "source": "sources/YouTube_Shorts_Addons",
+    "status": "Experimental \u2014 physical-device verification remains necessary."
+  },
+  "local.kilian.ytshortsnoads": {
+    "source": "sources/YouTube_Shorts_Addons",
+    "status": "Experimental \u2014 physical-device verification remains necessary."
+  }
+}

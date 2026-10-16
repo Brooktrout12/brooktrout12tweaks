@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "InstantPasscode18.dylib",
+      "architecture": "arm64",
+      "uuid": "43be796d-bf6b-3523-ae11-e33b3a41ee12",
+      "match": true
+    },
+    {
+      "binary": "InstantPasscode18.dylib",
+      "architecture": "arm64e",
+      "uuid": "0875297e-8c1d-36c9-89d0-6152fb66fa92",
+      "match": true
+    }
+  ]
+}

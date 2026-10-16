@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.photoicon_1.1.1_iphoneos-arm64.deb",
+  "sha256": "9929c6e6fd8807411d3d36fba314d2e0d448c0ae9a5d29cbcbd5292117bf2ab9",
+  "trace_markers_absent": [
+    "PIBookmarkDiagnostic",
+    "Configuration requested;",
+    "Final menu built;",
+    "Final menu provider wrapped;",
+    "Provider invoked; icon view",
+    "PhotoIcon 1.0 beta 3 loaded;"
+  ],
+  "old_trace_cleanup_present": true,
+  "device_runtime_tested": false
+}

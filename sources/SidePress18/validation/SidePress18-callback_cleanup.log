@@ -1,0 +1,65 @@
+{
+  "result": "PASS",
+  "scope": "Direct stack release, heap handoffs at three external callback boundaries, and removal of the crashing block predicate",
+  "checked": [
+    {
+      "binary": "SidePress18.dylib",
+      "architecture": "arm64",
+      "heap_callback_handoffs": [
+        {
+          "callback": "third_argument",
+          "copy": "7054:\tbl\t0xd450 ; symbol stub for: __Block_copy",
+          "call": "7078:\tbl\t0xd5e8 ; Objc message: -[x0 activateCameraViewAnimated:sendingActions:completion:]"
+        },
+        {
+          "callback": "third_argument",
+          "copy": "789c:\tbl\t0xd450 ; symbol stub for: __Block_copy",
+          "call": "78c0:\tbl\t0xd5e8 ; Objc message: -[x0 openApplication:withOptions:completion:]"
+        },
+        {
+          "callback": "third_argument",
+          "copy": "af08:\tbl\t0xd450 ; symbol stub for: __Block_copy",
+          "call": "af2c:\tbl\t0xd5e8 ; Objc message: -[x0 _reallyActivateAppSceneWithEntity:interactive:withCompletion:]"
+        }
+      ]
+    },
+    {
+      "binary": "SidePress18.dylib",
+      "architecture": "arm64e",
+      "heap_callback_handoffs": [
+        {
+          "callback": "third_argument",
+          "copy": "708c:\tbl\t0xd664 ; symbol stub for: __Block_copy",
+          "call": "70b0:\tbl\t0xd884 ; symbol stub for: _objc_msgSend"
+        },
+        {
+          "callback": "third_argument",
+          "copy": "78ec:\tbl\t0xd664 ; symbol stub for: __Block_copy",
+          "call": "7910:\tbl\t0xd884 ; symbol stub for: _objc_msgSend"
+        },
+        {
+          "callback": "third_argument",
+          "copy": "b044:\tbl\t0xd664 ; symbol stub for: __Block_copy",
+          "call": "b068:\tbl\t0xd884 ; symbol stub for: _objc_msgSend"
+        }
+      ]
+    },
+    {
+      "binary": "SidePress18Settings.dylib",
+      "architecture": "arm64"
+    },
+    {
+      "binary": "SidePress18Settings.dylib",
+      "architecture": "arm64e"
+    },
+    {
+      "binary": "SidePress18Prefs",
+      "architecture": "arm64"
+    },
+    {
+      "binary": "SidePress18Prefs",
+      "architecture": "arm64e"
+    }
+  ],
+  "violations": []
+}

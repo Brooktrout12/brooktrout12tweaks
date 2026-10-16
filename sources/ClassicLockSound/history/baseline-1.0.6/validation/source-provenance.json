@@ -1,0 +1,16 @@
+{
+  "baseline_version": "1.0.5",
+  "version": "1.0.6",
+  "baseline_source": "ClassicLockSound-1.0.5-source.zip",
+  "baseline_source_sha256": "779e141d056b556751e3b19174fcbb1c2f24c407bc414c333aef1b28a1548b84",
+  "unchanged_runtime_sources": [
+    "BTLockSoundPolicy.h",
+    "Compatibility.h",
+    "Tweak.m",
+    "tests/test_policy.c"
+  ],
+  "runtime_source_unchanged": true,
+  "corrected_wav_sha256": "8fad6338e6fe6b4d3d645ec4240b226c25c970a6d8ae544b0dbbf101ca682c74",
+  "converted_caf_sha256": "f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918",
+  "package_sha256": "bab0183c06490a91fdf7a25f81284c9fa13362ec5e955f67c5604f5e566211ae"
+}

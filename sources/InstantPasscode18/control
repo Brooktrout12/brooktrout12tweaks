@@ -1,0 +1,11 @@
+Package: com.brooktrout12.instantpasscode18
+Name: InstantPasscode18
+Version: 1.1.1
+Architecture: iphoneos-arm64
+Description: Instant lock-screen keypad with native Face ID and a Face ID-aware passcode title.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate
+Priority: optional
+Tag: purpose::extension

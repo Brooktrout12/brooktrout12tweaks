@@ -1,0 +1,9 @@
+Package: com.brooktrout12.classiclocksound
+Name: ClassicLockSound
+Version: 1.0.8
+Architecture: iphoneos-arm64
+Description: Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.6)

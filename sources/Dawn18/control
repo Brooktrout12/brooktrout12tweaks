@@ -1,0 +1,13 @@
+Package: com.brooktrout12.dawn18
+Name: Dawn 18
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Independent light and dark appearance controls for iOS 17 and 18.
+ Native settings for applications, folders, notifications, banners, widgets,
+ dock, notification buttons and App Library. No Cephei dependency.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)
+Conflicts: com.ethanrdoesmc.dawn
+Tag: role::enduser

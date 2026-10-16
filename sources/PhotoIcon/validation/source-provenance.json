@@ -1,0 +1,8 @@
+{
+  "baseline_source": "PhotoIcon-1.1.1-source.zip",
+  "baseline_source_sha256": "f8c27cf74abbc613a71cc0213b97bccba4a4f31047b09d74eb668be26185da5d",
+  "baseline_version": "1.1.1",
+  "version": "1.1.2",
+  "package_sha256": "95cc3edb3a5dc15c7fbf2b95d24017b088533fd4e84368443caaa9ad7a29444f",
+  "source_patch": "IOS17-18.patch"
+}

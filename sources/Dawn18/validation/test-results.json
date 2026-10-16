@@ -1,0 +1,26 @@
+[
+  {
+    "project": "Dawn18",
+    "check": "package",
+    "exit_code": 0,
+    "log": "Dawn18-package.log"
+  },
+  {
+    "project": "Dawn18",
+    "check": "preferences",
+    "exit_code": 0,
+    "log": "Dawn18-preferences.log"
+  },
+  {
+    "project": "Dawn18",
+    "check": "test_rules-compile",
+    "exit_code": 0,
+    "log": "Dawn18-test_rules-compile.log"
+  },
+  {
+    "project": "Dawn18",
+    "check": "test_rules",
+    "exit_code": 0,
+    "log": "Dawn18-test_rules.log"
+  }
+]

@@ -1,0 +1,10 @@
+PASS: Mach-O ARM64 (not arm64e), MH_EXECUTE, PIE
+PASS: iOS platform 2; minimum iOS 15.0, declared link SDK 15.0
+PASS: exactly one linked library, /usr/lib/libSystem.B.dylib
+PASS: /usr/lib/dyld interpreter and LC_MAIN entry point
+PASS: segment bounds; no writable-and-executable mapped segment
+PASS: ad-hoc SHA-256 code signature, 22 page hashes verified
+Binary size: 89952 bytes
+SHA256: 62b8c18d3cb59e1f0a69dcd174b410369a72f3ae5a24ad20c428486784448cb9
+
+Static structural checks only. Device signing policy and private API behavior were NOT tested.

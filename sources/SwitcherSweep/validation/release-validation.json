@@ -1,0 +1,38 @@
+{
+  "project": "SwitcherSweep",
+  "display_name": "SwitcherSweep",
+  "package_id": "com.brooktrout12.switchersweep",
+  "previous_version": "1.0.7",
+  "version": "1.0.8",
+  "package": "com.brooktrout12.switchersweep_1.0.8_iphoneos-arm64.deb",
+  "sha256": "e7b360986bd88fa4229fcd19218ae8374121cd477aa5e2e93ccb622437f47c19",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 2,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/SwitcherSweep.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {},
+  "on_device_tested": false
+}

@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64",
+      "uuid": "2a6366b3-7298-3765-b1a3-e12a34e2dd72",
+      "matches_packaged_binary": true
+    },
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64e",
+      "uuid": "7da76eb8-95d0-3d3d-9759-362b2b844841",
+      "matches_packaged_binary": true
+    },
+    {
+      "binary": "ClassicLockSoundPrefs",
+      "architecture": "arm64",
+      "uuid": "3e1c4165-2df0-34e9-9446-1826404d4a7d",
+      "matches_packaged_binary": true
+    },
+    {
+      "binary": "ClassicLockSoundPrefs",
+      "architecture": "arm64e",
+      "uuid": "78bcdcaa-90b0-37c1-8d0d-a546f125e77d",
+      "matches_packaged_binary": true
+    }
+  ]
+}

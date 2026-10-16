@@ -1,0 +1,12 @@
+Package: com.brooktrout12.3dbadgeclear18
+Name: 3D Badge Clear 18
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Clear a Home Screen badge from Quick Actions on iOS 17 and 18.
+ Adds Clear Badge with a native symbol that follows the menu appearance.
+ Inspired by 3DBadgeClear by isklikas. No settings to configure.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate
+Tag: role::enduser

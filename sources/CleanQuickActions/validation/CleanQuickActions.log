@@ -1,0 +1,162 @@
+> Making all for tweak CleanQuickActions…
+==> Compiling Tweak.m (arm64)…
+==> Compiling Preferences.m (arm64)…
+==> Compiling Rules.c (arm64)…
+==> Linking tweak CleanQuickActions (arm64)…
+==> Generating debug symbols for CleanQuickActions…
+==> Stripping CleanQuickActions (arm64)…
+==> Compiling Tweak.m (arm64e)…
+==> Compiling Preferences.m (arm64e)…
+==> Linking tweak CleanQuickActions (arm64e)…
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/obj/arm64e/Tweak.m.24c64cd3.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/obj/arm64e/Preferences.m.24c64cd3.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/obj/arm64e/Rules.c.24c64cd3.o was built with an incompatible arm64e ABI compiler
+==> Generating debug symbols for CleanQuickActions…
+==> Stripping CleanQuickActions (arm64e)…
+==> Merging tweak CleanQuickActions…
+==> Signing CleanQuickActions…
+> Making stage for tweak CleanQuickActions…
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/_/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib"
+Reading file...
+
+Patching
+
+convert len:168560
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__objc_classname__TEXT
+__objc_methname
+__objc_methtype
+__cstring
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__const
+__cfstring
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D8D
+cfstr value: SBIconView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D98
+cfstr value: _UIContextMenuUIController
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DB3
+cfstr value: _createMenuViewIfNecessaryForMenu:
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DD6
+cfstr value: _UIContextMenuSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DF2
+cfstr value: _UIContextMenuReusableSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E16
+cfstr value: _UIContextMenuGradientMaskSectionSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E45
+cfstr value: _UIContextMenuListView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E5C
+cfstr value: menuView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E65
+cfstr value: delegate
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E6E
+cfstr value: view
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7EA2
+cfstr value: com.brooktrout12.cleanquickactions/preferences.changed
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7ED9
+cfstr value: com.brooktrout12.cleanquickactions
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7EFC
+cfstr value: Enabled
+cfstr ISA after 0xC0156AE100000028
+__objc_classlist__DATA_CONST
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_const
+__objc_selrefs
+__objc_classrefs__DATA
+__objc_ivar
+__objc_data
+--- MAIN CLASS ---
+objc_class isa:		0x4008000000000031
+objc_class superclass:	0x4008000000000031
+objc_class cache:	0x4010000000000030
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE100000031
+objc_class superclass:	0xC00DB5AB00000031
+objc_class cache:	0x4010000000000030
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+class_ro_t flags:	0x145X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	CQASeparatorState
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x800000000C1F8
+objc_class superclass:	0x4008000000000032
+objc_class cache:	0x4010000000000030
+objc_class vtable:	0x00
+objc_class data:	0xC090
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE10000C1F8
+objc_class superclass:	0xC00DB5AB00000032
+objc_class cache:	0x4010000000000030
+objc_class vtable:	0x00
+objc_class data:	0xC090
+class_ro_t flags:	0x144X
+class_ro_t instanceStart:	0x08X
+class_ro_t instanceSize:	0x11X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	CQASeparatorState
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x1800000000C048
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/_/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib
+/workspace/scratch/337dbaad81e8/build_tools/theos/toolchain/linux/iphone/bin/ldid -S "/workspace/scratch/337dbaad81e8/ios17_18_update/CleanQuickActions/.theos/_/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib"
+==> Notice: Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.cleanquickactions:iphoneos-arm64' in `./packages/com.brooktrout12.cleanquickactions_1.0.1_iphoneos-arm64.deb'

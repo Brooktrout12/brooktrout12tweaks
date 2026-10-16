@@ -1,0 +1,27 @@
+{
+  "report": "SpringBoard-2026-09-20-185249.ips",
+  "exception": "EXC_CRASH",
+  "signal": "SIGABRT",
+  "queue": "com.apple.ControlCenter.sensorEntityIconCache",
+  "reason": "CoreAnimation: CA_ASSERT_MAIN_THREAD_TRANSACTIONS is set and an implicit transaction wasn't created on a main thread.",
+  "matched_binary_uuid": "80be80c6-325c-352a-bb23-2b01fcda7c32",
+  "symbolicated_frames": [
+    {
+      "offset": "0x6688",
+      "symbol": "PISharedImage",
+      "location": "PISystemIconReader.m:132:41"
+    },
+    {
+      "offset": "0x5e74",
+      "symbol": "PIIconServicesImage",
+      "location": "PISystemIcons.m:0:22"
+    },
+    {
+      "offset": "0x50d4",
+      "symbol": "PIISPreparedImage",
+      "location": "PISystemIcons.m:0:1"
+    }
+  ],
+  "fix_version": "1.1.1",
+  "device_runtime_tested": false
+}

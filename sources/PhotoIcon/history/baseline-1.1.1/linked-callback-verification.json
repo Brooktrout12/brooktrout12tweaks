@@ -1,0 +1,200 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.photoicon_1.1.1_iphoneos-arm64.deb",
+  "sha256": "9929c6e6fd8807411d3d36fba314d2e0d448c0ae9a5d29cbcbd5292117bf2ab9",
+  "checks": [
+    {
+      "architecture": "arm64",
+      "method": "-[PIHostController setOnReady:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnSave:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnCancel:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PICropViewController setOnChoosePhoto:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "helper_calls_Block_copy": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "system_copy_calls": [
+        "0x468c",
+        "0x4748",
+        "0x4b0c",
+        "0x5a10",
+        "0x7cd0",
+        "0x82b8",
+        "0x96c0",
+        "0x9a44",
+        "0xc034",
+        "0xdbb0",
+        "0xdc4c",
+        "0xe0f4",
+        "0xe3c0",
+        "0xeee0",
+        "0xf460",
+        "0xf7c0",
+        "0xf80c"
+      ],
+      "expected_count": 17,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "dismissal_animation_runtime_copy_calls": [
+        "0xf7c0",
+        "0xf80c"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "bookmark_provider_runtime_copy_calls": [
+        "0x5a10"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "bookmark_action_runtime_copy_calls": [
+        "0x7cd0"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "method": "-[PIEditorCoordinator picker:didFinishPicking:]",
+      "uuid": "0E8F6B66-F553-3532-826D-BD7D3DD17793",
+      "runtime_copy_calls": [
+        "0xe0f4"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "startup_copies": [
+        {
+          "address": "0x468c",
+          "argument_instruction": "0x910103e0",
+          "passes_stack_literal": true
+        },
+        {
+          "address": "0x4748",
+          "argument_instruction": "0x910063e0",
+          "passes_stack_literal": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PIHostController setOnReady:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnSave:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnCancel:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PICropViewController setOnChoosePhoto:]",
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "helper_calls_Block_copy": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "system_copy_calls": [
+        "0x8330",
+        "0x83f8",
+        "0x87cc",
+        "0x9720",
+        "0xba78",
+        "0xc080",
+        "0xd514",
+        "0xd8bc",
+        "0xff24",
+        "0x11b30",
+        "0x11bd4",
+        "0x120a0",
+        "0x12378",
+        "0x12f04",
+        "0x134c4",
+        "0x13840",
+        "0x13894"
+      ],
+      "expected_count": 17,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "dismissal_animation_runtime_copy_calls": [
+        "0x13840",
+        "0x13894"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "bookmark_provider_runtime_copy_calls": [
+        "0x9720"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "bookmark_action_runtime_copy_calls": [
+        "0xba78"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "method": "-[PIEditorCoordinator picker:didFinishPicking:]",
+      "uuid": "0A8E2520-4990-3BCE-B146-A488BD39BEB5",
+      "runtime_copy_calls": [
+        "0x120a0"
+      ],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "startup_copies": [
+        {
+          "address": "0x8330",
+          "argument_instruction": "0x910103e0",
+          "passes_stack_literal": true
+        },
+        {
+          "address": "0x83f8",
+          "argument_instruction": "0x910063e0",
+          "passes_stack_literal": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "device_runtime_tested": false
+}

@@ -1,0 +1,82 @@
+{
+  "package": "com.brooktrout12.classiclocksound_1.0.4_iphoneos-arm64.deb",
+  "sha256": "524b961a09291fcce9de9c93891bc7abeb6b449366f703a1df1326f27abcb9b7",
+  "result": "PASS",
+  "slices": [
+    {
+      "architecture": "arm64",
+      "uuid": "869143be-0e29-3a55-ba8c-945b41e269b3",
+      "minimum_ios": "18.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 0,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": true,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound"
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "uuid": "9f8e65ba-088d-32a7-8a06-f15de8dcb117",
+      "minimum_ios": "18.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 8,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": true,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound"
+        }
+      ]
+    }
+  ],
+  "packaged_audio_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "audio_gain": 1.0,
+  "observed_device_route": {
+    "sound_type": 5,
+    "event_type": 1002
+  },
+  "rootless_only_payload": true,
+  "no_system_file_replacement_or_maintainer_scripts": true,
+  "device_runtime_tested": false
+}

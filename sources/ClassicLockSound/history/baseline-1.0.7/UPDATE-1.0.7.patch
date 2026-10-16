@@ -1,0 +1,782 @@
+--- a/BTPreferences.h
++++ b/BTPreferences.h
+@@ -0,0 +1,26 @@
++#pragma once
++#import <Foundation/Foundation.h>
++#include "BTVolume.h"
++
++#define BTPreferenceDomain CFSTR("com.brooktrout12.classiclocksound")
++#define BTVolumeChanged CFSTR("com.brooktrout12.classiclocksound/volume-changed")
++
++static inline int BTReadVolume(void) {
++    CFPreferencesAppSynchronize(BTPreferenceDomain);
++    CFPropertyListRef value = CFPreferencesCopyAppValue(CFSTR("VolumePercent"), BTPreferenceDomain);
++    double number = 100;
++    if (value && CFGetTypeID(value) == CFNumberGetTypeID())
++        CFNumberGetValue((CFNumberRef)value, kCFNumberDoubleType, &number);
++    if (value) CFRelease(value);
++    return BTVolumePercent(number);
++}
++
++static inline void BTWriteVolume(int percent) {
++    int clamped = BTVolumePercent(percent);
++    CFNumberRef number = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &clamped);
++    CFPreferencesSetAppValue(CFSTR("VolumePercent"), number, BTPreferenceDomain);
++    CFRelease(number);
++    CFPreferencesAppSynchronize(BTPreferenceDomain);
++    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(),
++        BTVolumeChanged, NULL, NULL, true);
++}
+--- a/BTVolume.c
++++ b/BTVolume.c
+@@ -0,0 +1,63 @@
++#include "BTVolume.h"
++#include <math.h>
++#include <string.h>
++
++static uint32_t BTReadBE32(const uint8_t *p) {
++    return ((uint32_t)p[0] << 24) | ((uint32_t)p[1] << 16) |
++           ((uint32_t)p[2] << 8) | p[3];
++}
++static uint64_t BTReadBE64(const uint8_t *p) {
++    return ((uint64_t)BTReadBE32(p) << 32) | BTReadBE32(p + 4);
++}
++int BTVolumePercent(double value) {
++    if (!isfinite(value)) return 100;
++    if (value <= 0) return 0;
++    if (value >= 100) return 100;
++    return (int)(value + 0.5);
++}
++bool BTScaleCAF(uint8_t *bytes, size_t length, unsigned int percent) {
++    /* Accept the shipped, uncompressed stereo format only. Validate the
++       entire container before modifying any byte; never guess PCM offsets. */
++    if (!bytes || percent > 100 || length < 8 ||
++        memcmp(bytes, "caff\0\1", 6) != 0) return false;
++    size_t position = 8, dataOffset = 0, dataLength = 0;
++    bool description = false, audio = false;
++    while (position < length) {
++        if (length - position < 12) return false;
++        uint8_t *chunk = bytes + position;
++        uint64_t size = BTReadBE64(chunk + 4);
++        position += 12;
++        if (size > length - position) return false;
++        if (memcmp(chunk, "desc", 4) == 0) {
++            if (description || audio || size != 32 || position != 20) return false;
++            const uint8_t *format = bytes + position;
++            /* IEEE-754 44100.0, big-endian CAF fields; signed little-endian PCM. */
++            if (BTReadBE64(format) != UINT64_C(0x40e5888000000000) ||
++                memcmp(format + 8, "lpcm", 4) != 0 ||
++                BTReadBE32(format + 12) != 2 ||
++                BTReadBE32(format + 16) != 4 ||
++                BTReadBE32(format + 20) != 1 ||
++                BTReadBE32(format + 24) != 2 ||
++                BTReadBE32(format + 28) != 16) return false;
++            description = true;
++        } else if (memcmp(chunk, "data", 4) == 0) {
++            if (!description || audio || size < 4 || (size - 4) % 4 != 0) return false;
++            dataOffset = position + 4; /* Skip the CAF edit count. */
++            dataLength = (size_t)size - 4;
++            audio = true;
++        }
++        position += (size_t)size;
++    }
++    if (!description || !audio || !dataLength) return false;
++    if (percent == 100) return true; /* Bit-for-bit original at maximum. */
++    for (size_t i = dataOffset; i < dataOffset + dataLength; i += 2) {
++        uint32_t encoded = bytes[i] | ((uint32_t)bytes[i + 1] << 8);
++        int32_t sample = encoded >= 32768 ? (int32_t)encoded - 65536 : (int32_t)encoded;
++        int32_t numerator = sample * (int32_t)percent;
++        int32_t scaled = numerator >= 0 ? (numerator + 50) / 100 : -((-numerator + 50) / 100);
++        uint32_t output = scaled < 0 ? (uint32_t)(scaled + 65536) : (uint32_t)scaled;
++        bytes[i] = (uint8_t)output;
++        bytes[i + 1] = (uint8_t)(output >> 8);
++    }
++    return true;
++}
+--- a/BTVolume.h
++++ b/BTVolume.h
+@@ -0,0 +1,10 @@
++#ifndef BT_VOLUME_H
++#define BT_VOLUME_H
++#include <stdbool.h>
++#include <stddef.h>
++#include <stdint.h>
++
++/* Percent is linear PCM amplitude relative to the original recording. */
++int BTVolumePercent(double value);
++bool BTScaleCAF(uint8_t *bytes, size_t length, unsigned int percent);
++#endif
+--- a/Makefile
++++ b/Makefile
+@@ -3,12 +3,12 @@
+ THEOS_PACKAGE_SCHEME = rootless
+ FINALPACKAGE = 1
+ DEBUG = 0
+-INSTALL_TARGET_PROCESSES = SpringBoard
++INSTALL_TARGET_PROCESSES = SpringBoard Preferences
+ 
+ include $(THEOS)/makefiles/common.mk
+ 
+ TWEAK_NAME = ClassicLockSound
+-ClassicLockSound_FILES = Tweak.m
++ClassicLockSound_FILES = Tweak.m BTVolume.c
+ ClassicLockSound_CFLAGS = -fno-objc-arc -Wall -Wextra -Werror
+ ClassicLockSound_FRAMEWORKS = Foundation
+ ClassicLockSound_PRIVATE_FRAMEWORKS = SpringBoardUI
+@@ -16,3 +16,6 @@
+ ClassicLockSound_CODESIGN_FLAGS = -S -Cadhoc -Icom.brooktrout12.classiclocksound
+ 
+ include $(THEOS_MAKE_PATH)/tweak.mk
++
++SUBPROJECTS += prefs
++include $(THEOS_MAKE_PATH)/aggregate.mk
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -1,5 +1,5 @@
+ #import "Compatibility.h"
+-// ClassicLockSound 1.0.4 — brooktrout12
++// ClassicLockSound 1.0.7 — brooktrout12
+ // The device report identifies lock playback as SBUISound feedback event 1002.
+ // Redirect that request into the controller's native file player. Never patch
+ // shared AudioServices entry points or intercept the screenshot action.
+@@ -9,7 +9,9 @@
+ #include <dlfcn.h>
+ #include <dispatch/dispatch.h>
+ #include <string.h>
++#include <pthread.h>
+ #include "BTLockSoundPolicy.h"
++#include "BTPreferences.h"
+ 
+ // These signatures were captured from the user's iOS 18.6 runtime. There are
+ // no custom Objective-C classes, block literals, ivar offsets, or C audio hooks.
+@@ -24,8 +26,67 @@
+ @end
+ 
+ static NSString *BTClassicSoundPath;
++static NSData *BTOriginalAudio;
++static pthread_mutex_t BTAudioMutex = PTHREAD_MUTEX_INITIALIZER;
+ static char BTImageAnchor;
+ static bool (*BTOriginalPlayFeedback)(id, SEL, SBUISound *);
++
++static NSString *BTCopyActiveSoundPath(void) {
++    pthread_mutex_lock(&BTAudioMutex);
++    NSString *path = [BTClassicSoundPath retain];
++    pthread_mutex_unlock(&BTAudioMutex);
++    return path;
++}
++
++static bool BTPrepareVolume(void) {
++    int percent = BTReadVolume();
++    NSMutableData *scaled = [BTOriginalAudio mutableCopy];
++    if (!scaled || !BTScaleCAF(scaled.mutableBytes, scaled.length, (unsigned int)percent)) {
++        [scaled release];
++        NSLog(@"[ClassicLockSound] Could not prepare the selected volume.");
++        return false;
++    }
++    NSString *directory = @"/var/mobile/Library/Caches/ClassicLockSound";
++    /* Source hash + algorithm + gain make the audio server's file identity
++       different from older releases and from every other slider setting. */
++    NSString *filename = [NSString stringWithFormat:
++        @"original-90d02d979ff94def-pcm1-%03d.caf", percent];
++    NSString *path = [directory stringByAppendingPathComponent:filename];
++    NSFileManager *manager = [NSFileManager defaultManager];
++    NSDictionary *attributes = @{NSFileProtectionKey:NSFileProtectionNone};
++    NSError *error = nil;
++    bool ready = [manager createDirectoryAtPath:directory withIntermediateDirectories:YES
++                                    attributes:attributes error:&error];
++    if (ready) ready = [manager setAttributes:attributes ofItemAtPath:directory error:&error];
++    if (ready) {
++        NSData *existing = [NSData dataWithContentsOfFile:path];
++        ready = [existing isEqualToData:scaled] ||
++            [scaled writeToFile:path options:NSDataWritingAtomic | NSDataWritingFileProtectionNone error:&error];
++    }
++    [scaled release];
++    if (!ready) {
++        NSLog(@"[ClassicLockSound] Volume preparation failed: %@", error);
++        return false; /* Keep the last successfully prepared setting. */
++    }
++    pthread_mutex_lock(&BTAudioMutex);
++    NSString *previous = BTClassicSoundPath;
++    BTClassicSoundPath = [path copy];
++    pthread_mutex_unlock(&BTAudioMutex);
++    [previous release];
++    return true;
++}
++
++static void BTRefreshVolume(void *context) {
++    (void)context;
++    @autoreleasepool { BTPrepareVolume(); }
++}
++
++static void BTVolumeDidChange(CFNotificationCenterRef center, void *observer,
++                             CFStringRef name, const void *object, CFDictionaryRef info) {
++    (void)center; (void)observer; (void)name; (void)object; (void)info;
++    /* No block literals; serialize cache preparation with initialization. */
++    dispatch_async_f(dispatch_get_main_queue(), NULL, BTRefreshVolume);
++}
+ 
+ static NSString *BTResourcePath(void) {
+     Dl_info image = {0};
+@@ -77,7 +138,13 @@
+     // separate shouldPlayLockSound query (the unsuccessful 1.0.2 approach).
+     long long previousType = sound.soundType;
+     NSString *previousPath = [sound.songPath retain];
+-    sound.songPath = BTClassicSoundPath;
++    NSString *selectedPath = BTCopyActiveSoundPath();
++    if (!selectedPath) {
++        [previousPath release];
++        return BTOriginalPlayFeedback(controller, command, sound);
++    }
++    sound.songPath = selectedPath;
++    [selectedPath release];
+     sound.soundType = BTSystemSoundType;
+ 
+     // Native _playSystemSound: resolves songPath, installs its completion,
+@@ -119,9 +186,12 @@
+             NSLog(@"[ClassicLockSound] Bundled lock sound unavailable; native playback retained.");
+             return;
+         }
+-        BTClassicSoundPath = [path copy]; // One process-lifetime string, MRC.
++        BTOriginalAudio = [[NSData alloc] initWithContentsOfFile:path];
++        if (!BTPrepareVolume()) return;
+         MSHookMessageEx(controller, sel_registerName("_playFeedback:"),
+                         (IMP)BTPlayFeedback, (IMP *)&BTOriginalPlayFeedback);
++        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL,
++            BTVolumeDidChange, BTVolumeChanged, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
+     }
+ }
+ 
+--- a/control
++++ b/control
+@@ -1,9 +1,9 @@
+ Package: com.brooktrout12.classiclocksound
+ Name: ClassicLockSound
+-Version: 1.0.6
++Version: 1.0.7
+ Architecture: iphoneos-arm64
+-Description: Restores the classic iOS 7-9 lock sound without modifying Apple's system audio files.
++Description: Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.
+ Maintainer: brooktrout12
+ Author: brooktrout12
+ Section: Tweaks
+-Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)
++Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.6)
+--- a/layout/Library/PreferenceLoader/Preferences/ClassicLockSound.plist
++++ b/layout/Library/PreferenceLoader/Preferences/ClassicLockSound.plist
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0"><dict><key>entry</key><dict>
++<key>bundle</key><string>ClassicLockSoundPrefs</string>
++<key>cell</key><string>PSLinkCell</string>
++<key>detail</key><string>BTLockSoundPrefsController</string>
++<key>isController</key><true/>
++<key>label</key><string>Classic Lock Sound</string>
++<key>icon</key><string>/var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle/icon.png</string>
++</dict></dict></plist>
+--- a/prefs/BTLockSoundPrefsController.m
++++ b/prefs/BTLockSoundPrefsController.m
+@@ -0,0 +1,137 @@
++#import <UIKit/UIKit.h>
++#import <Preferences/PSListController.h>
++#import <Preferences/PSSpecifier.h>
++#import <Preferences/PSTableCell.h>
++#import "../BTPreferences.h"
++
++@interface BTLockVolumeCell : PSTableCell
++@property(nonatomic, strong) UISlider *volumeSlider;
++@property(nonatomic, strong) UILabel *percentageLabel;
++@property(nonatomic) int lastSavedPercent;
++@end
++
++@implementation BTLockVolumeCell
++- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)identifier
++                    specifier:(PSSpecifier *)specifier {
++    self = [super initWithStyle:style reuseIdentifier:identifier specifier:specifier];
++    if (!self) return nil;
++    self.selectionStyle = UITableViewCellSelectionStyleNone;
++    self.textLabel.text = nil;
++    UILabel *title = [UILabel new];
++    title.text = @"Lock sound volume";
++    title.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
++    title.adjustsFontForContentSizeCategory = YES;
++    title.adjustsFontSizeToFitWidth = YES;
++    title.minimumScaleFactor = 0.7;
++    self.percentageLabel = [UILabel new];
++    self.percentageLabel.font = [[UIFontMetrics metricsForTextStyle:UIFontTextStyleBody]
++        scaledFontForFont:[UIFont monospacedDigitSystemFontOfSize:17 weight:UIFontWeightSemibold]];
++    self.percentageLabel.adjustsFontForContentSizeCategory = YES;
++    self.percentageLabel.textAlignment = NSTextAlignmentRight;
++    [self.percentageLabel setContentCompressionResistancePriority:UILayoutPriorityRequired
++        forAxis:UILayoutConstraintAxisHorizontal];
++    self.volumeSlider = [UISlider new];
++    self.volumeSlider.minimumValue = 0;
++    self.volumeSlider.maximumValue = 100;
++    self.volumeSlider.continuous = YES;
++    self.volumeSlider.minimumValueImage = [UIImage systemImageNamed:@"speaker.slash.fill"];
++    self.volumeSlider.maximumValueImage = [UIImage systemImageNamed:@"speaker.wave.3.fill"];
++    self.volumeSlider.accessibilityLabel = @"Lock sound volume";
++    [self.volumeSlider addTarget:self action:@selector(volumeChanged:)
++        forControlEvents:UIControlEventValueChanged];
++    [self.volumeSlider addTarget:self action:@selector(commitVolume:)
++        forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel];
++    for (UIView *view in @[title, self.percentageLabel, self.volumeSlider]) {
++        view.translatesAutoresizingMaskIntoConstraints = NO;
++        [self.contentView addSubview:view];
++    }
++    UILayoutGuide *margins = self.contentView.layoutMarginsGuide;
++    [NSLayoutConstraint activateConstraints:@[
++        [title.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor],
++        [title.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:14],
++        [title.trailingAnchor constraintLessThanOrEqualToAnchor:self.percentageLabel.leadingAnchor constant:-12],
++        [self.percentageLabel.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor],
++        [self.percentageLabel.firstBaselineAnchor constraintEqualToAnchor:title.firstBaselineAnchor],
++        [self.volumeSlider.leadingAnchor constraintEqualToAnchor:margins.leadingAnchor],
++        [self.volumeSlider.trailingAnchor constraintEqualToAnchor:margins.trailingAnchor],
++        [self.volumeSlider.topAnchor constraintEqualToAnchor:title.bottomAnchor constant:8],
++        [self.volumeSlider.heightAnchor constraintEqualToConstant:36]
++    ]];
++    self.lastSavedPercent = BTReadVolume();
++    self.volumeSlider.value = self.lastSavedPercent;
++    [self updatePercentage];
++    return self;
++}
++- (void)updatePercentage {
++    int percent = BTVolumePercent(self.volumeSlider.value);
++    NSString *text = [NSString stringWithFormat:@"%d%%", percent];
++    self.percentageLabel.text = text;
++    self.volumeSlider.accessibilityValue = text;
++}
++- (void)volumeChanged:(UISlider *)slider {
++    [self updatePercentage];
++    /* Touch drags update the label immediately and save once on release.
++       VoiceOver, Switch Control and keyboard changes save immediately. */
++    if (!slider.isTracking) [self commitVolume:slider];
++}
++- (void)commitVolume:(UISlider *)slider {
++    int percent = BTVolumePercent(slider.value);
++    slider.value = percent;
++    [self updatePercentage];
++    if (percent != self.lastSavedPercent) {
++        BTWriteVolume(percent);
++        self.lastSavedPercent = percent;
++    }
++}
++- (void)refreshCellContentsWithSpecifier:(PSSpecifier *)specifier {
++    [super refreshCellContentsWithSpecifier:specifier];
++    self.textLabel.text = nil;
++    if (self.volumeSlider && !self.volumeSlider.isTracking) {
++        self.lastSavedPercent = BTReadVolume();
++        self.volumeSlider.value = self.lastSavedPercent;
++        [self updatePercentage];
++    }
++}
++@end
++
++@interface BTLockSoundPrefsController : PSListController
++@end
++@implementation BTLockSoundPrefsController
++- (NSMutableArray *)specifiers {
++    if (!_specifiers) {
++        self.title = @"Classic Lock Sound";
++        NSMutableArray *items = [NSMutableArray array];
++        PSSpecifier *group = [PSSpecifier groupSpecifierWithName:@"Volume"];
++        [group setProperty:@"0% is silent. 100% uses the original recording at full level. Your iPhone’s ringer volume and Silent Mode still apply. Changes take effect on the next lock." forKey:@"footerText"];
++        [items addObject:group];
++        PSSpecifier *slider = [PSSpecifier preferenceSpecifierNamed:@"Lock sound volume" target:self
++            set:NULL get:NULL detail:Nil cell:PSStaticTextCell edit:Nil];
++        slider.identifier = @"LockVolume";
++        [slider setProperty:BTLockVolumeCell.class forKey:@"cellClass"];
++        [slider setProperty:@100 forKey:@"height"];
++        [items addObject:slider];
++        PSSpecifier *reset = [PSSpecifier preferenceSpecifierNamed:@"Reset to 100%" target:self
++            set:NULL get:NULL detail:Nil cell:PSButtonCell edit:Nil];
++        reset.buttonAction = @selector(resetVolume);
++        [items addObject:reset];
++        PSSpecifier *about = [PSSpecifier emptyGroupSpecifier];
++        [about setProperty:@"Classic Lock Sound 1.0.7 · Brooktrout12\niOS 17–18 · Rootless" forKey:@"footerText"];
++        [items addObject:about];
++        _specifiers = items;
++    }
++    return _specifiers;
++}
++- (void)viewWillAppear:(BOOL)animated {
++    [super viewWillAppear:animated];
++    [self reloadSpecifiers];
++}
++- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
++    if ([[self specifierAtIndexPath:indexPath].identifier isEqualToString:@"LockVolume"])
++        return MAX(100, [UIFont preferredFontForTextStyle:UIFontTextStyleBody].lineHeight + 72);
++    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
++}
++- (void)resetVolume {
++    BTWriteVolume(100);
++    [self reloadSpecifiers];
++}
++@end
+--- a/prefs/Makefile
++++ b/prefs/Makefile
+@@ -0,0 +1,11 @@
++include $(THEOS)/makefiles/common.mk
++
++BUNDLE_NAME = ClassicLockSoundPrefs
++ClassicLockSoundPrefs_FILES = BTLockSoundPrefsController.m ../BTVolume.c
++ClassicLockSoundPrefs_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
++ClassicLockSoundPrefs_FRAMEWORKS = UIKit Foundation
++ClassicLockSoundPrefs_PRIVATE_FRAMEWORKS = Preferences
++ClassicLockSoundPrefs_INSTALL_PATH = /Library/PreferenceBundles
++ClassicLockSoundPrefs_CODESIGN_FLAGS = -S -Cadhoc -Icom.brooktrout12.classiclocksound.prefs
++
++include $(THEOS_MAKE_PATH)/bundle.mk
+--- a/prefs/Resources/Info.plist
++++ b/prefs/Resources/Info.plist
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0"><dict>
++<key>CFBundleIdentifier</key><string>com.brooktrout12.classiclocksound.prefs</string>
++<key>CFBundleName</key><string>Classic Lock Sound</string>
++<key>CFBundleDisplayName</key><string>Classic Lock Sound</string>
++<key>CFBundleExecutable</key><string>ClassicLockSoundPrefs</string>
++<key>CFBundlePackageType</key><string>BNDL</string>
++<key>CFBundleShortVersionString</key><string>1.0.7</string>
++<key>CFBundleVersion</key><string>1</string>
++<key>CFBundleIconFile</key><string>icon.png</string>
++<key>CFBundleIconFiles</key><array><string>icon.png</string><string>icon@2x.png</string><string>icon@3x.png</string></array>
++<key>NSPrincipalClass</key><string>BTLockSoundPrefsController</string>
++<key>MinimumOSVersion</key><string>17.0</string>
++</dict></plist>
+--- a/scripts/build-linux.sh
++++ b/scripts/build-linux.sh
+@@ -8,5 +8,5 @@
+ bash ./scripts/test-policy.sh
+ python3 scripts/verify_audio.py
+ make clean
+-make -j2 package TARGET_CODESIGN="$bt_project/scripts/sign-linux.sh"
+-python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.6_iphoneos-arm64.deb
++make -j1 package TARGET_CODESIGN="$bt_project/scripts/sign-linux.sh"
++python3 scripts/verify_package.py packages/com.brooktrout12.classiclocksound_1.0.7_iphoneos-arm64.deb
+--- a/scripts/sign-linux.sh
++++ b/scripts/sign-linux.sh
+@@ -3,7 +3,9 @@
+ : "${BT_ALLEMANDE:?Set BT_ALLEMANDE to the compiled allemande executable}"
+ : "${BT_LDID:?Set BT_LDID to the toolchain ldid executable}"
+ bt_binary="${!#}"
+-bt_log="${bt_binary}.abi-conversion.log"
++bt_project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
++mkdir -p -- "$bt_project/validation"
++bt_log="$bt_project/validation/$(basename -- "$bt_binary").abi-conversion.log"
+ "$BT_ALLEMANDE" "$bt_binary" > "$bt_log" 2>&1
+ if rg -q 'ERROR|Unexpected' "$bt_log"; then
+     cat "$bt_log" >&2
+--- a/scripts/verify_audio.py
++++ b/scripts/verify_audio.py
+@@ -1,48 +1,113 @@
+ #!/usr/bin/env python3
+-"""Verify the corrected WAV is preserved sample-for-sample in the installed CAF."""
++"""Verify the original asset and test the C gain engine; no iOS runtime simulation."""
+ from pathlib import Path
++import ctypes
+ import hashlib
+ import json
++import math
++import struct
+ import subprocess
++import tempfile
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+-SOURCE = ROOT / "assets/lock-corrected.wav"
+ RESOURCE = ROOT / "layout/Library/Application Support/ClassicLockSound/lock.caf"
+-SOURCE_SHA256 = "8fad6338e6fe6b4d3d645ec4240b226c25c970a6d8ae544b0dbbf101ca682c74"
+-CAF_SHA256 = "f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918"
++ORIGINAL_SHA256 = "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543"
++original = RESOURCE.read_bytes()
++assert original == (ROOT / "assets/lock-original.caf").read_bytes()
++assert hashlib.sha256(original).hexdigest() == ORIGINAL_SHA256
++probe = json.loads(subprocess.check_output([
++    "ffprobe", "-v", "error", "-show_streams", "-of", "json", str(RESOURCE)
++], text=True))["streams"]
++assert len(probe) == 1
++assert (probe[0]["codec_name"], probe[0]["sample_rate"], probe[0]["channels"],
++        probe[0]["duration_ts"]) == ("pcm_s16le", "44100", 2, 39047)
++pcm = subprocess.check_output([
++    "ffmpeg", "-v", "error", "-i", str(RESOURCE), "-map", "0:a:0",
++    "-c:a", "pcm_s16le", "-f", "s16le", "-"
++])
++assert pcm == original[4096:]
++samples = struct.unpack("<" + "h" * (len(pcm) // 2), pcm)
+ 
+-def decoded_pcm(path):
+-    return subprocess.check_output([
+-        "ffmpeg", "-v", "error", "-i", str(path), "-map", "0:a:0",
+-        "-c:a", "pcm_s16le", "-f", "s16le", "-"
+-    ])
++with tempfile.TemporaryDirectory() as folder:
++    library = Path(folder) / "volume.so"
++    subprocess.run(["cc", "-std=c11", "-O2", "-Wall", "-Wextra", "-Werror",
++        "-fPIC", "-shared", str(ROOT / "BTVolume.c"), "-o", str(library)], check=True)
++    code = ctypes.CDLL(str(library))
++    code.BTScaleCAF.argtypes = (ctypes.c_void_p, ctypes.c_size_t, ctypes.c_uint)
++    code.BTScaleCAF.restype = ctypes.c_bool
++    code.BTVolumePercent.argtypes = (ctypes.c_double,)
++    code.BTVolumePercent.restype = ctypes.c_int
+ 
+-assert hashlib.sha256(SOURCE.read_bytes()).hexdigest() == SOURCE_SHA256
+-assert hashlib.sha256(RESOURCE.read_bytes()).hexdigest() == CAF_SHA256
+-assert RESOURCE.read_bytes().startswith(bytes.fromhex("636166660001"))
+-for path in (SOURCE, RESOURCE):
+-    probe = json.loads(subprocess.check_output([
+-        "ffprobe", "-v", "error", "-show_streams", "-of", "json", str(path)
+-    ], text=True))
+-    assert len(probe["streams"]) == 1
+-    stream = probe["streams"][0]
+-    assert stream["codec_name"] == "pcm_s16le"
+-    assert int(stream["sample_rate"]) == 44100 and stream["channels"] == 2
+-    assert int(stream["duration_ts"]) == 39029
+-source_pcm = decoded_pcm(SOURCE)
+-assert source_pcm == decoded_pcm(RESOURCE), "CAF audio samples differ from corrected WAV"
+-assert len(source_pcm) == 39029 * 2 * 2
++    def scale(blob, percent, valid=True):
++        buffer = ctypes.create_string_buffer(blob, len(blob))
++        assert code.BTScaleCAF(buffer, len(blob), percent) is valid
++        result = buffer.raw
++        if not valid:
++            assert result == blob, "Invalid input must not be partially modified"
++        return result
++
++    def expected(values, percent):
++        return [int(math.copysign(math.floor(abs(s) * percent / 100 + 0.5), s)) for s in values]
++
++    for value, want in [(-100, 0), (0, 0), (0.49, 0), (0.5, 1), (43.5, 44),
++                        (99.49, 99), (99.5, 100), (100, 100), (1000, 100),
++                        (float("nan"), 100), (float("inf"), 100), (-float("inf"), 100)]:
++        assert code.BTVolumePercent(value) == want
++
++    decoded_checks = []
++    for percent in range(101):
++        output = scale(original, percent)
++        assert output[:4096] == original[:4096], "CAF header/metadata must be preserved"
++        actual = struct.unpack("<" + "h" * len(samples), output[4096:])
++        assert list(actual) == expected(samples, percent)
++        assert all(abs(a - b * percent / 100) <= 0.500000001 for a, b in zip(actual, samples))
++        if percent == 0:
++            assert not any(actual)
++        if percent == 100:
++            assert output == original, "Maximum must be the exact original file"
++        if percent in (0, 1, 44, 50, 99, 100):
++            target = Path(folder) / f"volume-{percent}.caf"
++            target.write_bytes(output)
++            decoded = subprocess.check_output(["ffmpeg", "-v", "error", "-i", str(target),
++                "-map", "0:a:0", "-c:a", "pcm_s16le", "-f", "s16le", "-"])
++            assert decoded == output[4096:]
++            decoded_checks.append(percent)
++
++    # All possible signed 16-bit values, including both limits, at every level.
++    boundary_samples = list(range(-32768, 32768))
++    boundary_pcm = struct.pack("<" + "h" * len(boundary_samples), *boundary_samples)
++    header = bytearray(original[:4096])
++    struct.pack_into(">Q", header, 4084, len(boundary_pcm) + 4)
++    synthetic = bytes(header) + boundary_pcm
++    for percent in range(101):
++        output = scale(synthetic, percent)
++        actual = struct.unpack("<" + "h" * len(boundary_samples), output[4096:])
++        assert list(actual) == expected(boundary_samples, percent)
++        assert all(-32768 <= x <= 32767 for x in actual)
++
++    malformed = [b"", b"caff", original[:7], original[:4095], original[:-1],
++                 original + b"x", original + original[4080:], original[8:]]
++    for offset, replacement in [(0, b"RIFF"), (5, b"\2"), (8, b"bad!"),
++        (12, b"\xff" * 8), (20, struct.pack(">d", 48000)), (28, b"aac "),
++        (32, struct.pack(">I", 3)), (36, struct.pack(">I", 2)),
++        (40, struct.pack(">I", 2)), (44, struct.pack(">I", 1)),
++        (48, struct.pack(">I", 24)), (4080, b"junk"), (4084, b"\xff" * 8),
++        (4084, struct.pack(">Q", 3)), (4084, struct.pack(">Q", 5))]:
++        bad = bytearray(original)
++        bad[offset:offset + len(replacement)] = replacement
++        malformed.append(bytes(bad))
++    for bad in malformed:
++        scale(bad, 50, False)
++    scale(original, 101, False)
++    assert not code.BTScaleCAF(None, len(original), 50)
++
+ print(json.dumps({
+-    "result": "PASS",
+-    "source_wav_sha256": SOURCE_SHA256,
+-    "packaged_audio_sha256": CAF_SHA256,
+-    "decoded_pcm_sha256": hashlib.sha256(source_pcm).hexdigest(),
+-    "sample_for_sample_identical": True,
+-    "volume_adjustment": False,
+-    "resampling": False,
+-    "sample_rate": 44100,
+-    "channels": 2,
+-    "frames": 39029,
+-    "bytes": RESOURCE.stat().st_size,
++    "result": "PASS", "packaged_audio_sha256": ORIGINAL_SHA256,
++    "frames": 39047, "sample_rate": 44100, "channels": 2,
++    "minimum_is_silent": True, "maximum_bit_identical_to_original": True,
++    "levels_checked": 101, "all_signed_16_bit_values_checked_per_level": 65536,
++    "maximum_rounding_error_pcm_units": 0.5,
++    "independent_ffmpeg_decode_at_percent": decoded_checks,
++    "invalid_inputs_leave_buffer_unchanged": True,
+     "device_runtime_tested": False
+ }, indent=2))
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -43,7 +43,7 @@
+     assert directories, 'No verified CodeDirectory'
+     return directories
+ 
+-def verify_slice(data, expected_subtype):
++def verify_slice(data, expected_subtype, preferences=False):
+     magic, cpu, subtype, kind, count, commandbytes, flags, reserved = unpack('<8I', data)
+     assert magic == 0xfeedfacf and cpu == 0x100000c and kind == 6
+     assert (subtype & 0xffffff) == expected_subtype
+@@ -78,7 +78,8 @@
+         offset += size
+     assert minimum == 0x110000, f'Unexpected deployment version: {minimum}'
+     assert signature and image_uuid
+-    assert '@rpath/CydiaSubstrate.framework/CydiaSubstrate' in dependencies
++    if not preferences:
++        assert '@rpath/CydiaSubstrate.framework/CydiaSubstrate' in dependencies
+     assert '/var/jb/Library/Frameworks' in rpaths
+     assert any('.jbroot' in path for path in rpaths), 'Relocated rootless rpath is missing'
+     assert all(path.startswith(('/usr/lib/', '/System/Library/', '@rpath/')) for path in dependencies)
+@@ -86,7 +87,15 @@
+     converted_classes = 0
+     converted_constant_strings = 0
+     assert b'_NSConcrete' not in data, 'Unexpected Objective-C block literals'
+-    assert '/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI' in dependencies
++    if preferences:
++        assert '/System/Library/PrivateFrameworks/Preferences.framework/Preferences' in dependencies
++        assert '/System/Library/Frameworks/UIKit.framework/UIKit' in dependencies
++        for required in (b'_OBJC_CLASS_$_BTLockSoundPrefsController\0',
++                         b'_OBJC_CLASS_$_BTLockVolumeCell\0', b'_OBJC_CLASS_$_UISlider\0',
++                         b'_CFPreferencesSetAppValue\0', b'_CFNotificationCenterPostNotification\0'):
++            assert required in data, 'Missing Settings control or preference writer'
++    else:
++        assert '/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI' in dependencies
+     assert '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox' not in dependencies
+     for required in (b'_OBJC_CLASS_$_SBUISound\0',
+                      b'_playFeedback:\0', b'_playSystemSound:\0',
+@@ -96,7 +105,16 @@
+                      b'_dladdr\0', b'_MSHookMessageEx\0',
+                      b'_method_getReturnType\0', b'_method_getArgumentType\0',
+                      b'_method_getNumberOfArguments\0'):
+-        assert required in data, 'Required feedback redirect or ABI validation is absent'
++        if not preferences:
++            assert required in data, 'Required feedback redirect or ABI validation is absent'
++    for required in (b'_CFPreferencesCopyAppValue\0', b'_CFPreferencesAppSynchronize\0',
++                     b'VolumePercent\0', b'com.brooktrout12.classiclocksound/volume-changed\0'):
++        assert required in data, 'Missing shared volume preferences or notification name'
++    if not preferences:
++        for required in (b'_CFNotificationCenterAddObserver\0',
++                         b'/var/mobile/Library/Caches/ClassicLockSound\0',
++                         b'original-90d02d979ff94def-pcm1-%03d.caf\0'):
++            assert required in data, 'Missing volume refresh or cache identity'
+     for forbidden in (b'_MSHookFunction\0', b'_rebind_symbols\0',
+                       b'_AudioServicesPlaySystemSound\0', b'_AudioServicesPlaySystemSoundWithCompletion\0',
+                       b'_AudioServicesPlayAlertSound\0', b'_AudioServicesPlayAlertSoundWithCompletion\0',
+@@ -117,7 +135,7 @@
+                     assert isa & 0x800D6AE100000000 == 0x800D6AE100000000, 'arm64e class metadata was not converted'
+                     assert superclass & 0xC00DB5AB00000000 == 0xC00DB5AB00000000
+                     converted_classes += 1
+-        assert converted_classes == 0, "This tweak must not contain custom Objective-C class metadata"
++        assert converted_classes == (4 if preferences else 0), 'Unexpected class/metaclass count'
+         # Allemande updates authenticated constant-string/class records, not
+         # the CPU subtype header. A versioned-subtype flag is not its output.
+         for name, start, length in sections:
+@@ -129,14 +147,16 @@
+                     converted_constant_strings += 1
+         assert converted_constant_strings >= 1
+     signatures = verify_signature(data, *signature)
+-    assert all(item['identifier'] == 'com.brooktrout12.classiclocksound' for item in signatures)
+-    return {'architecture':'arm64e' if expected_subtype==2 else 'arm64',
++    identity = 'com.brooktrout12.classiclocksound' + ('.prefs' if preferences else '')
++    assert all(item['identifier'] == identity for item in signatures)
++    return {'binary':'ClassicLockSoundPrefs' if preferences else 'ClassicLockSound.dylib',
++            'architecture':'arm64e' if expected_subtype==2 else 'arm64',
+             'uuid':image_uuid,
+             'minimum_ios':'17.0', 'dependencies':dependencies, 'rpaths':rpaths,
+             'converted_objc_class_records':converted_classes,
+             'converted_constant_string_records':converted_constant_strings,
+             'objc_block_literals':False,
+-            'native_feedback_to_file_route_present':True,
++            'native_feedback_to_file_route_present':not preferences,
+             'diagnostic_capture_removed':True,
+             'direct_audio_playback_absent':True,
+             'global_audio_hooks_absent':True,
+@@ -146,18 +166,36 @@
+     package = pathlib.Path(sys.argv[1]).resolve()
+     architecture = subprocess.check_output(['dpkg-deb','-f',str(package),'Architecture'], text=True).strip()
+     assert architecture == 'iphoneos-arm64'
+-    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.6'), ('Description',"Restores the classic iOS 7-9 lock sound without modifying Apple's system audio files.")]:
++    for field, expected in [('Package','com.brooktrout12.classiclocksound'), ('Author','brooktrout12'), ('Maintainer','brooktrout12'), ('Version','1.0.7'), ('Description','Restores the classic iOS 7-9 lock sound with a 0-100 percent volume slider in Settings.')]:
+         actual = subprocess.check_output(['dpkg-deb','-f',str(package),field], text=True).strip()
+         assert actual == expected, (field, actual)
++    dependencies = subprocess.check_output(['dpkg-deb','-f',str(package),'Depends'], text=True)
++    for required in ('firmware (>= 17.0)', 'firmware (<< 19.0)', 'preferenceloader (>= 2.2.6)'):
++        assert required in dependencies
+     with tempfile.TemporaryDirectory() as folder:
+         subprocess.run(['dpkg-deb','-x',str(package),folder], check=True)
+         root = pathlib.Path(folder)
+         base = root/'var/jb/Library/MobileSubstrate/DynamicLibraries'
+         files = {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()}
+         resource = root/'var/jb/Library/Application Support/ClassicLockSound/lock.caf'
+-        assert files == {str((base/name).relative_to(root)) for name in ('ClassicLockSound.dylib','ClassicLockSound.plist')} | {str(resource.relative_to(root))}
+-        expected_sound_hash = 'f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918'
+-        assert hashlib.sha256(resource.read_bytes()).hexdigest() == expected_sound_hash, 'Expected the CAF converted from the corrected WAV, without any gain change'
++        bundle = root/'var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle'
++        loader = root/'var/jb/Library/PreferenceLoader/Preferences/ClassicLockSound.plist'
++        expected = {str((base/name).relative_to(root)) for name in ('ClassicLockSound.dylib','ClassicLockSound.plist')}
++        expected |= {str(resource.relative_to(root)), str(loader.relative_to(root))}
++        expected |= {str((bundle/name).relative_to(root)) for name in
++                     ('ClassicLockSoundPrefs','Info.plist','icon.png','icon@2x.png','icon@3x.png')}
++        assert files == expected, files ^ expected
++        info = plistlib.loads((bundle/'Info.plist').read_bytes())
++        assert info['NSPrincipalClass'] == 'BTLockSoundPrefsController'
++        assert info['MinimumOSVersion'] == '17.0' and info['CFBundleShortVersionString'] == '1.0.7'
++        entry = plistlib.loads(loader.read_bytes())['entry']
++        assert entry['bundle'] == 'ClassicLockSoundPrefs' and entry['detail'] == info['NSPrincipalClass']
++        assert entry['icon'] == '/var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle/icon.png'
++        for name, dimension in [('icon.png',29), ('icon@2x.png',58), ('icon@3x.png',87)]:
++            icon = (bundle/name).read_bytes()
++            assert icon[:8] == b'\x89PNG\r\n\x1a\n' and unpack('>II',icon,16) == (dimension,dimension)
++        expected_sound_hash = '90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543'
++        assert hashlib.sha256(resource.read_bytes()).hexdigest() == expected_sound_hash, 'Expected the original full-level CAF'
+         assert resource.read_bytes().startswith(b'caff\x00\x01'), 'Expected CAF version 1'
+         # No install/uninstall scripts and no packaged files outside /var/jb.
+         controls = subprocess.check_output(['dpkg-deb','--ctrl-tarfile',str(package)])
+@@ -166,20 +204,22 @@
+             assert all(p.name.removeprefix('./') in ('', '.', 'control', 'md5sums') for p in archive.getmembers())
+         with (base/'ClassicLockSound.plist').open('rb') as stream:
+             assert plistlib.load(stream) == {'Filter':{'Bundles':['com.apple.springboard']}}
+-        data = (base/'ClassicLockSound.dylib').read_bytes()
+-        magic, count = unpack('>II',data)
+-        assert magic == 0xcafebabe and count == 2
+         slices = []
+-        subtypes = set()
+-        for i in range(count):
+-            cpu, subtype, offset, size, alignment = unpack('>5I',data,8+i*20)
+-            assert cpu == 0x100000c and offset+size <= len(data)
+-            subtypes.add(subtype & 0xffffff)
+-            slices.append(verify_slice(data[offset:offset+size], subtype & 0xffffff))
+-        assert subtypes == {0,2}
++        for binary, preferences in ((base/'ClassicLockSound.dylib',False), (bundle/'ClassicLockSoundPrefs',True)):
++            data = binary.read_bytes()
++            magic, count = unpack('>II',data)
++            assert magic == 0xcafebabe and count == 2
++            subtypes = set()
++            for i in range(count):
++                cpu, subtype, offset, size, alignment = unpack('>5I',data,8+i*20)
++                assert cpu == 0x100000c and offset+size <= len(data)
++                subtypes.add(subtype & 0xffffff)
++                slices.append(verify_slice(data[offset:offset+size], subtype & 0xffffff, preferences))
++            assert subtypes == {0,2}
+         print(json.dumps({'package':package.name,'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),
+             'result':'PASS','slices':slices,'packaged_audio_sha256':expected_sound_hash,
+-            'audio_gain':1.0,
++            'default_audio_gain':1.0, 'volume_percent_range':[0,100],
++            'settings_icon_sizes':[29,58,87],
+             'observed_device_route':{'sound_type':5, 'event_type':1002},
+             'rootless_only_payload':True,
+             'no_system_file_replacement_or_maintainer_scripts':True,

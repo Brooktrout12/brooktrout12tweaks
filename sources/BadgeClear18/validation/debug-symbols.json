@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "BadgeClear18.dylib",
+      "architecture": "arm64",
+      "uuid": "4dc71b53-10b2-304f-a2bf-e39cae571374",
+      "match": true
+    },
+    {
+      "binary": "BadgeClear18.dylib",
+      "architecture": "arm64e",
+      "uuid": "ca56b334-a849-3205-8503-cea69a47c214",
+      "match": true
+    }
+  ]
+}

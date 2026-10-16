@@ -1,0 +1,116 @@
+{
+  "result": "FAIL",
+  "checks": [
+    {
+      "architecture": "arm64",
+      "file": "PISystemIconReader.m",
+      "function": "PISharedImage",
+      "layer_call_sites_checked": 9,
+      "balanced_exit_blocks": 2,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "renderInContext: reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction",
+        "setCornerCurve: reachable without explicit non-animating transaction",
+        "setCornerRadius: reachable without explicit non-animating transaction",
+        "setMasksToBounds: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISpringBoardImages.m",
+      "function": "PILayerForIcon",
+      "layer_call_sites_checked": 5,
+      "balanced_exit_blocks": 1,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISpringBoardImages.m",
+      "function": "PIReplacementMiniLayer",
+      "layer_call_sites_checked": 11,
+      "balanced_exit_blocks": 1,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "setAnchorPoint: reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction",
+        "setHidden: reachable without explicit non-animating transaction",
+        "setName: reachable without explicit non-animating transaction",
+        "setOpacity: reachable without explicit non-animating transaction",
+        "setPosition: reachable without explicit non-animating transaction",
+        "setTransform: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISystemIconReader.m",
+      "function": "PISharedImage",
+      "layer_call_sites_checked": 9,
+      "balanced_exit_blocks": 2,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "renderInContext: reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction",
+        "setCornerCurve: reachable without explicit non-animating transaction",
+        "setCornerRadius: reachable without explicit non-animating transaction",
+        "setMasksToBounds: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISpringBoardImages.m",
+      "function": "PILayerForIcon",
+      "layer_call_sites_checked": 5,
+      "balanced_exit_blocks": 1,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISpringBoardImages.m",
+      "function": "PIReplacementMiniLayer",
+      "layer_call_sites_checked": 11,
+      "balanced_exit_blocks": 1,
+      "failures": [
+        "layer reachable without explicit non-animating transaction",
+        "setAnchorPoint: reachable without explicit non-animating transaction",
+        "setBounds: reachable without explicit non-animating transaction",
+        "setContents: reachable without explicit non-animating transaction",
+        "setContentsGravity: reachable without explicit non-animating transaction",
+        "setContentsScale: reachable without explicit non-animating transaction",
+        "setHidden: reachable without explicit non-animating transaction",
+        "setName: reachable without explicit non-animating transaction",
+        "setOpacity: reachable without explicit non-animating transaction",
+        "setPosition: reachable without explicit non-animating transaction",
+        "setTransform: reachable without explicit non-animating transaction"
+      ],
+      "pass": false
+    }
+  ],
+  "device_runtime_tested": false
+}

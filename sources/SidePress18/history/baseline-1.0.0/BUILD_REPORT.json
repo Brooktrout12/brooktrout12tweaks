@@ -1,0 +1,140 @@
+{
+  "package": "com.brooktrout12.sidepress18_1.0.0_iphoneos-arm64.deb",
+  "version": "1.0.0",
+  "sha256": "8dcd22e674e0e09fa7446b9daef5673158a2d9ef98caf9d4488b52af938744a9",
+  "result": "PASS: package and code-signature integrity",
+  "device_tested": false,
+  "binaries": [
+    {
+      "path": "var/jb/Library/MobileSubstrate/DynamicLibraries/SidePress18.dylib",
+      "slices": [
+        {
+          "architecture": "arm64",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 26,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        },
+        {
+          "architecture": "arm64e",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 26,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "var/jb/Library/MobileSubstrate/DynamicLibraries/SidePress18Settings.dylib",
+      "slices": [
+        {
+          "architecture": "arm64",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 17,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        },
+        {
+          "architecture": "arm64e",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 17,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "var/jb/Library/PreferenceBundles/SidePress18Prefs.bundle/SidePress18Prefs",
+      "slices": [
+        {
+          "architecture": "arm64",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 22,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+            "/usr/lib/libSystem.B.dylib"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        },
+        {
+          "architecture": "arm64e",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 22,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+            "/usr/lib/libSystem.B.dylib"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        }
+      ]
+    }
+  ]
+}

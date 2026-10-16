@@ -1,0 +1,9 @@
+Package: com.brooktrout12.switchersweep
+Name: SwitcherSweep
+Version: 1.0.8
+Architecture: iphoneos-arm64
+Description: Close all apps with a frosted App Switcher button, a quick upward sweep, and a smooth return to the Home Screen.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)

@@ -1,0 +1,38 @@
+{
+  "source": "User-supplied ClassicLockSound-diagnostics.json",
+  "diagnostic_version": "1.0.4~diagnostic1",
+  "os_version": "Version 18.6 (Build 22G86)",
+  "observed_lock_invocations": 6,
+  "observed_feedback_requests": 6,
+  "lock_request": {
+    "_resolvedSystemSoundID": 0,
+    "class": "SBUISound",
+    "eventType": 1002,
+    "soundType": 5,
+    "systemSoundID": 0
+  },
+  "initializer_hook_calls": 0,
+  "audio": {
+    "bytes": 160284,
+    "dispose_status": 0,
+    "matches_reattached_file": true,
+    "readable": true,
+    "registration_status": 0,
+    "sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+    "ui_sound_property_status": 0
+  },
+  "required_method_encodings": {
+    "SBSoundController": {
+      "- _playFeedback:": "B24@0:8@16",
+      "- _playSystemSound:": "B24@0:8@16"
+    },
+    "SBUISound": {
+      "- eventType": "q16@0:8",
+      "- soundType": "q16@0:8",
+      "- setSoundType:": "v24@0:8q16",
+      "- songPath": "@16@0:8",
+      "- setSongPath:": "v24@0:8@16"
+    }
+  },
+  "release_device_playback_verified": false
+}

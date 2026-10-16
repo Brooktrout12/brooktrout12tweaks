@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "Dawn18Apps.dylib",
+      "architecture": "arm64",
+      "uuid": "bc7cbc67-7294-3ea0-88f5-d89432051fe9",
+      "match": true
+    },
+    {
+      "binary": "Dawn18Apps.dylib",
+      "architecture": "arm64e",
+      "uuid": "35d825ed-c87a-3dda-9385-142d7625af38",
+      "match": true
+    },
+    {
+      "binary": "Dawn18SpringBoard.dylib",
+      "architecture": "arm64",
+      "uuid": "60485f08-8b6e-3643-857f-abaf530d2d46",
+      "match": true
+    },
+    {
+      "binary": "Dawn18SpringBoard.dylib",
+      "architecture": "arm64e",
+      "uuid": "45f40b7e-0ac7-337b-bb09-044ec7dde2a1",
+      "match": true
+    },
+    {
+      "binary": "Dawn18Prefs",
+      "architecture": "arm64",
+      "uuid": "47b4c90d-c071-3ff8-8893-bfc0681894bb",
+      "match": true
+    },
+    {
+      "binary": "Dawn18Prefs",
+      "architecture": "arm64e",
+      "uuid": "75252ca0-49db-3916-b6cc-00b3947dd13c",
+      "match": true
+    }
+  ]
+}

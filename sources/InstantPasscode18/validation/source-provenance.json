@@ -1,0 +1,8 @@
+{
+  "baseline_source": "InstantPasscode18_1.1.0_source.zip",
+  "baseline_source_sha256": "f92590044a24630f625d3b02cdd2c1872ae69b97b66f6b857a4e0dcd15d53abe",
+  "baseline_version": "1.1.0",
+  "version": "1.1.1",
+  "package_sha256": "fc821df119e25443d53901781d4228390dd7e5a8bdf0a7d35680a0a78050b273",
+  "source_patch": "IOS17-18.patch"
+}

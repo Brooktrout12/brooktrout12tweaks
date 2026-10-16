@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "original_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "packaged_audio_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "matches_reattached_file_byte_for_byte": true,
+  "volume_adjustment": false,
+  "sample_rate": 44100,
+  "channels": 2,
+  "frames": 39047,
+  "bytes": 160284,
+  "device_runtime_tested": false
+}

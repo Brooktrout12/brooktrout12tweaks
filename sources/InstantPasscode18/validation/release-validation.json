@@ -1,0 +1,38 @@
+{
+  "project": "InstantPasscode18",
+  "display_name": "InstantPasscode18",
+  "package_id": "com.brooktrout12.instantpasscode18",
+  "previous_version": "1.1.0",
+  "version": "1.1.1",
+  "package": "com.brooktrout12.instantpasscode18_1.1.1_iphoneos-arm64.deb",
+  "sha256": "fc821df119e25443d53901781d4228390dd7e5a8bdf0a7d35680a0a78050b273",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 2,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/InstantPasscode18.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {},
+  "on_device_tested": false
+}

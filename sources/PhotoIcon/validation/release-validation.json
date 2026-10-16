@@ -1,0 +1,50 @@
+{
+  "project": "PhotoIcon",
+  "display_name": "PhotoIcon",
+  "package_id": "com.brooktrout12.photoicon",
+  "previous_version": "1.1.1",
+  "version": "1.1.2",
+  "package": "com.brooktrout12.photoicon_1.1.2_iphoneos-arm64.deb",
+  "sha256": "95cc3edb3a5dc15c7fbf2b95d24017b088533fd4e84368443caaa9ad7a29444f",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 4,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIcon.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ],
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/PhotoIconSystem.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {},
+  "on_device_tested": false
+}

@@ -1,0 +1,9 @@
+Package: com.brooktrout12.batterycapacity18
+Name: Battery Capacity 18
+Version: 1.0.6
+Architecture: iphoneos-arm64
+Description: Battery charge and capacities in mAh, current discharge rate in mA, and optional battery-message hiding in Battery Health.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.6)

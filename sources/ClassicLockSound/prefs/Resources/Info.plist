@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleIdentifier</key><string>com.brooktrout12.classiclocksound.prefs</string>
+<key>CFBundleName</key><string>Classic Lock Sound</string>
+<key>CFBundleDisplayName</key><string>Classic Lock Sound</string>
+<key>CFBundleExecutable</key><string>ClassicLockSoundPrefs</string>
+<key>CFBundlePackageType</key><string>BNDL</string>
+<key>CFBundleShortVersionString</key><string>1.0.8</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>CFBundleIconFile</key><string>icon.png</string>
+<key>CFBundleIconFiles</key><array><string>icon.png</string><string>icon@2x.png</string><string>icon@3x.png</string></array>
+<key>NSPrincipalClass</key><string>BTLockSoundPrefsController</string>
+<key>MinimumOSVersion</key><string>17.0</string>
+</dict></plist>

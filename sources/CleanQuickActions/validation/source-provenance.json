@@ -1,0 +1,8 @@
+{
+  "baseline_source": "CleanQuickActions_1.0.0_source.zip",
+  "baseline_source_sha256": "bea0e3f90c063da5deb22ba4177c0689c41e91598371f33f623b22f08d9d83a3",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "38e0a0e32e6ea7e3f7ed89d462b2f6042b6ada38ae009ea16de565494a4206fa",
+  "source_patch": "IOS17-18.patch"
+}

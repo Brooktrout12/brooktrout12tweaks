@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "InstantClear18.dylib",
+      "architecture": "arm64",
+      "uuid": "6e960b08-d4e5-3244-b8b4-ac2a601273d6",
+      "match": true
+    },
+    {
+      "binary": "InstantClear18.dylib",
+      "architecture": "arm64e",
+      "uuid": "13555570-59f6-3bcb-aed5-7b2b6ae43168",
+      "match": true
+    }
+  ]
+}

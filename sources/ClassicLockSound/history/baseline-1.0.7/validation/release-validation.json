@@ -1,0 +1,56 @@
+{
+  "project": "ClassicLockSound",
+  "display_name": "ClassicLockSound",
+  "package_id": "com.brooktrout12.classiclocksound",
+  "previous_version": "1.0.6",
+  "version": "1.0.7",
+  "package": "com.brooktrout12.classiclocksound_1.0.7_iphoneos-arm64.deb",
+  "sha256": "2f1802f7554cdfbcc6bb8add8586eee407ec0ddb5e5a7198517ee9d808cca4ab",
+  "dependencies": "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.6)",
+  "firmware_version_checks": {
+    "16.7.12": false,
+    "17.0": true,
+    "17.0.3": true,
+    "17.6.1": true,
+    "17.7": true,
+    "18.0": true,
+    "18.6": true,
+    "18.7.1": true,
+    "19.0": false
+  },
+  "installed_files": 9,
+  "binaries": {
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/ClassicLockSound.dylib": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ],
+    "var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle/ClassicLockSoundPrefs": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x0"
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0.0",
+        "cpu_subtype": "0x2"
+      }
+    ]
+  },
+  "bundle_info": {
+    "var/jb/Library/PreferenceBundles/ClassicLockSoundPrefs.bundle/Info.plist": {
+      "MinimumOSVersion": "17.0",
+      "CFBundleShortVersionString": "1.0.7",
+      "CFBundleVersion": "1"
+    }
+  },
+  "on_device_tested": false
+}

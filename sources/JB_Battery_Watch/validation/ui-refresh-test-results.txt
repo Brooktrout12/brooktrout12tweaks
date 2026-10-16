@@ -1,0 +1,16 @@
+PASS: 2.1.0 reproduces missing-tableView failure in dispatch model
+PASS: fixed helper refreshes without any tableView method
+PASS: list-controller refresh is preferred; no getters queried
+PASS: verified table getter fallback refreshes only a table
+PASS: already-loaded public table view fallback works
+PASS: nil controller is a safe unsupported result
+PASS: absent optional selectors are never sent
+PASS: nil table getter falls back to the loaded view
+PASS: non-table getter is rejected before public-view fallback
+PASS: non-table object does not receive reloadData
+PASS: table with missing reloadData is handled without dispatching it
+PASS: nil viewIfLoaded does not force view loading
+PASS: non-table root view is safely rejected
+PASS: repeated refreshes do not fall through to unsupported selectors
+
+14 refresh checks passed. Host dispatch model only; no iPhone/UI execution.

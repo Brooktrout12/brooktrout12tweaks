@@ -1,0 +1,105 @@
+Reading file...
+
+Patching
+
+convert len:166880
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__objc_methname
+__cstring
+__const
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7BFB
+cfstr value: com.apple.springboard
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7C87
+cfstr value: [ClassicLockSound] Unsupported sound-controller signatures; native playback retained.
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7CDD
+cfstr value: [ClassicLockSound] Bundled lock sound unavailable; native playback retained.
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7D2A
+cfstr value: com.brooktrout12.classiclocksound/volume-changed
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7D63
+cfstr value: /Library/MobileSubstrate/DynamicLibraries/ClassicLockSound.dylib
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7DA4
+cfstr value: Application Support/ClassicLockSound/lock.caf
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7DD2
+cfstr value: /usr/lib/TweakInject/ClassicLockSound.dylib
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7DFE
+cfstr value: Library/Application Support/ClassicLockSound/lock.caf
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7E34
+cfstr value: /var/jb/Library/Application Support/ClassicLockSound/lock.caf
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7E72
+cfstr value: [ClassicLockSound] Could not prepare the selected volume.
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7EAC
+cfstr value: /var/mobile/Library/Caches/ClassicLockSound
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7ED8
+cfstr value: original-90d02d979ff94def-pcm1-%03d.caf
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7F00
+cfstr value: [ClassicLockSound] Volume preparation failed: %@
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7F31
+cfstr value: com.brooktrout12.classiclocksound
+cfstr ISA after 0xC0156AE100000021
+cfstr ISA 0x4010000000000021
+cfstr offset: 0x7F53
+cfstr value: VolumePercent
+cfstr ISA after 0xC0156AE100000021
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__data
+current str isa: 0x00, hikari str: 0x32AAABA7, hikari stroff: 0xFFFC81F1989A00C0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00C8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00D0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00D8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00E0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00E8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00F0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81F1989A00F8
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/classiclocksound_slider_fix/ClassicLockSound/.theos/obj/ClassicLockSound.dylib.520b7aef.unsigned

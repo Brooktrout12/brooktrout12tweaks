@@ -1,0 +1,199 @@
+Reading file...
+
+Patching
+
+convert len:167584
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__objc_methlist
+__const
+__objc_methname
+__cstring
+__objc_classname__TEXT
+__objc_methtype
+__ustring
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C1C
+cfstr value: Lock sound volume
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C2E
+cfstr value: speaker.slash.fill
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C41
+cfstr value: speaker.wave.3.fill
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C55
+cfstr value: %d%%
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C5A
+cfstr value: Classic Lock Sound
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C6D
+cfstr value: Volume
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7DB8
+cfstr value: 0
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C74
+cfstr value: footerText
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C7F
+cfstr value: LockVolume
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C8A
+cfstr value: cellClass
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C94
+cfstr value: height
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7C9B
+cfstr value: Reset to 100%
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7EF2
+cfstr value: C
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7CA9
+cfstr value: com.brooktrout12.classiclocksound
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7CCB
+cfstr value: VolumePercent
+cfstr ISA after 0xC0156AE100000018
+cfstr ISA 0x4010000000000018
+cfstr offset: 0x7CD9
+cfstr value: com.brooktrout12.classiclocksound/volume-changed
+cfstr ISA after 0xC0156AE100000018
+__objc_classlist__DATA_CONST
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_const
+__objc_selrefs
+__objc_classrefs__DATA
+__objc_superrefs__DATA
+__objc_ivar
+__objc_data
+--- MAIN CLASS ---
+objc_class isa:		0x800000000C4C8
+objc_class superclass:	0x4008000000000025
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C0E8
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE10000C4C8
+objc_class superclass:	0xC00DB5AB00000025
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C0E8
+class_ro_t flags:	0x388X
+class_ro_t instanceStart:	0x08X
+class_ro_t instanceSize:	0x32X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x8000000007D2A
+class_ro_t name:	BTLockVolumeCell
+class_ro_t baseMethodList:	0x8015C310000074E8
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x1000000000C048
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x4008000000000027
+objc_class superclass:	0x4008000000000026
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE100000027
+objc_class superclass:	0xC00DB5AB00000026
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+class_ro_t flags:	0x389X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	BTLockVolumeCell
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x800000000C518
+objc_class superclass:	0x4008000000000028
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C178
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE10000C518
+objc_class superclass:	0xC00DB5AB00000028
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0x800000000C178
+class_ro_t flags:	0x128X
+class_ro_t instanceStart:	0x16X
+class_ro_t instanceSize:	0x16X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	BTLockSoundPrefsController
+class_ro_t baseMethodList:	0x802DC310000074B0
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x4008000000000027
+objc_class superclass:	0x4008000000000029
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0xC130
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE100000027
+objc_class superclass:	0xC00DB5AB00000029
+objc_class cache:	0x4010000000000024
+objc_class vtable:	0x00
+objc_class data:	0xC130
+class_ro_t flags:	0x129X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	BTLockSoundPrefsController
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/classiclocksound_volume_update/ClassicLockSound/.theos/obj/ClassicLockSoundPrefs.bundle/ClassicLockSoundPrefs.aa33a661.unsigned

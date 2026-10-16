@@ -1,0 +1,227 @@
+{
+  "result": "PASS",
+  "scope": "Source/header comparison and compiled-artifact inspection; not runtime UI verification",
+  "package": "com.brooktrout12.photoicon_1.1.1_iphoneos-arm64.deb",
+  "sha256": "9929c6e6fd8807411d3d36fba314d2e0d448c0ae9a5d29cbcbd5292117bf2ab9",
+  "interface_reference": "https://github.com/qingralf/iOS18-Runtime-Headers",
+  "interface_checks": [
+    {
+      "class": "SBIcon",
+      "header": "PrivateFrameworks/SpringBoardHome.framework/SBIcon.h",
+      "sha256": "3f13db007da1cab11a084daa005c6a8ee9a460d5ede7643308bf0f1ecf916565",
+      "declared_methods_or_property_getters": [
+        "iconImageWithInfo:",
+        "iconImageWithInfo:traitCollection:options:",
+        "iconLayerWithInfo:traitCollection:options:"
+      ]
+    },
+    {
+      "class": "SBLeafIcon",
+      "header": "PrivateFrameworks/SpringBoardHome.framework/SBLeafIcon.h",
+      "sha256": "cda364d820532c769afdaf2e022b20ee6dbb4f764edeca4f9c4e7ea3ea3c643a",
+      "declared_methods_or_property_getters": [
+        "makeIconImageWithInfo:traitCollection:options:",
+        "makeIconLayerWithInfo:traitCollection:options:"
+      ]
+    },
+    {
+      "class": "SBHIconImageCache",
+      "header": "PrivateFrameworks/SpringBoardHome.framework/SBHIconImageCache.h",
+      "sha256": "8ec366d1aacbedcb1ead9132a2d96aa36fe3aa77ac8b93725c1ee214d2fcea69",
+      "declared_methods_or_property_getters": [
+        "imageForIcon:",
+        "cachedImageForIcon:",
+        "unmaskedImageForIcon:",
+        "cachedUnmaskedImageForIcon:",
+        "imageForIcon:imageAppearance:options:",
+        "cachedImageForIcon:imageAppearance:options:",
+        "realImageForIcon:imageAppearance:options:",
+        "imageForIcon:compatibleWithTraitCollection:options:",
+        "cachedImageForIcon:compatibleWithTraitCollection:options:",
+        "iconImageInfo",
+        "purgeAllCachedImages"
+      ]
+    },
+    {
+      "class": "SBFolderIconImageCache",
+      "header": "PrivateFrameworks/SpringBoardHome.framework/SBFolderIconImageCache.h",
+      "sha256": "376bb0023ee8b23de11efdfd651bd8b144c2fc32c77a9734704da408970658e2",
+      "declared_methods_or_property_getters": [
+        "gridCellImageForIcon:imageAppearance:",
+        "gridCellImageForIcon:imageAppearance:imageAttributes:",
+        "purgeAllCachedFolderImages",
+        "rebuildAllCachedFolderImages",
+        "informObserversOfUpdateForAllFolderIcons"
+      ]
+    },
+    {
+      "class": "SBFolderIconImageSharedCache",
+      "header": "PrivateFrameworks/SpringBoardHome.framework/SBFolderIconImageSharedCache.h",
+      "sha256": "1b57b65c13f14a33be40c3be09718d43a589bd93969055358982f5b6ac279d62",
+      "declared_methods_or_property_getters": [
+        "gridCellImageForIcon:imageAppearance:",
+        "gridCellImageForIcon:imageAppearance:imageAttributes:",
+        "gridCellLayerForIcon:imageAppearance:",
+        "gridCellLayerForIcon:imageAppearance:imageAttributes:",
+        "purgeAllCachedFolderImages",
+        "rebuildAllCachedFolderImages"
+      ]
+    },
+    {
+      "class": "UIImage",
+      "header": "PrivateFrameworks/UIKitCore.framework/UIImage.h",
+      "sha256": "5a13584a20824a28a61d9a6c9724693b34c527037c9797d5eb458bed4c0e94c9",
+      "declared_methods_or_property_getters": [
+        "_applicationIconImageForBundleIdentifier:format:",
+        "_applicationIconImageForBundleIdentifier:format:scale:",
+        "_applicationIconImageForBundleIdentifier:format:scale:style:"
+      ]
+    },
+    {
+      "class": "ISIcon",
+      "header": "PrivateFrameworks/IconServices.framework/ISIcon.h",
+      "sha256": "8fea2fbb1ab17ffe1c880f57d03c31ec1fafae54365bf76d289e1bb841d1a627",
+      "declared_methods_or_property_getters": [
+        "imageForDescriptor:",
+        "imageForImageDescriptor:",
+        "prepareImageForDescriptor:"
+      ]
+    },
+    {
+      "class": "ISConcreteIcon",
+      "header": "PrivateFrameworks/IconServices.framework/ISConcreteIcon.h",
+      "sha256": "1142d8f6e711c521efe50c52c79330d3a8fe4172635c83e55063690cc94c0220",
+      "declared_methods_or_property_getters": [
+        "imageForDescriptor:",
+        "generateImageWithDescriptor:",
+        "_cachedImageForDescriptor:",
+        "_imageFromStoreForDescriptor:"
+      ]
+    },
+    {
+      "class": "SearchUIAppIconImage",
+      "header": "PrivateFrameworks/SearchUI.framework/SearchUIAppIconImage.h",
+      "sha256": "fd972f9f4b0f6dc11a246f539332dd02a0dbf9926038144461a4197ad736344b",
+      "declared_methods_or_property_getters": [
+        "loadImageWithScale:isDarkStyle:",
+        "bundleIdentifier"
+      ]
+    },
+    {
+      "class": "UIActivity",
+      "header": "PrivateFrameworks/ShareSheet.framework/UIActivity.h",
+      "sha256": "ef22ea269f778e038373cb4806036b3b032bdb254b85a1156207a4924d8682e7",
+      "declared_methods_or_property_getters": [
+        "_activityImageForApplicationBundleIdentifier:userInterfaceStyle:",
+        "_activitySettingsImageForApplicationBundleIdentifier:userInterfaceStyle:"
+      ]
+    },
+    {
+      "class": "SFUIActivityImageProvider",
+      "header": "PrivateFrameworks/SharingUI.framework/SFUIActivityImageProvider.h",
+      "sha256": "f9f85bb99f7ef3adcb899f4e5f029f7e6cb83b427c5fe946e07c568c6092881d",
+      "declared_methods_or_property_getters": [
+        "_handleIconImage:identifier:activityCategory:contentSizeCategory:iconFormat:placeholder:uti:"
+      ]
+    },
+    {
+      "class": "ISApplicationIdentityIcon",
+      "header": "PrivateFrameworks/IconServices.framework/ISApplicationIdentityIcon.h",
+      "sha256": "d7a1d9b0f752780288311ec5d8f65f029bf27955850e9e205f1144d70e72f682",
+      "declared_methods_or_property_getters": [
+        "identityString"
+      ]
+    },
+    {
+      "class": "ISBundleIdentifierIcon",
+      "header": "PrivateFrameworks/IconServices.framework/ISBundleIdentifierIcon.h",
+      "sha256": "f8147a3cd079324cc4becce9e90908883de6fce3e95df449d83ab7a9ef0a008f",
+      "declared_methods_or_property_getters": [
+        "bundleIdentifier"
+      ]
+    },
+    {
+      "class": "ISImageDescriptor",
+      "header": "PrivateFrameworks/IconServices.framework/ISImageDescriptor.h",
+      "sha256": "788ef0b240eac81633a63c9a9f1733c2e5dbab9fe6d12e47e21942391e0b9bf2",
+      "declared_methods_or_property_getters": [
+        "size",
+        "scale",
+        "continuousCornerRadius",
+        "shouldApplyMask"
+      ]
+    },
+    {
+      "class": "IFImage",
+      "header": "PrivateFrameworks/IconFoundation.framework/IFImage.h",
+      "sha256": "4cdf34955691cec87451b490327c6426006ac99f0ec0cb8cf68cbb522eade606",
+      "declared_methods_or_property_getters": [
+        "initWithCGImage:scale:",
+        "size",
+        "scale"
+      ]
+    },
+    {
+      "class": "LSApplicationIdentity",
+      "header": "Frameworks/CoreServices.framework/LSApplicationIdentity.h",
+      "sha256": "d7c1fc1af4a3bf2b04024097076fedafd2eafeed9154a565d65e087d53ca1c24",
+      "declared_methods_or_property_getters": [
+        "bundleIdentifierForIdentityString:error:"
+      ]
+    },
+    {
+      "class": "LSApplicationExtensionRecord",
+      "header": "Frameworks/CoreServices.framework/LSApplicationExtensionRecord.h",
+      "sha256": "2129931b9c208b17978973a3003844c0349db96200b2143b22513d7fe1c157a7",
+      "declared_methods_or_property_getters": [
+        "initWithBundleIdentifier:error:",
+        "containingBundleRecord"
+      ]
+    }
+  ],
+  "preserved_source": [
+    {
+      "file": "PIEditorCoordinator.m",
+      "unchanged_from_device_confirmed_1_0": true,
+      "sha256": "9169e1d66d589b0fee759fd2c07c0a0a135a3efd5cdeb99b6adc89818bb84f7b"
+    },
+    {
+      "file": "PICropViewController.m",
+      "unchanged_from_device_confirmed_1_0": true,
+      "sha256": "728921b08512ee90299bbb4e5fa58d0355526923e2d44ec6361d269b5e0181f7"
+    },
+    {
+      "file": "PICropGeometry.h",
+      "unchanged_from_device_confirmed_1_0": true,
+      "sha256": "0786088ff7be391608f1528df4e22f3ffa84c47e750dd7215ade3d13c5d6240c"
+    },
+    {
+      "file": "PIBlockCompatibility.h",
+      "unchanged_from_device_confirmed_1_0": true,
+      "sha256": "cd4531a6d2974d7b485998b079dc24922149c882fba355e47e2503c21980d616"
+    },
+    {
+      "file": "PIBlockCompatibility.m",
+      "unchanged_from_device_confirmed_1_0": true,
+      "sha256": "42f627fafe02599d66ef36e3a2715147fac7f3d6a2bd281a95056ea4d123856b"
+    }
+  ],
+  "runtime_abi_guards_present": true,
+  "read_only_provider_has_no_private_photo_store_or_editor": true,
+  "extension_identity_uses_launchservices_containing_bundle": true,
+  "app_switcher_integration": "Shared SpringBoard image/layer and UIKit/IconServices providers; no app-switcher-specific view hook",
+  "new_surfaces_requiring_device_confirmation": [
+    "Closed-folder miniatures",
+    "Spotlight and Siri Suggestions",
+    "App-switcher small icons",
+    "Settings app entries",
+    "Share-sheet app entries"
+  ],
+  "device_runtime_tested": false,
+  "source_changes_from_1_1": [
+    "PISpringBoardImages.m",
+    "PISystemIconReader.m"
+  ],
+  "transaction_regression_report": "layer-transaction-verification.json",
+  "user_reported_1_1_icon_coverage_working": true
+}

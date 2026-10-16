@@ -1,0 +1,133 @@
+{
+  "package": "com.brooktrout12.photoicon_1.1.2_iphoneos-arm64.deb",
+  "sha256": "95cc3edb3a5dc15c7fbf2b95d24017b088533fd4e84368443caaa9ad7a29444f",
+  "result": "PASS",
+  "binaries": {
+    "PhotoIcon": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+          "/System/Library/Frameworks/PhotosUI.framework/PhotosUI",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/ImageIO.framework/ImageIO",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "converted_objc_class_records": 0,
+        "signatures": [
+          {
+            "algorithm": 2,
+            "verified_pages": 40,
+            "identifier": "com.brooktrout12.photoicon"
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+          "/System/Library/Frameworks/PhotosUI.framework/PhotosUI",
+          "/System/Library/Frameworks/UniformTypeIdentifiers.framework/UniformTypeIdentifiers",
+          "/System/Library/Frameworks/ImageIO.framework/ImageIO",
+          "/usr/lib/libc++.1.dylib",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "converted_objc_class_records": 10,
+        "signatures": [
+          {
+            "algorithm": 2,
+            "verified_pages": 40,
+            "identifier": "com.brooktrout12.photoicon"
+          }
+        ]
+      }
+    ],
+    "PhotoIconSystem": [
+      {
+        "architecture": "arm64",
+        "minimum_ios": "17.0",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "converted_objc_class_records": 0,
+        "signatures": [
+          {
+            "algorithm": 2,
+            "verified_pages": 22,
+            "identifier": "com.brooktrout12.photoicon.system"
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "minimum_ios": "17.0",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "converted_objc_class_records": 0,
+        "signatures": [
+          {
+            "algorithm": 2,
+            "verified_pages": 22,
+            "identifier": "com.brooktrout12.photoicon.system"
+          }
+        ]
+      }
+    ]
+  },
+  "installer": "PASS",
+  "device_runtime_tested": false
+}

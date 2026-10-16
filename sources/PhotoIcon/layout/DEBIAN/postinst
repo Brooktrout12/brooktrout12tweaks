@@ -1,0 +1,15 @@
+#!/var/jb/bin/sh
+set -eu
+case "${1:-}" in
+    configure)
+        pi_prefix=/var/jb
+        case "$0" in
+            */var/lib/dpkg/*) pi_prefix=${0%/var/lib/dpkg/*} ;;
+        esac
+        pi_directory="$pi_prefix/var/mobile/Library/Caches/PhotoIcon"
+        mkdir -p "$pi_directory"
+        chown 501:501 "$pi_directory"
+        chmod 0755 "$pi_directory"
+        ;;
+esac
+exit 0

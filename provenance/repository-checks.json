@@ -1,0 +1,8 @@
+{
+  "packages": 15,
+  "files": 689,
+  "deb_bytes_preserved": true,
+  "index_checks": "PASS",
+  "device_runtime_tests": "Not run during repository assembly",
+  "live_github_deployment": "Not performed; requires upload and Pages setup"
+}

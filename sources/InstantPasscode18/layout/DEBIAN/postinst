@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if [ "$1" = "configure" ] && [ -n "${CYDIA:-}" ]; then
+    cydia_fd=${CYDIA%% *}
+    case "$cydia_fd" in
+        ''|*[!0-9]*) ;;
+        *) printf 'finish:respring\n' >&"$cydia_fd" || true ;;
+    esac
+fi
+exit 0

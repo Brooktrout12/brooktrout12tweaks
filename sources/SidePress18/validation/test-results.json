@@ -1,0 +1,62 @@
+[
+  {
+    "project": "SidePress18",
+    "check": "package",
+    "exit_code": 0,
+    "log": "SidePress18-package.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "callback_cleanup",
+    "exit_code": 0,
+    "log": "SidePress18-callback_cleanup.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "press_policy_test-compile",
+    "exit_code": 0,
+    "log": "SidePress18-press_policy_test-compile.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "press_policy_test",
+    "exit_code": 0,
+    "log": "SidePress18-press_policy_test.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "click_speed_policy_test-compile",
+    "exit_code": 0,
+    "log": "SidePress18-click_speed_policy_test-compile.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "click_speed_policy_test",
+    "exit_code": 0,
+    "log": "SidePress18-click_speed_policy_test.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "unlock_policy_test-compile",
+    "exit_code": 0,
+    "log": "SidePress18-unlock_policy_test-compile.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "unlock_policy_test",
+    "exit_code": 0,
+    "log": "SidePress18-unlock_policy_test.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "launch_policy_test-compile",
+    "exit_code": 0,
+    "log": "SidePress18-launch_policy_test-compile.log"
+  },
+  {
+    "project": "SidePress18",
+    "check": "launch_policy_test",
+    "exit_code": 0,
+    "log": "SidePress18-launch_policy_test.log"
+  }
+]

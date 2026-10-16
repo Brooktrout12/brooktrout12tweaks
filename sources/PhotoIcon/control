@@ -1,0 +1,9 @@
+Package: com.brooktrout12.photoicon
+Name: PhotoIcon
+Version: 1.1.2
+Architecture: iphoneos-arm64
+Description: Choose and crop app and bookmark icons, with folder previews and shared system app-icon support on iOS 17 and 18.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)

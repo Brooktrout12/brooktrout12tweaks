@@ -1,0 +1,80 @@
+==> Cleaning…
+> Making all for tweak InstantClear18…
+==> Compiling Tweak.m (arm64)…
+==> Compiling Tweak.m (arm64e)…
+==> Linking tweak InstantClear18 (arm64e)…
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/InstantClear18/.theos/obj/arm64e/Tweak.m.5be233c5.o was built with an incompatible arm64e ABI compiler
+==> Generating debug symbols for InstantClear18…
+==> Stripping InstantClear18 (arm64e)…
+==> Linking tweak InstantClear18 (arm64)…
+==> Generating debug symbols for InstantClear18…
+==> Stripping InstantClear18 (arm64)…
+==> Merging tweak InstantClear18…
+==> Signing InstantClear18…
+> Making stage for tweak InstantClear18…
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/ios17_18_update/InstantClear18/.theos/_/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib"
+Reading file...
+
+Patching
+
+convert len:166720
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__const
+__cstring
+__objc_methname
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__const
+__cfstring
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7E66
+cfstr value: NCNotificationListSectionHeaderView
+cfstr ISA after 0xC0156AE100000016
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7E8A
+cfstr value: clearButton
+cfstr ISA after 0xC0156AE100000016
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7E98
+cfstr value: _handleClearAll:
+cfstr ISA after 0xC0156AE100000016
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7EAB
+cfstr value: [InstantClear18] Compatible notification header not found; leaving native behavior intact.
+cfstr ISA after 0xC0156AE100000016
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7F06
+cfstr value: _handleClearButtonTouchUpInside:
+cfstr ISA after 0xC0156AE100000016
+cfstr ISA 0x4010000000000016
+cfstr offset: 0x7F27
+cfstr value: _handleClearButtonPrimaryActionTriggered:
+cfstr ISA after 0xC0156AE100000016
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/ios17_18_update/InstantClear18/.theos/_/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -s "/workspace/scratch/337dbaad81e8/ios17_18_update/InstantClear18/.theos/_/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib"
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -S -Cadhoc "/workspace/scratch/337dbaad81e8/ios17_18_update/InstantClear18/.theos/_/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib"
+==> Notice: Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.instantclear18:iphoneos-arm64' in `./packages/com.brooktrout12.instantclear18_1.0.1_iphoneos-arm64.deb'

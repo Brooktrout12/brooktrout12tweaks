@@ -1,0 +1,23 @@
+PASS: sanitized simulated 24-hour run exits cleanly
+PASS: initial baseline plus 288 complete five-minute intervals
+PASS: automatic completion and 30-point simulated battery change
+PASS: package inventory included automatically
+PASS: file ownership and explicitly unproven candidates
+PASS: cumulative CPU deltas aggregate to known fixture result
+PASS: finished session does not run again
+PASS: permission failure stops instead of misleading logging
+PASS: unavailable battery is not invented
+PASS: interruption preserves session, without a finished marker
+PASS: resume preserves original deadline and appends a new baseline
+PASS: sleep/scheduling gaps are visible and do not demand 288 wakes
+PASS: corrupt persistent state does not overwrite previous data
+PASS: installation probe rejects insufficient access
+PASS: installation probe succeeds with readable processes
+PASS: kernel lock prevents duplicate collectors; graceful stop clean
+PASS: live check nonce is acknowledged after a complete saved sample
+PASS: machine-readable completed health agrees with report
+PASS: missing check notification API does not stop passive logging
+PASS: machine-readable access failure is an error, not a successful check
+
+Tests use synthetic counters and accelerated virtual time, not an iPhone.
+Apple API availability, launchd behavior and actual power overhead still require a device test.

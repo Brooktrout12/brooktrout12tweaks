@@ -1,0 +1,1705 @@
+==> Cleaning…
+> Making clean in prefs…
+==> Cleaning…
+> Making all for tweak SidePress18…
+==> Compiling Tweak.m (arm64)…
+==> Compiling Tweak.m (arm64e)…
+==> Compiling Actions.m (arm64)…
+==> Compiling Actions.m (arm64e)…
+==> Compiling UnlockFlow.m (arm64)…
+==> Compiling UnlockFlow.m (arm64e)…
+==> Compiling SecureAppLaunch.m (arm64)…
+==> Compiling SecureAppLaunch.m (arm64e)…
+==> Compiling ClickSpeedRuntime.m (arm64)…
+==> Compiling ClickSpeedRuntime.m (arm64e)…
+==> Linking tweak SidePress18 (arm64)…
+==> Generating debug symbols for SidePress18…
+==> Stripping SidePress18 (arm64)…
+==> Linking tweak SidePress18 (arm64e)…
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/Tweak.m.aa4ce58b.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/Actions.m.aa4ce58b.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/UnlockFlow.m.aa4ce58b.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/SecureAppLaunch.m.aa4ce58b.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/ClickSpeedRuntime.m.aa4ce58b.o was built with an incompatible arm64e ABI compiler
+==> Generating debug symbols for SidePress18…
+==> Stripping SidePress18 (arm64e)…
+==> Merging tweak SidePress18…
+==> Signing SidePress18…
+> Making all for tweak SidePress18Settings…
+==> Compiling ClickSpeedSettings.m (arm64)…
+==> Compiling ClickSpeedSettings.m (arm64e)…
+==> Linking tweak SidePress18Settings (arm64)…
+==> Generating debug symbols for SidePress18Settings…
+==> Stripping SidePress18Settings (arm64)…
+==> Linking tweak SidePress18Settings (arm64e)…
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/ClickSpeedSettings.m.9c9ae8d1.o was built with an incompatible arm64e ABI compiler
+==> Generating debug symbols for SidePress18Settings…
+==> Stripping SidePress18Settings (arm64e)…
+==> Merging tweak SidePress18Settings…
+==> Signing SidePress18Settings…
+> Making all in prefs…
+> Making all for bundle SidePress18Prefs…
+==> Copying resource directories into the bundle wrapper…
+==> Compiling SPRootListController.m (arm64)…
+==> Compiling SPRootListController.m (arm64e)…
+==> Linking bundle SidePress18Prefs (arm64e)…
+ld: warning: object file /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/obj/arm64e/SPRootListController.m.743c2456.o was built with an incompatible arm64e ABI compiler
+==> Generating debug symbols for SidePress18Prefs…
+==> Stripping SidePress18Prefs (arm64e)…
+==> Linking bundle SidePress18Prefs (arm64)…
+==> Generating debug symbols for SidePress18Prefs…
+==> Stripping SidePress18Prefs (arm64)…
+==> Merging bundle SidePress18Prefs…
+==> Signing SidePress18Prefs…
+> Making stage for tweak SidePress18…
+> Making stage for tweak SidePress18Settings…
+> Making stage in prefs…
+> Making stage for bundle SidePress18Prefs…
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18.dylib"
+Reading file...
+
+Patching
+
+convert len:237920
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__const
+__cstring
+__objc_methname
+__objc_classname__TEXT
+__ustring
+__gcc_except_tab__TEXT
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__const
+__cfstring
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xD970
+cfstr value: native
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xD977
+cfstr value: 
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xD978
+cfstr value: com.apple.springboard
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xD98E
+cfstr value: SBLockHardwareButtonActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xD9AA
+cfstr value: SBSleepWakeHardwareButtonInteraction
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDA9B
+cfstr value: Inactive: this iOS build has a different button interface.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDAD6
+cfstr value: [SidePress18] Unsupported interface: %s
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDAFE
+cfstr value: performLongPressActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDE0A
+cfstr value: performLongPressCancelledActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDB16
+cfstr value: performTriplePressActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDB30
+cfstr value: performTerminalLockLongPressActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDB54
+cfstr value: performSOSGestureBeganActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDB72
+cfstr value: performForceResetSequenceBeganActions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDB98
+cfstr value: SBLockHardwareButton
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDC32
+cfstr value: com.brooktrout12.sidepress18/preferences-changed
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDC63
+cfstr value: Ready. Double-press the side button to try your action.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDC9B
+cfstr value: com.brooktrout12.sidepress18
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCB8
+cfstr value: Enabled
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCC0
+cfstr value: RequireUnlock
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCCE
+cfstr value: Haptic
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCD5
+cfstr value: AppID
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCDB
+cfstr value: publishUpdatedParameters:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDA5C
+cfstr value: hardwareButtonGestureParameters
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCF5
+cfstr value: Action
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDCFC
+cfstr value: camera
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD03
+cfstr value: flashlight
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD0E
+cfstr value: app
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD12
+cfstr value: playpause
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD1C
+cfstr value: next
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD21
+cfstr value: previous
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD2A
+cfstr value: sleepWakeButtonInteraction
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD4B
+cfstr value: _isSOSActive
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD58
+cfstr value: _foregroundAppRegisteredForLockButtonEvents
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD84
+cfstr value: SBHardwareButtonService
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDD9C
+cfstr value: hasConsumersForLockButtonDoublePressUp
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDDC3
+cfstr value: sharedInstance
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDA7E
+cfstr value: _performSleep
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDA8C
+cfstr value: _playLockSound
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDDD2
+cfstr value: maximumPressCount
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDE2B
+cfstr value: LastResult
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDE80
+cfstr value: Actions.m
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDE8A
+cfstr value: Actions must run on the main thread
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDEAE
+cfstr value: SBLockScreenManager
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDEC2
+cfstr value: isUILocked
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDECD
+cfstr value: com.apple.camera
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDEEC
+cfstr value: SBUIFlashlightController
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF05
+cfstr value: level
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF0B
+cfstr value: setLevel:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF15
+cfstr value: Flashlight control is unavailable.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF38
+cfstr value: isAvailable
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF44
+cfstr value: isOverheated
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF51
+cfstr value: Flashlight is busy or temporarily unavailable.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF80
+cfstr value: Flashlight off requested.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDF9A
+cfstr value: Flashlight on requested.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDFD8
+cfstr value: No player accepted the media command.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xDFFE
+cfstr value: %@ requested.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE00C
+cfstr value: Choose an app in SidePress18 settings first.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE039
+cfstr value: The selected app is already visible.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE05E
+cfstr value: SBCoverSheetPresentationManager
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE07E
+cfstr value: isInSecureApp
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE08C
+cfstr value: secureAppViewController
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0A4
+cfstr value: isHostingAnApp
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0B3
+cfstr value: hostedAppSceneHandle
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0C8
+cfstr value: application
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0D4
+cfstr value: bundleIdentifier
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0E5
+cfstr value: coverSheetViewController
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE0FE
+cfstr value: isPresented
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE10A
+cfstr value: isVisibleAndNotDisappearing
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE126
+cfstr value: App launch canceled because the device locked.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE17C
+cfstr value: FBSOpenApplicationService
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE196
+cfstr value: serviceWithDefaultShellEndpoint
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE1B6
+cfstr value: FBSOpenApplicationOptions
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE1D0
+cfstr value: openApplication:withOptions:completion:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE1F8
+cfstr value: optionsWithDictionary:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE20F
+cfstr value: This iOS build does not expose the app-launch service.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFA86
+cfstr value: O
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE2CC
+cfstr value: No explanation returned.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFAA0
+cfstr value:  
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE2E5
+cfstr value: Launch of %@ declined (%@ %ld): %@%@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE30A
+cfstr value: App launch accepted.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE334
+cfstr value: Unable to prepare the app-launch callback.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE35F
+cfstr value: activateCameraViewAnimated:sendingActions:completion:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE395
+cfstr value: This iOS build does not expose native Lock Screen Camera presentation.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFAD2
+cfstr value: O
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE3DC
+cfstr value: Lock Screen Camera is visible.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE3FB
+cfstr value: Unable to prepare the Lock Screen Camera callback.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE42E
+cfstr value: Camera presentation requested; iOS did not report a visible Camera host.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE477
+cfstr value: applicationLauncher
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE48B
+cfstr value: Unable to present the selected secure app scene.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFB0A
+cfstr value: S
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE4BC
+cfstr value: %@ visible; UI locked: %@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE4D6
+cfstr value: YES
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE4DA
+cfstr value: NO
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE4DD
+cfstr value: Selected app is visible in the native Lock Screen host.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE515
+cfstr value: Requested %@; visible secure bundle: %@; UI locked: %@; Cover Sheet visible: %@.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE566
+cfstr value: The selected scene was submitted directly, but iOS did not report it visible in the Lock Screen host. Copy Last Result includes the host details.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE5F8
+cfstr value: (none reported)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE608
+cfstr value: /System/Library/PrivateFrameworks/%s.framework/%s
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE63A
+cfstr value: iOS Default
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE646
+cfstr value: Camera
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE64D
+cfstr value: Flashlight
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE658
+cfstr value: Open App
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE661
+cfstr value: Play / Pause
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE66E
+cfstr value: Next Track
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE679
+cfstr value: Previous Track
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE6A8
+cfstr value: UnlockFlow.m
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE6B5
+cfstr value: Unlock cancellation must run on the main thread
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE740
+cfstr value: Unlock requests must run on the main thread
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE76C
+cfstr value: lockScreenViewControllerRequestsUnlock
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE793
+cfstr value: This iOS build does not expose the native unlock presentation.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE7D2
+cfstr value: This iOS build does not expose both native unlock-cancellation callbacks.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE81C
+cfstr value: isInScreenOffMode
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFB80
+cfstr value: W
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE82E
+cfstr value: Unable to observe the native unlock result.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE85A
+cfstr value: passcodeViewControllerDidCancelPasscodeEntry:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE888
+cfstr value: passcodeEntryTransientOverlayViewControllerRequestsDismissal:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE8C6
+cfstr value: Unlock canceled; no action performed.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE8EC
+cfstr value: _isPasscodeVisible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE8FF
+cfstr value: isPasscodeEntryTransientOverlayVisible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE926
+cfstr value: isPasscodeLockVisible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE93C
+cfstr value: isInlinePasscodeLockVisible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE958
+cfstr value: isUIUnlocking
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE966
+cfstr value: Unlock canceled because the screen turned off.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFBD8
+cfstr value: A
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE995
+cfstr value: setCoverSheetPresented:animated:withCompletion:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xE9C9
+cfstr value: Authenticated, but iOS did not finish dismissing the lock-screen interface. No action was performed.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEA2E
+cfstr value: setPasscodeVisible:animated:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEA4E
+cfstr value: iOS did not present its unlock interface. No action was performed.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEA91
+cfstr value: _userAuthController
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEAA5
+cfstr value: isAuthenticated
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEAB5
+cfstr value: isVisible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEABF
+cfstr value: Secure app presentation must start on the main thread.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEAF6
+cfstr value: Build
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFC42
+cfstr value: S
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEAFC
+cfstr value: System
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB03
+cfstr value: Attempt
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB0B
+cfstr value: Selected bundle
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB1B
+cfstr value: (invalid)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB25
+cfstr value: Cover launcher class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB3A
+cfstr value: native-launcher-interface
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB54
+cfstr value: _reallyActivateAppSceneWithEntity:interactive:withCompletion:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEB92
+cfstr value: Direct launcher method
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEBAE
+cfstr value: The native secure-scene presentation interface is unavailable.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEBED
+cfstr value: selected-application
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEC02
+cfstr value: No separate application was selected for secure presentation.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEC40
+cfstr value: application-registry
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEC55
+cfstr value: SBApplicationController
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEC6D
+cfstr value: applicationWithBundleIdentifier:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEC8E
+cfstr value: Application registry class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xECA9
+cfstr value: Application lookup method
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xECC3
+cfstr value: The SpringBoard application registry is unavailable.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xECF8
+cfstr value: application-lookup
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xED0B
+cfstr value: Selected application class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xED26
+cfstr value: The selected application is no longer installed.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xED57
+cfstr value: SBDeviceApplicationSceneEntity
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xED76
+cfstr value: initWithApplicationForMainSecureDisplay:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xED9F
+cfstr value: Secure scene initializer
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEDB8
+cfstr value: secure-scene-initializer
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEDD1
+cfstr value: This iOS build cannot prepare a native secure-display application scene.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE1A
+cfstr value: secure-scene-creation
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE30
+cfstr value: Selected scene class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE45
+cfstr value: Scene handle getter
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE59
+cfstr value: sceneHandle
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE65
+cfstr value: Scene application getter
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE7E
+cfstr value: secure-scene-accessors
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEE95
+cfstr value: iOS did not create a secure application scene.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEEC4
+cfstr value: isSecure
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEECD
+cfstr value: Scene handle class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEEE0
+cfstr value: Scene secure getter
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEEF4
+cfstr value: secure-handle-interface
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEF0C
+cfstr value: iOS did not assign the selected application to the secure display.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEF4F
+cfstr value: secure-handle-state
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEF63
+cfstr value: Scene isSecure
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEF72
+cfstr value: scene-application-identity
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEF8D
+cfstr value: Scene application class
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEFA5
+cfstr value: Scene bundle getter
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEFB9
+cfstr value: The secure scene does not belong to the selected application.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xEFF7
+cfstr value: iOS rejected secure scene preparation: %@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF021
+cfstr value: direct-scene-submission
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF039
+cfstr value: Native completion received
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF054
+cfstr value: native-completion-awaiting-host
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF074
+cfstr value: Unable to prepare the native presentation callback.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF0A8
+cfstr value: native-submission-exception
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF0C4
+cfstr value: iOS rejected secure app presentation: %@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF0ED
+cfstr value: (no detail)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF0F9
+cfstr value: Observed host result
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF10E
+cfstr value: selected-secure-host-visible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF12B
+cfstr value: selected-secure-host-not-visible
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF14C
+cfstr value: submitted-request-cancelled
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF168
+cfstr value: (nil)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF16E
+cfstr value: Stage
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF174
+cfstr value: %@ %@: %@ (arguments: %u)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF18E
+cfstr value: (class missing)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF19E
+cfstr value: (method missing)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1AF
+cfstr value: Error
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1B5
+cfstr value: [%@] %@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1BD
+cfstr value: %@: %@
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1C5
+cfstr value: LastSecureLaunchDiagnostic
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1E0
+cfstr value: activat
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1E8
+cfstr value: present
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1F0
+cfstr value: scene
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xFCA4
+cfstr value: %
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1F8
+cfstr value: 
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF1FA
+cfstr value: Available launcher interfaces
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF218
+cfstr value: isButtonDown
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF24A
+cfstr value: LastClickSpeedConfiguration
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF266
+cfstr value: Inactive: iOS does not expose the expected side-button recognizer configuration method.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF2BE
+cfstr value: Release to sleep request: %.0f ms
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF2E0
+cfstr value: Release timestamp unavailable
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF2FE
+cfstr value: Measured at %@
+Button down to sleep request: %.0f ms
+%@
+%@
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF339
+cfstr value: Recognizer configuration not observed yet.
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF364
+cfstr value: LastTimingDiagnostic
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF37B
+cfstr value: singlePressGestureRecognizer
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF398
+cfstr value: doublePressGestureRecognizer
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF3B5
+cfstr value: triplePressGestureRecognizer
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF3D2
+cfstr value: buttonGestureParameters
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF404
+cfstr value: Selected speed: %@
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF418
+cfstr value: %@ (%.0f ms)
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF425
+cfstr value: Faster
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF42C
+cfstr value: Fastest
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF434
+cfstr value: iOS native
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF43F
+cfstr value: Native multi-click parameter: %.0f ms
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF466
+cfstr value: maximumBetweenClicksDelay
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF480
+cfstr value: setMaximumBetweenClicksDelay:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF49E
+cfstr value: waitForPreemptionTimeInterval
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF4BC
+cfstr value: setWaitForPreemptionTimeInterval:
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF4DE
+cfstr value: %@.%@: unavailable
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF4F2
+cfstr value: %@.%@: %.0f ms (native %.0f ms)
+
+cfstr ISA after 0xC0156AE100000042
+cfstr ISA 0x4010000000000042
+cfstr offset: 0xF513
+cfstr value: ClickSpeedOverride
+cfstr ISA after 0xC0156AE100000042
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__data
+current str isa: 0x00, hikari str: 0x8000000010398, hikari stroff: 0xFFFC82B2FF628270
+current str isa: 0x00, hikari str: 0x103B8, hikari stroff: 0xFFFC82B2FF628278
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18.dylib
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -s "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18.dylib"
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -S -Cadhoc "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18.dylib"
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18Settings.dylib"
+Reading file...
+
+Patching
+
+convert len:167712
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__cstring
+__objc_methname
+__const
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7AD8
+cfstr value: HOME_CLICK_SPEED_DEFAULT
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7AF1
+cfstr value: HOME_CLICK_SPEED_SLOW
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B07
+cfstr value: HOME_CLICK_SPEED_SLOWEST
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B20
+cfstr value: SP18_SIDE_CLICK_FASTER
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B37
+cfstr value: SP18_SIDE_CLICK_FASTEST
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B4F
+cfstr value: com.apple.Preferences
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B65
+cfstr value: Faster
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B6C
+cfstr value: Fastest
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B74
+cfstr value: radioGroupCheckedSpecifier
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7B8F
+cfstr value: SidePress18ClickSpeed
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7BA5
+cfstr value: ClickSpeedOverride
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7BB8
+cfstr value: com.brooktrout12.sidepress18/preferences-changed
+cfstr ISA after 0xC0156AE10000001A
+cfstr ISA 0x401000000000001A
+cfstr offset: 0x7BE9
+cfstr value: com.brooktrout12.sidepress18
+cfstr ISA after 0xC0156AE10000001A
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18Settings.dylib
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -s "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18Settings.dylib"
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -S -Cadhoc "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/MobileSubstrate/DynamicLibraries/SidePress18Settings.dylib"
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/PreferenceBundles/SidePress18Prefs.bundle/SidePress18Prefs"
+Reading file...
+
+Patching
+
+convert len:203104
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__objc_methlist
+__const
+__objc_methname
+__cstring
+__objc_classname__TEXT
+__objc_methtype
+__ustring
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__const
+__cfstring
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB01A
+cfstr value: Choose App
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB025
+cfstr value: Search apps
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB070
+cfstr value: LSApplicationWorkspace
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB087
+cfstr value: defaultWorkspace
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB098
+cfstr value: allInstalledApplications
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0B1
+cfstr value: allApplications
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0C1
+cfstr value: bundleIdentifier
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0D2
+cfstr value: localizedName
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0E0
+cfstr value: appTags
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0E8
+cfstr value: isInstalled
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB0F4
+cfstr value: isLaunchProhibited
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB107
+cfstr value: hidden
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB10E
+cfstr value: id
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB111
+cfstr value: name
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB116
+cfstr value: No launchable apps were returned by iOS.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB145
+cfstr value: 
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB146
+cfstr value: app
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB14A
+cfstr value: AppID
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB150
+cfstr value: AppName
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB158
+cfstr value: Action
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB15F
+cfstr value: Double-Press Action
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB173
+cfstr value: Choose which app the Open App action opens.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB8AC
+cfstr value: i
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB19F
+cfstr value: chooseApp
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1A9
+cfstr value: No app selected
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1B9
+cfstr value: action
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1C0
+cfstr value: iphone
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1C7
+cfstr value: camera.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1D3
+cfstr value: flashlight.on.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1E6
+cfstr value: app.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1EF
+cfstr value: playpause.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB1FE
+cfstr value: forward.end.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB20F
+cfstr value: backward.end.fill
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB221
+cfstr value: /System/Library/PreferenceBundles/AccessibilitySettings.bundle
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB260
+cfstr value: ButtonClickController
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB276
+cfstr value: Side Button
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB282
+cfstr value: HOME_CLICK_TITLE
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB293
+cfstr value: Side Button Settings
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB976
+cfstr value: O
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2A8
+cfstr value: OK
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2AB
+cfstr value: com.brooktrout12.sidepress18
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2C8
+cfstr value: SidePress18
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2D4
+cfstr value: key
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2D8
+cfstr value: default
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2E0
+cfstr value: footerText
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB2EB
+cfstr value: A shortcut at your fingertips
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB309
+cfstr value: Quickly press the side button twice, from an app, the Home Screen, or the Lock Screen.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB360
+cfstr value: Enabled
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB368
+cfstr value: Double Press
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB375
+cfstr value: Current action: %@
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB388
+cfstr value: Choose Action
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB396
+cfstr value: Selected app: %@
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB3A7
+cfstr value: When Locked
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xBA52
+cfstr value: O
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB3B3
+cfstr value: Require Unlock
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB3C2
+cfstr value: RequireUnlock
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB3D0
+cfstr value: Feedback & Timing
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB3E2
+cfstr value: Choose the timing for SidePress18 here. Home button click speed stays in Accessibility. Faster choices require quicker double or triple presses; other system button gestures keep priority.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB49F
+cfstr value: Side Button Click Speed
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4B7
+cfstr value: PSListItemsController
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4CD
+cfstr value: ClickSpeedOverride
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4E0
+cfstr value: iOS Default
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4EC
+cfstr value: Faster
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4F3
+cfstr value: Fastest
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xBCD2
+cfstr value: S
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB4FB
+cfstr value: Haptic Feedback
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB50B
+cfstr value: Haptic
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB512
+cfstr value: LastResult
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB51D
+cfstr value: Install and respring once to activate.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB544
+cfstr value: Last Result
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB550
+cfstr value: No result yet.
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB55F
+cfstr value: Refresh Status
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB56E
+cfstr value: Copy Last Result
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xBE88
+cfstr value: S
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB57F
+cfstr value: LastSecureLaunchDiagnostic
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB59A
+cfstr value: 
+
+Last locked-app diagnostic:
+%@
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB5BB
+cfstr value: LastClickSpeedConfiguration
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB5D7
+cfstr value: LastTimingDiagnostic
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB5EC
+cfstr value: 
+
+%@: %@
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB5F5
+cfstr value: com.brooktrout12.sidepress18/preferences-changed
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB626
+cfstr value: native
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB62D
+cfstr value: camera
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB634
+cfstr value: flashlight
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB63F
+cfstr value: playpause
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB649
+cfstr value: next
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB64E
+cfstr value: previous
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB657
+cfstr value: Camera
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB65E
+cfstr value: Flashlight
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB669
+cfstr value: Open App
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB672
+cfstr value: Play / Pause
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB67F
+cfstr value: Next Track
+cfstr ISA after 0xC0156AE100000024
+cfstr ISA 0x4010000000000024
+cfstr offset: 0xB68A
+cfstr value: Previous Track
+cfstr ISA after 0xC0156AE100000024
+__objc_classlist__DATA_CONST
+__objc_protolist__DATA_CONST
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_const
+__objc_selrefs
+__objc_classrefs__DATA
+__objc_superrefs__DATA
+__objc_ivar
+__objc_data
+--- MAIN CLASS ---
+objc_class isa:		0x8000000010A98
+objc_class superclass:	0x400800000000003B
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010480
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE100010A98
+objc_class superclass:	0xC00DB5AB0000003B
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010480
+class_ro_t flags:	0x388X
+class_ro_t instanceStart:	0x08X
+class_ro_t instanceSize:	0x32X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x800000000B6CE
+class_ro_t name:	SPAppListController
+class_ro_t baseMethodList:	0x800DC3100000A440
+class_ro_t baseProtocols:	0x8000000010340
+class_ro_t ivars:	0x100000000103A0
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x400800000000003D
+objc_class superclass:	0x400800000000003C
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010358
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE10000003D
+objc_class superclass:	0xC00DB5AB0000003C
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010358
+class_ro_t flags:	0x389X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	SPAppListController
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x28000000010340
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x8000000010AE8
+objc_class superclass:	0x400800000000003B
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010510
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE100010AE8
+objc_class superclass:	0xC00DB5AB0000003B
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x8000000010510
+class_ro_t flags:	0x128X
+class_ro_t instanceStart:	0x08X
+class_ro_t instanceSize:	0x08X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	SPActionListController
+class_ro_t baseMethodList:	0x8045C3100000A3D8
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x400800000000003D
+objc_class superclass:	0x400800000000003C
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x80000000104C8
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE10000003D
+objc_class superclass:	0xC00DB5AB0000003C
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x80000000104C8
+class_ro_t flags:	0x129X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	SPActionListController
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x8000000010B38
+objc_class superclass:	0x4008000000000033
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x80000000105A0
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE100010B38
+objc_class superclass:	0xC00DB5AB00000033
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x80000000105A0
+class_ro_t flags:	0x128X
+class_ro_t instanceStart:	0x16X
+class_ro_t instanceSize:	0x16X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	SPRootListController
+class_ro_t baseMethodList:	0x802DC3100000A4E8
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x400800000000003D
+objc_class superclass:	0x400800000000003E
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x10000000010558
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE10000003D
+objc_class superclass:	0xC00DB5AB0000003E
+objc_class cache:	0x401000000000003A
+objc_class vtable:	0x00
+objc_class data:	0x10000000010558
+class_ro_t flags:	0x129X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	SPRootListController
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+__data
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554AF0
+current str isa: 0x00, hikari str: 0x1000000000B6C5, hikari stroff: 0xFFFC81FD58554AF8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B00
+current str isa: 0x00, hikari str: 0x10000000010000, hikari stroff: 0xFFFC81FD58554B08
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B10
+current str isa: 0x00, hikari str: 0x100000000101D0, hikari stroff: 0xFFFC81FD58554B18
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B20
+current str isa: 0x00, hikari str: 0x100000000101F0, hikari stroff: 0xFFFC81FD58554B28
+current str isa: 0x00, hikari str: 0x60, hikari stroff: 0xFFFC81FD58554B30
+current str isa: 0x00, hikari str: 0x20000000010238, hikari stroff: 0xFFFC81FD58554B38
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B40
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B48
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B50
+current str isa: 0x00, hikari str: 0x800000000B6AD, hikari stroff: 0xFFFC81FD58554B58
+current str isa: 0x00, hikari str: 0x80000000102D8, hikari stroff: 0xFFFC81FD58554B60
+current str isa: 0x00, hikari str: 0x100000000102F0, hikari stroff: 0xFFFC81FD58554B68
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B70
+current str isa: 0x00, hikari str: 0x20000000010310, hikari stroff: 0xFFFC81FD58554B78
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B80
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554B88
+current str isa: 0x00, hikari str: 0x60, hikari stroff: 0xFFFC81FD58554B90
+current str isa: 0x00, hikari str: 0x10330, hikari stroff: 0xFFFC81FD58554B98
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554BA0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC81FD58554BA8
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/PreferenceBundles/SidePress18Prefs.bundle/SidePress18Prefs
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -s "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/PreferenceBundles/SidePress18Prefs.bundle/SidePress18Prefs"
+"/workspace/scratch/337dbaad81e8/build_tools/linux/iphone/bin/ldid" -S -Cadhoc "/workspace/scratch/337dbaad81e8/ios17_18_update/SidePress18/.theos/_/Library/PreferenceBundles/SidePress18Prefs.bundle/SidePress18Prefs"
+==> Notice: Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.sidepress18:iphoneos-arm64' in `./packages/com.brooktrout12.sidepress18_1.0.1_iphoneos-arm64.deb'

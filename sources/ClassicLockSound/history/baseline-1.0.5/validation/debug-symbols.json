@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64",
+      "uuid": "46ae41fb-2e89-3082-b6c8-3ce10f4f88b1",
+      "match": true
+    },
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64e",
+      "uuid": "3f9540d9-5ef5-383c-8f3d-49c435ab5f13",
+      "match": true
+    }
+  ]
+}

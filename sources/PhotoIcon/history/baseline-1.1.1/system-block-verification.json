@@ -1,0 +1,516 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "actionWithTitle:style:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "actionWithTitle:style:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "dismissViewControllerAnimated:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "loadFileRepresentationForTypeIdentifier:completionHandler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "saveImage:source:crop:forBundleIdentifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "removeIconForBundleIdentifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "animateWithDuration:delay:options:animations:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "selector": "animateWithDuration:delay:options:animations:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIEditorCoordinator.m",
+      "expected_handoffs": {
+        "actionWithTitle:style:handler:": 2,
+        "dismissViewControllerAnimated:completion:": 1,
+        "loadFileRepresentationForTypeIdentifier:completionHandler:": 1,
+        "saveImage:source:crop:forBundleIdentifier:completion:": 1,
+        "removeIconForBundleIdentifier:completion:": 1,
+        "animateWithDuration:delay:options:animations:completion:": 2
+      },
+      "observed_handoffs": {
+        "actionWithTitle:style:handler:": 2,
+        "dismissViewControllerAnimated:completion:": 1,
+        "loadFileRepresentationForTypeIdentifier:completionHandler:": 1,
+        "saveImage:source:crop:forBundleIdentifier:completion:": 1,
+        "removeIconForBundleIdentifier:completion:": 1,
+        "animateWithDuration:delay:options:animations:completion:": 2
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PICropViewController.m",
+      "selector": "imageWithActions:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PICropViewController.m",
+      "expected_handoffs": {
+        "imageWithActions:": 1
+      },
+      "observed_handoffs": {
+        "imageWithActions:": 1
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIStore.m",
+      "selector": "enumerateKeysAndObjectsUsingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIStore.m",
+      "selector": "finish:identifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "forwarded callback",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIStore.m",
+      "selector": "finish:identifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "forwarded callback",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIStore.m",
+      "expected_handoffs": {
+        "enumerateKeysAndObjectsUsingBlock:": 1,
+        "finish:identifier:completion:": 2
+      },
+      "observed_handoffs": {
+        "enumerateKeysAndObjectsUsingBlock:": 1,
+        "finish:identifier:completion:": 2
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "selector": "addObserverForName:object:queue:usingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "selector": "addObserverForName:object:queue:usingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "selector": "imageWithActions:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "selector": "setActionProvider:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "selector": "actionWithTitle:image:identifier:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "Tweak.xm",
+      "expected_handoffs": {
+        "imageWithActions:": 1,
+        "addObserverForName:object:queue:usingBlock:": 2,
+        "actionWithTitle:image:identifier:handler:": 1,
+        "setActionProvider:": 1
+      },
+      "observed_handoffs": {
+        "addObserverForName:object:queue:usingBlock:": 2,
+        "imageWithActions:": 1,
+        "setActionProvider:": 1,
+        "actionWithTitle:image:identifier:handler:": 1
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISharedPaths.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PIIconPublisher.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISpringBoardImages.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISystemIconReader.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISystemIcons.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "helper_calls_c_blocks_runtime": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "actionWithTitle:style:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "actionWithTitle:style:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "dismissViewControllerAnimated:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "loadFileRepresentationForTypeIdentifier:completionHandler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "saveImage:source:crop:forBundleIdentifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "removeIconForBundleIdentifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "animateWithDuration:delay:options:animations:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "selector": "animateWithDuration:delay:options:animations:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIEditorCoordinator.m",
+      "expected_handoffs": {
+        "actionWithTitle:style:handler:": 2,
+        "dismissViewControllerAnimated:completion:": 1,
+        "loadFileRepresentationForTypeIdentifier:completionHandler:": 1,
+        "saveImage:source:crop:forBundleIdentifier:completion:": 1,
+        "removeIconForBundleIdentifier:completion:": 1,
+        "animateWithDuration:delay:options:animations:completion:": 2
+      },
+      "observed_handoffs": {
+        "actionWithTitle:style:handler:": 2,
+        "dismissViewControllerAnimated:completion:": 1,
+        "loadFileRepresentationForTypeIdentifier:completionHandler:": 1,
+        "saveImage:source:crop:forBundleIdentifier:completion:": 1,
+        "removeIconForBundleIdentifier:completion:": 1,
+        "animateWithDuration:delay:options:animations:completion:": 2
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PICropViewController.m",
+      "selector": "imageWithActions:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PICropViewController.m",
+      "expected_handoffs": {
+        "imageWithActions:": 1
+      },
+      "observed_handoffs": {
+        "imageWithActions:": 1
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIStore.m",
+      "selector": "enumerateKeysAndObjectsUsingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIStore.m",
+      "selector": "finish:identifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "forwarded callback",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIStore.m",
+      "selector": "finish:identifier:completion:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "forwarded callback",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIStore.m",
+      "expected_handoffs": {
+        "enumerateKeysAndObjectsUsingBlock:": 1,
+        "finish:identifier:completion:": 2
+      },
+      "observed_handoffs": {
+        "enumerateKeysAndObjectsUsingBlock:": 1,
+        "finish:identifier:completion:": 2
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "selector": "addObserverForName:object:queue:usingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "selector": "addObserverForName:object:queue:usingBlock:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "selector": "imageWithActions:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "selector": "setActionProvider:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "selector": "actionWithTitle:image:identifier:handler:",
+      "runtime_copy_is_argument": true,
+      "input_kind": "capturing stack block",
+      "copy_not_elided_or_noescape": true,
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "Tweak.xm",
+      "expected_handoffs": {
+        "imageWithActions:": 1,
+        "addObserverForName:object:queue:usingBlock:": 2,
+        "actionWithTitle:image:identifier:handler:": 1,
+        "setActionProvider:": 1
+      },
+      "observed_handoffs": {
+        "addObserverForName:object:queue:usingBlock:": 2,
+        "imageWithActions:": 1,
+        "setActionProvider:": 1,
+        "actionWithTitle:image:identifier:handler:": 1
+      },
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISharedPaths.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PIIconPublisher.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISpringBoardImages.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISystemIconReader.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISystemIcons.m",
+      "expected_handoffs": {},
+      "observed_handoffs": {},
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "helper_calls_c_blocks_runtime": true,
+      "pass": true
+    }
+  ],
+  "device_runtime_tested": false
+}

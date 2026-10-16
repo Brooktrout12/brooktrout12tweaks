@@ -1,0 +1,8 @@
+{
+  "baseline_source": "InstantClear18_1.0.0_source.zip",
+  "baseline_source_sha256": "9a71f97d1797a3af03ceaec93a0726a5d54f3d62d8b12ce4f6040dfcacc74831",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "6a3a8134179886ae0fc2e8b6a0bc9e6aa1ccfb00a1de887ebae9d7c526ef25c0",
+  "source_patch": "IOS17-18.patch"
+}

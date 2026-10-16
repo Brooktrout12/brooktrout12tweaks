@@ -1,0 +1,223 @@
+--- a/ClickSpeedSettings.m
++++ b/ClickSpeedSettings.m
+@@ -1,3 +1,4 @@
++#import "Compatibility.h"
+ #import <UIKit/UIKit.h>
+ #import <Preferences/PSListController.h>
+ #import <Preferences/PSSpecifier.h>
+@@ -5,6 +6,7 @@
+ #import <objc/runtime.h>
+ #import <substrate.h>
+ #import "ClickSpeed.h"
++#import "DeviceCapabilities.h"
+ 
+ // These are the identifiers from Apple's Accessibility Side Button page, not
+ // translated titles. Discovering the controller through its native specifiers
+@@ -179,7 +181,8 @@
+ __attribute__((constructor)) static void SPClickSpeedSettingsStart(void) {
+     @autoreleasepool {
+         if (![NSBundle.mainBundle.bundleIdentifier isEqualToString:@"com.apple.Preferences"] ||
+-            NSProcessInfo.processInfo.operatingSystemVersion.majorVersion != 18) return;
++            !BTSupportsIOS17And18()) return;
++        if (SPNeedsSeparateSideButtonTiming()) return;
+         Class cls = PSListController.class;
+         if (!SPMethodHasObjectArguments(cls, @selector(loadSpecifiersFromPlistName:target:), '@', 4) ||
+             !SPMethodHasObjectArguments(cls, @selector(loadSpecifiersFromPlistName:target:bundle:), '@', 5) ||
+--- a/Compatibility.h
++++ b/Compatibility.h
+@@ -0,0 +1,8 @@
++#pragma once
++#import <Foundation/Foundation.h>
++
++// Keep future major versions opt-in; all 17.x and 18.x point releases qualify.
++static inline BOOL BTSupportsIOS17And18(void) {
++    NSInteger major = NSProcessInfo.processInfo.operatingSystemVersion.majorVersion;
++    return major == 17 || major == 18;
++}
+--- a/DeviceCapabilities.h
++++ b/DeviceCapabilities.h
+@@ -0,0 +1,11 @@
++#pragma once
++#import <LocalAuthentication/LocalAuthentication.h>
++
++// The Accessibility click-speed page controls the Home button on Touch ID
++// devices. Never add side-button choices to that native Home-button page.
++// An unavailable/unknown biometric capability also takes the separate UI path.
++static inline BOOL SPNeedsSeparateSideButtonTiming(void) {
++    LAContext *context = [LAContext new];
++    (void)[context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:NULL];
++    return context.biometryType != LABiometryTypeFaceID;
++}
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ ARCHS = arm64 arm64e
+-TARGET = iphone:clang:latest:15.0
++TARGET = iphone:clang:16.5:17.0
+ THEOS_PACKAGE_SCHEME = rootless
+ FINALPACKAGE = 1
+ DEBUG = 0
+@@ -13,7 +13,7 @@
+ SidePress18_FRAMEWORKS = Foundation UIKit
+ SidePress18Settings_FILES = ClickSpeedSettings.m
+ SidePress18Settings_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
+-SidePress18Settings_FRAMEWORKS = Foundation UIKit
++SidePress18Settings_FRAMEWORKS = Foundation UIKit LocalAuthentication
+ SidePress18Settings_PRIVATE_FRAMEWORKS = Preferences
+ include $(THEOS_MAKE_PATH)/tweak.mk
+ 
+--- a/Shared.h
++++ b/Shared.h
+@@ -1,3 +1,4 @@
++#pragma once
+ #import <Foundation/Foundation.h>
+ 
+ #define SP_DOMAIN CFSTR("com.brooktrout12.sidepress18")
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -1,3 +1,4 @@
++#import "Compatibility.h"
+ #import <UIKit/UIKit.h>
+ #import <substrate.h>
+ #import "Runtime.h"
+@@ -195,7 +196,7 @@
+ __attribute__((constructor)) static void SPInitialize(void) {
+     @autoreleasepool {
+         if (![NSBundle.mainBundle.bundleIdentifier isEqualToString:@"com.apple.springboard"] ||
+-            NSProcessInfo.processInfo.operatingSystemVersion.majorVersion != 18) return;
++            !BTSupportsIOS17And18()) return;
+         providers = [NSHashTable weakObjectsHashTable];
+         SPReload();
+         Class actions = NSClassFromString(@"SBLockHardwareButtonActions");
+--- a/UnlockFlow.m
++++ b/UnlockFlow.m
+@@ -205,7 +205,7 @@
+     requestedPasscode = NO;
+     requestedDismissal = NO;
+     NSUInteger generation = unlockGeneration;
+-    SPSetStatus(@"Waiting for Face ID or passcode…");
++    SPSetStatus(@"Waiting for Touch ID, Face ID, or passcode…");
+ 
+     // Unlike constructing an empty SBLockScreenUnlockRequest, this lets iOS
+     // choose its own correct source, intent, biometric UI, and unlock options.
+--- a/control
++++ b/control
+@@ -1,11 +1,11 @@
+ Package: com.brooktrout12.sidepress18
+ Name: SidePress18
+-Version: 1.0.0
++Version: 1.0.1
+ Architecture: iphoneos-arm64
+ Description: Double-press the side button for Camera, apps, flashlight, or media controls.
+ Maintainer: brooktrout12
+ Author: brooktrout12
+ Section: Tweaks
+-Depends: firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate, preferenceloader
++Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader
+ Priority: optional
+ Tag: purpose::extension
+--- a/prefs/Makefile
++++ b/prefs/Makefile
+@@ -2,7 +2,7 @@
+ BUNDLE_NAME = SidePress18Prefs
+ SidePress18Prefs_FILES = SPRootListController.m
+ SidePress18Prefs_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
+-SidePress18Prefs_FRAMEWORKS = UIKit Foundation
++SidePress18Prefs_FRAMEWORKS = UIKit Foundation LocalAuthentication
+ SidePress18Prefs_PRIVATE_FRAMEWORKS = Preferences
+ SidePress18Prefs_INSTALL_PATH = /Library/PreferenceBundles
+ SidePress18Prefs_RESOURCE_DIRS = Resources
+--- a/prefs/Resources/Info.plist
++++ b/prefs/Resources/Info.plist
+@@ -1,11 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+-<plist version="1.0"><dict>
+-<key>CFBundleIdentifier</key><string>com.brooktrout12.sidepress18.preferences</string>
+-<key>CFBundleName</key><string>SidePress18Prefs</string>
+-<key>CFBundleExecutable</key><string>SidePress18Prefs</string>
+-<key>CFBundlePackageType</key><string>BNDL</string>
+-<key>CFBundleShortVersionString</key><string>1.0</string>
+-<key>CFBundleVersion</key><string>1</string>
+-<key>NSPrincipalClass</key><string>SPRootListController</string>
+-</dict></plist>
++<plist version="1.0">
++<dict>
++	<key>CFBundleIdentifier</key>
++	<string>com.brooktrout12.sidepress18.preferences</string>
++	<key>CFBundleName</key>
++	<string>SidePress18Prefs</string>
++	<key>CFBundleExecutable</key>
++	<string>SidePress18Prefs</string>
++	<key>CFBundlePackageType</key>
++	<string>BNDL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>1.0.1</string>
++	<key>CFBundleVersion</key>
++	<string>2</string>
++	<key>NSPrincipalClass</key>
++	<string>SPRootListController</string>
++	<key>MinimumOSVersion</key>
++	<string>17.0</string>
++</dict>
++</plist>
+--- a/prefs/SPRootListController.m
++++ b/prefs/SPRootListController.m
+@@ -157,6 +157,14 @@
+ }
+ @end
+ 
++#import "../DeviceCapabilities.h"
++#import "../ClickSpeed.h"
++
++// Present in the iOS 17 Preferences runtime; the minimal Theos header omits it.
++@interface PSSpecifier (SPClickSpeedValues)
++- (void)setValues:(NSArray *)values titles:(NSArray *)titles shortTitles:(NSArray *)shortTitles;
++@end
++
+ @interface SPRootListController : PSListController
+ @end
+ @implementation SPRootListController
+@@ -220,16 +228,27 @@
+             [items addObject:[self group:nil footer:[NSString stringWithFormat:@"Selected app: %@", appName]]];
+             [items addObject:[self button:@"Choose App" selector:@selector(chooseApp)]];
+         }
+-        [items addObject:[self group:@"When Locked" footer:@"On: authenticate with Face ID or passcode before any selected action. Off: run the action while locked; apps open over the Lock Screen and return there when dismissed. Anyone holding the phone can use the chosen app and whatever content it exposes. An app’s own authentication and protected data still apply."]];
++        [items addObject:[self group:@"When Locked" footer:@"On: authenticate with Touch ID, Face ID, or passcode before any selected action. Off: run the action while locked; apps open over the Lock Screen and return there when dismissed. Anyone holding the phone can use the chosen app and whatever content it exposes. An app’s own authentication and protected data still apply."]];
+         [items addObject:[self toggle:@"Require Unlock" key:@"RequireUnlock" defaultValue:@NO]];
+-        [items addObject:[self group:@"Feedback & Timing" footer:@"SidePress18 adds Faster and Fastest to Settings → Accessibility → Side Button. These shorten the wait after a single press and require quicker double or triple presses. The system’s other button gestures keep priority."]];
+-        [items addObject:[self button:@"Side Button Settings" selector:@selector(openSideButtonSettings)]];
++        if (SPNeedsSeparateSideButtonTiming()) {
++            [items addObject:[self group:@"Feedback & Timing" footer:@"Choose the timing for SidePress18 here. Home button click speed stays in Accessibility. Faster choices require quicker double or triple presses; other system button gestures keep priority."]];
++            PSSpecifier *speed = [PSSpecifier preferenceSpecifierNamed:@"Side Button Click Speed" target:self
++                set:@selector(setValue:specifier:) get:@selector(readValue:) detail:NSClassFromString(@"PSListItemsController")
++                cell:PSLinkListCell edit:Nil];
++            [speed setProperty:SP_CLICK_SPEED_KEY forKey:@"key"];
++            [speed setProperty:@0 forKey:@"default"];
++            [speed setValues:@[@0, @1, @2] titles:@[@"iOS Default", @"Faster", @"Fastest"] shortTitles:nil];
++            [items addObject:speed];
++        } else {
++            [items addObject:[self group:@"Feedback & Timing" footer:@"SidePress18 adds Faster and Fastest to Settings → Accessibility → Side Button. These shorten the wait after a single press and require quicker double or triple presses. The system’s other button gestures keep priority."]];
++            [items addObject:[self button:@"Side Button Settings" selector:@selector(openSideButtonSettings)]];
++        }
+         [items addObject:[self toggle:@"Haptic Feedback" key:@"Haptic" defaultValue:@YES]];
+         id result = SPRead(@"LastResult", @"Install and respring once to activate.");
+         [items addObject:[self group:@"Last Result" footer:[result isKindOfClass:NSString.class] ? result : @"No result yet."]];
+         [items addObject:[self button:@"Refresh Status" selector:@selector(refreshStatus)]];
+         [items addObject:[self button:@"Copy Last Result" selector:@selector(copyLastResult)]];
+-        [items addObject:[self group:nil footer:@"SidePress18 1.0 • brooktrout12\niOS 18 • Rootless\nChanges take effect immediately."]];
++        [items addObject:[self group:nil footer:@"SidePress18 1.0.1 • brooktrout12\niOS 17–18 • Rootless\nChanges take effect immediately."]];
+         _specifiers = items;
+     }
+     return _specifiers;
+--- a/tools/verify_package.py
++++ b/tools/verify_package.py
+@@ -128,7 +128,7 @@
+     metadata = dict(line.split(": ", 1) for line in control["control"][0].decode().splitlines() if ": " in line)
+     require(metadata["Architecture"] == "iphoneos-arm64", "Incorrect Debian architecture")
+     require(metadata["Package"] == "com.brooktrout12.sidepress18", "Incorrect package ID")
+-    require(metadata["Depends"] == "firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate, preferenceloader", "Incorrect dependencies")
++    require(metadata["Depends"] == "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader", "Incorrect dependencies")
+     require(control["postinst"][1] == 0o755, "Post-install script is not executable")
+     subprocess.run(["sh", "-n"], input=control["postinst"][0], check=True)
+     binaries = []

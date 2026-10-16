@@ -1,0 +1,8 @@
+[
+  {
+    "project": "InstantPasscode18",
+    "check": "package",
+    "exit_code": 0,
+    "log": "InstantPasscode18-package.log"
+  }
+]

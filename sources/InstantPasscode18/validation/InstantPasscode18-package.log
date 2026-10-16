@@ -1,0 +1,47 @@
+{
+  "package": "com.brooktrout12.instantpasscode18_1.1.1_iphoneos-arm64.deb",
+  "version": "1.1.1",
+  "sha256": "fc821df119e25443d53901781d4228390dd7e5a8bdf0a7d35680a0a78050b273",
+  "result": "PASS: package and code-signature integrity",
+  "device_tested": false,
+  "slices": [
+    {
+      "architecture": "arm64",
+      "verified_code_directories": 1,
+      "verified_page_hashes": 17,
+      "libraries": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "verified_code_directories": 1,
+      "verified_page_hashes": 17,
+      "libraries": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+--- a/Compatibility.h
++++ b/Compatibility.h
+@@ -0,0 +1,8 @@
++#pragma once
++#import <Foundation/Foundation.h>
++
++// Keep future major versions opt-in; all 17.x and 18.x point releases qualify.
++static inline BOOL BTSupportsIOS17And18(void) {
++    NSInteger major = NSProcessInfo.processInfo.operatingSystemVersion.majorVersion;
++    return major == 17 || major == 18;
++}
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ ARCHS = arm64 arm64e
+-TARGET = iphone:clang:latest:15.0
++TARGET = iphone:clang:16.5:17.0
+ THEOS_PACKAGE_SCHEME = rootless
+ FINALPACKAGE = 1
+ DEBUG = 0
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -1,3 +1,4 @@
++#import "Compatibility.h"
+ // SPDX-License-Identifier: MIT
+ // InstantPasscode18 — brooktrout12
+ // Change the lock-screen presentation, leaving authentication to iOS.
+@@ -208,8 +209,8 @@
+     @autoreleasepool {
+         if (![[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.apple.springboard"])
+             return;
+-        // This release deliberately targets the iOS 18 family only.
+-        if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion != 18)
++        // Support the reviewed iOS 17 and iOS 18 families.
++        if (!BTSupportsIOS17And18())
+             return;
+ 
+         Class cls = NSClassFromString(@"SBUIPasscodeLockViewBase");
+@@ -230,6 +231,6 @@
+         MSHookMessageEx(cls, @selector(willTransitionToPasscodeView),
+                        (IMP)IPWillTransition, (IMP *)&IPOriginalWillTransition);
+         IPInstallTitleHooks(cls);
+-        NSLog(@"[InstantPasscode18] 1.1.0 loaded; lock-screen presentation hooks installed.");
+-    }
+-}
++        NSLog(@"[InstantPasscode18] 1.1.1 loaded; lock-screen presentation hooks installed.");
++    }
++}
+--- a/control
++++ b/control
+@@ -1,11 +1,11 @@
+ Package: com.brooktrout12.instantpasscode18
+ Name: InstantPasscode18
+-Version: 1.1.0
++Version: 1.1.1
+ Architecture: iphoneos-arm64
+ Description: Instant lock-screen keypad with native Face ID and a Face ID-aware passcode title.
+ Maintainer: brooktrout12
+ Author: brooktrout12
+ Section: Tweaks
+-Depends: firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate
++Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate
+ Priority: optional
+ Tag: purpose::extension
+--- a/tools/verify_package.py
++++ b/tools/verify_package.py
+@@ -111,7 +111,7 @@
+     metadata = dict(line.split(": ", 1) for line in control["control"][0].decode().splitlines() if ": " in line)
+     require(metadata["Architecture"] == "iphoneos-arm64", "Incorrect Debian architecture")
+     require(metadata["Package"] == "com.brooktrout12.instantpasscode18", "Incorrect package ID")
+-    require(metadata["Depends"] == "firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate", "Incorrect dependencies")
++    require(metadata["Depends"] == "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate", "Incorrect dependencies")
+     require(control["postinst"][1] == 0o755, "Post-install script is not executable")
+     subprocess.run(["sh", "-n"], input=control["postinst"][0], check=True)
+     data = payload[prefix + ".dylib"][0]

@@ -1,0 +1,26 @@
+[
+  {
+    "project": "ClassicLockSound",
+    "check": "audio",
+    "exit_code": 0,
+    "log": "audio.log"
+  },
+  {
+    "project": "ClassicLockSound",
+    "check": "policy",
+    "exit_code": 0,
+    "log": "policy.log"
+  },
+  {
+    "project": "ClassicLockSound",
+    "check": "build",
+    "exit_code": 0,
+    "log": "build.log"
+  },
+  {
+    "project": "ClassicLockSound",
+    "check": "package",
+    "exit_code": 0,
+    "log": "package.log"
+  }
+]

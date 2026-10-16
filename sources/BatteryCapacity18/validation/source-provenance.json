@@ -1,0 +1,8 @@
+{
+  "baseline_source": "BatteryCapacity18_1.0.5_source.zip",
+  "baseline_source_sha256": "047edcb3c72e42dd500fd6a4fa12fe464a6bbc690a6ab7d7c188593dd11ae495",
+  "baseline_version": "1.0.5",
+  "version": "1.0.6",
+  "package_sha256": "30ddbebc548dbb0d2eebb8508a5ac3d58c9c191aa5090d8d41520b49ddc059ec",
+  "source_patch": "IOS17-18.patch"
+}

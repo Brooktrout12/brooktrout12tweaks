@@ -1,0 +1,8 @@
+{
+  "baseline_source": "Dawn18_1.0.0_source.zip",
+  "baseline_source_sha256": "72188cd16866472fb6f9f448220b929faf4c864f4d0981c28d6fa94dcaf7956f",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "49c6fbdfcecf05b9bb2c25f82ad10077ddfa925951aedd81e54ef385331662c5",
+  "source_patch": "IOS17-18.patch"
+}

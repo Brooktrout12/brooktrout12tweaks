@@ -1,0 +1,20 @@
+[
+  {
+    "project": "CleanQuickActions",
+    "check": "package",
+    "exit_code": 0,
+    "log": "CleanQuickActions-package.log"
+  },
+  {
+    "project": "CleanQuickActions",
+    "check": "test_rules-compile",
+    "exit_code": 0,
+    "log": "CleanQuickActions-test_rules-compile.log"
+  },
+  {
+    "project": "CleanQuickActions",
+    "check": "test_rules",
+    "exit_code": 0,
+    "log": "CleanQuickActions-test_rules.log"
+  }
+]

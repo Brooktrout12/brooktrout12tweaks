@@ -1,0 +1,14 @@
+{
+  "original_package": "JB_Battery_Watch_2.1.0_rootless.deb",
+  "recorder_sha256": "62b8c18d3cb59e1f0a69dcd174b410369a72f3ae5a24ad20c428486784448cb9",
+  "source_sha256": {
+    "src/core.c": "aab1cf83e2c6f439e5a3434f0beaefd2f02b116c3b79f6097b37c5151edf4117",
+    "src/core.h": "db91a7d43c36afd785a5ff9cfa9c90329464446c2d4ce734413b9dc952fb9bf6",
+    "src/darwin.c": "39c35256c4e1ad898e60625ce26bac59920bb7c41a6df37ac612dba32b6496d6",
+    "src/darwin.h": "5fae16ba6962b84b71aa90e7a6ad1f1e6726d22af9f3db69db544c88333d35c4",
+    "src/inventory.c": "4d21ffe10bd2ef207a0ba47a88eb158883939339edc416593f298516f5ead68b",
+    "src/inventory.h": "029582fef23962ca398d56998a64088650f775bc27e4b254374765e8e16356f9",
+    "src/logger.c": "4273f9bf6f4d0c1f125bd272069bec98ea2971cc751c9692650e8abf4f410422",
+    "src/platform.h": "7541326ba5cbd8e2eb246db3b8570b64c1217891548ca13cd00c62b509f2db52"
+  }
+}

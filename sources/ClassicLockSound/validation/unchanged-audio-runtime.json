@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "baseline": "1.0.7",
+  "preserved_files": {
+    "Tweak.m": "f7507ae22f996d8e45e6ae5ab8d31bb5d374316165a5929a7147178c168a2e54",
+    "Compatibility.h": "b4214bf9985ec560891fd32fe558ddafd850a27d44a6e04bee6d8b9ff84ce57a",
+    "BTLockSoundPolicy.h": "07730e52fd612adbd63c257fd01ba674682eec535319ef7645c9b02fb1c4c641",
+    "BTVolume.c": "f0eca9c37e7f973a89f09223bedaf8d06606dca9815f12ecc53a928c4d6896ff",
+    "BTVolume.h": "fd730377068fa18f9fc8c9e73bedfd5ef1b5d69207dfa8ea651b0d23b175b092",
+    "BTPreferences.h": "f628bbb3491e0124886c0195dbb642cc6b8a66f99f49df571a1c73571e278453",
+    "assets/lock-original.caf": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+    "assets/settings-icon-master.png": "d8e627dc5d5cd9e1f1425019c840e3695e4b12878133ad127410896e8228fac2",
+    "layout/Library/Application Support/ClassicLockSound/lock.caf": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+    "prefs/Resources/icon.png": "eefe6bbb8671ef49cabbbdb2f9c86445c9768b2f3b2758cf577aef2a50e3a62a",
+    "prefs/Resources/icon@2x.png": "cf272ffba68c7f4dd7da551d1ba69ae940d6c39bac011bcc3cd2cdc336746ab1",
+    "prefs/Resources/icon@3x.png": "f25b656f3c51c15c039055a2ba7c7c4f5b3d30e6638b25894fc27985e4f71f53"
+  }
+}

@@ -1,0 +1,7 @@
+* text=auto
+*.deb binary
+*.png binary
+*.caf binary
+*.sh text eol=lf
+*.py text eol=lf
+*.yml text eol=lf

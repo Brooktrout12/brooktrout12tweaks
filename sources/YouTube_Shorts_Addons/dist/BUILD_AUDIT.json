@@ -1,0 +1,56 @@
+{
+  "build": "ForegroundOnly 1.0.1 Test 2; NoAds 1.0.0 unchanged",
+  "validation": "Compilation, lifecycle state test and package/binary inspection only; no on-device validation.",
+  "packages": [
+    {
+      "package": "YTShortsForegroundOnly_1.0.1_rootless.deb",
+      "bytes": 18820,
+      "sha256": "9c349f1659bb9e11dfdcf6f22fa71a08c920f117f8b36b608385dae3120c26c7",
+      "architecture": "arm64",
+      "minimum_ios": "15.0",
+      "only_injected_bundle": "com.google.ios.youtube",
+      "dependencies": [
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks"
+      ],
+      "ad_hoc_signature_present": true,
+      "signed_code_page_hashes_verified": true,
+      "device_tested": false
+    },
+    {
+      "package": "YTShortsNoAds_1.0.0_rootless.deb",
+      "bytes": 10144,
+      "sha256": "449dbb172279798bee5d175bce1cdc5bcf05cc0c4f2967022f292918fffdacfe",
+      "architecture": "arm64",
+      "minimum_ios": "15.0",
+      "only_injected_bundle": "com.google.ios.youtube",
+      "dependencies": [
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics",
+        "/usr/lib/libobjc.A.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks"
+      ],
+      "ad_hoc_signature_present": true,
+      "signed_code_page_hashes_verified": true,
+      "device_tested": false
+    }
+  ]
+}

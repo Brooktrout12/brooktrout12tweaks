@@ -1,0 +1,11 @@
+Package: com.brooktrout12.sidepress18
+Name: SidePress18
+Version: 1.0.1
+Architecture: iphoneos-arm64
+Description: Double-press the side button for Camera, apps, flashlight, or media controls.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader
+Priority: optional
+Tag: purpose::extension

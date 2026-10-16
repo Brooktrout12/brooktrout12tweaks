@@ -1,0 +1,185 @@
+{
+  "package": "com.brooktrout12.batterycapacity18_1.0.6_iphoneos-arm64.deb",
+  "version": "1.0.6",
+  "sha256": "30ddbebc548dbb0d2eebb8508a5ac3d58c9c191aa5090d8d41520b49ddc059ec",
+  "size": 49452,
+  "payload_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/BatteryCapacity18.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/BatteryCapacity18.plist",
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/BatteryCapacity18Prefs",
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/Info.plist",
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon.png",
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon@2x.png",
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon@3x.png",
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18.plist",
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18.png",
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18@2x.png",
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18@3x.png"
+  ],
+  "settings_icons": {
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon.png": {
+      "width": 29,
+      "height": 29
+    },
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18.png": {
+      "width": 29,
+      "height": 29
+    },
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon@2x.png": {
+      "width": 58,
+      "height": 58
+    },
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18@2x.png": {
+      "width": 58,
+      "height": 58
+    },
+    "var/jb/Library/PreferenceBundles/BatteryCapacity18Prefs.bundle/icon@3x.png": {
+      "width": 87,
+      "height": 87
+    },
+    "var/jb/Library/PreferenceLoader/Preferences/BatteryCapacity18@3x.png": {
+      "width": 87,
+      "height": 87
+    }
+  },
+  "binaries": {
+    "tweak": [
+      {
+        "architecture": "arm64",
+        "cpu_subtype": "0x0",
+        "minimum_ios": "17.0.0",
+        "rootless_rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "objc_classes": 8,
+        "converted_objc_classes": 0,
+        "block_object_imports": [],
+        "unsupported_table_accessors": [],
+        "signatures": [
+          {
+            "identifier": "com.brooktrout12.batterycapacity18",
+            "hash_type": 2,
+            "verified_code_pages": 27,
+            "special_slots": 2,
+            "code_directory_version": "0x20400"
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "cpu_subtype": "0x80000002",
+        "minimum_ios": "17.0.0",
+        "rootless_rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "objc_classes": 8,
+        "converted_objc_classes": 8,
+        "block_object_imports": [],
+        "unsupported_table_accessors": [],
+        "signatures": [
+          {
+            "identifier": "com.brooktrout12.batterycapacity18",
+            "hash_type": 2,
+            "verified_code_pages": 27,
+            "special_slots": 2,
+            "code_directory_version": "0x20400"
+          }
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "architecture": "arm64",
+        "cpu_subtype": "0x0",
+        "minimum_ios": "17.0.0",
+        "rootless_rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "objc_classes": 2,
+        "converted_objc_classes": 0,
+        "block_object_imports": [],
+        "unsupported_table_accessors": [],
+        "signatures": [
+          {
+            "identifier": "com.brooktrout12.batterycapacity18.prefs",
+            "hash_type": 2,
+            "verified_code_pages": 17,
+            "special_slots": 2,
+            "code_directory_version": "0x20400"
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "cpu_subtype": "0x80000002",
+        "minimum_ios": "17.0.0",
+        "rootless_rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "objc_classes": 2,
+        "converted_objc_classes": 2,
+        "block_object_imports": [],
+        "unsupported_table_accessors": [],
+        "signatures": [
+          {
+            "identifier": "com.brooktrout12.batterycapacity18.prefs",
+            "hash_type": 2,
+            "verified_code_pages": 17,
+            "special_slots": 2,
+            "code_directory_version": "0x20400"
+          }
+        ]
+      }
+    ]
+  },
+  "result": "PASS",
+  "device_tested": false
+}

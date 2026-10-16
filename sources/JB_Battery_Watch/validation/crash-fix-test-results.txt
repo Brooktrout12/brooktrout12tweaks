@@ -1,0 +1,11 @@
+PASS: prefs binary has no standalone tableView selector literal
+PASS: arm64: compiled checked list refresh and verified fallback selectors
+PASS: arm64e: compiled checked list refresh and verified fallback selectors
+PASS: pane redraw routes through the guarded helper and has a reentrancy guard
+PASS: UI failure is separate from recorder health and is included in export
+PASS: full list reload invalidates the pane cache and rebuilds from live status
+PASS: recorder binary is byte-identical to the 2.1.0 release
+PASS: all native recorder source files unchanged
+PASS: package recorder matches the unchanged build
+
+Static checks only. The runtime regression is a Linux dispatch model, not UIKit.

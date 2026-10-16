@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "SwitcherSweep.dylib",
+      "architecture": "arm64",
+      "uuid": "37720eed-9e64-329a-a799-ce5228aae2ca",
+      "match": true
+    },
+    {
+      "binary": "SwitcherSweep.dylib",
+      "architecture": "arm64e",
+      "uuid": "2f87bc85-b184-338a-b463-92015c5d85c4",
+      "match": true
+    }
+  ]
+}

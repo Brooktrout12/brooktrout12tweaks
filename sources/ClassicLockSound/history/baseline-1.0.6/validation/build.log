@@ -1,0 +1,15 @@
+[1;31m> [1;3;39mMaking all for tweak ClassicLockSound…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64)…[m
+[0;33m==> [1;39mLinking tweak ClassicLockSound (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSound…[m
+[0;34m==> [1;39mStripping ClassicLockSound (arm64)…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64e)…[m
+[0;33m==> [1;39mLinking tweak ClassicLockSound (arm64e)…[m
+ld: warning: object file /workspace/scratch/337dbaad81e8/classiclocksound_audio_update/ClassicLockSound/.theos/obj/arm64e/Tweak.m.2698f9a8.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSound…[m
+[0;34m==> [1;39mStripping ClassicLockSound (arm64e)…[m
+[0;34m==> [1;39mMerging tweak ClassicLockSound…[m
+[0;34m==> [1;39mSigning ClassicLockSound…[m
+[1;31m> [1;3;39mMaking stage for tweak ClassicLockSound…[m
+[0;36m==> [1;36mNotice:[m Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.classiclocksound:iphoneos-arm64' in `./packages/com.brooktrout12.classiclocksound_1.0.6_iphoneos-arm64.deb'

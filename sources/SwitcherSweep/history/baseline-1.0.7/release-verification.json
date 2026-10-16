@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "version": "1.0.7",
+  "debug_symbols": [
+    {
+      "architecture": "arm64",
+      "uuid": "688986bf-5e37-389a-a6b2-10ec86a3a62e",
+      "matches_package": true
+    },
+    {
+      "architecture": "arm64e",
+      "uuid": "ed08e763-8961-349a-a4a3-c697c013ffef",
+      "matches_package": true
+    }
+  ],
+  "behavior": "1.0.6 close handling and entry/exit timing preserved; only touch feedback changed",
+  "diagnostic_writer_present": false,
+  "device_runtime_tested": false
+}

@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "name": "3D Badge Clear 18",
+  "version": "1.0.1",
+  "package": "com.brooktrout12.3dbadgeclear18_1.0.1_iphoneos-arm64.deb",
+  "sha256": "829ac14e248325fe85e3609a0e51fed3dd6534a07cafa81da9664916ecd4a494",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/BadgeClear18.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/BadgeClear18.plist"
+  ],
+  "binaries": {
+    "BadgeClear18": [
+      {
+        "architecture": "arm64",
+        "uuid": "4dc71b53-10b2-304f-a2bf-e39cae571374",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 17
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "ca56b334-a849-3205-8503-cea69a47c214",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 17
+          }
+        ]
+      }
+    ]
+  },
+  "on_device_tested": false,
+  "badge_clearing_verified_on_ios_18_6": false,
+  "automatic_icon_tint_verified_on_ios_18_6": false
+}

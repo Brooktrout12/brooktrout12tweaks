@@ -1,0 +1,16 @@
+PASS: universal preferences contains two slices
+PASS: arm64: correct MH_BUNDLE architecture, PAC ABI 2 where required
+PASS: arm64: iOS 15 minimum, bounded segments, no writable executable segment
+PASS: arm64: expected system dependencies and rootless library search paths
+PASS: arm64: chained fixups and read-only offset initializer
+PASS: arm64: every ad-hoc SHA256 signature page verified (18)
+PASS: arm64e: correct MH_BUNDLE architecture, PAC ABI 2 where required
+PASS: arm64e: iOS 15 minimum, bounded segments, no writable executable segment
+PASS: arm64e: expected system dependencies and rootless library search paths
+PASS: arm64e: chained fixups and read-only offset initializer
+PASS: arm64e: every ad-hoc SHA256 signature page verified (18)
+PASS: PreferenceLoader bundle and principal class match
+PASS: sandbox profile grants only Settings read access to report folder
+
+Bundle SHA256: fa1fababdb7f3f4bfa7cd8177a5b7efdef4f4e9c3536997eecf58386db5d94f8
+Static checks only. UIKit/Preferences dispatch, arm64e dyld compatibility, device trust policy and share-sheet behavior remain untested on a physical iPhone.

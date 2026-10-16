@@ -1,0 +1,32 @@
+{
+  "version": "1.0.1",
+  "files": {
+    "BUILD-IOS17-18.md": "109f161068b9f3e56d8dda470f91b5254d36096f8a525e07d6ab7099b571d0ae",
+    "BadgeClear18.plist": "c1d4c5bd2b535e81c51dcc3733ace5516a8e720c0665e7edaa73c0d3f75100dc",
+    "Compatibility.h": "b4214bf9985ec560891fd32fe558ddafd850a27d44a6e04bee6d8b9ff84ce57a",
+    "IOS17-18.patch": "0dc620937bc3abb2f28176539649eca96c2918cd824bf142ae344f776398ab1e",
+    "LICENSE": "f9bcfd33a83efad513241fb7e0831089a2170c2f7fe19927d7903c50bc29c86d",
+    "Makefile": "3be5a1e8ba6d2d67ecb53880cadc8d09ad973bcd3e5580685a32f03b8bed8a35",
+    "README.md": "7bc5f5088c39ce477a98cbc255e43eae9ef3d0078b4fcc2c57425e5125a6c96f",
+    "Runtime.h": "b6a6ba1926a2117ba222397a85151ec149c7b24879fbdc0aa5143bdbb4ed9b57",
+    "THIRD-PARTY-NOTICES.md": "dcd16c84175cbc752882276906bdc903b2e8a0a68e658eb5e8be9231d026fb9b",
+    "Tweak.m": "93fa047fded97e9a56b05c4ca461473ccd21ddc1702e8afe2208ba078fd1d1d1",
+    "control": "1dc05a8f0882be1b97520e269eac9db62b535b0c9e45ee2803d43df5def4f4fb",
+    "debug-symbols/arm64/BadgeClear18.dylib.dSYM/Contents/Info.plist": "192dbfa132c54232ef88cf837803f5d2c433fa344424dc001ed91cc8387edcf5",
+    "debug-symbols/arm64/BadgeClear18.dylib.dSYM/Contents/Resources/DWARF/BadgeClear18.dylib": "1291f14617b6b920d25c19e9a996fd0b1ba40290c671a94312a572df98e9e5ce",
+    "debug-symbols/arm64e/BadgeClear18.dylib.dSYM/Contents/Info.plist": "192dbfa132c54232ef88cf837803f5d2c433fa344424dc001ed91cc8387edcf5",
+    "debug-symbols/arm64e/BadgeClear18.dylib.dSYM/Contents/Resources/DWARF/BadgeClear18.dylib": "bc4030dba42aedeabf7f67cfdddbb1a879281d82f42ab5c8446d265ce59f9dac",
+    "history/baseline-1.0.0/HISTORICAL.txt": "c6e75d31e0757378fe7e17da4b5a11cf495d40f4ee998a252d09ad150ab41332",
+    "history/baseline-1.0.0/README.md": "4415e76314c5db1d47ea9920c778f909d320acf05895e2e38b34691a5ebe8551",
+    "history/baseline-1.0.0/VALIDATION.json": "7fb7a6f31bd0c0a1f6ae7afeeb7607b34cf261566fc5450f7c36741fa995cc0c",
+    "scripts/macho.py": "3347096be36d3be7b4b56a677a785873891800eb63f6c275b30368e5db56ee83",
+    "scripts/signature.py": "c5157bed8d10e9051ae7d4d7f6b558e80e57516344a1db4cfa3bc4154a65412f",
+    "scripts/verify_package.py": "c321ebb5ead724fda9cf312285744757c44f33d9fac6c2bed25184fb668505e4",
+    "validation/BadgeClear18-package.log": "268f7995e3efcdc75450d5bf576c0f9b5c05192c3031910d52d305baa307f352",
+    "validation/BadgeClear18.log": "293ced10d272ee091bfa9f7c0ef0dea902c698a2a108158cd074162798214e12",
+    "validation/debug-symbols.json": "e3f862f3834af773f9e5da0f0447bec007cb233c9eea49a52754b46ce6f91caa",
+    "validation/release-validation.json": "432ed838661a3da8acdf3a34d114f4a132812656003edc341dd01d551455c656",
+    "validation/source-provenance.json": "ede157f7bcae5017dad3acda588b1573f6f7a730f9a3b668efa5f09e2f1ea6af",
+    "validation/test-results.json": "210c24db910fb00dfbfaaee32505d622d124074a5276cbb3762df47d811292cb"
+  }
+}

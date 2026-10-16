@@ -1,0 +1,32 @@
+PASS: matching live nonce and saved sample confirms working
+PASS: pending request is not called success
+PASS: timeout produces a warning, not a false crash claim
+PASS: a previous request token cannot confirm a new check
+PASS: recent file alone is not a live confirmation
+PASS: missing status is an error
+PASS: unsupported schema rejected
+PASS: future timestamp is not trusted
+PASS: implausible sample count rejected
+PASS: sleep-delayed sample warns without claiming a crash
+PASS: missing report is an error
+PASS: wrong report header rejected
+PASS: failed report write cannot pass live check
+PASS: failed session save cannot pass live check
+PASS: insufficient process access is an error
+PASS: partial process coverage remains qualified
+PASS: missing battery measurements remain qualified
+PASS: unavailable notification channel is not success
+PASS: completed recording needs no running daemon
+PASS: recorder's precise error is retained
+PASS: paused report is exportable but not called working
+PASS: unrecognized state rejected
+PASS: export copies readable allowlisted diagnostic
+PASS: missing source is captured as unavailable
+PASS: path traversal is rejected
+PASS: oversized export request is rejected
+PASS: bounded export handles truncation
+PASS: export includes source contents
+PASS: export includes file-read error information
+PASS: truncation is explicitly reported
+
+30 health/export checks passed. Native Settings UI and Apple notification delivery were NOT executed.

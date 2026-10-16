@@ -1,0 +1,8 @@
+[
+  {
+    "project": "BadgeClear18",
+    "check": "package",
+    "exit_code": 0,
+    "log": "BadgeClear18-package.log"
+  }
+]

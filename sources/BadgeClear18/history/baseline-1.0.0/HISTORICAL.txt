@@ -1,0 +1,1 @@
+Original baseline documentation and reports. They do not validate the new iOS 17/18 build. See the project README.md and validation/ for current results. Older install commands and file hashes here apply only to the baseline release.

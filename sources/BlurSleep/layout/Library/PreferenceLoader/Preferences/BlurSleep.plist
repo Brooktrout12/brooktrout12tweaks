@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>entry</key>
+	<dict>
+		<key>bundle</key>
+		<string>BlurSleepPrefs</string>
+		<key>cell</key>
+		<string>PSLinkCell</string>
+		<key>detail</key>
+		<string>BSRootListController</string>
+		<key>icon</key>
+		<string>/var/jb/Library/PreferenceBundles/BlurSleepPrefs.bundle/icon.png</string>
+		<key>label</key>
+		<string>BlurSleep</string>
+		<key>isController</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

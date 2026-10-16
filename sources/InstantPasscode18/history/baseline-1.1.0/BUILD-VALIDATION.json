@@ -1,0 +1,55 @@
+{
+  "package": "com.brooktrout12.instantpasscode18_1.1.0_iphoneos-arm64.deb",
+  "version": "1.1.0",
+  "sha256": "8d458526373e218e5a152795017de1e0170f86541445d2f2735ae16b9a50a0bf",
+  "result": "PASS: package and code-signature integrity",
+  "device_tested": false,
+  "slices": [
+    {
+      "architecture": "arm64",
+      "verified_code_directories": 1,
+      "verified_page_hashes": 17,
+      "libraries": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "verified_code_directories": 1,
+      "verified_page_hashes": 17,
+      "libraries": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ]
+    }
+  ],
+  "previous_version_user_report": {
+    "version": "1.0.0",
+    "result": "User reported working flawlessly",
+    "device": "iPhone 11 Pro",
+    "ios": "18.6",
+    "jailbreak": "Dopamine 3.0.9 rootless"
+  },
+  "new_ui_device_tested": false
+}

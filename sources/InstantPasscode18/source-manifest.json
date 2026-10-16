@@ -1,0 +1,29 @@
+{
+  "version": "1.1.1",
+  "files": {
+    "BUILD-IOS17-18.md": "0f6110901c48fbbda20b21c4d70cb41e26a192df10294171a6c7b23bf6f1909b",
+    "Compatibility.h": "b4214bf9985ec560891fd32fe558ddafd850a27d44a6e04bee6d8b9ff84ce57a",
+    "IOS17-18.patch": "76294eeaed7b894e583aa8a7dd1debea546dd46a7f5ee8d3a140d4d574a88a32",
+    "InstantPasscode18.plist": "22957c2b6df0a9dd9c7deba18639321701aadf1e6452b86d9be434e48c7f454f",
+    "LICENSE": "159c00768e27fefe4d40956fb4d41caac96a0ab6cba6e0916e24eb9297672e82",
+    "Makefile": "001ae88d38801126d1430550f8ecb12bb1bcb17f697435dd9c0cd74ceaddaa99",
+    "README.md": "ff94422e9ca73ff165a03af91ef5ae07be139623dec8a425e36ca0dd6e089858",
+    "Tweak.m": "0dc8f496fec6f059760bcffc9f1776bb5ac18bed27c2e2761d6ebf72dc143718",
+    "control": "3bfa182a329beeddbc81992eaa46465eefba9ae86c676620938eb936ae322b6b",
+    "debug-symbols/arm64/InstantPasscode18.dylib.dSYM/Contents/Info.plist": "9a41d5c7d88a847a902c8bd62ebc409a91c6a5fec7da0823b2758f47bc9548ce",
+    "debug-symbols/arm64/InstantPasscode18.dylib.dSYM/Contents/Resources/DWARF/InstantPasscode18.dylib": "e7d7b9b0ea1809b8a97cf9e3a4b3a5eb48d3150ef47aec4fb611a56ab2ae87a0",
+    "debug-symbols/arm64e/InstantPasscode18.dylib.dSYM/Contents/Info.plist": "9a41d5c7d88a847a902c8bd62ebc409a91c6a5fec7da0823b2758f47bc9548ce",
+    "debug-symbols/arm64e/InstantPasscode18.dylib.dSYM/Contents/Resources/DWARF/InstantPasscode18.dylib": "64f25f68868cfb399df8082370a393a385808bc97c4713d026b5141f2ee522b7",
+    "history/baseline-1.1.0/BUILD-VALIDATION.json": "18de40622c0d73bb5c6549abe360fa84764d6e8166566af96c45fa266eeeda1f",
+    "history/baseline-1.1.0/HISTORICAL.txt": "c6e75d31e0757378fe7e17da4b5a11cf495d40f4ee998a252d09ad150ab41332",
+    "history/baseline-1.1.0/README.md": "5dec8f965af9d157a7e3856b4ffc0c6ad1bbbf1b18c4f91f51554cc1084714ce",
+    "layout/DEBIAN/postinst": "fcc545ec826b3afbb0e5a3dc155b4af5984f21e3af7f935b9cc0f0c27d85181f",
+    "tools/verify_package.py": "d2ac5ec9fb2ee6f77c529d7ad1c28564afdc09b2d9e38e5227c72bd2c72b55b9",
+    "validation/InstantPasscode18-package.log": "54f58d1809bd3f332c6350e80eec9af022fe1fa174b9bb6a454c97c3e64e6120",
+    "validation/InstantPasscode18.log": "0317fd9794bd1640b46219af40ab2556ca107904619f83afb8f5d2dfd1b9021e",
+    "validation/debug-symbols.json": "5ce7c931833e78850fa1b89946962fb9f4eccbc32a3c723fad10ea8bd2393090",
+    "validation/release-validation.json": "10fac7ac9f5ebdfe2cfdc954ef729ee3d92bc271aa663efd899388a1b9973cb6",
+    "validation/source-provenance.json": "a6ff44c011364ded8e5c6858f702cf70f42bb4bd83e07125cb9c2507f4705c78",
+    "validation/test-results.json": "5df8d8354af3ae7cc41a6f0c82d39578bcfd324d8286b7dbb3d8530c5d355aaf"
+  }
+}

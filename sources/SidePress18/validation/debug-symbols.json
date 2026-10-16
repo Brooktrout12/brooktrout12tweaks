@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "SidePress18.dylib",
+      "architecture": "arm64",
+      "uuid": "7beec16f-59cd-3ff2-a1e0-9d2535f36a62",
+      "match": true
+    },
+    {
+      "binary": "SidePress18.dylib",
+      "architecture": "arm64e",
+      "uuid": "22e8e5c8-edcc-3889-b410-bbb36fe55261",
+      "match": true
+    },
+    {
+      "binary": "SidePress18Settings.dylib",
+      "architecture": "arm64",
+      "uuid": "f9b64955-dc51-32bf-9e72-1409db4e7c19",
+      "match": true
+    },
+    {
+      "binary": "SidePress18Settings.dylib",
+      "architecture": "arm64e",
+      "uuid": "8357fd6c-06a3-3ed8-9229-75cb49b7f44d",
+      "match": true
+    },
+    {
+      "binary": "SidePress18Prefs",
+      "architecture": "arm64",
+      "uuid": "b74bac74-b6d1-32d9-b3b1-ff0fdff3caf6",
+      "match": true
+    },
+    {
+      "binary": "SidePress18Prefs",
+      "architecture": "arm64e",
+      "uuid": "e96a4a72-3736-38c2-8eb2-fb374ce466f6",
+      "match": true
+    }
+  ]
+}

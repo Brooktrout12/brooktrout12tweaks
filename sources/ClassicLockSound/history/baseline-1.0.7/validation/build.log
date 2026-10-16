@@ -1,0 +1,224 @@
+{"result":"PASS","observed_lock_events_selected":6,"selection_grid_cases":524296,"unrelated_sounds_excluded":true,"full_width_event_types":true,"device_playback_tested":false}
+{
+  "result": "PASS",
+  "packaged_audio_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "frames": 39047,
+  "sample_rate": 44100,
+  "channels": 2,
+  "minimum_is_silent": true,
+  "maximum_bit_identical_to_original": true,
+  "levels_checked": 101,
+  "all_signed_16_bit_values_checked_per_level": 65536,
+  "maximum_rounding_error_pcm_units": 0.5,
+  "independent_ffmpeg_decode_at_percent": [
+    0,
+    1,
+    44,
+    50,
+    99,
+    100
+  ],
+  "invalid_inputs_leave_buffer_unchanged": true,
+  "device_runtime_tested": false
+}
+[0;36m==> [1;39mCleaning…[m
+[1;31m> [1;3;39mMaking clean in prefs…[m
+[0;36m==> [1;39mCleaning…[m
+[1;31m> [1;3;39mMaking all for tweak ClassicLockSound…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64)…[m
+[0;32m==> [1;39mCompiling BTVolume.c (arm64)…[m
+[0;33m==> [1;39mLinking tweak ClassicLockSound (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSound…[m
+[0;34m==> [1;39mStripping ClassicLockSound (arm64)…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64e)…[m
+[0;32m==> [1;39mCompiling BTVolume.c (arm64e)…[m
+[0;33m==> [1;39mLinking tweak ClassicLockSound (arm64e)…[m
+ld: warning: object file /workspace/scratch/337dbaad81e8/classiclocksound_volume_update/ClassicLockSound/.theos/obj/arm64e/Tweak.m.bfd31d71.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/classiclocksound_volume_update/ClassicLockSound/.theos/obj/arm64e/BTVolume.c.bfd31d71.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSound…[m
+[0;34m==> [1;39mStripping ClassicLockSound (arm64e)…[m
+[0;34m==> [1;39mMerging tweak ClassicLockSound…[m
+[0;34m==> [1;39mSigning ClassicLockSound…[m
+[1;31m> [1;3;39mMaking all in prefs…[m
+[1;31m> [1;3;39mMaking all for bundle ClassicLockSoundPrefs…[m
+[0;35m==> [1;39mCopying resource directories into the bundle wrapper…[m
+[0;32m==> [1;39mCompiling BTLockSoundPrefsController.m (arm64)…[m
+[0;32m==> [1;39mCompiling ../BTVolume.c (arm64)…[m
+[0;33m==> [1;39mLinking bundle ClassicLockSoundPrefs (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSoundPrefs…[m
+[0;34m==> [1;39mStripping ClassicLockSoundPrefs (arm64)…[m
+[0;32m==> [1;39mCompiling BTLockSoundPrefsController.m (arm64e)…[m
+[0;32m==> [1;39mCompiling ../BTVolume.c (arm64e)…[m
+[0;33m==> [1;39mLinking bundle ClassicLockSoundPrefs (arm64e)…[m
+ld: warning: object file /workspace/scratch/337dbaad81e8/classiclocksound_volume_update/ClassicLockSound/.theos/obj/arm64e/BTLockSoundPrefsController.m.e60a1cc7.o was built with an incompatible arm64e ABI compiler
+ld: warning: object file /workspace/scratch/337dbaad81e8/classiclocksound_volume_update/ClassicLockSound/.theos/obj/arm64e/../BTVolume.c.e60a1cc7.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for ClassicLockSoundPrefs…[m
+[0;34m==> [1;39mStripping ClassicLockSoundPrefs (arm64e)…[m
+[0;34m==> [1;39mMerging bundle ClassicLockSoundPrefs…[m
+[0;34m==> [1;39mSigning ClassicLockSoundPrefs…[m
+[1;31m> [1;3;39mMaking stage for tweak ClassicLockSound…[m
+[1;31m> [1;3;39mMaking stage in prefs…[m
+[1;31m> [1;3;39mMaking stage for bundle ClassicLockSoundPrefs…[m
+[0;36m==> [1;36mNotice:[m Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.classiclocksound:iphoneos-arm64' in `./packages/com.brooktrout12.classiclocksound_1.0.7_iphoneos-arm64.deb'
+{
+  "package": "com.brooktrout12.classiclocksound_1.0.7_iphoneos-arm64.deb",
+  "sha256": "2f1802f7554cdfbcc6bb8add8586eee407ec0ddb5e5a7198517ee9d808cca4ab",
+  "result": "PASS",
+  "slices": [
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64",
+      "uuid": "2a6366b3-7298-3765-b1a3-e12a34e2dd72",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 0,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": true,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound"
+        }
+      ]
+    },
+    {
+      "binary": "ClassicLockSound.dylib",
+      "architecture": "arm64e",
+      "uuid": "7da76eb8-95d0-3d3d-9759-362b2b844841",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 15,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": true,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound"
+        }
+      ]
+    },
+    {
+      "binary": "ClassicLockSoundPrefs",
+      "architecture": "arm64",
+      "uuid": "bd08d73f-0e85-3b7b-a1bb-5d765b80e781",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 0,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": false,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound.prefs"
+        }
+      ]
+    },
+    {
+      "binary": "ClassicLockSoundPrefs",
+      "architecture": "arm64e",
+      "uuid": "69240f59-eb18-3c91-a082-31ce0d3e7af2",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 4,
+      "converted_constant_string_records": 16,
+      "objc_block_literals": false,
+      "native_feedback_to_file_route_present": false,
+      "diagnostic_capture_removed": true,
+      "direct_audio_playback_absent": true,
+      "global_audio_hooks_absent": true,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.classiclocksound.prefs"
+        }
+      ]
+    }
+  ],
+  "packaged_audio_sha256": "90d02d979ff94defa18b05ca91ba8633a7eb73f28574b015af09d542d8331543",
+  "default_audio_gain": 1.0,
+  "volume_percent_range": [
+    0,
+    100
+  ],
+  "settings_icon_sizes": [
+    29,
+    58,
+    87
+  ],
+  "observed_device_route": {
+    "sound_type": 5,
+    "event_type": 1002
+  },
+  "rootless_only_payload": true,
+  "no_system_file_replacement_or_maintainer_scripts": true,
+  "device_runtime_tested": false
+}

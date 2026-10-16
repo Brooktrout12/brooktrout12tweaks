@@ -1,0 +1,86 @@
+{
+  "result": "PASS",
+  "name": "Clean Quick Actions",
+  "version": "1.0.1",
+  "package": "com.brooktrout12.cleanquickactions_1.0.1_iphoneos-arm64.deb",
+  "sha256": "38e0a0e32e6ea7e3f7ed89d462b2f6042b6ada38ae009ea16de565494a4206fa",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.plist",
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/Info.plist",
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/Preferences.plist",
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/icon.png",
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/icon@2x.png",
+    "var/jb/Library/PreferenceLoader/Preferences/CleanQuickActions/icon@3x.png"
+  ],
+  "settings_registration": {
+    "entry": {
+      "cell": "PSSwitchCell",
+      "label": "Clean Quick Actions",
+      "icon": "icon.png",
+      "defaults": "com.brooktrout12.cleanquickactions",
+      "key": "Enabled",
+      "default": true,
+      "PostNotification": "com.brooktrout12.cleanquickactions/preferences.changed"
+    }
+  },
+  "binaries": {
+    "CleanQuickActions": [
+      {
+        "architecture": "arm64",
+        "uuid": "b710338a-7938-3aed-a961-6ca1b2fcbe35",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 17
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "2679fb38-95ef-34d5-b868-5b3070e3f12b",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 17
+          }
+        ]
+      }
+    ]
+  },
+  "on_device_tested": false,
+  "direct_settings_switch_verified_on_ios": false,
+  "private_class_coverage_verified_on_ios_18_6": false
+}

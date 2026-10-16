@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>entry</key><dict>
+        <key>cell</key><string>PSSwitchCell</string>
+        <key>label</key><string>Clean Quick Actions</string>
+        <key>icon</key><string>icon.png</string>
+        <key>defaults</key><string>com.brooktrout12.cleanquickactions</string>
+        <key>key</key><string>Enabled</string>
+        <key>default</key><true/>
+        <key>PostNotification</key><string>com.brooktrout12.cleanquickactions/preferences.changed</string>
+    </dict>
+</dict></plist>

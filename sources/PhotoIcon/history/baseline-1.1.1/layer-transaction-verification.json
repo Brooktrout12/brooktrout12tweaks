@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "architecture": "arm64",
+      "file": "PISystemIconReader.m",
+      "function": "PISharedImage",
+      "layer_call_sites_checked": 9,
+      "balanced_exit_blocks": 3,
+      "failures": [],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISpringBoardImages.m",
+      "function": "PILayerForIcon",
+      "layer_call_sites_checked": 5,
+      "balanced_exit_blocks": 2,
+      "failures": [],
+      "pass": true
+    },
+    {
+      "architecture": "arm64",
+      "file": "PISpringBoardImages.m",
+      "function": "PIReplacementMiniLayer",
+      "layer_call_sites_checked": 11,
+      "balanced_exit_blocks": 2,
+      "failures": [],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISystemIconReader.m",
+      "function": "PISharedImage",
+      "layer_call_sites_checked": 9,
+      "balanced_exit_blocks": 3,
+      "failures": [],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISpringBoardImages.m",
+      "function": "PILayerForIcon",
+      "layer_call_sites_checked": 5,
+      "balanced_exit_blocks": 2,
+      "failures": [],
+      "pass": true
+    },
+    {
+      "architecture": "arm64e",
+      "file": "PISpringBoardImages.m",
+      "function": "PIReplacementMiniLayer",
+      "layer_call_sites_checked": 11,
+      "balanced_exit_blocks": 2,
+      "failures": [],
+      "pass": true
+    }
+  ],
+  "device_runtime_tested": false
+}

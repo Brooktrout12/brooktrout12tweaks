@@ -1,0 +1,52 @@
+{
+  "package": "com.brooktrout12.instantclear18_1.0.0_iphoneos-arm64.deb",
+  "version": "1.0.0",
+  "sha256": "b8348c1ca03174457ee6189cb8a55a72f13216eb54d419acf92356cb58d27213",
+  "result": "PASS: package and code-signature integrity",
+  "device_tested": false,
+  "binaries": [
+    {
+      "path": "var/jb/Library/MobileSubstrate/DynamicLibraries/InstantClear18.dylib",
+      "slices": [
+        {
+          "architecture": "arm64",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 17,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        },
+        {
+          "architecture": "arm64e",
+          "verified_code_directories": 1,
+          "verified_page_hashes": 17,
+          "libraries": [
+            "/usr/lib/libobjc.A.dylib",
+            "/System/Library/Frameworks/Foundation.framework/Foundation",
+            "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+            "/System/Library/Frameworks/UIKit.framework/UIKit",
+            "/usr/lib/libSystem.B.dylib",
+            "@rpath/CydiaSubstrate.framework/CydiaSubstrate"
+          ],
+          "rpaths": [
+            "/var/jb/Library/Frameworks",
+            "/var/jb/usr/lib",
+            "@loader_path/.jbroot/Library/Frameworks",
+            "@loader_path/.jbroot/usr/lib"
+          ]
+        }
+      ]
+    }
+  ]
+}

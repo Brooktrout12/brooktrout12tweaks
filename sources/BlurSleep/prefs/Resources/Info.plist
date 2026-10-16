@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>BlurSleep</string>
+	<key>CFBundleExecutable</key>
+	<string>BlurSleepPrefs</string>
+	<key>CFBundleIconFile</key>
+	<string>icon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>icon.png</string>
+		<string>icon@2x.png</string>
+		<string>icon@3x.png</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.brooktrout12.blursleep.prefs</string>
+	<key>CFBundleName</key>
+	<string>BlurSleep</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.2</string>
+	<key>CFBundleVersion</key>
+	<string>3</string>
+	<key>MinimumOSVersion</key>
+	<string>17.0</string>
+	<key>NSPrincipalClass</key>
+	<string>BSRootListController</string>
+</dict>
+</plist>

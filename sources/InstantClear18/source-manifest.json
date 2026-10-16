@@ -1,0 +1,29 @@
+{
+  "version": "1.0.1",
+  "files": {
+    "BUILD-IOS17-18.md": "bd8a4e12688e3ce82025ec12a5012d304dfb651fd4832ff8a9dfc596875d9ebf",
+    "Compatibility.h": "b4214bf9985ec560891fd32fe558ddafd850a27d44a6e04bee6d8b9ff84ce57a",
+    "IOS17-18.patch": "91786c939b4f93ae7e2a0c0438e3d314907e0319fc5718f217392be3f9de1782",
+    "InstantClear18.plist": "e7dc57a8e03d8bfbdcc532669806e91849452e5974645aad9dffde2d6e2a90d5",
+    "LICENSE": "159c00768e27fefe4d40956fb4d41caac96a0ab6cba6e0916e24eb9297672e82",
+    "Makefile": "1803b6a576dca844b122f84e0a39b889d3e1bad98c53c7638a5353cf096c5ca6",
+    "README.md": "ee3048d09d073b9515fa6fdb929e08647cf6a4b762f4767c8dd98a3770fb6253",
+    "Tweak.m": "2fd7fcd2d8151d0b44d11e5beadbbd7c58775b5155d000ba77b60e1eab9d9711",
+    "control": "dbbe3e64717d5c47794055ad8cba2a733be39ad90bc4d6714d7dded468fc3a99",
+    "debug-symbols/arm64/InstantClear18.dylib.dSYM/Contents/Info.plist": "6ec6280bad7a430bd7da32cab44b692eee6f92c4149d76382f223dcec220c091",
+    "debug-symbols/arm64/InstantClear18.dylib.dSYM/Contents/Resources/DWARF/InstantClear18.dylib": "beb53d98e356a9e8527902c1eca10f82556794c2d501c565061d6f06e2a12e24",
+    "debug-symbols/arm64e/InstantClear18.dylib.dSYM/Contents/Info.plist": "6ec6280bad7a430bd7da32cab44b692eee6f92c4149d76382f223dcec220c091",
+    "debug-symbols/arm64e/InstantClear18.dylib.dSYM/Contents/Resources/DWARF/InstantClear18.dylib": "d8e8312eb61e4f9c71cda8ec9fb120089c29ff0ab1eab376e05a295869db37a8",
+    "history/baseline-1.0.0/BUILD_REPORT.json": "386a2a58f918714a8c1a440aa1ca5e304e0bacdb8e271c82b17a15f8d3529574",
+    "history/baseline-1.0.0/HISTORICAL.txt": "c6e75d31e0757378fe7e17da4b5a11cf495d40f4ee998a252d09ad150ab41332",
+    "history/baseline-1.0.0/README.md": "1273ef61a0046f6b11481c0c9710d50923bf21129a5599c5fbacde37ba2fd836",
+    "layout/DEBIAN/postinst": "fcc545ec826b3afbb0e5a3dc155b4af5984f21e3af7f935b9cc0f0c27d85181f",
+    "tools/verify_package.py": "39e6f94019e59270896ab8db94b96662c857c898a52fef8b791519b23d3c91fe",
+    "validation/InstantClear18-package.log": "512ce927052719c20a834a258cb54db880e2137e8d4f57ab96645bdf066b8197",
+    "validation/InstantClear18.log": "94e23a4602fdc4a6808f53a66a3321c4310dd0e03a780b4ced3ecbb5f09b6611",
+    "validation/debug-symbols.json": "12ad46069bbb5b20a8ca52ad8c5694f29c757c9acc59cda5919683c3dc3085a8",
+    "validation/release-validation.json": "1581049a2625db73c7dd83470032bb79fa653d0c22c945608264bbafc85459e3",
+    "validation/source-provenance.json": "fa76227f0758e4853915590597f45bf0f6ceb5ad846eb3c272bccda5a42f620e",
+    "validation/test-results.json": "aba4864fa6f2d1159dd6461d4bd2ffb404283cd554d8b6a88cae121920fb63d5"
+  }
+}

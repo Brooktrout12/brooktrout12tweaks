@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict><key>entry</key><dict>
+    <key>bundle</key><string>Dawn18Prefs</string>
+    <key>cell</key><string>PSLinkCell</string>
+    <key>detail</key><string>D18RootController</string>
+    <key>label</key><string>Dawn 18</string>
+    <key>isController</key><true/>
+    <key>icon</key><string>icon.png</string>
+</dict></dict></plist>

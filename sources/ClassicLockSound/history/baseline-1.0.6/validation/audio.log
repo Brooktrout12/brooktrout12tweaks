@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "source_wav_sha256": "8fad6338e6fe6b4d3d645ec4240b226c25c970a6d8ae544b0dbbf101ca682c74",
+  "packaged_audio_sha256": "f1974dfb867c73043b3dbdb902f4f759aa652932b5583eb224d0733bc36d3918",
+  "decoded_pcm_sha256": "dd2b97745ed79efeb8bc78812cddd94ec8be28742bad7ce8e009c86150219d13",
+  "sample_for_sample_identical": true,
+  "volume_adjustment": false,
+  "resampling": false,
+  "sample_rate": 44100,
+  "channels": 2,
+  "frames": 39029,
+  "bytes": 156246,
+  "device_runtime_tested": false
+}

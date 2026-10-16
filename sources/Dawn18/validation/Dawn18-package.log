@@ -1,0 +1,188 @@
+{
+  "result": "PASS",
+  "version": "1.0.1",
+  "package": "com.brooktrout12.dawn18_1.0.1_iphoneos-arm64.deb",
+  "sha256": "49c6fbdfcecf05b9bb2c25f82ad10077ddfa925951aedd81e54ef385331662c5",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18Apps.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18Apps.plist",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18SpringBoard.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18SpringBoard.plist",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/Dawn18Prefs",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/Info.plist",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon.png",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon.svg",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon@2x.png",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon@3x.png",
+    "var/jb/Library/PreferenceLoader/Preferences/Dawn18.plist"
+  ],
+  "binaries": {
+    "Dawn18Apps": [
+      {
+        "architecture": "arm64",
+        "uuid": "bc7cbc67-7294-3ea0-88f5-d89432051fe9",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 18
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "35d825ed-c87a-3dda-9385-142d7625af38",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 18
+          }
+        ]
+      }
+    ],
+    "Dawn18SpringBoard": [
+      {
+        "architecture": "arm64",
+        "uuid": "60485f08-8b6e-3643-857f-abaf530d2d46",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 26
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "45f40b7e-0ac7-337b-bb09-044ec7dde2a1",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 26
+          }
+        ]
+      }
+    ],
+    "Dawn18Prefs": [
+      {
+        "architecture": "arm64",
+        "uuid": "47b4c90d-c071-3ff8-8893-bfc0681894bb",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 22
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "75252ca0-49db-3916-b6cc-00b3947dd13c",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 22
+          }
+        ]
+      }
+    ]
+  },
+  "on_device_tested": false,
+  "settings_visually_verified_on_ios": false,
+  "private_class_coverage_verified_on_ios_18_6": false
+}

@@ -1,0 +1,15 @@
+PASS: upgrade preinst unloads old job
+PASS: successful probe then bootstrap creates recording status
+PASS: v2 upgrade marks session preservation and stops old job
+PASS: v2 Settings upgrade preserves report and saved deadline bytes
+PASS: 2.1.0 to 2.1.1 preserves active report and exact saved state
+PASS: completed recording stays marked complete across the Settings fix
+PASS: remove unloads only this job and preserves report
+PASS: purge removes private session state but keeps user report
+PASS: failed native probe does not launch and visibly reports failure
+PASS: startup failure publishes machine-readable health for Settings
+PASS: reinstall archives, rather than overwrites, previous reports
+PASS: launchd rejection is visible and is not called recording
+
+Sandboxed script tests; launchctl, native probe, iOS filesystem paths and chown were mocked.
+Not a physical-device install test.

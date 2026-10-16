@@ -1,0 +1,50 @@
+[
+  {
+    "project": "PhotoIcon",
+    "check": "package",
+    "exit_code": 0,
+    "log": "PhotoIcon-package.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "callback_codegen",
+    "exit_code": 0,
+    "log": "PhotoIcon-callback_codegen.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "system_blocks",
+    "exit_code": 0,
+    "log": "PhotoIcon-system_blocks.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "layer_transactions",
+    "exit_code": 0,
+    "log": "PhotoIcon-layer_transactions.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "icon_isolation",
+    "exit_code": 0,
+    "log": "PhotoIcon-icon_isolation.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "linked_callbacks",
+    "exit_code": 0,
+    "log": "PhotoIcon-linked_callbacks.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "test_crop-compile",
+    "exit_code": 0,
+    "log": "PhotoIcon-test_crop-compile.log"
+  },
+  {
+    "project": "PhotoIcon",
+    "check": "test_crop",
+    "exit_code": 0,
+    "log": "PhotoIcon-test_crop.log"
+  }
+]

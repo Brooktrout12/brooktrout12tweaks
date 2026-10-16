@@ -1,0 +1,458 @@
+{
+  "result": "PASS",
+  "version": "1.0.0",
+  "package": "Dawn18_1.0.0_rootless.deb",
+  "sha256": "a84bbf7a9a8613889fd50bacd9e2329103480c8408c56443413591e91e40e6be",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18Apps.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18Apps.plist",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18SpringBoard.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18SpringBoard.plist",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/Dawn18Prefs",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/Info.plist",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon.png",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon.svg",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon@2x.png",
+    "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/icon@3x.png",
+    "var/jb/Library/PreferenceLoader/Preferences/Dawn18.plist"
+  ],
+  "binaries": {
+    "Dawn18Apps": [
+      {
+        "architecture": "arm64",
+        "uuid": "f208107d-93d3-3297-9d66-7e4cd969c99f",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 18
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "96bfcb85-ebc2-3bce-abc6-6a48e060c7d2",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 18
+          }
+        ]
+      }
+    ],
+    "Dawn18SpringBoard": [
+      {
+        "architecture": "arm64",
+        "uuid": "8b3eae56-7e89-38ca-8ba9-e28ee21e52d0",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 26
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "6d6914dc-3175-37fb-8c98-9fffc084f99e",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 26
+          }
+        ]
+      }
+    ],
+    "Dawn18Prefs": [
+      {
+        "architecture": "arm64",
+        "uuid": "73833dec-40dd-37d5-8d69-36767ded71cb",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 22
+          }
+        ]
+      },
+      {
+        "architecture": "arm64e",
+        "uuid": "d9e77870-71af-3c69-8f4a-9eb0e85c8dd4",
+        "dependencies": [
+          "/usr/lib/libobjc.A.dylib",
+          "/System/Library/Frameworks/Foundation.framework/Foundation",
+          "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+          "/System/Library/Frameworks/UIKit.framework/UIKit",
+          "/System/Library/PrivateFrameworks/Preferences.framework/Preferences",
+          "/usr/lib/libSystem.B.dylib",
+          "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+        ],
+        "rpaths": [
+          "/var/jb/Library/Frameworks",
+          "/var/jb/usr/lib",
+          "@loader_path/.jbroot/Library/Frameworks",
+          "@loader_path/.jbroot/usr/lib"
+        ],
+        "block_runtime_imports": [],
+        "signature": [
+          {
+            "hash_type": 2,
+            "flags": 0,
+            "verified_pages": 22
+          }
+        ]
+      }
+    ]
+  },
+  "on_device_tested": false,
+  "settings_visually_verified_on_ios": false,
+  "private_class_coverage_verified_on_ios_18_6": false,
+  "build_scope": "Rename Settings row to Ringer; add a Quick Actions-only iOS 10 style fourth choice using scoped legacy light blur and native dark foregrounds. Native menu shape, input and actions unchanged. Version remains 1.0.0.",
+  "prior_build_user_report": {
+    "sha256": "4eef6369261cd28b9c3b26b71398f3b0487bf16c52989b18bee63d312278ae49",
+    "springboard_arm64e_uuid": "af5ed1e1-19f3-3bb3-9e74-7a443e02b4e2",
+    "reported_working": [
+      "User reports all existing features working",
+      "Notification swipe Options/Clear now work",
+      "Ringer appearance works; volume HUD has no visible light/dark difference on user's phone"
+    ],
+    "remaining_issues": [],
+    "requested_changes": [
+      "Rename Settings label to Ringer",
+      "Fourth Quick Actions choice named iOS 10 style, matching translucent reference without changing menu shape"
+    ]
+  },
+  "portable_rules_test": {
+    "result": "PASS",
+    "sanitizers": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "leak_sanitizer": "disabled on traced build host",
+    "coverage": [
+      "process isolation",
+      "GUI process path acceptance",
+      "category boundaries",
+      "folder icon context without mini-icon override",
+      "generic context-menu exclusion",
+      "Default restoration",
+      "native setter tracking",
+      "preview reply identity",
+      "context-dependent expanded notification class coverage",
+      "generic PlatterKit exclusion",
+      "unmanaged stale-card override cleared by inheritance policy",
+      "native setter interception during Notifications Default",
+      "forced Light -> Dark -> Default and scope-exit restoration",
+      "per-card actions separate from list-wide X/Clear All",
+      "positive and negative Options source-class recognition",
+      "other categories retain native Default restoration",
+      "iOS 18 shared PlatterKit action classes yield contextual markers, not unconditional Notifications",
+      "ringer and volume UI roots with audio/base-slider/brightness exclusions",
+      "original preference indices 0–8 preserved; RingerVolume=9; total=10",
+      "RingerVolume native Default restoration for native styles 0/1/2",
+      "fourth value accepted only for Quick Actions at production preference validation boundary",
+      "fractional, NaN, infinity and out-of-range values rejected",
+      "classic mode maps to native Light enum 1, never UIKit enum 3",
+      "classic -> Dark -> Default preserves native style restoration",
+      "menu-list class recognized only as material context marker"
+    ],
+    "source_sha256": {
+      "Rules.c": "b2390890e9a832eb8cecd93d5865ec85a867db8415f32dc21375de34f9dfd8d3",
+      "Rules.h": "cfc2334f62739fcff95b2d02c3852ee46dbd80dddf5379125cd7e857affafd87",
+      "Preview.h": "fdc197dc551d7739c82bdd116b03f98e3508553e5811d50f1e2729ec58c35d06",
+      "tests/test_rules.c": "7c5e7dd729f323c764da24216738b9192bc8a61e8c3a4dcf6655bf3861b5f399"
+    }
+  },
+  "startup_crash_regression": {
+    "original_package_sha256": "77054389a29b1e0d4bbadc60674877e3d8517a5509d8fa2129166d0c5a0a098d",
+    "crash_image_uuid": "02d3c91f-ac69-3fd9-9ba6-ba9844f749d4",
+    "symbolication": {
+      "0x6cd0": "D18ObserveConfiguration, Preferences.m:51",
+      "0x53c4": "D18Start, Appearance.m:251"
+    },
+    "regression_original_rejected": true,
+    "regression_rejection": "ValueError: Unsafe compiler block metadata for this build: ['__Block_object_assign', '__NSConcreteGlobalBlock', '__NSConcreteStackBlock']",
+    "corrected_package_passed": true,
+    "original_rejection_carried_forward_from_prior_validation": true
+  },
+  "matching_debug_symbols_in_source_archive": true,
+  "private_interface_reference": "iOS 18.2 menu-list main and scrolling background effect views, menu/submenu ownership, platform metrics and UIBlurEffect references, plus local UIKit SDK headers inspected. New material rendering and its iOS 10 visual match are not device-verified.",
+  "notification_routing_reference_check": {
+    "result": "PASS",
+    "scope": "Reference source inspection, not iOS runtime execution",
+    "routing_abis": [
+      {
+        "selector": "destination:requestsClearingNotificationRequests:",
+        "return": "v",
+        "arguments": "@@"
+      },
+      {
+        "selector": "destination:requestsClearingNotificationRequests:fromDestinations:",
+        "return": "v",
+        "arguments": "@@@"
+      },
+      {
+        "selector": "destination:requestsClearingNotificationRequestsInSections:",
+        "return": "v",
+        "arguments": "@@"
+      },
+      {
+        "selector": "destination:requestsClearingNotificationRequestsFromDate:toDate:inSections:",
+        "return": "v",
+        "arguments": "@@@@"
+      },
+      {
+        "selector": "destination:notificationRequestForUUID:",
+        "return": "@",
+        "arguments": "@@"
+      }
+    ],
+    "source_registration_removed": true,
+    "native_reference_sha256": "7cdb3285b8235f9a6f21a1bd61479a6e8e372c03fb2e5bcef971a5024e0a7c0c"
+  },
+  "notification_list_and_expanded_reference_check": {
+    "scope": "Reference source inspection, not iOS runtime execution",
+    "lock_screen_membership": "BulletinDestinationLockScreen",
+    "notification_center_membership": "BulletinDestinationNotificationCenter",
+    "transport_identifier": "Read from SpringBoard dashBoardDestination.identifier",
+    "expanded_owner_chain": "NCExpandedPlatterViewController.delegate -> NCNotificationShortLookViewController.delegate -> destination",
+    "long_look_owner_chain": "NCNotificationLongLookViewController.delegate -> destination",
+    "references_sha256": {
+      "NCNotificationRootList.m": "d0aa6754c1f6eb45488e5af414d8cbf4828f93878c0b0d048f1766e2844024f3",
+      "CSNotificationDispatcher.m": "e0d55bb57adf9474f6cc9555f140d488e5e5d0572302aaf63c929629a9014edc",
+      "NCNotificationShortLookViewController.m": "84d22b359388a650a4ae620ba3059d3bbc1e65c3fec92a3aa0db8ad3170baa87",
+      "NCExpandedPlatterViewController.m": "551bfccce37dcb3b682e91eba46f2a3faa0663979e24563f1ca6837d2f47f55f"
+    },
+    "carried_forward": true,
+    "implementation_unchanged_in_this_revision": true
+  },
+  "notification_binary_regression_check": {
+    "result": "PASS",
+    "explicit_list_and_expanded_class_markers_present": true,
+    "expiry_method_timer_and_settings_wording_absent": true,
+    "scope": "Compiled-content regression checks, not proof of device behavior",
+    "notification_action_container_marker_present": true,
+    "platter_action_and_ringer_volume_class_markers_present": true,
+    "new_preference_key_in_all_binaries_and_settings_title_present": true,
+    "ringer_settings_label_renamed": true,
+    "classic_menu_code_isolated_to_springboard": true
+  },
+  "default_options_revision_check": {
+    "result": "PASS",
+    "scope": "Portable production C rules, compiled package content and local source review; not iOS UI execution",
+    "default_selection_internal": -1,
+    "saved_preferences_unchanged": [
+      0,
+      1,
+      2
+    ],
+    "options_source_ancestor_bound": 32,
+    "generic_menu_classes_unmatched": true,
+    "additional_hook_sites": 0,
+    "reference_sha256": {
+      "_UIContextMenuUIController.m": "644f155573b3ac31eb94616b77e3650293282540f1ca5a274568f8d675a9bc98",
+      "UIContextMenuInteraction.m": "c9ea516e59c591d54225b7c023600231c9e7329e1f7359ca342166b0e31254f1"
+    },
+    "carried_forward": true,
+    "source_sha256_at_original_fix": {
+      "Appearance.m": "4a1082da00675e5a5bec68532ae1c540bc0cea2520adb45834b81e988ae2bb04"
+    },
+    "default_state_engine_and_menu_implementation_unchanged": true
+  },
+  "unchanged_components_check": {
+    "result": "PASS",
+    "changed_installed_files": [
+      "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18Apps.dylib",
+      "var/jb/Library/MobileSubstrate/DynamicLibraries/Dawn18SpringBoard.dylib",
+      "var/jb/Library/PreferenceBundles/Dawn18Prefs.bundle/Dawn18Prefs"
+    ],
+    "all_nonbinary_installed_files_byte_identical": true,
+    "preview_source_unchanged": true,
+    "preview_settings_request_reply_and_save_operations_unchanged": true,
+    "preference_keys_and_indices_unchanged": true,
+    "preference_validation_extended_only_for_quick_actions_value_3": true,
+    "menu_construction_and_options_source_resolution_unchanged": true,
+    "folder_swipe_and_expanded_notification_scope_functions_unchanged": true,
+    "reversible_native_style_state_engine_unchanged": true,
+    "hud_root_mapping_and_implementation_unchanged": true,
+    "runtime_helpers_control_and_injection_filters_source_unchanged": true,
+    "makefile_change_limited_to_springboard_classic_material_source": true
+  },
+  "preference_source_contract_test": {
+    "result": "PASS",
+    "tests": 3,
+    "scope": "Source contracts, not CFPreferences/UIKit execution",
+    "preserves_existing_key_order": true,
+    "retained_ringer_key": "RingerVolume",
+    "settings_label": "Ringer",
+    "settings_choices": 10,
+    "read_write_bounds_include_all_choices": true,
+    "reset_zero_initializes_whole_configuration": true,
+    "source_sha256": {
+      "tests/test_preferences.py": "1f5f5c879a172465654dd1756d1fe1a772c3b1c206871a071d35a6c3287c46f6",
+      "Preferences.m": "5f70452e8d808f3586c7b00f4e4e5018755ff83d2691bda4713da591036a1108",
+      "Settings.m": "27788797097185603acb8bcb6c2393bfddd23793d0ba08daa1ef7bb5b0976c12"
+    }
+  },
+  "buttons_volume_revision_check": {
+    "result": "PASS",
+    "scope": "Production C tests, source-contract tests, source review and compiled-content checks; not on-device UI execution",
+    "action_classes": [
+      "PLActionButtonsPresentingView",
+      "PLPlatterActionButtonsView",
+      "PLPlatterActionButton"
+    ],
+    "shared_action_classes_are_context_markers": true,
+    "notification_source_ancestor_bound": 32,
+    "actual_background_getter_runtime_signature_checked": true,
+    "notification_cell_remains_context_only": true,
+    "ringer_volume_roots": [
+      "SBRingerHUDViewController",
+      "SBRingerPillView",
+      "SBElasticVolumeViewController"
+    ],
+    "shared_elastic_slider_and_base_controller_excluded": true,
+    "additional_hook_sites": 0,
+    "audio_mute_hardware_button_and_timing_implementations_unchanged": true,
+    "references_sha256": {
+      "NCNotificationListCell.m": "7b9a170c34fdfed7ed3f6fa5793883e1c2962b32c24c8042cb9085451d81309a",
+      "PLSwipeInteraction.m": "94f70b672017f874a22efaf6ecca574261d2029fb07a6f96095ccf19757ba0e0",
+      "PLPlatterActionButton.m": "6fecf3e988397cd2fd40cfebd317972101f7e1108fe6d0eb44dc9cdf6d18a5d7",
+      "PLPlatterActionButtonsView.m": "db7c48d603fb8d13afc512ebc47ed9b58df51bea5e60c6f6183821f37e9b6579",
+      "PLActionButtonsPresentingView.m": "99fe365d7ae58dcb233b1b5b5694856a8de9feb4b3e6ff785b83a3972b11f211",
+      "SBRingerHUDViewController.m": "7605045c5c7edd9ed880386411f5ffa47147d890de13ae528d616399cf939c74",
+      "SBRingerPillView.m": "dfdc4e1f5fd91215892b22eb0f758f72305124642a1171e2868aa4091b4264a2",
+      "SBElasticVolumeViewController.m": "7107929df911d207ec2ae4bb22fb6d795dbb39a4594f1bfd648a63e2daa237df",
+      "SBElasticValueViewController.m": "0ed4ddf68dd74c3aecf5a3937af39faf01c709cda597db88755d71ffb20876eb",
+      "SBElasticSliderView.m": "3613474f5a28bc9bc6fa23c4d5f15c17e4e7c3455750e919bb5c892d45124183"
+    },
+    "carried_forward": true,
+    "source_sha256_at_original_fix": {
+      "Appearance.m": "da63ad723a140d95b121bc577f9ebdaa361d680fdd3ca38885de20bfac1d8df1",
+      "Rules.c": "b6ff9e94138c8ea7fae2eac9cd26da324898ed2f806bb58e9c51f3bf7d72b616",
+      "Rules.h": "62d07c4d7dcb6cc6489023a3652ac107f61344130ab81b82e5d6811af830d3c4"
+    },
+    "swipe_scope_and_hud_roots_unchanged": true
+  },
+  "classic_menu_revision_check": {
+    "result": "PASS",
+    "scope": "Portable production rules, source review, package checks and source contracts; no iOS runtime execution",
+    "preference_value": 3,
+    "allowed_category": "QuickActions",
+    "native_foreground_style": 1,
+    "material": "UIBlurEffectStyleLight",
+    "background_color": "clearColor",
+    "recognized_list": "_UIContextMenuListView",
+    "owner": "existing SBIconView interaction marker",
+    "owner_ancestor_bound": 64,
+    "background_getters": [
+      "backgroundView",
+      "cvBackgroundView"
+    ],
+    "getter_runtime_abi_class_and_descendant_checks": true,
+    "additional_hook_sites": 1,
+    "hook": "_UIContextMenuListView.layoutSubviews (void, zero explicit arguments)",
+    "original_layout_called_first": true,
+    "geometry_alpha_mask_filters_view_insertion_and_input_handlers_unmodified": true,
+    "native_effect_and_color_state_restored_on_exit": true,
+    "weak_background_tracking": true,
+    "reentrancy_guard": true,
+    "default_light_and_dark_retained": true,
+    "existing_settings_keys_and_values_0_1_2_retained": true,
+    "exact_ios_10_visual_match_verified": false,
+    "source_sha256": {
+      "Appearance.m": "acdcf4fabfc0e4643a47675c8964924c730d5d19cdc37b9c1e42a5ca4ce0e40d",
+      "ClassicMenu.m": "3990a820cbe2e1807c4fec2bf90a004e6d0e7612844e1456e2fc66c90752ace4",
+      "ClassicMenu.h": "df7eb67be30aa68d931086d7332e9c2b050bbacc4d8743795e260a6c9285b1ae",
+      "Rules.c": "b2390890e9a832eb8cecd93d5865ec85a867db8415f32dc21375de34f9dfd8d3",
+      "Rules.h": "cfc2334f62739fcff95b2d02c3852ee46dbd80dddf5379125cd7e857affafd87",
+      "Preferences.m": "5f70452e8d808f3586c7b00f4e4e5018755ff83d2691bda4713da591036a1108",
+      "Settings.m": "27788797097185603acb8bcb6c2393bfddd23793d0ba08daa1ef7bb5b0976c12"
+    },
+    "references_sha256": {
+      "_UIContextMenuListView.m": "cde8e109165e115075c26f2062df12a3e3634899315748565e1fcc7b834c4b88",
+      "_UIContextMenuView.m": "de777f597ae828a4c9349b8a459e7db3a0ab9515c3b31d757a75bed89046ba77",
+      "_UIContextMenuPlatformMetrics.m": "07fabfca79fd6d814236d5a8087d10b9972e0a3449c3de63d22e382fc84e30f9",
+      "_UIBlurEffectLegacyImpl.m": "712705397180f8ba54feb032877462afb943c30817dd0c87161ae19fbda78de4",
+      "UIBlurEffect.m": "baaa7f90a2a9e0c7af908968bade2b064f6eea13a9b1b1bbb50e7090de881d80"
+    }
+  }
+}

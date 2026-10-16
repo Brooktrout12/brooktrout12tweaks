@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.faceidgrace_1.0.1_iphoneos-arm64.deb",
+  "sha256": "6829d3352dca7517dddbe3425ead3af3599f4b7bebac65b79878b4f5a1d46731",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.plist"
+  ],
+  "slices": [
+    {
+      "architecture": "arm64",
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    }
+  ],
+  "on_device_tested": false
+}

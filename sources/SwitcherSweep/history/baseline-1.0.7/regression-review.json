@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "compared_against": "1.0.6",
+  "whole_runtime_comparison": "Identical after isolating new tint helper, initial tint color and the three button feedback handlers; version comment updated",
+  "request_and_presentation_policy": "Byte-for-byte unchanged",
+  "touch_feedback": "12% white tint over blur content; 0.06-second press and 0.14-second release; press scaling removed",
+  "diagnostic_writer_present": false,
+  "device_runtime_tested": false
+}
