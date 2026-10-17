@@ -8,7 +8,7 @@ def main():
     raw=(OUT/'Packages').read_bytes()
     for suffix,unpack in [('gz',gzip.decompress),('bz2',bz2.decompress),('xz',lzma.decompress)]:
         assert unpack((OUT/('Packages.'+suffix)).read_bytes())==raw
-    records=[parse(s) for s in raw.decode().strip().split('\n\n')]
+    records=[parse(s) for s in raw.decode().strip().split('\n\n') if s.strip()]
     assert len(records)==len(list((ROOT/'debs').rglob('*.deb')))
     for record in records:
         path=OUT/record['Filename'];b=path.read_bytes()
