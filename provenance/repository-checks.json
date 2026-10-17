@@ -1,8 +1,15 @@
 {
-  "packages": 15,
-  "files": 689,
+  "date": "2026-10-17",
+  "packages": 16,
   "deb_bytes_preserved": true,
   "index_checks": "PASS",
-  "device_runtime_tests": "Not run during repository assembly",
-  "live_github_deployment": "Not performed; requires upload and Pages setup"
+  "updated_source_projects": 5,
+  "source_file_hashes_verified": 197,
+  "package_source_hash_pairs": "PASS",
+  "source_links": "PASS",
+  "top_level_zip_only_sources": 0,
+  "device_runtime_tests": "Not run during repository assembly.",
+  "deployment_verification": "GitHub Actions run status is the authoritative deployment record.",
+  "source_hash_check_scope": "Original supplied source files before documented publication-only redactions.",
+  "private_device_report_metadata": "Omitted from new published source notes."
 }

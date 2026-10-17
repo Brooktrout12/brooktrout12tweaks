@@ -1,0 +1,1 @@
+PASS: embedded JS syntax/execution, ad-dialog close, domain isolation, resource deduplication, URL-query redaction

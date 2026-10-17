@@ -43,6 +43,7 @@ def verify_slice(binary, tweak):
     require(magic == 0xFEEDFACF and cpu == 0x0100000C, "Expected arm64-family Mach-O")
     require(filetype == 6 if tweak else filetype in (6, 8), "Unexpected Mach-O file type")
     dependencies, rpaths, signature, platform, symtab = [], [], None, None, None
+    sections, minimum = [], None
     image_uuid = None
     position = 32
     require(32 + commands_size <= len(binary), "Truncated commands")
@@ -57,12 +58,21 @@ def verify_slice(binary, tweak):
             signature = struct.unpack_from("<II", binary, position + 8)
         elif command == 0x32:
             platform = u32(binary, position + 8)
+            minimum = u32(binary, position + 12)
         elif command == 0x2:
             symtab = struct.unpack_from("<IIII", binary, position + 8)
         elif command == 0x1B:
             image_uuid = str(uuid.UUID(bytes=binary[position + 8:position + 24]))
+        elif command == 0x19:
+            for index in range(u32(binary, position + 64)):
+                pos = position + 72 + index * 80
+                name = binary[pos:pos + 16].split(b'\0', 1)[0].decode()
+                length = struct.unpack_from('<Q', binary, pos + 40)[0]
+                start = u32(binary, pos + 48)
+                sections.append((name, start, length))
         position += size
     require(position == 32 + commands_size and platform == 2, "Expected intact iOS load commands")
+    require(minimum == 0x110000, "Expected iOS 17.0 deployment minimum")
     forbidden = ("cephei", "hbprefs", "libswift", "/usr/lib/libsubstrate", "/library/frameworks/cydia")
     require(not any(term in dep.lower() for dep in dependencies for term in forbidden), "Forbidden dependency")
     if tweak:
@@ -77,11 +87,35 @@ def verify_slice(binary, tweak):
     require(image_uuid is not None, "Missing UUID for identifying same-version builds")
     blocks = block_runtime_imports(binary, symtab)
     require(not blocks, "Unsafe compiler block metadata for this build: " + repr(blocks))
+    classes = strings = 0
+    if subtype & 0xFFFFFF == 2:
+        for name, start, length in sections:
+            if name == '__objc_data':
+                require(length % 40 == 0, "Invalid Objective-C records")
+                for pos in range(start, start + length, 40):
+                    isa, superclass = struct.unpack_from('<QQ', binary, pos)
+                    require(isa & 0x800D6AE100000000 == 0x800D6AE100000000,
+                            "Unconverted arm64e class ISA")
+                    require(superclass & 0xC00DB5AB00000000 == 0xC00DB5AB00000000,
+                            "Unconverted arm64e superclass")
+                    classes += 1
+            elif name == '__cfstring':
+                require(length % 32 == 0, "Invalid constant-string records")
+                for pos in range(start, start + length, 32):
+                    isa = struct.unpack_from('<Q', binary, pos)[0]
+                    require(isa & 0xFFFFFFFF00000000 == 0xC0156AE100000000,
+                            "Unconverted arm64e constant-string ISA")
+                    strings += 1
+        require(classes == 2 and strings > 0, "Missing converted runtime records")
+    signatures = verify_signature(binary, *signature)
+    require(all(item['flags'] & 2 for item in signatures), "Expected ad-hoc signature flag")
     return {"architecture": {0: "arm64", 2: "arm64e"}.get(subtype & 0xFFFFFF, str(subtype)),
             "uuid": image_uuid,
+            "minimum_ios": "17.0", "converted_objc_records": classes,
+            "converted_constant_strings": strings,
             "dependencies": dependencies, "rpaths": rpaths,
             "block_runtime_imports": blocks,
-            "signature": verify_signature(binary, *signature)}
+            "signature": signatures}
 
 
 def verify_binary(binary, tweak):

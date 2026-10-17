@@ -1,0 +1,29 @@
+{
+  "version": "1.0.1",
+  "files": {
+    "BUILD-IOS17-18.md": "bb2f32a42713ea116dadb19e66800927c0729fa51d56c373d76137211caaa25d",
+    "Compatibility.h": "b4214bf9985ec560891fd32fe558ddafd850a27d44a6e04bee6d8b9ff84ce57a",
+    "FaceIDGrace.plist": "cab1724658939ab5c9d1077a3a7f7ce142176e6612ffb02ed0a79e91f00071aa",
+    "IOS17-18.patch": "d9dbb1900805440e8ba66be42a770441c892743e84191d89748bcb6fe629cf1d",
+    "LICENSE": "f9bcfd33a83efad513241fb7e0831089a2170c2f7fe19927d7903c50bc29c86d",
+    "Makefile": "244c3d7c67888c80a3b434d9a180bf08415c33757437686f78bdead68921b3cf",
+    "README.md": "04b2ac334eebb21a83f0599b618e0fd2e0135438f78f1e861d8a669b97f034f4",
+    "REFERENCES.md": "3fb9c1a449c02da87485ca04c2b090a43c496f554f2ffd6cb054138b261755ed",
+    "Tweak.m": "7f27299e4a8f6907515999269e51eb5be0b15178f36d8ad2bee9c33bfa4f54b5",
+    "control": "05626d9381543721f317ed3dab47a30c4babbf87d3f2661fc3b760eb6472e256",
+    "debug-symbols/arm64/FaceIDGrace.dylib.dSYM/Contents/Info.plist": "cfd3a8a08259802cd66dbcc2e9c9a657dea57cedc974b91c1f2a517dd1005588",
+    "debug-symbols/arm64/FaceIDGrace.dylib.dSYM/Contents/Resources/DWARF/FaceIDGrace.dylib": "9244fb9b96d5845b3bfc35c6da49c6cdee476329c234480e807f655668a62826",
+    "debug-symbols/arm64e/FaceIDGrace.dylib.dSYM/Contents/Info.plist": "cfd3a8a08259802cd66dbcc2e9c9a657dea57cedc974b91c1f2a517dd1005588",
+    "debug-symbols/arm64e/FaceIDGrace.dylib.dSYM/Contents/Resources/DWARF/FaceIDGrace.dylib": "69bda86b108e9fffa125e9df799428cdf0df341b39b8a17978d013f2eb2147ec",
+    "history/baseline-1.0.0/HISTORICAL.txt": "c6e75d31e0757378fe7e17da4b5a11cf495d40f4ee998a252d09ad150ab41332",
+    "history/baseline-1.0.0/README.md": "4419689ed0172c3b3749f8ac8d5adbb4cccb1f352ca505b2a19f8899e05800f7",
+    "history/baseline-1.0.0/VALIDATION.json": "7b5f1ca6b15ec0eecf34659b5ca1714697b58dc5db32e97cd1ba884918204925",
+    "scripts/verify_package.py": "d314988c9e859128adf6b1f9f306e7bdd8e6c0aec55a362cabd5d1249ca04899",
+    "validation/FaceIDGrace-package.log": "f6d82fe59f61edd26b4aa824d2e9bc52d9704db4bb722f14e4364197bdce4772",
+    "validation/FaceIDGrace.log": "5d7a8985df448e7c298462ee62629c279872fc32d21130137a25f16ba458d7bd",
+    "validation/debug-symbols.json": "df49c0017e848613259875aa6c5385e9f5327cb4c39fde053649c31b50455313",
+    "validation/release-validation.json": "b69d109fab22aa6eb046d16d56ff2e9e1ddc1a972488d8f87091871c5b4c8fad",
+    "validation/source-provenance.json": "38d5455d31db9589e55704596396f0445b189d3ccf5f36cdd8d503a2f0b1a37a",
+    "validation/test-results.json": "aabc0f090abb9d1a5a93823365fad8d8f8deaee6f552a8e1711167ffe35b8aa9"
+  }
+}

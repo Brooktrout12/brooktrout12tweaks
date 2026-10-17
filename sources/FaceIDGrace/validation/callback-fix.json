@@ -1,0 +1,9 @@
+{
+  "affected_package_version": "1.0.2",
+  "replacement_version": "1.0.3",
+  "issue": "The block-based bundle observer used legacy arm64e block metadata that the build-time converter did not repair.",
+  "remedy": "Use a C callback with CFNotificationCenterGetLocalCenter instead of the Objective-C block-based observer.",
+  "validation": "Retained block regression checks reject the older slices and accept the replacement slices.",
+  "device_runtime_tested": false,
+  "publication_scope": "Code and package evidence only; no private device crash report, report hash, event timestamp, model metadata, memory addresses or register dump."
+}

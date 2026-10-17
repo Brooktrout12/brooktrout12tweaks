@@ -1,0 +1,14 @@
+ROCK ANTENNE AdBlock – Test 2 (0.2.0)
+
+1. RockAntenneAdBlock_0.2.0_Test2_rootless.deb installieren.
+   Die Paket-ID bleibt gleich; Test 1 wird aktualisiert.
+2. ROCK ANTENNE vollständig schließen und neu öffnen.
+3. Sender starten und tatsächliches Verhalten beobachten.
+4. Für die Diagnose zwei Finger gleichzeitig ungefähr zwei Sekunden
+   ruhig auf den Bildschirm legen. Das Menü muss „Test 2“ anzeigen.
+   Das gehörte/gesehene Ergebnis auswählen und den Bericht teilen.
+
+Voraussetzung: Rootless-Jailbreak mit Tweak-Injection auf iOS 17/18.
+Build und lokale Prüfungen bestanden; Test 2 ist noch nicht auf einem
+physischen iPhone getestet. Werbefreiheit ist nicht bestätigt.
+Details und Grenzen: Quellcode/README.md

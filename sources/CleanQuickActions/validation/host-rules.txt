@@ -1,0 +1,2 @@
+PASS: process scope, repeat toggles, native updates and restoration
+Existing Rules.c and tests/test_rules.c retained unchanged. Linux host execution, not iOS.

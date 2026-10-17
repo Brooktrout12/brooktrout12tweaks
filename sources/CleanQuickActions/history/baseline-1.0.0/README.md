@@ -74,7 +74,7 @@ rootless paths, filter, direct Settings switch, dependencies, code-signature
 page hashes and absence of unsafe block imports. Matching dSYMs are included
 in `Symbols` in the source ZIP for crash symbolication. These checks are not
 device tests: final visual behavior and the direct toggle still need testing
-on the target iPhone running iOS 18.6.
+on the target iPhone running iOS 18.x.
 
 ## Primary references
 
@@ -85,5 +85,5 @@ on the target iPhone running iOS 18.6.
 - [Theos rootless packaging](https://theos.dev/docs/rootless)
 
 Private UIKit details were checked against iOS 18.2 reference material; they
-have not been verified on a connected iOS 18.6 device. The package includes
+have not been verified on a connected iOS 18.x device. The package includes
 original implementation code, not copied UIKit source.

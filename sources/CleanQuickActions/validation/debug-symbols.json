@@ -1,17 +1,12 @@
-{
-  "result": "PASS",
-  "matches": [
-    {
-      "binary": "CleanQuickActions.dylib",
-      "architecture": "arm64",
-      "uuid": "b710338a-7938-3aed-a961-6ca1b2fcbe35",
-      "match": true
-    },
-    {
-      "binary": "CleanQuickActions.dylib",
-      "architecture": "arm64e",
-      "uuid": "2679fb38-95ef-34d5-b868-5b3070e3f12b",
-      "match": true
-    }
-  ]
-}
+[
+  {
+    "architecture": "arm64",
+    "uuid": "bbce851b-a0a5-3fcb-9b00-e6b6a4231776",
+    "matches_package": true
+  },
+  {
+    "architecture": "arm64e",
+    "uuid": "e9e88d1a-b3d3-3444-a273-a30413f09225",
+    "matches_package": true
+  }
+]

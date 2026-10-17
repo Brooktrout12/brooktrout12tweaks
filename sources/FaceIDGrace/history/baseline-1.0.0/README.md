@@ -2,11 +2,11 @@
 
 Restore the native **Require Passcode** delay choices while Face ID is enabled.
 Built for a rootless Dopamine jailbreak on iOS 18, with an arm64e slice for the
-iPhone 11 Pro and an arm64 slice.
+compatible iPhone and an arm64 slice.
 
 **Status:** compiled and statically validated. Not tested on a physical iPhone.
 The private methods were verified in iOS 18.2's implementation; their behavior
-on your exact iOS 18.6 installation still needs an on-device check.
+on your exact iOS 18.x installation still needs an on-device check.
 
 ## Install and use
 

@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "baseline": "Bundled CleanQuickActions 1.0.1",
+  "existing_implementation_preserved_except_new_ios17_module_calls": true,
+  "new_hook_installation_os_major": 17,
+  "ios18_installs_new_hooks": false,
+  "byte_identical_files": [
+    "Preferences.m",
+    "Preferences.h",
+    "Rules.c",
+    "Rules.h",
+    "Compatibility.h",
+    "Runtime.h",
+    "CleanQuickActions.plist",
+    "Artwork/icon.svg",
+    "layout/Library/PreferenceLoader/Preferences/CleanQuickActions/Preferences.plist",
+    "layout/Library/PreferenceLoader/Preferences/CleanQuickActions/icon.png",
+    "layout/Library/PreferenceLoader/Preferences/CleanQuickActions/icon@2x.png",
+    "layout/Library/PreferenceLoader/Preferences/CleanQuickActions/icon@3x.png"
+  ],
+  "on_device_tested": false
+}

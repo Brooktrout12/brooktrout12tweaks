@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.faceidgrace_1.0.3_iphoneos-arm64.deb",
+  "sha256": "cb58bd2e3fa172376d6db0fb92e88cc25e932cbc04e621a8ad999d3759f1c5fc",
+  "installed_files": [
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib",
+    "var/jb/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.plist"
+  ],
+  "slices": [
+    {
+      "architecture": "arm64",
+      "uuid": "5789113e-2cf3-3e22-8b32-34d8e36432c4",
+      "minimum_ios": "17.0",
+      "shared_identity_and_touch_id_count_routes_present": true,
+      "bundle_observer": "CoreFoundation C callback",
+      "objective_c_blocks_absent": true,
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "uuid": "c023d737-8d10-379c-9cc9-dbb2bd5571ee",
+      "minimum_ios": "17.0",
+      "shared_identity_and_touch_id_count_routes_present": true,
+      "bundle_observer": "CoreFoundation C callback",
+      "objective_c_blocks_absent": true,
+      "signature": [
+        {
+          "hash_type": 2,
+          "flags": 0,
+          "verified_pages": 17
+        }
+      ]
+    }
+  ],
+  "on_device_tested": false
+}

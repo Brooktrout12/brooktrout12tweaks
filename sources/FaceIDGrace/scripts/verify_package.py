@@ -14,6 +14,7 @@ import struct
 import subprocess
 import sys
 import tarfile
+import uuid
 
 
 def require(condition, message):
@@ -27,6 +28,17 @@ def u32(data, offset, endian="<"):
 
 def cstring(data, offset):
     return data[offset:data.index(b"\0", offset)].decode("utf-8")
+
+
+def verify_block_free(binary):
+    # 1.0.2's global observer block had an incompatible arm64e ISA fixup.
+    # Inspect the shipped slices, not just the source. Imported block classes
+    # survive symbol stripping; local block symbols are useful extra guards.
+    for marker in (b'_NSConcrete', b'___block_literal_', b'___block_descriptor_',
+                   b'addObserverForName:object:queue:usingBlock:'):
+        require(marker not in binary,
+                'Objective-C block metadata/observer is forbidden: '+marker.decode())
+    return {'objective_c_blocks_absent': True}
 
 
 def verify_signature(binary, offset, size):
@@ -71,11 +83,14 @@ def verify_signature(binary, offset, size):
 
 
 def verify_slice(binary):
+    block_check = verify_block_free(binary)
     magic, cpu, subtype, filetype, count, commands_size = struct.unpack_from("<6I", binary)
     require(magic == 0xFEEDFACF and cpu == 0x0100000C and filetype == 6,
             "Expected an arm64-family Mach-O dylib")
     require(32 + commands_size <= len(binary), "Truncated load commands")
     dependencies, rpaths, signature, platform = [], [], None, None
+    minimum, image_uuid = None, None
+    constant_strings = []
     position = 32
     for _ in range(count):
         command, size = struct.unpack_from("<II", binary, position)
@@ -89,9 +104,36 @@ def verify_slice(binary):
             signature = struct.unpack_from("<II", binary, position + 8)
         elif command == 0x32:
             platform = u32(binary, position + 8)
+            minimum = u32(binary, position + 12)
+        elif command == 0x1B:
+            image_uuid = str(uuid.UUID(bytes=binary[position+8:position+24]))
+        elif command == 0x19:
+            for index in range(u32(binary, position+64)):
+                section = position+72+index*80
+                name = binary[section:section+16].split(b'\0')[0]
+                if name == b'__cfstring':
+                    length = struct.unpack_from('<Q',binary,section+40)[0]
+                    start = u32(binary,section+48)
+                    require(length % 32 == 0, 'Invalid constant-string section')
+                    constant_strings.extend(struct.unpack_from('<Q',binary,p)[0] for p in range(start,start+length,32))
         position += size
     require(position == 32 + commands_size, "Load command count mismatch")
     require(platform == 2, "Expected the iOS device platform")
+    require(minimum == 0x110000, 'Expected iOS 17.0 deployment target')
+    require(image_uuid is not None, 'Missing binary UUID')
+    if subtype & 0xFFFFFF == 2:
+        require(constant_strings and all(v & 0xFFFFFFFF00000000 == 0xC0156AE100000000 for v in constant_strings),
+                'arm64e constant-string ABI conversion is missing')
+    for name in ('identities', 'fingerprintCount', '_updateGracePeriodForSpecifier:',
+                 'isFingerprintUnlockAllowed', '_class_getClassMethod', '_object_getClass',
+                 '_pthread_getspecific', '_pthread_setspecific', '_pthread_mutex_trylock',
+                 '_MSHookMessageEx', '_dyld_register_func_for_add_image',
+                 '_CFNotificationCenterGetLocalCenter', '_CFNotificationCenterAddObserver',
+                 '_NSBundleDidLoadNotification', '_dispatch_async_f'):
+        require(name.encode()+b'\0' in binary, 'Missing hook or scope mechanism: '+name)
+    for name in ('_MSHookFunction', '_MCKeybagSetPasscodeGracePeriod', 'setGraceValue:specifier:',
+                 'setFingerprintUnlockAllowed:passcode:'):
+        require(name.encode()+b'\0' not in binary, 'Unexpected authentication/persistence hook: '+name)
     require("@rpath/CydiaSubstrate.framework/CydiaSubstrate" in dependencies,
             "Missing rootless Substrate linkage")
     require("/var/jb/Library/Frameworks" in rpaths, "Missing rootless framework rpath")
@@ -99,6 +141,9 @@ def verify_slice(binary):
             "Missing relocated jailbreak rpath")
     require(signature is not None, "Unsigned dylib")
     return {"architecture": {0: "arm64", 2: "arm64e"}.get(subtype & 0xFFFFFF, str(subtype)),
+            'uuid':image_uuid, 'minimum_ios':'17.0',
+            'shared_identity_and_touch_id_count_routes_present':True,
+            'bundle_observer': 'CoreFoundation C callback', **block_check,
             "signature": verify_signature(binary, *signature)}
 
 
@@ -107,6 +152,8 @@ def main(path):
     metadata = subprocess.check_output(["dpkg-deb", "--field", str(path)], text=True)
     require("Architecture: iphoneos-arm64" in metadata, "Wrong package architecture")
     require("Package: com.brooktrout12.faceidgrace" in metadata, "Wrong package identifier")
+    require('Version: 1.0.3\n' in metadata, 'Wrong version')
+    require('firmware (>= 17.0)' in metadata and 'firmware (<< 19.0)' in metadata, 'Wrong firmware bounds')
     payload = subprocess.check_output(["dpkg-deb", "--fsys-tarfile", str(path)])
     with tarfile.open(fileobj=io.BytesIO(payload), mode="r:") as archive:
         prefix = "var/jb/Library/MobileSubstrate/DynamicLibraries/"

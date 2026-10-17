@@ -24,7 +24,7 @@ def main(package):
     domain = "com.brooktrout12.cleanquickactions"
     require(fields["Package"] == domain, "Wrong package ID")
     require(fields["Name"] == "Clean Quick Actions", "Wrong package name")
-    require(fields["Version"] == "1.0.1", "Wrong package version")
+    require(fields["Version"] == "1.0.2", "Wrong package version")
     require(fields["Architecture"] == "iphoneos-arm64", "Wrong package architecture")
     require(fields["Author"] == fields["Maintainer"] == "Brooktrout12", "Wrong attribution")
     require(fields["Depends"] == "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)",
@@ -70,7 +70,9 @@ def main(package):
     for marker in (b"CQASeparatorState", b"SBIconView", b"_UIContextMenuUIController",
                    b"_createMenuViewIfNecessaryForMenu:", b"_UIContextMenuListView",
                    b"_UIContextMenuSeparatorView", b"_UIContextMenuReusableSeparatorView",
-                   b"_UIContextMenuGradientMaskSectionSeparatorView", b"Enabled", domain.encode()):
+                   b"_UIContextMenuGradientMaskSectionSeparatorView",
+                   b"_UIContextMenuSection", b"wantsSectionSeparator",
+                   b"collectionViewDataSource", b"invalidateLayout", b"Enabled", domain.encode()):
         require(marker in binary, "Missing runtime marker: " + repr(marker))
     for marker in (b"setOverrideUserInterfaceStyle:", b"setAlpha:", b"setBackgroundColor:",
                    b"setEffect:", b"setFrame:", b"D18RootController", b"D18MenuMaterialState"):

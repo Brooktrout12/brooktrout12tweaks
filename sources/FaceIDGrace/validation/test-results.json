@@ -1,8 +1,26 @@
 [
   {
     "project": "FaceIDGrace",
+    "check": "build",
+    "exit_code": 0,
+    "log": "build.log"
+  },
+  {
+    "project": "FaceIDGrace",
     "check": "package",
     "exit_code": 0,
-    "log": "FaceIDGrace-package.log"
+    "log": "package.json"
+  },
+  {
+    "project": "FaceIDGrace",
+    "check": "scope",
+    "exit_code": 0,
+    "log": "scope.json"
+  },
+  {
+    "project": "FaceIDGrace",
+    "check": "block-regression",
+    "exit_code": 0,
+    "log": "block-regression.json"
   }
 ]

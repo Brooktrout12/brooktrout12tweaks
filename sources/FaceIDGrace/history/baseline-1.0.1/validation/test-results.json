@@ -1,0 +1,8 @@
+[
+  {
+    "project": "FaceIDGrace",
+    "check": "package",
+    "exit_code": 0,
+    "log": "FaceIDGrace-package.log"
+  }
+]

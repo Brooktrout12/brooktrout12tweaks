@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-17",
+  "base_commit": "86abb860bf54e1a7e2b5b5201687b37b1bc3b129",
+  "description": "Publish the selected saved DEBs with their matching, browsable source trees.",
+  "source_file_hashes_checked": 197,
+  "packages": [
+    {
+      "package": "com.brooktrout12.blursleep",
+      "version": "1.2.0",
+      "filename": "debs/rootless/BlurSleep_1.2.0_rootless.deb",
+      "sha256": "92e57ca83b508e669ae006afffa5a6084bd6fe16fa637d2455f5d5fd68785c67",
+      "source": "sources/BlurSleep",
+      "input_archive": "BlurSleep_1.2.0_DEB_and_Source.zip",
+      "source_files_checked": 38,
+      "source_hashes_verified": true,
+      "source_control_matches_deb": true,
+      "package_hash_matches_source_validation": true
+    },
+    {
+      "package": "com.brooktrout12.ccnorecent",
+      "version": "1.0.0",
+      "filename": "debs/rootless/CCNoRecent_1.0.0_rootless.deb",
+      "sha256": "339ebd2f26000e892853a050871a4a90d33d757788ca94faf92a9290c8cbe350",
+      "source": "sources/CCNoRecent",
+      "input_archive": "CCNoRecent_1.0.0_DEB_and_Source.zip",
+      "source_files_checked": 12,
+      "source_hashes_verified": true,
+      "source_control_matches_deb": true,
+      "package_hash_matches_source_validation": true
+    },
+    {
+      "package": "com.brooktrout12.faceidgrace",
+      "version": "1.0.3",
+      "filename": "debs/rootless/com.brooktrout12.faceidgrace_1.0.3_iphoneos-arm64.deb",
+      "sha256": "cb58bd2e3fa172376d6db0fb92e88cc25e932cbc04e621a8ad999d3759f1c5fc",
+      "source": "sources/FaceIDGrace",
+      "input_archive": "Jailbreak_Tweaks_iOS17_18_DEBs_and_Sources.zip",
+      "source_files_checked": 62,
+      "source_hashes_verified": true,
+      "source_control_matches_deb": true,
+      "package_hash_matches_source_validation": true
+    },
+    {
+      "package": "com.brooktrout12.cleanquickactions",
+      "version": "1.0.2",
+      "filename": "debs/rootless/CleanQuickActions_1.0.2_rootless.deb",
+      "sha256": "2b0923cd9b7ebabf285cfe6afa132ccebe775f0ae7a7f8dcf2a9b04b8f5626a2",
+      "source": "sources/CleanQuickActions",
+      "input_archive": "CleanQuickActions_1.0.2_source.zip",
+      "source_files_checked": 59,
+      "source_hashes_verified": true,
+      "source_control_matches_deb": true,
+      "package_hash_matches_source_validation": true
+    },
+    {
+      "package": "com.brooktrout12.rockantenneadblock",
+      "version": "0.2.0",
+      "filename": "debs/rootless/RockAntenneAdBlock_0.2.0_Test2_rootless.deb",
+      "sha256": "c04dd41f5c0ea737019218300a37510dbcd7521fedb75d896eda68986d29ce6e",
+      "source": "sources/RockAntenneAdBlock",
+      "input_archive": "RockAntenneAdBlock_0.2.0_Test2_DEB_und_Quellcode.zip",
+      "source_files_checked": 26,
+      "source_hashes_verified": true,
+      "source_control_matches_deb": true,
+      "package_hash_matches_source_validation": true
+    }
+  ],
+  "removed_source_archives": [
+    "sources/BlurSleep_1.2.0_DEB_and_Source.zip",
+    "sources/CCNoRecent_1.0.0_DEB_and_Source.zip"
+  ],
+  "tweak_code_modified": false,
+  "debs_rebuilt": false,
+  "device_runtime_tests": "Not run during repository assembly.",
+  "source_file_hashes_checked_scope": "197 original input files verified before publication-only documentation and fixture redactions.",
+  "publication_edits": [
+    "FaceIDGrace: replaced private crash-report metadata with a code-level callback explanation and updated source manifest.",
+    "BlurSleep and CCNoRecent: generalized release notes and interface fixtures; removed personal device attribution and test observations.",
+    "CleanQuickActions and RockAntenneAdBlock: removed personal app-test observations from release/build notes and updated source manifests.",
+    "Removed personal device-model and point-release test targets throughout updated publication notes; retained generic iOS 17/18 compatibility."
+  ]
+}

@@ -1,0 +1,345 @@
+--- a/FGMenuScope.h
++++ b/FGMenuScope.h
+@@ -0,0 +1,20 @@
++#pragma once
++#include <pthread.h>
++#include <stdbool.h>
++#include <stdint.h>
++
++static pthread_key_t FGMenuDepthKey;
++
++static inline bool FGMenuActive(void) {
++    return (uintptr_t)pthread_getspecific(FGMenuDepthKey) != 0;
++}
++
++static inline bool FGEnterMenu(uintptr_t *previous) {
++    *previous = (uintptr_t)pthread_getspecific(FGMenuDepthKey);
++    if (*previous == UINTPTR_MAX) return false;
++    return pthread_setspecific(FGMenuDepthKey, (void *)(*previous + 1)) == 0;
++}
++
++static inline void FGLeaveMenu(uintptr_t previous) {
++    pthread_setspecific(FGMenuDepthKey, (void *)previous);
++}
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -11,24 +11,26 @@
+ #import <stdbool.h>
+ #import <stdint.h>
+ #import <substrate.h>
++#include "FGMenuScope.h"
+ 
+-static pthread_key_t FGMenuDepthKey;
+ static pthread_mutex_t FGInstallMutex = PTHREAD_MUTEX_INITIALIZER;
+-static atomic_bool FGInstalled = ATOMIC_VAR_INIT(false);
+ static atomic_bool FGInstallQueued = ATOMIC_VAR_INIT(false);
+ static id FGBundleObserver;
++static bool FGUpdateInstalled, FGIdentitiesInstalled, FGCountInstalled;
++static bool FGBiometricInstalled, FGProfileInstalled;
+ 
+ static void (*FGOriginalUpdate)(id, SEL, id);
+ static BOOL (*FGOriginalBiometricUnlockAllowed)(id, SEL);
+ static BOOL (*FGOriginalProfileUnlockAllowed)(id, SEL);
++static id (*FGOriginalIdentities)(id, SEL);
++static long long (*FGOriginalFingerprintCount)(id, SEL);
+ 
+ // Only the synchronous menu-building call on THIS thread sees the override.
+ // Reentrant menu builds and Objective-C exceptions both restore the previous
+ // scope. Other threads and every call outside this scope use Apple's answer.
+ static void FGUpdateGracePeriod(id self, SEL command, id specifier) {
+-    uintptr_t previousDepth = (uintptr_t)pthread_getspecific(FGMenuDepthKey);
+-    if (previousDepth == UINTPTR_MAX ||
+-        pthread_setspecific(FGMenuDepthKey, (void *)(previousDepth + 1)) != 0) {
++    uintptr_t previousDepth;
++    if (!FGEnterMenu(&previousDepth)) {
+         FGOriginalUpdate(self, command, specifier);
+         return;
+     }
+@@ -37,36 +39,50 @@
+         FGOriginalUpdate(self, command, specifier);
+     } @finally {
+         // The key remains allocated for the lifetime of this injected library.
+-        pthread_setspecific(FGMenuDepthKey, (void *)previousDepth);
++        FGLeaveMenu(previousDepth);
+     }
+ }
+ 
+ static BOOL FGBiometricUnlockAllowed(id self, SEL command) {
+-    if ((uintptr_t)pthread_getspecific(FGMenuDepthKey) != 0) {
++    if (FGMenuActive()) {
+         return NO;
+     }
+     return FGOriginalBiometricUnlockAllowed(self, command);
+ }
+ 
+-// iOS 17 exposes this query on MCProfileConnection. Its override has the
+-// same tightly bounded, thread-local menu scope as the existing iOS 18 path.
++// Retain both query providers when available, without assuming which OS
++// version routes its menu through which provider.
+ static BOOL FGProfileUnlockAllowed(id self, SEL command) {
+-    if ((uintptr_t)pthread_getspecific(FGMenuDepthKey) != 0) return NO;
++    if (FGMenuActive()) return NO;
+     return FGOriginalProfileUnlockAllowed(self, command);
++}
++
++// +identities is shared by Touch ID and Face ID. The native menu tests its
++// count before applying the biometric-only immediate-passcode clamp. This
++// works without guessing where a particular OS implements its allow query.
++static id FGIdentities(id self, SEL command) {
++    if (FGMenuActive()) return @[];
++    return FGOriginalIdentities(self, command);
++}
++
++static long long FGFingerprintCount(id self, SEL command) {
++    if (FGMenuActive()) return 0;
++    return FGOriginalFingerprintCount(self, command);
+ }
+ 
+ // Do not hook a private selector if its ABI has changed. The relevant method
+ // signatures were checked against the iOS 18.2 runtime implementation.
+ static BOOL FGHasSignature(Method method, unsigned int argumentCount,
+-                           BOOL returnsBoolean) {
++                           char resultType) {
+     if (!method || method_getNumberOfArguments(method) != argumentCount) {
+         return NO;
+     }
+     char type[32] = {0};
+     method_getReturnType(method, type, sizeof(type));
+-    if (returnsBoolean ? (type[0] != 'B' && type[0] != 'c') : type[0] != 'v') {
++    if (resultType == 'B' ? (type[0] != 'B' && type[0] != 'c') : type[0] != resultType) {
+         return NO;
+     }
++    if (resultType == '@' && type[1] == '?') return NO;
+     method_getArgumentType(method, 0, type, sizeof(type));
+     if (type[0] != '@') return NO;
+     method_getArgumentType(method, 1, type, sizeof(type));
+@@ -79,37 +95,54 @@
+ }
+ 
+ static void FGInstallHooks(void) {
+-    if (atomic_load_explicit(&FGInstalled, memory_order_acquire)) return;
+-
+-    pthread_mutex_lock(&FGInstallMutex);
+-    if (!atomic_load_explicit(&FGInstalled, memory_order_relaxed)) {
++    // A bundle may become available after the first working provider. Keep
++    // installing missing routes on image loads; never hook a route twice.
++    // If a loader callback reenters during installation, defer to its queued
++    // main-thread attempt rather than deadlocking the recursive load.
++    if (pthread_mutex_trylock(&FGInstallMutex) != 0) return;
++    {
+         Class controller = objc_getClass("PSUIPasscodeLockController");
+         Class biometrics = objc_getClass("PSUIBiometrics");
+         Class profile = objc_getClass("MCProfileConnection");
+         SEL update = sel_registerName("_updateGracePeriodForSpecifier:");
+         SEL allowed = sel_registerName("isFingerprintUnlockAllowed");
++        SEL identities = sel_registerName("identities");
++        SEL count = sel_registerName("fingerprintCount");
+ 
+         Method updateMethod = class_getInstanceMethod(controller, update);
+         Method allowedMethod = class_getInstanceMethod(biometrics, allowed);
+         Method profileMethod = class_getInstanceMethod(profile, allowed);
+-        BOOL biometricQuery = FGHasSignature(allowedMethod, 2, YES);
+-        // Keep the existing iOS 18 hook set unchanged. The legacy provider is
+-        // used only on iOS 17, where it is present in runtime headers.
+-        BOOL profileQuery = NSProcessInfo.processInfo.operatingSystemVersion.majorVersion == 17 &&
+-                            FGHasSignature(profileMethod, 2, YES);
+-        if (FGHasSignature(updateMethod, 3, NO) &&
+-            (biometricQuery || profileQuery)) {
++        if (FGHasSignature(updateMethod, 3, 'v')) {
+             // Install the query hook first. It is inert until the updater
+             // enters its thread-local scope.
+-            if (biometricQuery)
++            if (!FGIdentitiesInstalled &&
++                FGHasSignature(class_getClassMethod(biometrics, identities), 2, '@')) {
++                MSHookMessageEx(object_getClass(biometrics), identities, (IMP)FGIdentities,
++                               (IMP *)&FGOriginalIdentities);
++                FGIdentitiesInstalled = true;
++            }
++            if (!FGCountInstalled &&
++                FGHasSignature(class_getInstanceMethod(controller, count), 2, 'q')) {
++                MSHookMessageEx(controller, count, (IMP)FGFingerprintCount,
++                               (IMP *)&FGOriginalFingerprintCount);
++                FGCountInstalled = true;
++            }
++            if (!FGBiometricInstalled && FGHasSignature(allowedMethod, 2, 'B')) {
+                 MSHookMessageEx(biometrics, allowed, (IMP)FGBiometricUnlockAllowed,
+                                (IMP *)&FGOriginalBiometricUnlockAllowed);
+-            if (profileQuery)
++                FGBiometricInstalled = true;
++            }
++            if (!FGProfileInstalled && FGHasSignature(profileMethod, 2, 'B')) {
+                 MSHookMessageEx(profile, allowed, (IMP)FGProfileUnlockAllowed,
+                                (IMP *)&FGOriginalProfileUnlockAllowed);
+-            MSHookMessageEx(controller, update, (IMP)FGUpdateGracePeriod,
+-                           (IMP *)&FGOriginalUpdate);
+-            atomic_store_explicit(&FGInstalled, true, memory_order_release);
++                FGProfileInstalled = true;
++            }
++            if (!FGUpdateInstalled && (FGIdentitiesInstalled || FGCountInstalled ||
++                                      FGBiometricInstalled || FGProfileInstalled)) {
++                MSHookMessageEx(controller, update, (IMP)FGUpdateGracePeriod,
++                               (IMP *)&FGOriginalUpdate);
++                FGUpdateInstalled = true;
++            }
+         }
+     }
+     pthread_mutex_unlock(&FGInstallMutex);
+@@ -124,7 +157,6 @@
+ }
+ 
+ static void FGQueueInstall(void) {
+-    if (atomic_load_explicit(&FGInstalled, memory_order_acquire)) return;
+     if (!atomic_exchange_explicit(&FGInstallQueued, true, memory_order_acq_rel)) {
+         dispatch_async_f(dispatch_get_main_queue(), NULL, FGRunQueuedInstall);
+     }
+@@ -147,7 +179,6 @@
+         if (pthread_key_create(&FGMenuDepthKey, NULL) != 0) return;
+ 
+         FGInstallHooks();
+-        if (atomic_load_explicit(&FGInstalled, memory_order_acquire)) return;
+ 
+         // PreferencesUI may load only when Face ID & Passcode is opened.
+         // A bundle notification is synchronous, so hooks are ready before
+--- a/control
++++ b/control
+@@ -1,8 +1,8 @@
+ Package: com.brooktrout12.faceidgrace
+ Name: FaceIDGrace
+-Version: 1.0.1
++Version: 1.0.2
+ Architecture: iphoneos-arm64
+-Description: Restore native Require Passcode delay choices with Face ID enabled.
++Description: Restore native Require Passcode delay choices with Face ID or Touch ID on iOS 17 and 18.
+ Maintainer: Brooktrout12
+ Author: Brooktrout12
+ Section: Tweaks
+--- a/scripts/test-scope.sh
++++ b/scripts/test-scope.sh
+@@ -0,0 +1,7 @@
++#!/usr/bin/env bash
++set -euo pipefail
++bt_project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
++bt_test="$(mktemp)"
++trap 'rm -f -- "$bt_test"' EXIT
++cc -std=c11 -Wall -Wextra -Werror -pthread "$bt_project/tests/test_scope.c" -o "$bt_test"
++"$bt_test"
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -14,6 +14,7 @@
+ import subprocess
+ import sys
+ import tarfile
++import uuid
+ 
+ 
+ def require(condition, message):
+@@ -76,6 +77,8 @@
+             "Expected an arm64-family Mach-O dylib")
+     require(32 + commands_size <= len(binary), "Truncated load commands")
+     dependencies, rpaths, signature, platform = [], [], None, None
++    minimum, image_uuid = None, None
++    constant_strings = []
+     position = 32
+     for _ in range(count):
+         command, size = struct.unpack_from("<II", binary, position)
+@@ -89,9 +92,34 @@
+             signature = struct.unpack_from("<II", binary, position + 8)
+         elif command == 0x32:
+             platform = u32(binary, position + 8)
++            minimum = u32(binary, position + 12)
++        elif command == 0x1B:
++            image_uuid = str(uuid.UUID(bytes=binary[position+8:position+24]))
++        elif command == 0x19:
++            for index in range(u32(binary, position+64)):
++                section = position+72+index*80
++                name = binary[section:section+16].split(b'\0')[0]
++                if name == b'__cfstring':
++                    length = struct.unpack_from('<Q',binary,section+40)[0]
++                    start = u32(binary,section+48)
++                    require(length % 32 == 0, 'Invalid constant-string section')
++                    constant_strings.extend(struct.unpack_from('<Q',binary,p)[0] for p in range(start,start+length,32))
+         position += size
+     require(position == 32 + commands_size, "Load command count mismatch")
+     require(platform == 2, "Expected the iOS device platform")
++    require(minimum == 0x110000, 'Expected iOS 17.0 deployment target')
++    require(image_uuid is not None, 'Missing binary UUID')
++    if subtype & 0xFFFFFF == 2:
++        require(constant_strings and all(v & 0xFFFFFFFF00000000 == 0xC0156AE100000000 for v in constant_strings),
++                'arm64e constant-string ABI conversion is missing')
++    for name in ('identities', 'fingerprintCount', '_updateGracePeriodForSpecifier:',
++                 'isFingerprintUnlockAllowed', '_class_getClassMethod', '_object_getClass',
++                 '_pthread_getspecific', '_pthread_setspecific', '_pthread_mutex_trylock',
++                 '_MSHookMessageEx', '_dyld_register_func_for_add_image'):
++        require(name.encode()+b'\0' in binary, 'Missing hook or scope mechanism: '+name)
++    for name in ('_MSHookFunction', '_MCKeybagSetPasscodeGracePeriod', 'setGraceValue:specifier:',
++                 'setFingerprintUnlockAllowed:passcode:'):
++        require(name.encode()+b'\0' not in binary, 'Unexpected authentication/persistence hook: '+name)
+     require("@rpath/CydiaSubstrate.framework/CydiaSubstrate" in dependencies,
+             "Missing rootless Substrate linkage")
+     require("/var/jb/Library/Frameworks" in rpaths, "Missing rootless framework rpath")
+@@ -99,6 +127,8 @@
+             "Missing relocated jailbreak rpath")
+     require(signature is not None, "Unsigned dylib")
+     return {"architecture": {0: "arm64", 2: "arm64e"}.get(subtype & 0xFFFFFF, str(subtype)),
++            'uuid':image_uuid, 'minimum_ios':'17.0',
++            'shared_identity_and_touch_id_count_routes_present':True,
+             "signature": verify_signature(binary, *signature)}
+ 
+ 
+@@ -107,6 +137,8 @@
+     metadata = subprocess.check_output(["dpkg-deb", "--field", str(path)], text=True)
+     require("Architecture: iphoneos-arm64" in metadata, "Wrong package architecture")
+     require("Package: com.brooktrout12.faceidgrace" in metadata, "Wrong package identifier")
++    require('Version: 1.0.2\n' in metadata, 'Wrong version')
++    require('firmware (>= 17.0)' in metadata and 'firmware (<< 19.0)' in metadata, 'Wrong firmware bounds')
+     payload = subprocess.check_output(["dpkg-deb", "--fsys-tarfile", str(path)])
+     with tarfile.open(fileobj=io.BytesIO(payload), mode="r:") as archive:
+         prefix = "var/jb/Library/MobileSubstrate/DynamicLibraries/"
+--- a/tests/test_scope.c
++++ b/tests/test_scope.c
+@@ -0,0 +1,45 @@
++#include "../FGMenuScope.h"
++#include <assert.h>
++#include <stdio.h>
++
++static void *otherThread(void *unused) {
++    (void)unused;
++    assert(!FGMenuActive());
++    uintptr_t previous;
++    assert(FGEnterMenu(&previous));
++    assert(previous == 0 && FGMenuActive());
++    FGLeaveMenu(previous);
++    assert(!FGMenuActive());
++    return NULL;
++}
++
++int main(void) {
++    assert(pthread_key_create(&FGMenuDepthKey, NULL) == 0);
++    assert(!FGMenuActive());
++    uintptr_t first, second;
++    assert(FGEnterMenu(&first));
++    assert(first == 0 && FGMenuActive());
++    assert(FGEnterMenu(&second));
++    assert(second == 1 && FGMenuActive());
++    FGLeaveMenu(second);
++    assert(FGMenuActive());
++    pthread_t thread;
++    assert(pthread_create(&thread, NULL, otherThread, NULL) == 0);
++    assert(pthread_join(thread, NULL) == 0);
++    assert(FGMenuActive());
++    FGLeaveMenu(first);
++    assert(!FGMenuActive());
++    for (unsigned i = 0; i < 100000; ++i) {
++        assert(FGEnterMenu(&first));
++        assert(FGMenuActive());
++        FGLeaveMenu(first);
++        assert(!FGMenuActive());
++    }
++    assert(pthread_setspecific(FGMenuDepthKey, (void *)UINTPTR_MAX) == 0);
++    assert(!FGEnterMenu(&first));
++    assert(first == UINTPTR_MAX);
++    FGLeaveMenu(0);
++    assert(!FGMenuActive());
++    assert(pthread_key_delete(FGMenuDepthKey) == 0);
++    puts("{\"result\":\"PASS\",\"nested_scope_restored\":true,\"other_thread_isolated\":true,\"repeat_cycles\":100000,\"overflow_rejected\":true,\"device_runtime_tested\":false}");
++}

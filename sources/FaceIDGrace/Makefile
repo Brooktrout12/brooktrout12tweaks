@@ -10,7 +10,7 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = FaceIDGrace
 FaceIDGrace_FILES = Tweak.m
 FaceIDGrace_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
-FaceIDGrace_FRAMEWORKS = Foundation
+FaceIDGrace_FRAMEWORKS = Foundation CoreFoundation
 FaceIDGrace_LIBRARIES = substrate
 
 include $(THEOS_MAKE_PATH)/tweak.mk

@@ -2,16 +2,14 @@
   "result": "PASS",
   "matches": [
     {
-      "binary": "FaceIDGrace.dylib",
-      "architecture": "arm64",
-      "uuid": "fd01566b-fb72-3b64-85fd-e72843bc11bd",
-      "match": true
+      "architecture": "arm64e",
+      "uuid": "c023d737-8d10-379c-9cc9-dbb2bd5571ee",
+      "matches_packaged_binary": true
     },
     {
-      "binary": "FaceIDGrace.dylib",
-      "architecture": "arm64e",
-      "uuid": "428fa87c-f0ee-317e-a236-94ea7024fcfe",
-      "match": true
+      "architecture": "arm64",
+      "uuid": "5789113e-2cf3-3e22-8b32-34d8e36432c4",
+      "matches_packaged_binary": true
     }
   ]
 }

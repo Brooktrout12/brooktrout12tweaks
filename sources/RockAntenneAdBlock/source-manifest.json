@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0-test2",
+  "generated_at": "2026-10-16T22:12:56.667844+00:00",
+  "files": {
+    "AdsWizz.h": "fc5237d5dcd56f29a5b871a1466998a6dd47f7ddc32e43a28dbb08f68a411327",
+    "AdsWizz.m": "d44d3017b5adb6784c6f93047cce1ba40d5d50a251ec5e1cbb1a0160704bf8ce",
+    "BUILD-INFO.md": "bc32fc26b1789086516628273fc47d23fe416e960354808482a72a2770e8851f",
+    "Diagnostics.h": "97f75a2f804024b2cd98b1cafbd8e569efcbfd71e5b74ce9e0b38555a0fff846",
+    "Diagnostics.m": "04b27e4b1cece92358ad59016a4a75c346d663e950844c16c62b539dabeb362d",
+    "Makefile": "6cac8168f907651ac85cb53bfa664e100423937b2b2c9aa0460995776b02aa35",
+    "README.md": "975236f5fbaae832b657fdd177ec3655f4919c9808315ae9d62fe27a532480a0",
+    "RockAntenneAdBlock.plist": "485161625fa812fb0d2078e48d20b3329079fe8b4e2627f723f2dc99ce0c9cb1",
+    "Rules.c": "e2f3d59268127e5387f751942f21f9ab513d92d1cb3463c4689cdb4a47e0795b",
+    "Rules.h": "7f711d6814c8d734c97c8310663eb613053460c45a1b1f49de0649bf03a8687f",
+    "SkipGate.c": "f111100e24451d4286c7a5ebc2cc8c4dc8795659588d6313882c232f3248f656",
+    "SkipGate.h": "c8411fc529184a08dc99a4e3dd5ea2e6a84e89f46e325edcaf4f39f70de5034a",
+    "Tweak.m": "e1992e7c598aa5b16ff344d833a26abcb6572b69320662379d755300d12ab1df",
+    "WebKitAPI.h": "4e23770cec91ad884d600fd45e550e1bba022b3d3e2df15ea11536d749f2f909",
+    "control": "169b5523b27bcb389653708cc28ad0884ea1b0b5e8edfc86e6d37175c28e9d2b",
+    "debug-symbols/RockAntenneAdBlock.dylib.dSYM/Contents/Info.plist": "6ab096133e86432fdb09b02089ee8e89514751708e5fb3825f494720ccf13bf5",
+    "debug-symbols/RockAntenneAdBlock.dylib.dSYM/Contents/Resources/DWARF/RockAntenneAdBlock.dylib": "b2a57f7a0d9421ab6189007b2f10de5e571e78f668d60829755989d0724fd95b",
+    "scripts/verify_package.py": "488b2fafefa7b4628b1292f680e04d0017fd4de7ba0a9ec0443a95dc340306ee",
+    "tests/test_rules.c": "dba0a6175adceac2318302731842b702d1232bb0254a6c0ef29f43843e7fc068",
+    "tests/test_skipgate.c": "13b9a6273e469aac50fe17bc8cf3ebe8d6878109ce1d69d079cb6c5b15b08b13",
+    "tests/test_webscript.py": "f136c821cb5321925ed11ff7100174d933b2aa99313cd48bda15c676c8ee97b1",
+    "validation/build.log": "d46345a05caa9a535fd8e1356a643af3f9b8af982f38400e695757adcfa991ca",
+    "validation/host-rules.txt": "3456db0b5f50e45434686265759c9d561b3cae5936bbb40dd79fb9be9beb2c14",
+    "validation/package.json": "5f0ee8b7dd0355ecceabefb2c5098db9ae2a0abf79126e0b03b9eb4a103157be",
+    "validation/skip-gate.txt": "8afcf7269fd30b1da04c36e5c9efdbe448682f61cde989d1a5c3bf241c922ed9",
+    "validation/webscript.txt": "07a7e2d82d1828f9f4ac03ec5f1a206c4474ccbd478af0d2512b128d60424215"
+  },
+  "publication_note": "Personal test observations and private device-report metadata are omitted from publication notes; implementation and package bytes are unchanged."
+}

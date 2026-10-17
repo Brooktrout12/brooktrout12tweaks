@@ -1,0 +1,8 @@
+{
+  "baseline_source": "FaceIDGrace_1.0.0_source.zip",
+  "baseline_source_sha256": "0807087fb3237e3c7a9a89d401bc62f6df2002a17df2fc52d4836e7f7b5a11b4",
+  "baseline_version": "1.0.0",
+  "version": "1.0.1",
+  "package_sha256": "6829d3352dca7517dddbe3425ead3af3599f4b7bebac65b79878b4f5a1d46731",
+  "source_patch": "IOS17-18.patch"
+}

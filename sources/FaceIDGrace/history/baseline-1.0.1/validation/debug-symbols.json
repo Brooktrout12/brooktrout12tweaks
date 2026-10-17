@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "binary": "FaceIDGrace.dylib",
+      "architecture": "arm64",
+      "uuid": "fd01566b-fb72-3b64-85fd-e72843bc11bd",
+      "match": true
+    },
+    {
+      "binary": "FaceIDGrace.dylib",
+      "architecture": "arm64e",
+      "uuid": "428fa87c-f0ee-317e-a236-94ea7024fcfe",
+      "match": true
+    }
+  ]
+}

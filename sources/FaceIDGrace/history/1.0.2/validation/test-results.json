@@ -1,0 +1,20 @@
+[
+  {
+    "project": "FaceIDGrace",
+    "check": "build",
+    "exit_code": 0,
+    "log": "build.log"
+  },
+  {
+    "project": "FaceIDGrace",
+    "check": "package",
+    "exit_code": 0,
+    "log": "package.json"
+  },
+  {
+    "project": "FaceIDGrace",
+    "check": "scope",
+    "exit_code": 0,
+    "log": "scope.json"
+  }
+]

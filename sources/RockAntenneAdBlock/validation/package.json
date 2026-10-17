@@ -1,0 +1,26 @@
+{
+  "package": "com.brooktrout12.rockantenneadblock_0.2.0_iphoneos-arm64.deb",
+  "sha256": "c04dd41f5c0ea737019218300a37510dbcd7521fedb75d896eda68986d29ce6e",
+  "architecture": "arm64 (App Store process, including A12+)",
+  "minimum_ios": "17.0",
+  "injection_bundle": "de.rockantenne.eple",
+  "binary_uuid": "1a9a7a34-8294-3f09-8923-ff707dce68f4",
+  "dependencies": [
+    "/usr/lib/libobjc.A.dylib",
+    "/System/Library/Frameworks/Foundation.framework/Foundation",
+    "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+    "/System/Library/Frameworks/UIKit.framework/UIKit",
+    "/System/Library/Frameworks/AVFoundation.framework/AVFoundation",
+    "/System/Library/Frameworks/CoreMedia.framework/CoreMedia",
+    "/usr/lib/libSystem.B.dylib",
+    "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
+  ],
+  "verified_code_signatures": [
+    {
+      "algorithm": "sha256",
+      "pages": 31
+    }
+  ],
+  "device_tested": false,
+  "status": "static checks passed; on-device verification pending"
+}

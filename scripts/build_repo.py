@@ -96,4 +96,7 @@ def main():
     (OUT/'index.html').write_text(page('Brooktrout12 Tweaks',body))
     print('Built',len(manifest),'packages into',OUT)
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    import runpy
+    runpy.run_path(str(ROOT/'scripts/import_sources_2026_10_17.py'), run_name='__main__')
+    main()

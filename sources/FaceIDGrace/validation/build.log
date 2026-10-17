@@ -1,0 +1,67 @@
+[1;31m> [1;3;39mMaking all for tweak FaceIDGrace…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64)…[m
+[0;33m==> [1;39mLinking tweak FaceIDGrace (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for FaceIDGrace…[m
+[0;34m==> [1;39mStripping FaceIDGrace (arm64)…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64e)…[m
+[0;33m==> [1;39mLinking tweak FaceIDGrace (arm64e)…[m
+ld: warning: object file /workspace/scratch/337dbaad81e8/faceidgrace_crash_fix/FaceIDGrace/.theos/obj/arm64e/Tweak.m.4cfa8c73.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for FaceIDGrace…[m
+[0;34m==> [1;39mStripping FaceIDGrace (arm64e)…[m
+[0;34m==> [1;39mMerging tweak FaceIDGrace…[m
+[0;34m==> [1;39mSigning FaceIDGrace…[m
+[1;31m> [1;3;39mMaking stage for tweak FaceIDGrace…[m
+"/workspace/scratch/337dbaad81e8/build_tools/allemande/allemande" "/workspace/scratch/337dbaad81e8/faceidgrace_crash_fix/FaceIDGrace/.theos/_/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib"
+Reading file...
+
+Patching
+
+convert len:167728
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__gcc_except_tab__TEXT
+__objc_methname
+__cstring
+__const
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x4010000000000024
+cfstr offset: 0x7ED4
+cfstr value: com.apple.Preferences
+cfstr ISA after 0xC0156AE100000024
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__data
+current str isa: 0x00, hikari str: 0x32AAABA7, hikari stroff: 0xFFFC804AB90F4FC8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FD0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FD8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FE0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FE8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FF0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F4FF8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC804AB90F5000
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/337dbaad81e8/faceidgrace_crash_fix/FaceIDGrace/.theos/_/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib
+/workspace/scratch/337dbaad81e8/build_tools/theos/toolchain/linux/iphone/bin/ldid -S "/workspace/scratch/337dbaad81e8/faceidgrace_crash_fix/FaceIDGrace/.theos/_/Library/MobileSubstrate/DynamicLibraries/FaceIDGrace.dylib"
+[0;36m==> [1;36mNotice:[m Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.faceidgrace:iphoneos-arm64' in `./packages/com.brooktrout12.faceidgrace_1.0.3_iphoneos-arm64.deb'

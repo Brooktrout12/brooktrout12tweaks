@@ -1,0 +1,13 @@
+Package: com.brooktrout12.rockantenneadblock
+Name: ROCK ANTENNE AdBlock (Test 2)
+Version: 0.2.0
+Architecture: iphoneos-arm64
+Description: Experimental app-scoped ad blocker for ROCK ANTENNE on iOS 17 and 18.
+ Skips SDK-managed AdsWizz ads using the documented AdManager interface,
+ filters selected ad requests and records playback diagnostics. Experimental.
+Maintainer: Brooktrout12
+Author: Brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate
+Tag: role::enduser
+

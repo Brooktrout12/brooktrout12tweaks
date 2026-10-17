@@ -1,27 +1,41 @@
-# Face ID Grace 1.0.1 — iOS 17 and 18
+# Face ID Grace 1.0.3 — Face ID and Touch ID, iOS 17–18
 
-By Brooktrout12. Update from 1.0.0. Package ID: `com.brooktrout12.faceidgrace`.
+By Brooktrout12. Package identifier: `com.brooktrout12.faceidgrace`.
 
-## Compatibility update
+This release fixes the bundle-notification callback that could crash Settings. It keeps the shared Face ID/Touch ID menu hooks introduced in 1.0.2. The DEB contains arm64 and arm64e slices with an iOS 17.0 deployment minimum; its firmware dependency permits iOS 17 and 18.
 
-Adds the iOS 17 MCProfileConnection biometric-query provider, with signature checks and the same thread-local, synchronous grace-menu scope. The existing iOS 18 PSUIBiometrics route is retained. Calls outside menu construction use the original result; native settings persistence and policy enforcement remain. The package name remains unchanged on Touch ID devices.
+## Callback repair
 
-The DEB dependency is `firmware (>= 17.0), firmware (<< 19.0)`. Runtime major-version checks accept 17 and 18, and both arm64/arm64e binaries target iOS 17.0. The package name, identifier, and existing preference domains are retained for normal upgrades.
+The previous notification observer used an Objective-C global block with legacy arm64e metadata. CoreFoundation could encounter invalid pointer authentication while retaining or releasing that block. The package's symbols and block regression checks document the affected callback without publishing a device crash report.
 
-## Install
+The Linux compiler emits legacy arm64e block metadata that the project's ABI converter does not repair. Version 1.0.3 registers a C function with the local CoreFoundation notification center, removing the Objective-C block object and its retain/release path. Bundle notifications still trigger synchronous hook installation; the existing deferred dyld callback still handles other image loads. No notification-center objects are cast between Foundation and CoreFoundation.
 
-Open `com.brooktrout12.faceidgrace_1.0.1_iphoneos-arm64.deb` in the existing rootless package manager and install it as an update. Let the package manager resolve the dependencies listed in `control`; no firmware-force option is required for iOS 17.6.1. Respring after SpringBoard tweaks and reopen Settings for preference changes. The archive contains no automatic installer.
+## Install and check
 
-## Device check
+Install `com.brooktrout12.faceidgrace_1.0.3_iphoneos-arm64.deb` over the previous version. Fully close Settings from the app switcher, then reopen it; complete a respring if the package manager requests one.
 
-Open Touch ID & Passcode → Require Passcode on the SE. Choose an offered interval, leave and reopen the page, and check the stored value and real lock timing. Confirm ordinary Touch ID/passcode authentication. Repeat under Face ID & Passcode on iOS 18. A policy-rejected save must remain rejected.
+1. Open Settings, then **Touch ID & Passcode → Require Passcode** on the Touch ID device. Confirm Settings stays open and delay choices appear. There is no separate tweak pane.
+2. Choose **After 1 minute**, leave the page, and reopen it to check that the selection persists.
+3. Lock and reopen within the minute without a biometric match: use an unenrolled finger for the Touch ID device's Home button, or cover the Face ID sensors. Repeat after more than a minute and confirm authentication is required again.
+4. Choose **Immediately** to check restoration of normal behavior. Repeat under **Face ID & Passcode** on a Face ID device.
 
-Compatibility review used the iOS **17.0.3** headers at https://github.com/MTACS/iOS-17-Runtime-Headers and the original projects' iOS 18 references. The downloaded iOS 17 header archive SHA-256 is `5d2634d56c32b829f9ec0d816a695a55b225beda4abc525e9be1ef7cb2cf17d2`. This is interface evidence, not execution of iOS 17.6.1. Runtime selector/signature guards remain where the original project supplies them. Unsupported private interfaces may leave a feature inactive rather than force a mismatched hook.
+No physical device was available for testing 1.0.3. Build and binary checks establish that the known faulty block is absent; they do not establish all native menu, save, and lock-timing behavior. The requested device matrix remains Touch ID and Face ID on both iOS 17 and iOS 18.
 
-No physical iPhone was connected. **The new release has not been device-tested on iOS 17 or iOS 18.** The priority acceptance device is iPhone SE (2020/A13), iOS 17.6.1, with the user's existing rootless Dopamine setup. All iOS 17.x and 18.x are admitted by the package/runtime range; behavior on every model and point release cannot be certified by static checks. Hardware tests and interactions with other installed tweaks remain outstanding.
+## Menu behavior retained from 1.0.2
 
-## Source and evidence
+During the native `_updateGracePeriodForSpecifier:` call only, on that thread, the tweak overrides the shared `PSUIBiometrics +identities` query, the controller's `-fingerprintCount`, and available `isFingerprintUnlockAllowed` providers. It installs matching hooks independently as Settings loads frameworks. Unsupported method signatures are skipped. Nested calls and Objective-C exceptions restore the prior scope; other threads and calls outside the menu scope receive the original results.
 
-This archive contains the exact updated project sources, original assets/licenses, fresh matching debug symbols, and retained regression scripts. `IOS17-18.patch` compares the edited implementation/build/test files with the original source ZIP. `BUILD-IOS17-18.md` gives current build commands. `validation/` contains current results and the distributed DEB hash. `source-manifest.json` hashes every other archived file.
+Native maximum-delay policy filtering, localized labels, and authenticated saving remain in place. No enrolled biometric is removed. Management policy can still restrict the choices. If delay choices appear but saving or actual expiry fails, that is a separate behavior requiring a device report.
 
-Baseline usage, implementation details, earlier diagnoses, and old reports are preserved in `history/baseline-1.0.0/`. Those historical version numbers and results do not describe the new binary.
+## Verification included
+
+- The package verifier checks both shipped slices for absence of Objective-C block imports/literals and the block-based notification selector. It also checks the replacement C notification API, Settings-only rootless injection, firmware/deployment bounds, hook symbols, converted arm64e constant strings, and every signed code page.
+- The block regression check rejects both original 1.0.2 slices for the relevant block metadata and accepts both 1.0.3 slices.
+- The existing host scope test covers nesting, thread isolation, restoration, 100,000 cycles, and overflow rejection. It does not emulate iOS.
+- Included debug symbols match the two packaged UUIDs. `validation/callback-fix.json` explains the code-level correction; private device-report details are omitted.
+
+See `validation/`, `BUILD-IOS17-18.md`, `REFERENCES.md`, and `UPDATE-1.0.3.patch`. Historical build records and symbols are retained under `history/`; they describe older binaries.
+
+## Removal
+
+Select **Immediately before uninstalling** if you want immediate authentication restored. The selected delay is a native iOS setting; uninstalling the tweak does not reset it. License: MIT.

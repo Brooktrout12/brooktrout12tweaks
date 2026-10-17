@@ -1,0 +1,156 @@
+Reading file...
+
+Patching
+
+convert len:167832
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__objc_classname__TEXT
+__objc_methname
+__objc_methtype
+__cstring
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__const
+__cfstring
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D2D
+cfstr value: SBIconView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D38
+cfstr value: _UIContextMenuUIController
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D53
+cfstr value: _createMenuViewIfNecessaryForMenu:
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D76
+cfstr value: _UIContextMenuSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7D92
+cfstr value: _UIContextMenuReusableSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DB6
+cfstr value: _UIContextMenuGradientMaskSectionSeparatorView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DE5
+cfstr value: _UIContextMenuListView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7DFC
+cfstr value: menuView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E05
+cfstr value: delegate
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E0E
+cfstr value: view
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E13
+cfstr value: _UIContextMenuSection
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E29
+cfstr value: wantsSectionSeparator
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E3F
+cfstr value: collectionView
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E4E
+cfstr value: collectionViewDataSource
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7E96
+cfstr value: com.brooktrout12.cleanquickactions/preferences.changed
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7ECD
+cfstr value: com.brooktrout12.cleanquickactions
+cfstr ISA after 0xC0156AE100000028
+cfstr ISA 0x4010000000000028
+cfstr offset: 0x7EF0
+cfstr value: Enabled
+cfstr ISA after 0xC0156AE100000028
+__objc_classlist__DATA_CONST
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_const
+__objc_selrefs
+__objc_classrefs__DATA
+__objc_ivar
+__objc_data
+--- MAIN CLASS ---
+objc_class isa:		0x4008000000000033
+objc_class superclass:	0x4008000000000033
+objc_class cache:	0x4010000000000032
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+--- MAIN CLASS AFTER ---
+objc_class isa:		0xC00D6AE100000033
+objc_class superclass:	0xC00DB5AB00000033
+objc_class cache:	0x4010000000000032
+objc_class vtable:	0x00
+objc_class data:	0x800000000C000
+class_ro_t flags:	0x145X
+class_ro_t instanceStart:	0x40X
+class_ro_t instanceSize:	0x40X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	CQASeparatorState
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x00
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+--- MAIN CLASS ---
+objc_class isa:		0x800000000C240
+objc_class superclass:	0x4008000000000034
+objc_class cache:	0x4010000000000032
+objc_class vtable:	0x00
+objc_class data:	0xC090
+--- MAIN CLASS AFTER ---
+objc_class isa:		0x800D6AE10000C240
+objc_class superclass:	0xC00DB5AB00000034
+objc_class cache:	0x4010000000000032
+objc_class vtable:	0x00
+objc_class data:	0xC090
+class_ro_t flags:	0x144X
+class_ro_t instanceStart:	0x08X
+class_ro_t instanceSize:	0x11X
+class_ro_t reserved:	0x00X
+class_ro_t ivarLayoutOrNonMetaclass:	0x00
+class_ro_t name:	CQASeparatorState
+class_ro_t baseMethodList:	0x00
+class_ro_t baseProtocols:	0x00
+class_ro_t ivars:	0x1800000000C048
+class_ro_t weakIvarLayout:	0x00
+class_ro_t weakIvarLayout:	0x00
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/5e23bc121934/CleanQuickActions/.theos/obj/CleanQuickActions.dylib.909b7868.unsigned

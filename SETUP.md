@@ -12,7 +12,7 @@ Target: https://github.com/Brooktrout12/Brooktrout12Tweaks
 6. Open Actions > Publish tweak repository. If the initial run failed because Pages was not enabled yet, choose Run workflow, select main and run it again.
 7. Wait for the build and deploy jobs to turn green. Add this URL in Sileo or Zebra:
 
-https://brooktrout12.github.io/Brooktrout12Tweaks/
+https://brooktrout12.github.io/brooktrout12tweaks/
 
 No GitHub token, paid hosting, custom domain, Python installation or iOS build toolchain is required on your Windows PC to publish these existing packages. GitHub Desktop may request the normal GitHub sign-in/authorization.
 

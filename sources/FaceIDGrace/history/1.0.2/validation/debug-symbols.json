@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "matches": [
+    {
+      "architecture": "arm64e",
+      "uuid": "2f808aa1-b572-3d62-9716-62201bd21b5b",
+      "matches_packaged_binary": true
+    },
+    {
+      "architecture": "arm64",
+      "uuid": "1aa19195-2d45-396d-b4ec-df03893fec02",
+      "matches_packaged_binary": true
+    }
+  ]
+}

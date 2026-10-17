@@ -1,0 +1,200 @@
+--- a/Makefile
++++ b/Makefile
+@@ -10,7 +10,7 @@
+ TWEAK_NAME = FaceIDGrace
+ FaceIDGrace_FILES = Tweak.m
+ FaceIDGrace_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
+-FaceIDGrace_FRAMEWORKS = Foundation
++FaceIDGrace_FRAMEWORKS = Foundation CoreFoundation
+ FaceIDGrace_LIBRARIES = substrate
+ 
+ include $(THEOS_MAKE_PATH)/tweak.mk
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -3,6 +3,7 @@
+ // See README.md and REFERENCES.md for behavior, limitations, and API evidence.
+ 
+ #import <Foundation/Foundation.h>
++#import <CoreFoundation/CoreFoundation.h>
+ #import <dispatch/dispatch.h>
+ #import <mach-o/dyld.h>
+ #import <objc/runtime.h>
+@@ -15,7 +16,7 @@
+ 
+ static pthread_mutex_t FGInstallMutex = PTHREAD_MUTEX_INITIALIZER;
+ static atomic_bool FGInstallQueued = ATOMIC_VAR_INIT(false);
+-static id FGBundleObserver;
++static const char FGBundleObserverToken;
+ static bool FGUpdateInstalled, FGIdentitiesInstalled, FGCountInstalled;
+ static bool FGBiometricInstalled, FGProfileInstalled;
+ 
+@@ -170,6 +171,19 @@
+     FGQueueInstall();
+ }
+ 
++static void FGBundleLoaded(CFNotificationCenterRef center, void *observer,
++                           CFNotificationName name, const void *object,
++                           CFDictionaryRef userInfo) {
++    (void)center;
++    (void)observer;
++    (void)name;
++    (void)object;
++    (void)userInfo;
++    @autoreleasepool {
++        FGInstallHooks();
++    }
++}
++
+ __attribute__((constructor)) static void FGInitialize(void) {
+     @autoreleasepool {
+         if (![[NSBundle mainBundle].bundleIdentifier
+@@ -180,17 +194,17 @@
+ 
+         FGInstallHooks();
+ 
+-        // PreferencesUI may load only when Face ID & Passcode is opened.
++        // PreferencesUI may load only when the biometric passcode pane opens.
+         // A bundle notification is synchronous, so hooks are ready before
+         // the newly loaded controller starts constructing its menu.
+-        FGBundleObserver = [[NSNotificationCenter defaultCenter]
+-            addObserverForName:NSBundleDidLoadNotification
+-                        object:nil
+-                         queue:nil
+-                    usingBlock:^(NSNotification *notification) {
+-                        (void)notification;
+-                        FGInstallHooks();
+-                    }];
++        // Use a C callback: the legacy Linux arm64e toolchain emits block ISA
++        // metadata that our ABI converter does not repair. Retaining/releasing
++        // that global block caused the 1.0.2 Settings pointer-authentication
++        // trap. No Objective-C block object is created by this registration.
++        CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(),
++            &FGBundleObserverToken, FGBundleLoaded,
++            (__bridge CFStringRef)NSBundleDidLoadNotification, NULL,
++            CFNotificationSuspensionBehaviorDeliverImmediately);
+         _dyld_register_func_for_add_image(FGImageAdded);
+         FGQueueInstall();
+     }
+--- a/control
++++ b/control
+@@ -1,6 +1,6 @@
+ Package: com.brooktrout12.faceidgrace
+ Name: FaceIDGrace
+-Version: 1.0.2
++Version: 1.0.3
+ Architecture: iphoneos-arm64
+ Description: Restore native Require Passcode delay choices with Face ID or Touch ID on iOS 17 and 18.
+ Maintainer: Brooktrout12
+--- a/scripts/test-blocks.py
++++ b/scripts/test-blocks.py
+@@ -0,0 +1,54 @@
++#!/usr/bin/env python3
++"""Regression check against the actual 1.0.2 and replacement DEB binaries."""
++import hashlib
++import io
++import json
++from pathlib import Path
++import struct
++import subprocess
++import sys
++import tarfile
++
++from verify_package import require, verify_block_free
++
++
++def slices(path):
++    payload = subprocess.check_output(['dpkg-deb', '--fsys-tarfile', str(path)])
++    with tarfile.open(fileobj=io.BytesIO(payload)) as archive:
++        entry = next(m for m in archive.getmembers() if m.name.endswith('/FaceIDGrace.dylib'))
++        data = archive.extractfile(entry).read()
++    require(struct.unpack_from('>II', data) == (0xCAFEBABE, 2), 'Expected two slices')
++    result = {}
++    for index in range(2):
++        _, subtype, offset, size, _ = struct.unpack_from('>IIIII', data, 8 + index * 20)
++        architecture = {0: 'arm64', 2: 'arm64e'}[subtype & 0xFFFFFF]
++        result[architecture] = data[offset:offset + size]
++    require(set(result) == {'arm64', 'arm64e'}, 'Missing architecture')
++    return result
++
++
++def main(old, new):
++    results = []
++    for architecture, binary in slices(old).items():
++        try:
++            verify_block_free(binary)
++        except ValueError as error:
++            require('Objective-C block metadata/observer is forbidden' in str(error),
++                    'Old binary was rejected for an unrelated reason')
++            results.append({'version': '1.0.2', 'architecture': architecture,
++                            'expected_rejection': True, 'reason': str(error)})
++        else:
++            raise AssertionError('Regression: old block-bearing binary was accepted')
++    for architecture, binary in slices(new).items():
++        results.append({'version': '1.0.3', 'architecture': architecture,
++                        **verify_block_free(binary)})
++    print(json.dumps({'result': 'PASS', 'checks': results,
++                      'baseline_sha256': hashlib.sha256(old.read_bytes()).hexdigest(),
++                      'replacement_sha256': hashlib.sha256(new.read_bytes()).hexdigest(),
++                      'on_device_tested': False}, indent=2))
++
++
++if __name__ == '__main__':
++    if len(sys.argv) != 3:
++        raise SystemExit('Usage: test-blocks.py /path/to/1.0.2.deb /path/to/1.0.3.deb')
++    main(Path(sys.argv[1]), Path(sys.argv[2]))
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -28,6 +28,17 @@
+ 
+ def cstring(data, offset):
+     return data[offset:data.index(b"\0", offset)].decode("utf-8")
++
++
++def verify_block_free(binary):
++    # 1.0.2's global observer block had an incompatible arm64e ISA fixup.
++    # Inspect the shipped slices, not just the source. Imported block classes
++    # survive symbol stripping; local block symbols are useful extra guards.
++    for marker in (b'_NSConcrete', b'___block_literal_', b'___block_descriptor_',
++                   b'addObserverForName:object:queue:usingBlock:'):
++        require(marker not in binary,
++                'Objective-C block metadata/observer is forbidden: '+marker.decode())
++    return {'objective_c_blocks_absent': True}
+ 
+ 
+ def verify_signature(binary, offset, size):
+@@ -72,6 +83,7 @@
+ 
+ 
+ def verify_slice(binary):
++    block_check = verify_block_free(binary)
+     magic, cpu, subtype, filetype, count, commands_size = struct.unpack_from("<6I", binary)
+     require(magic == 0xFEEDFACF and cpu == 0x0100000C and filetype == 6,
+             "Expected an arm64-family Mach-O dylib")
+@@ -115,7 +127,9 @@
+     for name in ('identities', 'fingerprintCount', '_updateGracePeriodForSpecifier:',
+                  'isFingerprintUnlockAllowed', '_class_getClassMethod', '_object_getClass',
+                  '_pthread_getspecific', '_pthread_setspecific', '_pthread_mutex_trylock',
+-                 '_MSHookMessageEx', '_dyld_register_func_for_add_image'):
++                 '_MSHookMessageEx', '_dyld_register_func_for_add_image',
++                 '_CFNotificationCenterGetLocalCenter', '_CFNotificationCenterAddObserver',
++                 '_NSBundleDidLoadNotification', '_dispatch_async_f'):
+         require(name.encode()+b'\0' in binary, 'Missing hook or scope mechanism: '+name)
+     for name in ('_MSHookFunction', '_MCKeybagSetPasscodeGracePeriod', 'setGraceValue:specifier:',
+                  'setFingerprintUnlockAllowed:passcode:'):
+@@ -129,6 +143,7 @@
+     return {"architecture": {0: "arm64", 2: "arm64e"}.get(subtype & 0xFFFFFF, str(subtype)),
+             'uuid':image_uuid, 'minimum_ios':'17.0',
+             'shared_identity_and_touch_id_count_routes_present':True,
++            'bundle_observer': 'CoreFoundation C callback', **block_check,
+             "signature": verify_signature(binary, *signature)}
+ 
+ 
+@@ -137,7 +152,7 @@
+     metadata = subprocess.check_output(["dpkg-deb", "--field", str(path)], text=True)
+     require("Architecture: iphoneos-arm64" in metadata, "Wrong package architecture")
+     require("Package: com.brooktrout12.faceidgrace" in metadata, "Wrong package identifier")
+-    require('Version: 1.0.2\n' in metadata, 'Wrong version')
++    require('Version: 1.0.3\n' in metadata, 'Wrong version')
+     require('firmware (>= 17.0)' in metadata and 'firmware (<< 19.0)' in metadata, 'Wrong firmware bounds')
+     payload = subprocess.check_output(["dpkg-deb", "--fsys-tarfile", str(path)])
+     with tarfile.open(fileobj=io.BytesIO(payload), mode="r:") as archive:

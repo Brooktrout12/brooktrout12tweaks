@@ -1,0 +1,311 @@
+--- a/Tweak.m
++++ b/Tweak.m
+@@ -5,6 +5,7 @@
+ #import "Runtime.h"
+ #import "Preferences.h"
+ #import "Rules.h"
++#import "IOS17Sections.h"
+ #include <mach-o/dyld.h>
+ #include <limits.h>
+ #include <pthread.h>
+@@ -47,6 +48,10 @@
+     return NO;
+ }
+ 
++static BOOL CQAActiveIconMenu(UIView *view) {
++    return CQAEnabled && CQAIsIconMenu(view);
++}
++
+ static CQASeparatorState *CQAState(UIView *view, BOOL create) {
+     CQASeparatorState *state = objc_getAssociatedObject(view, &CQAStateKey);
+     if (!state && create) {
+@@ -86,6 +91,7 @@
+     while (pending.count) {
+         UIView *view = pending.lastObject;
+         [pending removeLastObject];
++        CQARefreshIOS17Sections(view);
+         if (CQAIsSeparator(view)) CQAApplySeparator(view);
+         // The walk reads the existing menu only: no forced layout, frame,
+         // height, alpha, background, material, text or interaction changes.
+@@ -154,6 +160,7 @@
+         if (!CQAIconViewClass || !CQAMethodMatches(controller, create, 'v', "@")) return;
+         CQAMenuRoots = [NSHashTable weakObjectsHashTable];
+         CQAManagedSeparators = [NSHashTable weakObjectsHashTable];
++        CQAInstallIOS17SectionFix(CQAActiveIconMenu);
+ 
+         // Verified UIKit separator classes. Never hook generic collection
+         // cells, global separator colors, or guessed thin UIView geometry.
+--- /dev/null
++++ b/IOS17Sections.h
+@@ -0,0 +1,8 @@
++#pragma once
++#import <UIKit/UIKit.h>
++
++typedef BOOL (*CQAIconMenuPolicy)(UIView *view);
++
++// Installs nothing unless this is iOS 17 and every required interface matches.
++void CQAInstallIOS17SectionFix(CQAIconMenuPolicy policy);
++void CQARefreshIOS17Sections(UIView *view);
+--- /dev/null
++++ b/IOS17Sections.m
+@@ -0,0 +1,76 @@
++#import "IOS17Sections.h"
++#import "Runtime.h"
++#import <substrate.h>
++#include <pthread.h>
++
++static Class CQA17ListClass;
++static Class CQA17SectionClass;
++static CQAIconMenuPolicy CQA17Policy;
++static BOOL (*CQA17OriginalWantsSeparator)(id, SEL);
++static char CQA17OwnerKey, CQA17LastPolicyKey;
++
++static BOOL CQA17WantsSeparator(id self, SEL cmd) {
++    BOOL native = CQA17OriginalWantsSeparator(self, cmd);
++    if (!native || !pthread_main_np()) return native;
++    NSHashTable<UIView *> *owners = objc_getAssociatedObject(self, &CQA17OwnerKey);
++    UIView *owner = owners.anyObject;
++    // A weak owner avoids retaining a dismissed menu. Recheck its current
++    // scope and the switch on every read; never overwrite UIKit's model value.
++    return owner && CQA17Policy(owner) ? NO : native;
++}
++
++void CQAInstallIOS17SectionFix(CQAIconMenuPolicy policy) {
++    if (NSProcessInfo.processInfo.operatingSystemVersion.majorVersion != 17 ||
++        !policy || CQA17SectionClass) return;
++    Class section = NSClassFromString(@"_UIContextMenuSection");
++    Class list = NSClassFromString(@"_UIContextMenuListView");
++    SEL wants = NSSelectorFromString(@"wantsSectionSeparator");
++    if (![list isSubclassOfClass:UIView.class] ||
++        !CQAMethodMatches(list, NSSelectorFromString(@"collectionView"), '@', "") ||
++        !CQAMethodMatches(list, NSSelectorFromString(@"collectionViewDataSource"), '@', "") ||
++        !(CQAMethodMatches(section, wants, 'B', "") ||
++          CQAMethodMatches(section, wants, 'c', ""))) return;
++    CQA17Policy = policy;
++    CQA17ListClass = list;
++    CQA17SectionClass = section;
++    MSHookMessageEx(section, wants, (IMP)CQA17WantsSeparator,
++                   (IMP *)&CQA17OriginalWantsSeparator);
++}
++
++void CQARefreshIOS17Sections(UIView *view) {
++    if (!CQA17SectionClass || !pthread_main_np() ||
++        ![view isKindOfClass:CQA17ListClass]) return;
++    id source = CQAGetObject(view, NSSelectorFromString(@"collectionViewDataSource"));
++    id collection = CQAGetObject(view, NSSelectorFromString(@"collectionView"));
++    if (![source isKindOfClass:UICollectionViewDiffableDataSource.class] ||
++        ![collection isKindOfClass:UICollectionView.class]) return;
++
++    BOOL active = CQA17Policy(view);
++    BOOL changed = NO;
++    NSArray *sections = [(UICollectionViewDiffableDataSource *)source snapshot].sectionIdentifiers;
++    for (id section in sections) {
++        if (![section isKindOfClass:CQA17SectionClass]) continue;
++        NSHashTable<UIView *> *owners = objc_getAssociatedObject(section, &CQA17OwnerKey);
++        if (!owners && !active) continue; // Leave unrelated menus untouched.
++        NSNumber *previous = objc_getAssociatedObject(section, &CQA17LastPolicyKey);
++        if (!owners) {
++            owners = [NSHashTable weakObjectsHashTable];
++            objc_setAssociatedObject(section, &CQA17OwnerKey, owners,
++                                     OBJC_ASSOCIATION_RETAIN_NONATOMIC);
++        }
++        if (owners.anyObject != view || !previous || previous.boolValue != active) {
++            [owners removeAllObjects];
++            [owners addObject:view];
++            objc_setAssociatedObject(section, &CQA17LastPolicyKey, @(active),
++                                     OBJC_ASSOCIATION_RETAIN_NONATOMIC);
++            changed = YES;
++        }
++    }
++    if (changed) {
++        // UIKit may already have cached section decorations before the menu
++        // received its icon-owner marker. Recompute only when policy/ownership
++        // changes, not on every layout. Native cell sizing remains in charge.
++        [[(UICollectionView *)collection collectionViewLayout] invalidateLayout];
++        [view setNeedsLayout];
++    }
++}
+--- a/Makefile
++++ b/Makefile
+@@ -8,17 +8,14 @@
+ include $(THEOS)/makefiles/common.mk
+ 
+ TWEAK_NAME = CleanQuickActions
+-CleanQuickActions_FILES = Tweak.m Preferences.m Rules.c
++CleanQuickActions_FILES = Tweak.m IOS17Sections.m Preferences.m Rules.c
+ CleanQuickActions_CFLAGS = -fobjc-arc -Wall -Wextra -Werror -fvisibility=hidden
+ CleanQuickActions_FRAMEWORKS = UIKit Foundation CoreFoundation
+ CleanQuickActions_LIBRARIES = substrate
++CleanQuickActions_CODESIGN_FLAGS = -S -Cadhoc -Icom.brooktrout12.cleanquickactions
+ 
+ include $(THEOS_MAKE_PATH)/tweak.mk
+ 
+-# Linux Clang toolchains with the old arm64e ABI only. Leave ALLEMANDE unset
+-# when building with a current Apple toolchain. Always start with make clean.
+-ifneq ($(strip $(ALLEMANDE)),)
+-before-package::
+-	"$(ALLEMANDE)" "$(THEOS_STAGING_DIR)/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib"
+-	$(TARGET_CODESIGN) -S "$(THEOS_STAGING_DIR)/Library/MobileSubstrate/DynamicLibraries/CleanQuickActions.dylib"
+-endif
++# For the legacy Linux arm64e toolchain, scripts/build-linux.sh supplies a
++# signer that converts the finished binary before signing. Modern Apple
++# toolchains use the normal Theos signing path without ABI conversion.
+--- a/control
++++ b/control
+@@ -1,6 +1,6 @@
+ Package: com.brooktrout12.cleanquickactions
+ Name: Clean Quick Actions
+-Version: 1.0.1
++Version: 1.0.2
+ Architecture: iphoneos-arm64
+ Description: Hide Home Screen Quick Actions menu separators on iOS 17 and 18.
+  A single switch in the Tweaks list. Preserves menu spacing and appearance.
+--- a/scripts/verify_package.py
++++ b/scripts/verify_package.py
+@@ -24,7 +24,7 @@
+     domain = "com.brooktrout12.cleanquickactions"
+     require(fields["Package"] == domain, "Wrong package ID")
+     require(fields["Name"] == "Clean Quick Actions", "Wrong package name")
+-    require(fields["Version"] == "1.0.1", "Wrong package version")
++    require(fields["Version"] == "1.0.2", "Wrong package version")
+     require(fields["Architecture"] == "iphoneos-arm64", "Wrong package architecture")
+     require(fields["Author"] == fields["Maintainer"] == "Brooktrout12", "Wrong attribution")
+     require(fields["Depends"] == "firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate, preferenceloader (>= 2.2.8)",
+@@ -70,7 +70,9 @@
+     for marker in (b"CQASeparatorState", b"SBIconView", b"_UIContextMenuUIController",
+                    b"_createMenuViewIfNecessaryForMenu:", b"_UIContextMenuListView",
+                    b"_UIContextMenuSeparatorView", b"_UIContextMenuReusableSeparatorView",
+-                   b"_UIContextMenuGradientMaskSectionSeparatorView", b"Enabled", domain.encode()):
++                   b"_UIContextMenuGradientMaskSectionSeparatorView",
++                   b"_UIContextMenuSection", b"wantsSectionSeparator",
++                   b"collectionViewDataSource", b"invalidateLayout", b"Enabled", domain.encode()):
+         require(marker in binary, "Missing runtime marker: " + repr(marker))
+     for marker in (b"setOverrideUserInterfaceStyle:", b"setAlpha:", b"setBackgroundColor:",
+                    b"setEffect:", b"setFrame:", b"D18RootController", b"D18MenuMaterialState"):
+--- a/scripts/macho.py
++++ b/scripts/macho.py
+@@ -43,6 +43,7 @@
+     require(magic == 0xFEEDFACF and cpu == 0x0100000C, "Expected arm64-family Mach-O")
+     require(filetype == 6 if tweak else filetype in (6, 8), "Unexpected Mach-O file type")
+     dependencies, rpaths, signature, platform, symtab = [], [], None, None, None
++    sections, minimum = [], None
+     image_uuid = None
+     position = 32
+     require(32 + commands_size <= len(binary), "Truncated commands")
+@@ -57,12 +58,21 @@
+             signature = struct.unpack_from("<II", binary, position + 8)
+         elif command == 0x32:
+             platform = u32(binary, position + 8)
++            minimum = u32(binary, position + 12)
+         elif command == 0x2:
+             symtab = struct.unpack_from("<IIII", binary, position + 8)
+         elif command == 0x1B:
+             image_uuid = str(uuid.UUID(bytes=binary[position + 8:position + 24]))
++        elif command == 0x19:
++            for index in range(u32(binary, position + 64)):
++                pos = position + 72 + index * 80
++                name = binary[pos:pos + 16].split(b'\0', 1)[0].decode()
++                length = struct.unpack_from('<Q', binary, pos + 40)[0]
++                start = u32(binary, pos + 48)
++                sections.append((name, start, length))
+         position += size
+     require(position == 32 + commands_size and platform == 2, "Expected intact iOS load commands")
++    require(minimum == 0x110000, "Expected iOS 17.0 deployment minimum")
+     forbidden = ("cephei", "hbprefs", "libswift", "/usr/lib/libsubstrate", "/library/frameworks/cydia")
+     require(not any(term in dep.lower() for dep in dependencies for term in forbidden), "Forbidden dependency")
+     if tweak:
+@@ -77,11 +87,35 @@
+     require(image_uuid is not None, "Missing UUID for identifying same-version builds")
+     blocks = block_runtime_imports(binary, symtab)
+     require(not blocks, "Unsafe compiler block metadata for this build: " + repr(blocks))
++    classes = strings = 0
++    if subtype & 0xFFFFFF == 2:
++        for name, start, length in sections:
++            if name == '__objc_data':
++                require(length % 40 == 0, "Invalid Objective-C records")
++                for pos in range(start, start + length, 40):
++                    isa, superclass = struct.unpack_from('<QQ', binary, pos)
++                    require(isa & 0x800D6AE100000000 == 0x800D6AE100000000,
++                            "Unconverted arm64e class ISA")
++                    require(superclass & 0xC00DB5AB00000000 == 0xC00DB5AB00000000,
++                            "Unconverted arm64e superclass")
++                    classes += 1
++            elif name == '__cfstring':
++                require(length % 32 == 0, "Invalid constant-string records")
++                for pos in range(start, start + length, 32):
++                    isa = struct.unpack_from('<Q', binary, pos)[0]
++                    require(isa & 0xFFFFFFFF00000000 == 0xC0156AE100000000,
++                            "Unconverted arm64e constant-string ISA")
++                    strings += 1
++        require(classes == 2 and strings > 0, "Missing converted runtime records")
++    signatures = verify_signature(binary, *signature)
++    require(all(item['flags'] & 2 for item in signatures), "Expected ad-hoc signature flag")
+     return {"architecture": {0: "arm64", 2: "arm64e"}.get(subtype & 0xFFFFFF, str(subtype)),
+             "uuid": image_uuid,
++            "minimum_ios": "17.0", "converted_objc_records": classes,
++            "converted_constant_strings": strings,
+             "dependencies": dependencies, "rpaths": rpaths,
+             "block_runtime_imports": blocks,
+-            "signature": verify_signature(binary, *signature)}
++            "signature": signatures}
+ 
+ 
+ def verify_binary(binary, tweak):
+--- /dev/null
++++ b/scripts/build-linux.sh
+@@ -0,0 +1,12 @@
++#!/usr/bin/env bash
++set -euo pipefail
++: "${THEOS:?Set THEOS to your Theos installation}"
++: "${BT_ALLEMANDE:?Set BT_ALLEMANDE for the legacy Linux arm64e toolchain}"
++: "${BT_LDID:?Set BT_LDID to your ldid binary}"
++cqa_project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
++cd -- "$cqa_project"
++mkdir -p validation
++make clean
++make -j1 package ADDITIONAL_CODESIGN_FLAGS=-Cadhoc TARGET_CODESIGN="bash $cqa_project/scripts/sign-linux.sh"
++python3 scripts/verify_package.py packages/com.brooktrout12.cleanquickactions_1.0.2_iphoneos-arm64.deb \
++    > validation/package-verification.json
+--- /dev/null
++++ b/scripts/sign-linux.sh
+@@ -0,0 +1,14 @@
++#!/usr/bin/env bash
++set -euo pipefail
++: "${BT_ALLEMANDE:?Set BT_ALLEMANDE to the compiled allemande executable}"
++: "${BT_LDID:?Set BT_LDID to the toolchain ldid executable}"
++cqa_binary="${!#}"
++cqa_project="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
++mkdir -p -- "$cqa_project/validation"
++cqa_log="$cqa_project/validation/$(basename -- "$cqa_binary").abi-conversion.log"
++"$BT_ALLEMANDE" "$cqa_binary" > "$cqa_log" 2>&1
++if rg -q 'ERROR|Unexpected' "$cqa_log"; then
++    cat "$cqa_log" >&2
++    exit 1
++fi
++"$BT_LDID" "$@"
+--- a/layout/Library/PreferenceLoader/Preferences/CleanQuickActions/Info.plist
++++ b/layout/Library/PreferenceLoader/Preferences/CleanQuickActions/Info.plist
+@@ -1,9 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+-<plist version="1.0"><dict>
+-    <key>CFBundleIdentifier</key><string>com.brooktrout12.cleanquickactions.resources</string>
+-    <key>CFBundleName</key><string>CleanQuickActions</string>
+-    <key>CFBundlePackageType</key><string>BNDL</string>
+-    <key>CFBundleShortVersionString</key><string>1.0.1</string>
+-    <key>CFBundleVersion</key><string>2</string>
+-</dict></plist>
++<plist version="1.0">
++<dict>
++	<key>CFBundleIdentifier</key>
++	<string>com.brooktrout12.cleanquickactions.resources</string>
++	<key>CFBundleName</key>
++	<string>CleanQuickActions</string>
++	<key>CFBundlePackageType</key>
++	<string>BNDL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>1.0.2</string>
++	<key>CFBundleVersion</key>
++	<string>1.0.2</string>
++</dict>
++</plist>

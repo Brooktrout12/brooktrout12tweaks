@@ -1,6 +1,6 @@
 Package: com.brooktrout12.cleanquickactions
 Name: Clean Quick Actions
-Version: 1.0.1
+Version: 1.0.2
 Architecture: iphoneos-arm64
 Description: Hide Home Screen Quick Actions menu separators on iOS 17 and 18.
  A single switch in the Tweaks list. Preserves menu spacing and appearance.

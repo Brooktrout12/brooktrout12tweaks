@@ -1,0 +1,12 @@
+[
+  {
+    "file": "PSUIPasscodeLockController.m",
+    "sha256": "838a381df7611991478eeed73599d50cde3231c63c6489de7b06fa2e5b1b2f0c",
+    "url": "https://raw.githubusercontent.com/EthanArbuckle/iPhone17-1_18.2_22C152_Restore/main/System/Library/PrivateFrameworks/PreferencesUI.framework/PSUIPasscodeLockController.m"
+  },
+  {
+    "file": "PSUIBiometrics.m",
+    "sha256": "c39a5a353a9287913f80440b4285e6ece6093af30f2d6aa5209b3ff79fecdea3",
+    "url": "https://raw.githubusercontent.com/EthanArbuckle/iPhone17-1_18.2_22C152_Restore/main/System/Library/PrivateFrameworks/PreferencesUI.framework/PSUIBiometrics.m"
+  }
+]

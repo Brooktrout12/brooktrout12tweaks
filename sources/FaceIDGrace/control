@@ -1,8 +1,8 @@
 Package: com.brooktrout12.faceidgrace
 Name: FaceIDGrace
-Version: 1.0.1
+Version: 1.0.3
 Architecture: iphoneos-arm64
-Description: Restore native Require Passcode delay choices with Face ID enabled.
+Description: Restore native Require Passcode delay choices with Face ID or Touch ID on iOS 17 and 18.
 Maintainer: Brooktrout12
 Author: Brooktrout12
 Section: Tweaks

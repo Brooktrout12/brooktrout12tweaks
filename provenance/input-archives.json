@@ -18,5 +18,35 @@
   {
     "file": "YouTube_Shorts_Addons_1.0.1_Test2_Source_and_DEBs.zip",
     "sha256": "a2d29a7281bc6d36dea66775945e3ea01d7abe288bc0077778744ed3d31b5f3a"
+  },
+  {
+    "file": "BlurSleep_1.2.0_DEB_and_Source.zip",
+    "sha256": "7f4a25f30b2177acb9485a78c4e0acc0a7bac60998a56e3bbdab0a56c7e4a595",
+    "added_for": "2026-10-17 package and source update"
+  },
+  {
+    "file": "CCNoRecent_1.0.0_DEB_and_Source.zip",
+    "sha256": "d39bc7b932a90783168640dd49da9ef1d08bd386c104fcf759118fb093432e0f",
+    "added_for": "2026-10-17 package and source update"
+  },
+  {
+    "file": "CleanQuickActions_1.0.2_rootless.deb",
+    "sha256": "2b0923cd9b7ebabf285cfe6afa132ccebe775f0ae7a7f8dcf2a9b04b8f5626a2",
+    "added_for": "2026-10-17 package and source update"
+  },
+  {
+    "file": "CleanQuickActions_1.0.2_source.zip",
+    "sha256": "1166d27f2d2d04a9386349dd2d76a7afc737ed9f1e9b4db704fe63a1aa252b21",
+    "added_for": "2026-10-17 package and source update"
+  },
+  {
+    "file": "Jailbreak_Tweaks_iOS17_18_DEBs_and_Sources.zip",
+    "sha256": "434b033d7f633ae2be398cc08ddb2717b74ad1e3ce95c20854d077fd1fdf68f5",
+    "added_for": "2026-10-17 package and source update"
+  },
+  {
+    "file": "RockAntenneAdBlock_0.2.0_Test2_DEB_und_Quellcode.zip",
+    "sha256": "98622bf9cd47ada0c5917a7859a3cc8960dd9b1f50238ad7be87a740fac1de1e",
+    "added_for": "2026-10-17 package and source update"
   }
 ]

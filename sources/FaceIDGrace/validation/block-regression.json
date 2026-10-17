@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "version": "1.0.2",
+      "architecture": "arm64",
+      "expected_rejection": true,
+      "reason": "Objective-C block metadata/observer is forbidden: _NSConcrete"
+    },
+    {
+      "version": "1.0.2",
+      "architecture": "arm64e",
+      "expected_rejection": true,
+      "reason": "Objective-C block metadata/observer is forbidden: _NSConcrete"
+    },
+    {
+      "version": "1.0.3",
+      "architecture": "arm64",
+      "objective_c_blocks_absent": true
+    },
+    {
+      "version": "1.0.3",
+      "architecture": "arm64e",
+      "objective_c_blocks_absent": true
+    }
+  ],
+  "baseline_sha256": "19912eca48394853b4e88d511e251e51e70d394fe03912a8c4f960e009e2698a",
+  "replacement_sha256": "cb58bd2e3fa172376d6db0fb92e88cc25e932cbc04e621a8ad999d3759f1c5fc",
+  "on_device_tested": false
+}

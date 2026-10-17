@@ -5,6 +5,7 @@
 #import "Runtime.h"
 #import "Preferences.h"
 #import "Rules.h"
+#import "IOS17Sections.h"
 #include <mach-o/dyld.h>
 #include <limits.h>
 #include <pthread.h>
@@ -47,6 +48,10 @@ static BOOL CQAIsIconMenu(UIView *view) {
     return NO;
 }
 
+static BOOL CQAActiveIconMenu(UIView *view) {
+    return CQAEnabled && CQAIsIconMenu(view);
+}
+
 static CQASeparatorState *CQAState(UIView *view, BOOL create) {
     CQASeparatorState *state = objc_getAssociatedObject(view, &CQAStateKey);
     if (!state && create) {
@@ -86,6 +91,7 @@ static void CQARefreshTree(UIView *root) {
     while (pending.count) {
         UIView *view = pending.lastObject;
         [pending removeLastObject];
+        CQARefreshIOS17Sections(view);
         if (CQAIsSeparator(view)) CQAApplySeparator(view);
         // The walk reads the existing menu only: no forced layout, frame,
         // height, alpha, background, material, text or interaction changes.
@@ -154,6 +160,7 @@ static void CQAStart(void *context) {
         if (!CQAIconViewClass || !CQAMethodMatches(controller, create, 'v', "@")) return;
         CQAMenuRoots = [NSHashTable weakObjectsHashTable];
         CQAManagedSeparators = [NSHashTable weakObjectsHashTable];
+        CQAInstallIOS17SectionFix(CQAActiveIconMenu);
 
         // Verified UIKit separator classes. Never hook generic collection
         // cells, global separator colors, or guessed thin UIView geometry.

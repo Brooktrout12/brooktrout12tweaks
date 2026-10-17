@@ -13,7 +13,7 @@
   },
   "com.brooktrout12.cleanquickactions": {
     "source": "sources/CleanQuickActions",
-    "status": "Release build; see project notes for device validation."
+    "status": "1.0.2 iOS 17 section-divider fix; see project validation notes."
   },
   "com.brooktrout12.dawn18": {
     "source": "sources/Dawn18",
@@ -21,7 +21,7 @@
   },
   "com.brooktrout12.faceidgrace": {
     "source": "sources/FaceIDGrace",
-    "status": "Release build; see project notes for device validation."
+    "status": "1.0.3 Settings crash fix; device retest remains necessary."
   },
   "com.brooktrout12.instantclear18": {
     "source": "sources/InstantClear18",
@@ -45,18 +45,26 @@
   },
   "com.brooktrout12.blursleep": {
     "source": "sources/BlurSleep",
-    "status": "Experimental \u2014 physical-device verification remains necessary."
+    "status": "Experimental; see release notes for device validation."
   },
   "com.chatgpt.jbbatterywatch": {
     "source": "sources/JB_Battery_Watch",
-    "status": "Experimental \u2014 physical-device verification remains necessary."
+    "status": "Experimental — physical-device verification remains necessary."
   },
   "local.kilian.ytshortsforegroundonly": {
     "source": "sources/YouTube_Shorts_Addons",
-    "status": "Experimental \u2014 physical-device verification remains necessary."
+    "status": "Experimental — physical-device verification remains necessary."
   },
   "local.kilian.ytshortsnoads": {
     "source": "sources/YouTube_Shorts_Addons",
-    "status": "Experimental \u2014 physical-device verification remains necessary."
+    "status": "Experimental — physical-device verification remains necessary."
+  },
+  "com.brooktrout12.ccnorecent": {
+    "source": "sources/CCNoRecent",
+    "status": "Release build; physical-device verification remains necessary."
+  },
+  "com.brooktrout12.rockantenneadblock": {
+    "source": "sources/RockAntenneAdBlock",
+    "status": "Experimental Test 2; ad-skipping behavior is not guaranteed."
   }
 }
