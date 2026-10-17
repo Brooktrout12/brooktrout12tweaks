@@ -11,5 +11,5 @@ mkdir -p validation
 ASAN_OPTIONS=detect_leaks=0 ./validation/state_test | tee validation/state-test.txt
 make clean
 make -j1 package TARGET_CODESIGN="bash $bs_project/scripts/sign-linux.sh"
-python3 scripts/verify_package.py packages/com.brooktrout12.blursleep_1.0.2_iphoneos-arm64.deb \
+python3 scripts/verify_package.py packages/com.brooktrout12.blursleep_1.2.0_iphoneos-arm64.deb \
     > validation/package-verification.json

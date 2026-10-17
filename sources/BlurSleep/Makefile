@@ -8,7 +8,7 @@ INSTALL_TARGET_PROCESSES = SpringBoard Preferences
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = BlurSleep
-BlurSleep_FILES = Tweak.m BSAnimationState.c
+BlurSleep_FILES = Tweak.m BSAnimationState.c BSAnimationEffects.m
 BlurSleep_CFLAGS = -fobjc-arc -Wall -Wextra -Werror
 BlurSleep_FRAMEWORKS = Foundation UIKit QuartzCore
 BlurSleep_LIBRARIES = substrate

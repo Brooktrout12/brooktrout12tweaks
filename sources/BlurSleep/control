@@ -1,8 +1,8 @@
 Package: com.brooktrout12.blursleep
 Name: BlurSleep
-Version: 1.0.2
+Version: 1.2.0
 Architecture: iphoneos-arm64
-Description: Gaussian blur and fade-to-black sleep animation with an adjustable duration in Settings.
+Description: Seven sleep animations, including Liquid Glass, Gaussian blur and classic CRT TV, with an adjustable duration in Settings.
 Maintainer: brooktrout12
 Author: brooktrout12
 Section: Tweaks

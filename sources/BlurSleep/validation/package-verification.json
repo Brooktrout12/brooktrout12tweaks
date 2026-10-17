@@ -1,12 +1,12 @@
 {
   "result": "PASS",
-  "package": "com.brooktrout12.blursleep_1.0.2_iphoneos-arm64.deb",
-  "sha256": "07a5b531d7802955c4fdb5f1937737878ffe25383d8dfb6e4d90a25f1543d25c",
+  "package": "com.brooktrout12.blursleep_1.2.0_iphoneos-arm64.deb",
+  "sha256": "92e57ca83b508e669ae006afffa5a6084bd6fe16fa637d2455f5d5fd68785c67",
   "slices": [
     {
       "binary": "BlurSleep.dylib",
       "architecture": "arm64",
-      "uuid": "b4aa3a84-e52b-3627-a41d-4f4025521ff8",
+      "uuid": "d8bfe90f-cd51-3cdb-a773-ff56f9d5e95b",
       "minimum_ios": "17.0",
       "dependencies": [
         "/usr/lib/libobjc.A.dylib",
@@ -15,7 +15,8 @@
         "/System/Library/Frameworks/UIKit.framework/UIKit",
         "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
         "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
-        "/usr/lib/libSystem.B.dylib"
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
       ],
       "rpaths": [
         "/var/jb/Library/Frameworks",
@@ -28,7 +29,7 @@
       "signatures": [
         {
           "algorithm": 2,
-          "verified_pages": 22,
+          "verified_pages": 27,
           "identifier": "com.brooktrout12.blursleep"
         }
       ],
@@ -37,7 +38,7 @@
     {
       "binary": "BlurSleep.dylib",
       "architecture": "arm64e",
-      "uuid": "ec69fd1a-a328-3107-a953-35f391f33106",
+      "uuid": "032c800b-896d-34a9-aad2-0d2d7e4a9e6d",
       "minimum_ios": "17.0",
       "dependencies": [
         "/usr/lib/libobjc.A.dylib",
@@ -46,7 +47,8 @@
         "/System/Library/Frameworks/UIKit.framework/UIKit",
         "/System/Library/Frameworks/QuartzCore.framework/QuartzCore",
         "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
-        "/usr/lib/libSystem.B.dylib"
+        "/usr/lib/libSystem.B.dylib",
+        "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
       ],
       "rpaths": [
         "/var/jb/Library/Frameworks",
@@ -55,11 +57,11 @@
         "@loader_path/.jbroot/usr/lib"
       ],
       "converted_objc_records": 6,
-      "converted_constant_strings": 101,
+      "converted_constant_strings": 130,
       "signatures": [
         {
           "algorithm": 2,
-          "verified_pages": 22,
+          "verified_pages": 27,
           "identifier": "com.brooktrout12.blursleep"
         }
       ],
@@ -68,7 +70,7 @@
     {
       "binary": "BlurSleepPrefs",
       "architecture": "arm64",
-      "uuid": "19614712-5e17-34b7-9c5c-6a35a4bb830c",
+      "uuid": "e5026d05-a132-3a4b-9625-1126e23b8fe0",
       "minimum_ios": "17.0",
       "dependencies": [
         "/usr/lib/libobjc.A.dylib",
@@ -98,7 +100,7 @@
     {
       "binary": "BlurSleepPrefs",
       "architecture": "arm64e",
-      "uuid": "b1f2ecca-8dca-3b32-a471-3bb980bd488f",
+      "uuid": "4fc14ba5-ed3a-32a2-b793-83f79f9028b9",
       "minimum_ios": "17.0",
       "dependencies": [
         "/usr/lib/libobjc.A.dylib",
@@ -115,7 +117,7 @@
         "@loader_path/.jbroot/usr/lib"
       ],
       "converted_objc_records": 2,
-      "converted_constant_strings": 43,
+      "converted_constant_strings": 61,
       "signatures": [
         {
           "algorithm": 2,

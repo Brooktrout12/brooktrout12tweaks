@@ -1,0 +1,16 @@
+[0;36m==> [1;39mCleaning…[m
+[1;31m> [1;3;39mMaking all for tweak CCNoRecent…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64)…[m
+[0;33m==> [1;39mLinking tweak CCNoRecent (arm64)…[m
+[0;34m==> [1;39mGenerating debug symbols for CCNoRecent…[m
+[0;34m==> [1;39mStripping CCNoRecent (arm64)…[m
+[0;32m==> [1;39mCompiling Tweak.m (arm64e)…[m
+[0;33m==> [1;39mLinking tweak CCNoRecent (arm64e)…[m
+ld: warning: object file /workspace/scratch/5e23bc121934/CCNoRecent/.theos/obj/arm64e/Tweak.m.3b113921.o was built with an incompatible arm64e ABI compiler
+[0;34m==> [1;39mGenerating debug symbols for CCNoRecent…[m
+[0;34m==> [1;39mStripping CCNoRecent (arm64e)…[m
+[0;34m==> [1;39mMerging tweak CCNoRecent…[m
+[0;34m==> [1;39mSigning CCNoRecent…[m
+[1;31m> [1;3;39mMaking stage for tweak CCNoRecent…[m
+[0;36m==> [1;36mNotice:[m Neither plutil, ply, or libplist-utils are installed, so XML plist files were not optimized.
+dm.pl: building package `com.brooktrout12.ccnorecent:iphoneos-arm64' in `./packages/com.brooktrout12.ccnorecent_1.0.0_iphoneos-arm64.deb'

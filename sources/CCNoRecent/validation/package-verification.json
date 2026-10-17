@@ -1,0 +1,73 @@
+{
+  "result": "PASS",
+  "package": "com.brooktrout12.ccnorecent_1.0.0_iphoneos-arm64.deb",
+  "sha256": "339ebd2f26000e892853a050871a4a90d33d757788ca94faf92a9290c8cbe350",
+  "slices": [
+    {
+      "binary": "CCNoRecent.dylib",
+      "architecture": "arm64",
+      "uuid": "3acba989-f8a8-380f-a6b8-5edab849cfc3",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 0,
+      "converted_constant_strings": 0,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.ccnorecent"
+        }
+      ],
+      "block_literals": false
+    },
+    {
+      "binary": "CCNoRecent.dylib",
+      "architecture": "arm64e",
+      "uuid": "87986c53-5f5a-3f1c-a8cb-85d5eeeee7c6",
+      "minimum_ios": "17.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_records": 0,
+      "converted_constant_strings": 13,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 17,
+          "identifier": "com.brooktrout12.ccnorecent"
+        }
+      ],
+      "block_literals": false
+    }
+  ],
+  "rootless_payload_only": true,
+  "minimum_ios": "17.0",
+  "springboard_only": true,
+  "settings_pane": false,
+  "no_maintainer_scripts": true,
+  "device_runtime_tested": false
+}

@@ -1,11 +1,6 @@
 {
-  "source": "User-supplied BlurSleep 1.0.1 diagnostics and preview confirmation",
-  "device": "iPhone 11 Pro",
-  "os": "18.6",
-  "build": "22G86",
-  "settings_slider_works": true,
-  "preview_works": true,
-  "sleep_animation_works_in_1_0_1": false,
+  "source": "iOS 18.x interface regression fixture",
+  "os": "18.x",
   "methods": {
     "_animateBacklightToFactor:duration:source:silently:completion:": null,
     "animateBacklightToFactor:duration:source:completion:": null,
@@ -15,6 +10,5 @@
     "turnOnScreenFullyWithBacklightSource:": "v24@0:8q16",
     "_startFadeOutAnimationFromLockSource:": "v20@0:8i16"
   },
-  "expected_hook_mode_in_1_0_2": "BSHookBacklightState",
-  "device_result_for_1_0_2": "Not yet tested"
+  "expected_hook_mode_in_1_0_2": "BSHookBacklightState"
 }

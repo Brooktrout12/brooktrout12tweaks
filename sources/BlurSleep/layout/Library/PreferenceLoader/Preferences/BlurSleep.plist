@@ -11,11 +11,11 @@
 		<key>detail</key>
 		<string>BSRootListController</string>
 		<key>icon</key>
-		<string>/var/jb/Library/PreferenceBundles/BlurSleepPrefs.bundle/icon.png</string>
-		<key>label</key>
-		<string>BlurSleep</string>
+		<string>/var/jb/Library/PreferenceBundles/BlurSleepPrefs.bundle/icon-rounded.png</string>
 		<key>isController</key>
 		<true/>
+		<key>label</key>
+		<string>BlurSleep</string>
 	</dict>
 </dict>
 </plist>

@@ -1,0 +1,14 @@
+{
+  "native_sleep_and_wake_hooks": {
+    "unchanged_from_1_0_2": true,
+    "sha256": "5919cd98aa1a4fd64a3043b96a0aa84cb15fbf558d223100ecebb0ea029ca176"
+  },
+  "display_off_queue_and_cleanup": {
+    "unchanged_from_1_0_2": true,
+    "sha256": "65de8dbf015a0c243c5ba1c03fa627328812b9960c321334e3d634b7d4001f5c"
+  },
+  "runtime_hook_installation": {
+    "unchanged_from_1_0_2": true,
+    "sha256": "e8033217f4e2a9d872cd3700b58c5564325b1587e217f99c6587915083be6da9"
+  }
+}

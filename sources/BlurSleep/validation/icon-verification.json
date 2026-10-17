@@ -1,0 +1,40 @@
+{
+  "icons": [
+    {
+      "file": "icon-rounded.png",
+      "size": 29,
+      "corner_alpha": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "center_alpha": 254
+    },
+    {
+      "file": "icon-rounded@2x.png",
+      "size": 58,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 254
+    },
+    {
+      "file": "icon-rounded@3x.png",
+      "size": 87,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "center_alpha": 254
+    }
+  ],
+  "validated_release": "1.2.0",
+  "icons_unchanged_from": "1.1.1",
+  "animation_code_validation": "See liquid-glass-regression.json for the 1.2.0 code comparison."
+}

@@ -86,7 +86,9 @@ def verify_slice(data, expected_subtype, preferences=False):
     if preferences:
         assert '/System/Library/PrivateFrameworks/Preferences.framework/Preferences' in dependencies
         required = (b'setDuration:specifier:',b'readDurationText:',b'copyDiagnostics',
-                    b'_CFPreferencesSetAppValue',b'DurationValue')
+                    b'_CFPreferencesSetAppValue',b'DurationValue',
+                    b'setAnimationStyle:specifier:',b'readAnimationStyle:',
+                    b'PSListItemsController',b'setValues:titles:shortTitles:')
         assert b'_OBJC_CLASS_$_UISlider' not in data, 'Use a native PSSliderCell'
     else:
         assert '@rpath/CydiaSubstrate.framework/CydiaSubstrate' in dependencies
@@ -99,10 +101,17 @@ def verify_slice(data, expected_subtype, preferences=False):
                     b'_factorToPublishForBacklightState:',b'consumeInitialPressDown',
                     b'displayOffTimerFired:',b'backlight-state',
                     b'turnOnScreenFullyWithBacklightSource:',b'reverseSleepIfNeededAndPossible',
-                    b'_dispatch_async_f',b'_CFNotificationCenterAddObserver')
+                    b'_dispatch_async_f',b'_CFNotificationCenterAddObserver',
+                    b'BlurSleep.CRTGlow',b'BlurSleep.IrisMask',b'transform.scale.y',
+                    b'transform.scale.x',b'position.y',b'setKeyTimes:',
+                    b'BlurSleep.LiquidGlass',b'BlurSleep.GlassRefraction',
+                    b'BlurSleep.GlassHighlight',b'BlurSleep.GlassSheen',
+                    b'BlurSleep.GlassSilhouette')
         for forbidden in (b'lockUIFromSource:',b'playLockSound',b'_setBrightness',b'preventIdleSleep'):
             assert forbidden not in data, 'Unexpected lock/audio/brightness control'
-    for needle in required + (b'com.brooktrout12.blursleep',b'Duration',b'preferences-changed'):
+    for needle in required + (b'com.brooktrout12.blursleep',b'Duration',b'preferences-changed',
+                             b'AnimationStyle',b'Gaussian Blur',b'CRT TV',b'Iris Close',
+                             b'Shrink to Center',b'Slide Down',b'Card Flip',b'Liquid Glass'):
         assert needle in data, needle
     classes = strings = 0
     if expected_subtype == 2:
@@ -133,7 +142,7 @@ def verify_slice(data, expected_subtype, preferences=False):
 
 def main():
     package = pathlib.Path(sys.argv[1]).resolve()
-    for field,expected in [('Package','com.brooktrout12.blursleep'),('Architecture','iphoneos-arm64'),('Version','1.0.2')]:
+    for field,expected in [('Package','com.brooktrout12.blursleep'),('Architecture','iphoneos-arm64'),('Version','1.2.0')]:
         assert subprocess.check_output(['dpkg-deb','-f',str(package),field],text=True).strip() == expected
     dependencies = subprocess.check_output(['dpkg-deb','-f',str(package),'Depends'],text=True)
     for item in ('firmware (>= 17.0)','firmware (<< 19.0)','preferenceloader (>= 2.2.6)'):
@@ -146,21 +155,21 @@ def main():
         loader = root/'var/jb/Library/PreferenceLoader/Preferences/BlurSleep.plist'
         expected = {str((base/n).relative_to(root)) for n in ('BlurSleep.dylib','BlurSleep.plist')}
         expected |= {str(loader.relative_to(root))}
-        expected |= {str((bundle/n).relative_to(root)) for n in ('BlurSleepPrefs','Info.plist','icon.png','icon@2x.png','icon@3x.png')}
+        expected |= {str((bundle/n).relative_to(root)) for n in ('BlurSleepPrefs','Info.plist','icon-rounded.png','icon-rounded@2x.png','icon-rounded@3x.png')}
         actual = {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()}
         assert actual == expected, actual ^ expected
         info = plistlib.loads((bundle/'Info.plist').read_bytes())
         assert info['NSPrincipalClass'] == 'BSRootListController'
         assert info['CFBundleExecutable'] == 'BlurSleepPrefs'
         assert info['MinimumOSVersion'] == '17.0'
-        assert info['CFBundleShortVersionString'] == '1.0.2'
-        assert info['CFBundleVersion'] == '3'
+        assert info['CFBundleShortVersionString'] == '1.2.0'
+        assert info['CFBundleVersion'] == '6'
         entry = plistlib.loads(loader.read_bytes())['entry']
         assert entry['detail'] == info['NSPrincipalClass'] and entry['bundle'] == 'BlurSleepPrefs'
         assert entry.get('isController') is True, 'PreferenceLoader must lazily load the custom controller'
         assert entry['cell'] == 'PSLinkCell' and entry['label'] == 'BlurSleep'
-        assert entry['icon'] == '/var/jb/Library/PreferenceBundles/BlurSleepPrefs.bundle/icon.png'
-        for name,dimension in [('icon.png',29),('icon@2x.png',58),('icon@3x.png',87)]:
+        assert entry['icon'] == '/var/jb/Library/PreferenceBundles/BlurSleepPrefs.bundle/icon-rounded.png'
+        for name,dimension in [('icon-rounded.png',29),('icon-rounded@2x.png',58),('icon-rounded@3x.png',87)]:
             data = (bundle/name).read_bytes()
             assert data[:8] == b'\x89PNG\r\n\x1a\n' and unpack('>II',data,16) == (dimension,dimension)
         assert plistlib.loads((base/'BlurSleep.plist').read_bytes()) == {

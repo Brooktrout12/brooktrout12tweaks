@@ -7,6 +7,7 @@
 #import <dispatch/dispatch.h>
 #import <stdarg.h>
 #import "BSPreferences.h"
+#import "BSAnimationEffects.h"
 
 // Runtime-only declarations: private classes and functions are never hard-linked.
 @interface BSFilterAPI : NSObject
@@ -16,6 +17,7 @@
 
 static BOOL bsEnabled = YES;
 static double bsDuration = BS_DEFAULT_DURATION;
+static BSAnimationStyle bsStyle = BSStyleGaussianBlur;
 static unsigned bsManualSleepDepth;
 static unsigned bsInstallAttempts;
 static BOOL bsHooksInstalled, bsRendererAvailable;
@@ -139,6 +141,8 @@ static BSAnimator *bsAnimator;
     [_cleanupTimer invalidate]; _cleanupTimer = nil;
     _window.hidden = YES;
     [_imageView.layer removeAllAnimations];
+    [_imageView.layer.mask removeAllAnimations];
+    _imageView.layer.mask = nil;
     _imageView.layer.filters = nil;
     _imageView.image = nil;
     _imageView = nil;
@@ -230,6 +234,9 @@ static BSAnimator *bsAnimator;
 - (BOOL)startWithDuration:(double)duration {
     if (!NSThread.isMainThread || _state.active || !bsCaptureScreen) return NO;
     @try {
+        // Latch the selected style for this animation. Preference changes affect
+        // the next run and cannot switch an in-progress effect underneath it.
+        BSAnimationStyle style = bsStyle;
         // The UIKit Create function returns a retained UIImage. Move its +1
         // ownership to ARC explicitly, matching the C Create convention.
         UIImage *image = CFBridgingRelease(bsCaptureScreen());
@@ -237,16 +244,19 @@ static BSAnimator *bsAnimator;
             BSSetStatus(@"Snapshot failed",@"The renderer could not capture the screen. Copy diagnostics.");
             BSLog(@"Snapshot unavailable; using the native transition."); return NO;
         }
-        Class filterClass = NSClassFromString(@"CAFilter");
-        id filter = [(id)filterClass filterWithType:@"gaussianBlur"];
-        if (!filter) {
-            BSSetStatus(@"Renderer unavailable",@"The Gaussian filter could not be created.");
-            BSLog(@"Gaussian filter unavailable."); return NO;
+        id filter = nil;
+        if (style == BSStyleGaussianBlur) {
+            Class filterClass = NSClassFromString(@"CAFilter");
+            filter = [(id)filterClass filterWithType:@"gaussianBlur"];
+            if (!filter) {
+                BSSetStatus(@"Renderer unavailable",@"The Gaussian filter could not be created.");
+                BSLog(@"Gaussian filter unavailable."); return NO;
+            }
+            [filter setName:@"sleepBlur"];
+            [filter setValue:@0 forKey:@"inputRadius"];
+            // Avoid transparent/dark seams along the screen edges while blurring.
+            [filter setValue:@YES forKey:@"inputNormalizeEdges"];
         }
-        [filter setName:@"sleepBlur"];
-        [filter setValue:@0 forKey:@"inputRadius"];
-        // Avoid transparent/dark seams along the screen edges while blurring.
-        [filter setValue:@YES forKey:@"inputNormalizeEdges"];
 
         CGRect bounds = UIScreen.mainScreen.bounds;
         UIWindowScene *scene = nil;
@@ -275,7 +285,7 @@ static BSAnimator *bsAnimator;
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.clipsToBounds = YES;
         _imageView.image = image;
-        _imageView.layer.filters = @[filter];
+        if (filter) _imageView.layer.filters = @[filter];
         [controller.view addSubview:_imageView];
 
         double animationDuration = BSClampDuration(duration);
@@ -286,20 +296,9 @@ static BSAnimator *bsAnimator;
         [CATransaction setDisableActions:YES];
         _window.hidden = NO;
         [controller.view layoutIfNeeded];
-        _imageView.layer.opacity = 0;
-        [_imageView.layer setValue:@36 forKeyPath:@"filters.sleepBlur.inputRadius"];
-
-        CABasicAnimation *blur = [CABasicAnimation animationWithKeyPath:@"filters.sleepBlur.inputRadius"];
-        blur.fromValue = @0; blur.toValue = @36;
-        blur.duration = animationDuration;
-        blur.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-        CABasicAnimation *fade = [CABasicAnimation animationWithKeyPath:@"opacity"];
-        fade.fromValue = @1; fade.toValue = @0;
-        fade.duration = animationDuration;
-        fade.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        [_imageView.layer addAnimation:blur forKey:@"BlurSleep.blur"];
-        [_imageView.layer addAnimation:fade forKey:@"BlurSleep.fade"];
+        BSApplyAnimationStyle(_imageView,controller.view,style,animationDuration);
         } @finally { [CATransaction commit]; }
+        BSLog(@"Rendering %@ for %.2fs.",BSStyleTitle(style),animationDuration);
 
         // No block-based UIKit completions: compatible with the supplied
         // converted arm64e toolchain. A generation guards old timer callbacks.
@@ -509,9 +508,9 @@ static void BSInstallOptional(Class cls, const char *name, const char *signature
 
 static void BSReload(void *context) {
     (void)context;
-    bsEnabled = BSReadEnabled(); bsDuration = BSReadDuration();
+    bsEnabled = BSReadEnabled(); bsDuration = BSReadDuration(); bsStyle = BSReadStyle();
     if (!bsEnabled) BSCancelAnimation(@"disabled in Settings");
-    BSLog(@"Settings: enabled=%d duration=%.2f", bsEnabled, bsDuration);
+    BSLog(@"Settings: enabled=%d duration=%.2f style=%@", bsEnabled, bsDuration, BSStyleTitle(bsStyle));
 }
 static void BSPreferencesChanged(CFNotificationCenterRef center, void *observer, CFStringRef name,
                                 const void *object, CFDictionaryRef userInfo) {
@@ -521,6 +520,9 @@ static void BSPreferencesChanged(CFNotificationCenterRef center, void *observer,
 
 static void BSPreviewOnMain(void *context) {
     (void)context;
+    // Preview must reflect a just-selected style even when separate Darwin
+    // preference and preview notifications reach SpringBoard out of order.
+    bsStyle = BSReadStyle(); bsDuration = BSReadDuration();
     BSLog(@"Settings preview requested: renderer=%d hooks=%d",bsRendererAvailable,bsHooksInstalled);
     if (!bsRendererAvailable) {
         BSSetStatus(@"Renderer unavailable",@"Preview received, but a required rendering interface is missing. Copy diagnostics.");

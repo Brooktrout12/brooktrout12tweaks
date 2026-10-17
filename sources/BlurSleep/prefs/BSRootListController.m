@@ -3,6 +3,11 @@
 #import <Preferences/PSSpecifier.h>
 #import "../BSPreferences.h"
 
+// Used by the native Preferences list picker; omitted by the minimal header.
+@interface PSSpecifier (BSAnimationValues)
+- (void)setValues:(NSArray *)values titles:(NSArray *)titles shortTitles:(NSArray *)shortTitles;
+@end
+
 @interface BSRootListController : PSListController
 @end
 @implementation BSRootListController
@@ -20,12 +25,27 @@
             set:NULL get:@selector(readEngineStatus:) detail:Nil cell:PSTitleValueCell edit:Nil];
         [items addObject:statusRow];
         PSSpecifier *intro = [PSSpecifier groupSpecifierWithName:@"Lock animation"];
-        [intro setProperty:@"The screen gradually blurs and fades to black when you press the sleep button." forKey:@"footerText"];
+        [intro setProperty:@"Play the selected animation when you press the sleep button." forKey:@"footerText"];
         [items addObject:intro];
         PSSpecifier *enabled = [PSSpecifier preferenceSpecifierNamed:@"Enable BlurSleep" target:self
             set:@selector(setEnabled:specifier:) get:@selector(readEnabled:) detail:Nil cell:PSSwitchCell edit:Nil];
         [enabled setProperty:@YES forKey:@"default"];
         [items addObject:enabled];
+
+        PSSpecifier *styleGroup = [PSSpecifier groupSpecifierWithName:@"Animation style"];
+        [styleGroup setProperty:BSStyleDescription(BSReadStyle()) forKey:@"footerText"];
+        [items addObject:styleGroup];
+        PSSpecifier *style = [PSSpecifier preferenceSpecifierNamed:@"Animation" target:self
+            set:@selector(setAnimationStyle:specifier:) get:@selector(readAnimationStyle:)
+            detail:NSClassFromString(@"PSListItemsController") cell:PSLinkListCell edit:Nil];
+        style.identifier = @"AnimationStyle";
+        [style setProperty:@"com.brooktrout12.blursleep" forKey:@"defaults"];
+        [style setProperty:@"AnimationStyle" forKey:@"key"];
+        [style setProperty:@0 forKey:@"default"];
+        NSMutableArray *styleValues = [NSMutableArray array];
+        for (NSInteger i = 0; i < BSStyleCount; ++i) [styleValues addObject:@(i)];
+        [style setValues:styleValues titles:BSStyleTitles() shortTitles:nil];
+        [items addObject:style];
 
         PSSpecifier *group = [PSSpecifier groupSpecifierWithName:@"Animation duration"];
         [group setProperty:@"0.15–2.00 seconds. Shorter is faster; longer is slower. Release the slider to apply. Changes take effect the next time you lock." forKey:@"footerText"];
@@ -60,7 +80,7 @@
             set:NULL get:NULL detail:Nil cell:PSButtonCell edit:Nil];
         diagnostics.buttonAction = @selector(copyDiagnostics); [items addObject:diagnostics];
         PSSpecifier *about = [PSSpecifier emptyGroupSpecifier];
-        [about setProperty:@"BlurSleep 1.0.2 · Brooktrout12\niOS 17–18 · Rootless\nPreview briefly blurs and dims the screen without locking. Diagnostics contain interface and timing details only." forKey:@"footerText"];
+        [about setProperty:@"BlurSleep 1.2.0 · Brooktrout12\niOS 17–18 · Rootless\nPreview plays your selected animation without locking. All effects use the duration above." forKey:@"footerText"];
         [items addObject:about];
         _specifiers = items;
     }
@@ -71,6 +91,13 @@
     (void)specifier; if ([value isKindOfClass:NSNumber.class]) BSWrite(@"Enabled",@(value.boolValue));
 }
 - (id)readDuration:(PSSpecifier *)specifier { (void)specifier; return @(BSReadDuration()); }
+- (id)readAnimationStyle:(PSSpecifier *)specifier { (void)specifier; return @(BSReadStyle()); }
+- (void)setAnimationStyle:(NSNumber *)value specifier:(PSSpecifier *)specifier {
+    if (![value isKindOfClass:NSNumber.class]) return;
+    NSNumber *selected = @(BSNormalizeStyle(value.longLongValue));
+    [specifier setProperty:selected forKey:@"value"];
+    BSWrite(@"AnimationStyle",selected);
+}
 - (id)readDurationText:(PSSpecifier *)specifier {
     (void)specifier; return [NSString stringWithFormat:@"%.2f s",BSReadDuration()];
 }

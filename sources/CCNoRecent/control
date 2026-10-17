@@ -1,0 +1,9 @@
+Package: com.brooktrout12.ccnorecent
+Name: CCNoRecent
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Hides the camera and microphone activity row at the top of Control Center on iOS 17 and 18.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 17.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)

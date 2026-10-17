@@ -1,1 +1,1 @@
-PASS: iOS 18.6 hook-selection regression, input bounds, manual-lock eligibility, shared deadline, wake cancellation, stale timer isolation.
+PASS: iOS 18.x hook-selection regression, input bounds, manual-lock eligibility, shared deadline, wake cancellation, stale timer isolation.

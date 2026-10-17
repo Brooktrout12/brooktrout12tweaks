@@ -1,0 +1,111 @@
+Reading file...
+
+Patching
+
+convert len:166432
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 0
+Slice header: feedfacf
+Slice cputype: 100000c
+Slice cpusubtype: 2
+
+===== SEGMENT NAME: __TEXT =====
+__text
+__auth_stubs
+__init_offsets
+__gcc_except_tab__TEXT
+__objc_methname
+__cstring
+__unwind_info
+
+===== SEGMENT NAME: __DATA_CONST =====
+__auth_got
+__got
+__cfstring
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7CE2
+cfstr value: com.apple.springboard
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7CF8
+cfstr value: SpringBoard
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7D04
+cfstr value: CCNoRecent %@ loaded in SpringBoard; %@
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7D2C
+cfstr value: 1.0.0
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7DA7
+cfstr value: Installed header hooks; compact getter=%d privacy getter=%d visibility getter=%d
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7DF8
+cfstr value: [CCNoRecent] %@
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7E08
+cfstr value: /var/mobile/Library/Logs/CCNoRecent.log
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7E30
+cfstr value: %@ %@
+
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7E4C
+cfstr value: Installed visibility hooks: %s
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7E8F
+cfstr value: Hidden visible instance: %s
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7EC8
+cfstr value: Waiting for class: %s
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7EE6
+cfstr value: Skipped unexpected class/method ABI: %s
+cfstr ISA after 0xC0156AE10000001C
+cfstr ISA 0x401000000000001C
+cfstr offset: 0x7F2B
+cfstr value: Control Center header observed; compact hooks=%d privacy hooks=%d
+cfstr ISA after 0xC0156AE10000001C
+__objc_imageinfo__DATA_CONST
+
+===== SEGMENT NAME: __DATA =====
+__objc_selrefs
+__objc_classrefs__DATA
+__data
+current str isa: 0x00, hikari str: 0x38000000007E6B, hikari stroff: 0xFFFC86B0D14480F0
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D14480F8
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448100
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448108
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448110
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448118
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448120
+current str isa: 0x00, hikari str: 0x38000000007EAB, hikari stroff: 0xFFFC86B0D1448128
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448130
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448138
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448140
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448148
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448150
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448158
+current str isa: 0x00, hikari str: 0x7F0E, hikari stroff: 0xFFFC86B0D1448160
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448168
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448170
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448178
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448180
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448188
+current str isa: 0x00, hikari str: 0x00, hikari stroff: 0xFFFC86B0D1448190
+__bss
+
+===== SEGMENT NAME: __LINKEDIT =====
+End
+
+Wrote out patched file to: /workspace/scratch/5e23bc121934/CCNoRecent/.theos/obj/CCNoRecent.dylib.41fc0da7.unsigned

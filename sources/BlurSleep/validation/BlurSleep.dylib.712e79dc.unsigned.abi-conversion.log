@@ -2,7 +2,7 @@ Reading file...
 
 Patching
 
-convert len:204056
+convert len:238672
 Slice header: feedfacf
 Slice cputype: 100000c
 Slice cpusubtype: 0
@@ -28,411 +28,527 @@ __unwind_info
 __auth_got
 __got
 __cfstring
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xAFF6
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEE0D
 cfstr value: Sleep renderer ran, but no matching display-off request was captured.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB03C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEE53
 cfstr value: Sleep path differed
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB050
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEE67
 cfstr value: The renderer started but display-off did not use the expected state method. Copy diagnostics.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0AE
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEEC5
 cfstr value: controller
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0B9
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEED0
 cfstr value: command
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0C1
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEED8
 cfstr value: state
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0C7
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEEDE
 cfstr value: source
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0CE
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEEE5
 cfstr value: completion
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB0D9
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEEF0
 cfstr value: Display-off queued: state=%lld source=%lld remaining=%.3f calls=%lu
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB11D
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEF34
 cfstr value: Submitting %lu native display-off request(s).
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB14B
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEF62
 cfstr value: Snapshot failed
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB15B
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEF72
 cfstr value: The renderer could not capture the screen. Copy diagnostics.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB198
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEFAF
 cfstr value: Snapshot unavailable; using the native transition.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB1CB
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEFE2
 cfstr value: CAFilter
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB1D4
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEFEB
 cfstr value: gaussianBlur
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB1E1
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xEFF8
 cfstr value: Renderer unavailable
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB1F6
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF00D
 cfstr value: The Gaussian filter could not be created.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB220
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF037
 cfstr value: Gaussian filter unavailable.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB23D
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF054
 cfstr value: sleepBlur
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB247
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF05E
 cfstr value: inputRadius
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB253
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF06A
 cfstr value: inputNormalizeEdges
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB276
-cfstr value: filters.sleepBlur.inputRadius
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB294
-cfstr value: opacity
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB29C
-cfstr value: BlurSleep.blur
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB2AB
-cfstr value: BlurSleep.fade
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB2BA
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF08D
+cfstr value: Rendering %@ for %.2fs.
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF0A5
 cfstr value: Render setup failed
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB2CE
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF0B9
 cfstr value: %@: %@
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB2D5
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF0C0
 cfstr value: 
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB2D6
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF0C1
 cfstr value: Animation setup failed (%@); using native lock.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB306
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF0F1
 cfstr value: com.apple.springboard
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB31C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF107
 cfstr value: SpringBoard
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB328
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF113
 cfstr value: Starting
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB331
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF11C
 cfstr value: The tweak library loaded. Checking the animation interfaces.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB36E
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF159
 cfstr value: Library loaded: BlurSleep %@, bundle=%@, process=%@
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB3A2
-cfstr value: 1.0.2
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB3A8
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF18D
+cfstr value: 1.2.0
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF193
 cfstr value: com.brooktrout12.blursleep/preferences-changed
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB3D7
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF1C2
 cfstr value: com.brooktrout12.blursleep/preview
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB3FA
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF1E5
 cfstr value: [BlurSleep] %@
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB409
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF1F4
 cfstr value: /var/mobile/Library/Logs/BlurSleep.log
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB430
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF21B
 cfstr value: %@ %@
 
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB437
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF222
 cfstr value: /var/mobile/Library/Logs/BlurSleep-status.plist
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB467
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF252
 cfstr value: Version
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB46F
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF25A
 cfstr value: Stage
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB475
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF260
 cfstr value: Detail
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB47C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF267
 cfstr value: Timestamp
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB486
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF271
 cfstr value: OS
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB489
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF274
 cfstr value: Process
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB499
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF284
+cfstr value: Gaussian Blur
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF292
+cfstr value: CRT TV
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF299
+cfstr value: Iris Close
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2A4
+cfstr value: Shrink to Center
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2B5
+cfstr value: Slide Down
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2C0
+cfstr value: Card Flip
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2CA
+cfstr value: Liquid Glass
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2D7
 cfstr value: disabled in Settings
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB4AE
-cfstr value: Settings: enabled=%d duration=%.2f
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB4D1
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF2EC
+cfstr value: Settings: enabled=%d duration=%.2f style=%@
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF318
 cfstr value: Enabled
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB4D9
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF320
 cfstr value: com.brooktrout12.blursleep
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB4F4
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF33B
 cfstr value: Duration
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB4FD
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF344
+cfstr value: AnimationStyle
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF353
 cfstr value: Cancelled: %@
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB50B
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF361
 cfstr value: Settings preview requested: renderer=%d hooks=%d
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB53C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF392
 cfstr value: Preview received, but a required rendering interface is missing. Copy diagnostics.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB58F
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF3E5
 cfstr value: Preview started for %.2fs. No sleep request sent.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB5C1
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF417
 cfstr value: Ready
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB5C7
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF41D
 cfstr value: Lock hook unavailable
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB5DD
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF433
 cfstr value: Preview request received and animation submitted. Try the sleep button next.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB62A
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF480
 cfstr value: Preview submitted, but native lock hooks are unavailable. Copy diagnostics.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBE64
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFE3C
 cfstr value: B
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB676
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF4CC
 cfstr value: SBBacklightController
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB7EC
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF642
 cfstr value: Interfaces: private=%d public=%d stateSetter=%d factor=%d state=%d wake=%d Gaussian=%d snapshot=%d mode=%d
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB857
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF6AD
 cfstr value: compatible backlight transition interface
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB881
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF6D7
 cfstr value: screen-state interface
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB898
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF6EE
 cfstr value: wake interface
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB8A7
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF6FD
 cfstr value: Gaussian filter interface
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB8C1
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF717
 cfstr value: screen capture symbol
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB8D7
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF72D
 cfstr value: Inactive
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB8E0
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF736
 cfstr value: Missing or different: %@. Copy diagnostics.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB90C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF762
 cfstr value: , 
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB90F
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF765
 cfstr value: Inactive: required private interface unavailable. Native lock retained.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB96E
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF7C4
 cfstr value: Available: %s %s
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xB9A8
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF7FE
 cfstr value: SBSleepWakeHardwareButtonInteraction
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBA22
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF878
 cfstr value: The iOS 18 backlight-state hook is active. The sleep button uses the selected duration.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBA7A
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF8D0
 cfstr value: The legacy backlight-duration hook is active.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBAA8
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF8FE
 cfstr value: Ready for sleep-button testing (%@).
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBACD
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF923
 cfstr value: backlight-state
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBADD
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF933
 cfstr value: legacy duration
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBAED
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF943
 cfstr value: Interface %s.%s: %s
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBB22
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF978
 cfstr value: Hooked %s [%s]
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBB31
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF987
 cfstr value: animated
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBB3A
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF990
 cfstr value: Backlight state: state=%lld factor=%.4f source=%lld animated=%d manual=%d screenOn=%d
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBB90
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xF9E6
 cfstr value: superseding backlight state
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBBAC
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFA02
 cfstr value: sleep interrupted preview
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBBC6
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFA1C
 cfstr value: Animation started
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBBD8
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFA2E
 cfstr value: The sleep animation is using the backlight-state hook.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBC0F
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFA65
 cfstr value: Sleep animation started: %.2fs, backlight-state path.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBC45
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFA9B
 cfstr value: Native fade entry: lockSource=%d manualDepth=%u main=%d
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBC7D
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFAD3
 cfstr value: Manual transition arrived off the main thread; kept native transition.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBCC4
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFB1A
 cfstr value: background-thread wake
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBCDB
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFB31
 cfstr value: display brightening
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBCEF
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFB45
 cfstr value: different display transition
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBD0C
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFB62
 cfstr value: Manual transition: target=%.4f duration=%.3f screenOn=%d source=%lld
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBD51
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFBA7
 cfstr value: The lock-animation hook ran. Report any visible timing or blur problem.
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBD99
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFBEF
 cfstr value: Animation started: %.2fs (native %.3fs, source %lld).
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBDCF
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFC25
 cfstr value: wake request
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBDDC
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFC32
 cfstr value: Hardware sleep requested (main thread=%d).
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBE1D
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFC73
 cfstr value: hardware wake
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBE2B
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFC81
 cfstr value: sleep reversed
-cfstr ISA after 0xC0156AE100000036
-cfstr ISA 0x4010000000000036
-cfstr offset: 0xBE3A
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFC90
 cfstr value: new hardware press during sleep animation
-cfstr ISA after 0xC0156AE100000036
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFCBA
+cfstr value: transform.scale.y
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFCCC
+cfstr value: transform.scale.x
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFCDE
+cfstr value: opacity
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFCE6
+cfstr value: BlurSleep.CRTGlow
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFCF8
+cfstr value: BlurSleep.
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD03
+cfstr value: BlurSleep.IrisMask
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD16
+cfstr value: transform.scale
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD26
+cfstr value: cornerRadius
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD33
+cfstr value: position.y
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD3E
+cfstr value: transform
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD48
+cfstr value: BlurSleep.LiquidGlass
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD5E
+cfstr value: BlurSleep.GlassSilhouette
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD78
+cfstr value: BlurSleep.GlassRefraction
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD92
+cfstr value: bounds
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFD99
+cfstr value: BlurSleep.GlassHighlight
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDB2
+cfstr value: startPoint
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDBD
+cfstr value: endPoint
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDC6
+cfstr value: BlurSleep.GlassSheen
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDDB
+cfstr value: position.x
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDE6
+cfstr value: path
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDEB
+cfstr value: BlurSleep.GlassPath
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFDFF
+cfstr value: filters.sleepBlur.inputRadius
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFE1D
+cfstr value: BlurSleep.blur
+cfstr ISA after 0xC0156AE10000004B
+cfstr ISA 0x401000000000004B
+cfstr offset: 0xFE2C
+cfstr value: BlurSleep.fade
+cfstr ISA after 0xC0156AE10000004B
 __objc_classlist__DATA_CONST
 __objc_imageinfo__DATA_CONST
 
@@ -443,17 +559,17 @@ __objc_classrefs__DATA
 __objc_ivar
 __objc_data
 --- MAIN CLASS ---
-objc_class isa:		0x400800000000004F
-objc_class superclass:	0x400800000000004E
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x400800000000006A
+objc_class superclass:	0x4008000000000069
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010000
+objc_class data:	0x8000000014000
 --- MAIN CLASS AFTER ---
-objc_class isa:		0xC00D6AE10000004F
-objc_class superclass:	0xC00DB5AB0000004E
-objc_class cache:	0x401000000000004D
+objc_class isa:		0xC00D6AE10000006A
+objc_class superclass:	0xC00DB5AB00000069
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010000
+objc_class data:	0x8000000014000
 class_ro_t flags:	0x129X
 class_ro_t instanceStart:	0x40X
 class_ro_t instanceSize:	0x40X
@@ -466,40 +582,40 @@ class_ro_t ivars:	0x00
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 --- MAIN CLASS ---
-objc_class isa:		0x8000000010720
-objc_class superclass:	0x4008000000000050
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x80000000148F0
+objc_class superclass:	0x400800000000006B
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010048
+objc_class data:	0x8000000014048
 --- MAIN CLASS AFTER ---
-objc_class isa:		0x800D6AE100010720
-objc_class superclass:	0xC00DB5AB00000050
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x800D6AE1000148F0
+objc_class superclass:	0xC00DB5AB0000006B
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010048
+objc_class data:	0x8000000014048
 class_ro_t flags:	0x128X
 class_ro_t instanceStart:	0x08X
 class_ro_t instanceSize:	0x08X
 class_ro_t reserved:	0x00X
 class_ro_t ivarLayoutOrNonMetaclass:	0x00
 class_ro_t name:	BSOverlayController
-class_ro_t baseMethodList:	0x8045C3100000A138
+class_ro_t baseMethodList:	0x8045C3100000DA58
 class_ro_t baseProtocols:	0x00
 class_ro_t ivars:	0x00
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 --- MAIN CLASS ---
-objc_class isa:		0x400800000000004F
-objc_class superclass:	0x4008000000000051
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x400800000000006A
+objc_class superclass:	0x400800000000006C
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010090
+objc_class data:	0x8000000014090
 --- MAIN CLASS AFTER ---
-objc_class isa:		0xC00D6AE10000004F
-objc_class superclass:	0xC00DB5AB00000051
-objc_class cache:	0x401000000000004D
+objc_class isa:		0xC00D6AE10000006A
+objc_class superclass:	0xC00DB5AB0000006C
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010090
+objc_class data:	0x8000000014090
 class_ro_t flags:	0x129X
 class_ro_t instanceStart:	0x40X
 class_ro_t instanceSize:	0x40X
@@ -512,40 +628,40 @@ class_ro_t ivars:	0x00
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 --- MAIN CLASS ---
-objc_class isa:		0x8000000010770
-objc_class superclass:	0x4008000000000052
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x8000000014940
+objc_class superclass:	0x400800000000006D
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x80000000100D8
+objc_class data:	0x80000000140D8
 --- MAIN CLASS AFTER ---
-objc_class isa:		0x800D6AE100010770
-objc_class superclass:	0xC00DB5AB00000052
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x800D6AE100014940
+objc_class superclass:	0xC00DB5AB0000006D
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x80000000100D8
+objc_class data:	0x80000000140D8
 class_ro_t flags:	0x128X
 class_ro_t instanceStart:	0x08X
 class_ro_t instanceSize:	0x08X
 class_ro_t reserved:	0x00X
 class_ro_t ivarLayoutOrNonMetaclass:	0x00
 class_ro_t name:	BSOverlayWindow
-class_ro_t baseMethodList:	0x8045C3100000A168
+class_ro_t baseMethodList:	0x8045C3100000DA88
 class_ro_t baseProtocols:	0x00
 class_ro_t ivars:	0x00
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 --- MAIN CLASS ---
-objc_class isa:		0x400800000000004F
-objc_class superclass:	0x400800000000004F
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x400800000000006A
+objc_class superclass:	0x400800000000006A
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010120
+objc_class data:	0x8000000014120
 --- MAIN CLASS AFTER ---
-objc_class isa:		0xC00D6AE10000004F
-objc_class superclass:	0xC00DB5AB0000004F
-objc_class cache:	0x401000000000004D
+objc_class isa:		0xC00D6AE10000006A
+objc_class superclass:	0xC00DB5AB0000006A
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x8000000010120
+objc_class data:	0x8000000014120
 class_ro_t flags:	0x389X
 class_ro_t instanceStart:	0x40X
 class_ro_t instanceSize:	0x40X
@@ -558,31 +674,31 @@ class_ro_t ivars:	0x00
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 --- MAIN CLASS ---
-objc_class isa:		0x80000000107C0
-objc_class superclass:	0x4008000000000053
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x8000000014990
+objc_class superclass:	0x400800000000006E
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x10270
+objc_class data:	0x14270
 --- MAIN CLASS AFTER ---
-objc_class isa:		0x800D6AE1000107C0
-objc_class superclass:	0xC00DB5AB00000053
-objc_class cache:	0x401000000000004D
+objc_class isa:		0x800D6AE100014990
+objc_class superclass:	0xC00DB5AB0000006E
+objc_class cache:	0x4010000000000068
 objc_class vtable:	0x00
-objc_class data:	0x10270
+objc_class data:	0x14270
 class_ro_t flags:	0x388X
 class_ro_t instanceStart:	0x08X
 class_ro_t instanceSize:	0x82X
 class_ro_t reserved:	0x00X
-class_ro_t ivarLayoutOrNonMetaclass:	0x800000000A6F7
+class_ro_t ivarLayoutOrNonMetaclass:	0x800000000E1F7
 class_ro_t name:	BSAnimator
-class_ro_t baseMethodList:	0x8015C3100000A090
+class_ro_t baseMethodList:	0x8015C3100000D9B0
 class_ro_t baseProtocols:	0x00
-class_ro_t ivars:	0x18000000010168
+class_ro_t ivars:	0x18000000014168
 class_ro_t weakIvarLayout:	0x00
 class_ro_t weakIvarLayout:	0x00
 __data
-current str isa: 0x00, hikari str: 0x01, hikari stroff: 0xFFFC8066F3A517A0
-current str isa: 0x00, hikari str: 0x3FE199999999999A, hikari stroff: 0xFFFC8066F3A517A8
+current str isa: 0x00, hikari str: 0x01, hikari stroff: 0xFFFC80598E23C970
+current str isa: 0x00, hikari str: 0x3FE199999999999A, hikari stroff: 0xFFFC80598E23C978
 __bss
 
 ===== SEGMENT NAME: __LINKEDIT =====

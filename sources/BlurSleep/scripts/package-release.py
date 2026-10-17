@@ -23,7 +23,7 @@ build_lines = (root / 'validation/build.log').read_text().splitlines()
 state_result = next(line for line in build_lines if line.startswith('PASS: '))
 (root / 'validation/state-test.txt').write_text(state_result + '\n')
 
-validations = {'build.log', 'state-test.txt', 'package-verification.json'}
+validations = {'build.log', 'state-test.txt', 'package-verification.json', 'sleep-hook-regression.json', 'icon-verification.json', 'liquid-glass-regression.json'}
 for prefix in ('BlurSleep.dylib.', 'BlurSleepPrefs.'):
     logs = list((root / 'validation').glob(prefix + '*.abi-conversion.log'))
     if logs:

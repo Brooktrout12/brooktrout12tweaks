@@ -7,12 +7,12 @@
 	<key>CFBundleExecutable</key>
 	<string>BlurSleepPrefs</string>
 	<key>CFBundleIconFile</key>
-	<string>icon.png</string>
+	<string>icon-rounded.png</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>icon.png</string>
-		<string>icon@2x.png</string>
-		<string>icon@3x.png</string>
+		<string>icon-rounded.png</string>
+		<string>icon-rounded@2x.png</string>
+		<string>icon-rounded@3x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.brooktrout12.blursleep.prefs</string>
@@ -21,9 +21,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.2.0</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>6</string>
 	<key>MinimumOSVersion</key>
 	<string>17.0</string>
 	<key>NSPrincipalClass</key>

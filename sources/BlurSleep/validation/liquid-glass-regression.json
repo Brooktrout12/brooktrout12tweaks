@@ -1,0 +1,43 @@
+{
+  "result": "PASS",
+  "baseline": "1.1.1",
+  "target": "1.2.0",
+  "unchanged_files": [
+    {
+      "file": "Tweak.m",
+      "sha256": "131b72dd54d7df2ce8314057838c308ffa52c4bea6a0ea5fac13b70d4f553456"
+    },
+    {
+      "file": "BSAnimationState.h",
+      "sha256": "1937f8903fe96b34b3d62573b91b8674e7b6565335bac1b81733ed8362862b72"
+    },
+    {
+      "file": "BSAnimationState.c",
+      "sha256": "0913a0ce8ab0c7f1ce41007ef0147375d19e82d01a882ddac353c17e26215022"
+    },
+    {
+      "file": "BSAnimationEffects.h",
+      "sha256": "aa71181c624dccd7e9b08c5ce25fc8af5ab58214c72879702d3503bffffe380b"
+    },
+    {
+      "file": "prefs/Resources/icon-rounded.png",
+      "sha256": "bb1f42e176cc1f0c88600d85e57df2ad70a784504176d476040f0a857221e3a4"
+    },
+    {
+      "file": "prefs/Resources/icon-rounded@2x.png",
+      "sha256": "bdc475fa17d4b930d6386fba134ac09f31887173dff66bbeed05788f4e80a045"
+    },
+    {
+      "file": "prefs/Resources/icon-rounded@3x.png",
+      "sha256": "41809a576303d4f9c59468674dd672654e0dea94afddf3562a89f3ca7a6b61f9"
+    },
+    {
+      "file": "layout/Library/PreferenceLoader/Preferences/BlurSleep.plist",
+      "sha256": "c9b9db78e8fffe3c2a4a71d555c312a3cc2f727239359309066e130846e0f32d"
+    }
+  ],
+  "previous_six_effects_unchanged": true,
+  "existing_preference_ids_preserved": true,
+  "existing_settings_controller_unchanged_except_version": true,
+  "device_runtime_tested": false
+}
