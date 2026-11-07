@@ -8,13 +8,15 @@ Add this URL in Sileo or Zebra to install compatible packages and receive update
 
 ## Included packages
 
-The repository contains 16 rootless packages (`iphoneos-arm64`), selected on 17 October 2026. Each package's dependency fields specify its supported iOS versions. Package availability does not establish device testing; consult the project's release and validation notes.
+The repository contains 18 rootless packages (`iphoneos-arm64`), updated on 7 November 2026. Each package's dependency fields specify its supported iOS versions. Package availability does not establish device testing; consult the project's release and validation notes.
 
 | Package | Version | Source | Status |
 |---|---|---|---|
 | com.brooktrout12.3dbadgeclear18 | 1.0.1 | [Source](sources/BadgeClear18) | Release build; see project notes for device validation. |
 | com.brooktrout12.batterycapacity18 | 1.0.6 | [Source](sources/BatteryCapacity18) | Release build; see project notes for device validation. |
 | com.brooktrout12.blursleep | 1.2.0 | [Source](sources/BlurSleep) | Experimental; see release notes for device validation. |
+| com.brooktrout12.cc17shapes | 1.0.3 | [Source](sources/CC17Shapes) | iOS 18.x rootless; 1.0.3 includes flashlight and initial Focus shape fixes. See source validation notes. |
+| com.brooktrout12.ccfavorites | 1.0.0 | [Source](sources/CCFavorites) | iOS 18.x rootless; corrected 1.0.0 selector build. Reinstall if the earlier 1.0.0 is already installed. See source validation notes. |
 | com.brooktrout12.ccnorecent | 1.0.0 | [Source](sources/CCNoRecent) | Release build; physical-device verification remains necessary. |
 | com.brooktrout12.classiclocksound | 1.0.8 | [Source](sources/ClassicLockSound) | Release build; see project notes for device validation. |
 | com.brooktrout12.cleanquickactions | 1.0.2 | [Source](sources/CleanQuickActions) | 1.0.2 iOS 17 section-divider fix; see project validation notes. |
@@ -33,6 +35,8 @@ The repository contains 16 rootless packages (`iphoneos-arm64`), selected on 17 
 
 Every published package links to a browsable project under `sources/`. BlurSleep 1.2.0 and CCNoRecent 1.0.0 have been unpacked from the uploaded ZIPs. The Face ID Grace 1.0.3, Clean Quick Actions 1.0.2 and ROCK ANTENNE AdBlock 0.2.0 sources match the selected DEBs. Build instructions, technical validation records, assets and historical material are retained within each project. Private device-report metadata is omitted from published notes. JB Battery Watch's source remains available, but its previously removed package has not been republished.
 
+CC17Shapes 1.0.3 and the corrected CCFavorites 1.0.0 build are included with matching source folders. Both are iOS 18.x-only rootless tweaks.
+
 ## Building tweaks
 
 Most projects include a Theos Makefile and a README or build guide. The YouTube add-ons use `build.sh`; JB Battery Watch's archived source uses the Python scripts documented in `BUILD_NOTES.md`. External compilers and SDKs are not included. Repository publication copies the saved DEBs unchanged; it does not recompile tweaks or constitute a new device test.
@@ -49,6 +53,8 @@ python3 scripts/verify_repo.py
 ```
 
 See [SETUP.md](SETUP.md) for initial setup. The phone-setup workflow's ZIP import runs only before `.phone-setup-complete` exists.
+
+DEBs must be uploaded under `debs/rootless/` to appear in the package manager. The automatic build discovers them without requiring a catalog entry and removes deleted DEBs from the next published index. Files stored elsewhere are not automatically included.
 
 ## Licensing
 

@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "consistent_module_corners": true,
+  "gallery_scale_separate": true,
+  "straight_fills_preserved": true,
+  "resize_and_nested_setters": true,
+  "invalid_metrics_passthrough": true,
+  "circle_recognition_preserved": true,
+  "device_runtime_tested": false
+}

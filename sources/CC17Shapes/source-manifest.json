@@ -1,0 +1,29 @@
+{
+  "project": "CC17Shapes",
+  "version": "1.0.3",
+  "author": "brooktrout12",
+  "build_note": "Expanded flashlight stepped-slider and initial Focus row corner corrections. Host geometry, package, architecture, and signature checks passed. Version 1.0.3 has not been device-tested.",
+  "package_sha256": "6982b30bcc5f7b3889e9d46f847f457370d1fe939f0dbcc65a907f8fd4ff053f",
+  "files": {
+    "BTShapeGeometry.h": "15de1fd3f319dc5c866850676a914445761a7614abd2e509d8ec312c5032ff84",
+    "BUILD.md": "bf6eff86738babf305c7bdd6d5df55ac4ed7bc0d964e8dee315b8e6835673c24",
+    "CC17Shapes.plist": "23350a53b7b38b6c1bc73fb13d9ebf19fdc3dd9104afb0b8df1cb9ac3174cbbf",
+    "LICENSE": "159c00768e27fefe4d40956fb4d41caac96a0ab6cba6e0916e24eb9297672e82",
+    "Makefile": "1ad17d20bfa790c654e6626ff45ac40f050dff024bd6c89682b8d51c2992c526",
+    "README.md": "7eb99e3cecd794c83159d7e1477ae28e7363775a46c6240acd1da707a99713cd",
+    "Tweak.m": "5bdc44db5b30c60e1841f92fed4f52f91f6bd85d1883edb0b9aa5695d41eff78",
+    "control": "c4c269f7636e000dcb6710193057a26fcbae90ee25d18addc4559e786f41489b",
+    "debug/arm64/CC17Shapes.dylib.dSYM/Contents/Info.plist": "09c32479c1231fe69590d1a208476c2148751f1bfb46f08313aa7808fd427026",
+    "debug/arm64/CC17Shapes.dylib.dSYM/Contents/Resources/DWARF/CC17Shapes.dylib": "7e0a5b931280f3d222b9a1050db0fe040ac3e5ed39d65a8fb507dbe736616011",
+    "debug/arm64e/CC17Shapes.dylib.dSYM/Contents/Info.plist": "09c32479c1231fe69590d1a208476c2148751f1bfb46f08313aa7808fd427026",
+    "debug/arm64e/CC17Shapes.dylib.dSYM/Contents/Resources/DWARF/CC17Shapes.dylib": "71d7d19216b871f05f66808f9de859c33217a425fa0240cd499232361e1345ed",
+    "geometry-verification.json": "4809b1af1e1ccb96782bd70d84fe11dcfc6bb60874627dd9e0a8dfceff08a9ef",
+    "scripts/build-linux.sh": "04501104ed1c0ce3bb1d3a4ae6e6cbd532ee44b08dd83f98fa4fe15bd65f3646",
+    "scripts/sign-linux.sh": "96e8004144bc90cee5fdc6900b2ecf5908135b0065e61fa9839e35f51ed498da",
+    "scripts/test-geometry.sh": "ffd1751041203e5d30e0f742dfeec780a4c64519aef5e64317a71a0ea9df1405",
+    "scripts/verify_package.py": "67253b53d14d95045a9aa34938dc79e36f23002ebbabde2cde00a481ade17e56",
+    "tests/test_geometry.c": "e5d1cdf1ecfe87146b33caa9be0000237468317542cbe2064d7624686226cb29",
+    "verification.json": "3b3e946b249e661c7be33629824b74f29e82d06e0e9a78b67853a44b74848a7d"
+  },
+  "publication_note": "Public documentation uses general compatibility and technical validation notes. Code, build scripts, test fixtures, debug symbols and package bytes are unchanged from the original release."
+}

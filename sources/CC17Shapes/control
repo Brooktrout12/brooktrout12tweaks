@@ -1,0 +1,9 @@
+Package: com.brooktrout12.cc17shapes
+Name: CC17Shapes
+Version: 1.0.3
+Architecture: iphoneos-arm64
+Description: Consistent iOS 17-style Control Center corners for buttons, panels and sliders. No settings.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)

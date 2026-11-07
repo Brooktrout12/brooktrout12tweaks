@@ -1,0 +1,29 @@
+{
+  "project": "CCFavorites",
+  "version": "1.0.0",
+  "author": "brooktrout12",
+  "build_note": "Selector class matching corrected; package version unchanged.",
+  "files": {
+    "Tweak.m": "d3d21f58b2683a610fa0ceac6da17dff5197eed6d1bbcbf8d2ca1067c010d803",
+    "BTRuntimeClassMatch.h": "bc7a9840c880cd8a4bed295537829765c9ab2cfafb79b24c3aae8a9538d4b889",
+    "Makefile": "1c0dbf11e7f5a86e507cb57a0862d7090dba9f50b5db8537415c73247e0c68f2",
+    "control": "47817d989faad561551b50f231bb881cba94322ceb597cb6600ee759d0d5ac3e",
+    "CCFavorites.plist": "23350a53b7b38b6c1bc73fb13d9ebf19fdc3dd9104afb0b8df1cb9ac3174cbbf",
+    "LICENSE": "159c00768e27fefe4d40956fb4d41caac96a0ab6cba6e0916e24eb9297672e82",
+    "README.md": "a06297cfffdf05e2bfaae3cecac8d118e673f53beebcf5b56b05cb69151f0250",
+    "BUILD.md": "773f1c66f53819d7991e29984a4390e504d20e4b8be86405a6366097b0337651",
+    "verification.json": "c8042ad004c306743d8e3ad56e47c76f9cc74edeceeae02344594768b7d698c7",
+    "class-matching-verification.json": "b8af5651a97ab5c5f1360299f3ecc330ec8a9ee42bdbb603f97313bc39a63e49",
+    "scripts/build-linux.sh": "c822c5d9277c9acf09be0a34114025f3b231094701a96e5e923af63c6a75ec58",
+    "scripts/sign-linux.sh": "96e8004144bc90cee5fdc6900b2ecf5908135b0065e61fa9839e35f51ed498da",
+    "scripts/test-class-matching.sh": "7fc5613b7181141e1c762a9b386569bc312789ba4139e4cb63c7954a8375d712",
+    "scripts/verify_package.py": "203759abee112db6aabc9aad7be26444480fc6f38422f4c38ac341f7a377a0a4",
+    "tests/support/objc/runtime.h": "017795421072226ca8b3e896f04f56b74b4825a52dfa75fced9ad878400a3033",
+    "tests/test_class_matching.c": "3902a0176b280ec9d5abd0625238ccd7cd00ce817eb1053d19b69e84ee55f30e",
+    "debug/arm64/CCFavorites.dylib.dSYM/Contents/Info.plist": "75053ebd6bf99850718af7137bc53df3ebd316c327c0e441bb15df30be3dffa1",
+    "debug/arm64/CCFavorites.dylib.dSYM/Contents/Resources/DWARF/CCFavorites.dylib": "dfd01c090cde06635734b5f4183b03c62104521f48bd5d3904f714dd6774ea3d",
+    "debug/arm64e/CCFavorites.dylib.dSYM/Contents/Info.plist": "75053ebd6bf99850718af7137bc53df3ebd316c327c0e441bb15df30be3dffa1",
+    "debug/arm64e/CCFavorites.dylib.dSYM/Contents/Resources/DWARF/CCFavorites.dylib": "354eeed5c36f6e6db65628fee0320479ce31fa6357c135bc83ebcd6ce7d08379"
+  },
+  "publication_note": "Public documentation uses general compatibility and technical validation notes. Code, build scripts, test fixtures, debug symbols and package bytes are unchanged from the original release."
+}

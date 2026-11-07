@@ -1,0 +1,9 @@
+Package: com.brooktrout12.ccfavorites
+Name: CCFavorites
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Favorites-only Control Center for iOS 18. Hides the page symbols and disables page switching. No settings.
+Maintainer: brooktrout12
+Author: brooktrout12
+Section: Tweaks
+Depends: firmware (>= 18.0), firmware (<< 19.0), mobilesubstrate (>= 0.9.5000)

@@ -1,0 +1,64 @@
+{
+  "package": "com.brooktrout12.ccfavorites_1.0.0_iphoneos-arm64.deb",
+  "sha256": "cf3f5c80b9d850f5ce0a313b345d5fc8dd8758b337bae84d71afacf473a09d13",
+  "result": "PASS",
+  "slices": [
+    {
+      "architecture": "arm64",
+      "minimum_ios": "18.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 0,
+      "objc_block_literals": false,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 21,
+          "identifier": "com.brooktrout12.ccfavorites"
+        }
+      ]
+    },
+    {
+      "architecture": "arm64e",
+      "minimum_ios": "18.0",
+      "dependencies": [
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/Foundation.framework/Foundation",
+        "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation",
+        "/System/Library/Frameworks/UIKit.framework/UIKit",
+        "@rpath/CydiaSubstrate.framework/CydiaSubstrate",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/var/jb/Library/Frameworks",
+        "/var/jb/usr/lib",
+        "@loader_path/.jbroot/Library/Frameworks",
+        "@loader_path/.jbroot/usr/lib"
+      ],
+      "converted_objc_class_records": 0,
+      "converted_constant_string_records": 2,
+      "objc_block_literals": false,
+      "signatures": [
+        {
+          "algorithm": 2,
+          "verified_pages": 21,
+          "identifier": "com.brooktrout12.ccfavorites"
+        }
+      ]
+    }
+  ],
+  "device_runtime_tested": false
+}

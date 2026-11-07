@@ -66,5 +66,13 @@
   "com.brooktrout12.rockantenneadblock": {
     "source": "sources/RockAntenneAdBlock",
     "status": "Experimental Test 2; ad-skipping behavior is not guaranteed."
+  },
+  "com.brooktrout12.cc17shapes": {
+    "source": "sources/CC17Shapes",
+    "status": "iOS 18.x rootless; 1.0.3 includes flashlight and initial Focus shape fixes. See source validation notes."
+  },
+  "com.brooktrout12.ccfavorites": {
+    "source": "sources/CCFavorites",
+    "status": "iOS 18.x rootless; corrected 1.0.0 selector build. Reinstall if the earlier 1.0.0 is already installed. See source validation notes."
   }
 }

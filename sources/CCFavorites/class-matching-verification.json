@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "regression": "Swift class ownership",
+  "original_bug_reproduced": true,
+  "scope_negatives_passed": true,
+  "lazy_load_retry_passed": true,
+  "device_runtime_tested": false
+}

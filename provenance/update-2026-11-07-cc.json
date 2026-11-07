@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-07",
+  "purpose": "Restore omitted iOS 18-only Control Center packages to the automatically published package inventory.",
+  "packages": [
+    {
+      "package": "com.brooktrout12.cc17shapes_1.0.3_iphoneos-arm64.deb",
+      "sha256": "6982b30bcc5f7b3889e9d46f847f457370d1fe939f0dbcc65a907f8fd4ff053f",
+      "source": "sources/CC17Shapes",
+      "original_source_manifest_verified": true,
+      "original_package_hash_verified": true,
+      "publication_changes": [
+        "README.md",
+        "BUILD.md",
+        "source-manifest.json"
+      ],
+      "code_and_package_bytes_changed": false
+    },
+    {
+      "package": "com.brooktrout12.ccfavorites_1.0.0_iphoneos-arm64.deb",
+      "sha256": "cf3f5c80b9d850f5ce0a313b345d5fc8dd8758b337bae84d71afacf473a09d13",
+      "source": "sources/CCFavorites",
+      "original_source_manifest_verified": true,
+      "original_package_hash_verified": true,
+      "publication_changes": [
+        "README.md",
+        "BUILD.md",
+        "source-manifest.json"
+      ],
+      "code_and_package_bytes_changed": false
+    }
+  ],
+  "automatic_publishing": "Existing push-to-main workflow retained; build_repo.py discovers DEBs under debs/ independently of optional catalog metadata.",
+  "rootful": "Unchanged; not indexed or deployed by this update."
+}
