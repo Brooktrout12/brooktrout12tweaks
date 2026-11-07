@@ -1,0 +1,239 @@
+{
+  "result": "PASS",
+  "scope": "Host-side archive, metadata, version-rule and byte-identity verification; not an iPad runtime test.",
+  "source": {
+    "filename": "AppSync-Unified-116.0-iOS18.6-Rootless-Test1.deb",
+    "sha256": "0dd23330c7bff2e88e45c83d31df41875a4b56c8f3f99d8417dd28991be2161c",
+    "bytes": 49690
+  },
+  "output": {
+    "filename": "AppSync-Unified-116.0-iOS18-All-Rootless-Test3.deb",
+    "sha256": "1b823bf4b832f07ac41a661296470eb55b4fb174a52c09b974caec833f0c9896",
+    "bytes": 49730,
+    "version": "116.0+ios18.x-test3",
+    "architecture": "iphoneos-arm64",
+    "depends": "firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<< 19~)"
+  },
+  "source_test2_package_used": false,
+  "original_package_used_only_for_comparison": true,
+  "payload_sha256": {
+    "test1": "630f2e6f8bd1b8e1c4de1788894e5dc5e5e28b3343791179b86e3ec1da434448",
+    "test3": "630f2e6f8bd1b8e1c4de1788894e5dc5e5e28b3343791179b86e3ec1da434448",
+    "original": "630f2e6f8bd1b8e1c4de1788894e5dc5e5e28b3343791179b86e3ec1da434448"
+  },
+  "only_changed_extracted_path": "DEBIAN/control",
+  "changed_control_fields": [
+    "Depends",
+    "Description",
+    "Name",
+    "Version"
+  ],
+  "unchanged_payload_file_count": 6,
+  "unchanged_executable_count_including_maintainer_programs": 5,
+  "executable_checks": [
+    {
+      "path": "DEBIAN/postinst",
+      "sha256": "970b0aa82a9cfbd031a4dd57a5c682db9092fa64e0c718de3e3400ea3731b688",
+      "identical_to_test1_and_original": true
+    },
+    {
+      "path": "DEBIAN/prerm",
+      "sha256": "613701ca3b868f4a0161926609eb0b46224e7be1be6632e7c987df0e022b9a93",
+      "identical_to_test1_and_original": true
+    },
+    {
+      "path": "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-FrontBoard.dylib",
+      "sha256": "b87fc59f3f05c4656f25487f390baf14ba827ed5d98534e2678a61d6d154ac25",
+      "identical_to_test1_and_original": true
+    },
+    {
+      "path": "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-installd.dylib",
+      "sha256": "53e24d02429f92db5fb96673bf6ee09d7da643d54160d1d314e698bf503cc97c",
+      "identical_to_test1_and_original": true
+    },
+    {
+      "path": "var/jb/usr/bin/asu_inject",
+      "sha256": "fbf2617a92db2520b47fb80ad8596ac6bda90b03b75df338ee2df111de41c1b1",
+      "identical_to_test1_and_original": true
+    }
+  ],
+  "boundary_examples": [
+    {
+      "version_string": "5.0",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "17.6.1",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "17.7",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.0",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.0~beta1",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.2",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.6",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.6.1",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.7",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.7.1",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.7.2",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.7.99",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.8",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.9",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.10",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.99",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "18.999.999",
+      "expected_allowed": true,
+      "actual_allowed": true,
+      "passed": true
+    },
+    {
+      "version_string": "4.9",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "19~beta1",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "19.0~beta1",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "19",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "19.0",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "19.1",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "20.0",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "26.0",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    },
+    {
+      "version_string": "27.0",
+      "expected_allowed": false,
+      "actual_allowed": false,
+      "passed": true
+    }
+  ],
+  "additional_generated_18x_boundary_tests_passed": 505,
+  "total_firmware_version_tests_passed": 532,
+  "upgrade_ordering_tests": {
+    "116.0": true,
+    "116.0+ios18.6test1": true,
+    "116.0+ios18.7test2": true
+  },
+  "deterministic_rebuild_verified": true,
+  "device_installation_performed": false,
+  "device_runtime_test_performed": false,
+  "limitations": [
+    "Metadata-only compatibility allowance; does not guarantee runtime compatibility.",
+    "The pre-existing lower firmware bound and all other dependency/conflict checks are retained.",
+    "No code-signing, entitlements, launch hooks, payload paths or installation programs were changed."
+  ]
+}

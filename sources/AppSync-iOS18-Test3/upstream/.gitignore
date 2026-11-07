@@ -1,0 +1,14 @@
+*.o
+.theos/*
+.theos-rootless/*
+debs/*
+*.deb
+*.dylib
+**/.theos/*
+**/.theos-rootless/*
+*/.theos/*
+*/.theos-rootless/*
+*.sublime-workspace
+_/*
+*/obj/*
+**/obj/*

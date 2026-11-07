@@ -1,0 +1,146 @@
+{
+  "DEBIAN": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801391000000000,
+    "type": "directory"
+  },
+  "DEBIAN/control": {
+    "mode": 420,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1790640000000000000,
+    "type": "file",
+    "size": 1661,
+    "sha256": "c99ee173bf9f5eb4cbab1e4de826f74796a687bb9403a1a20bfa3def1baef646"
+  },
+  "DEBIAN/postinst": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801390000000000,
+    "type": "file",
+    "size": 200064,
+    "sha256": "970b0aa82a9cfbd031a4dd57a5c682db9092fa64e0c718de3e3400ea3731b688"
+  },
+  "DEBIAN/prerm": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801390000000000,
+    "type": "file",
+    "size": 199216,
+    "sha256": "613701ca3b868f4a0161926609eb0b46224e7be1be6632e7c987df0e022b9a93"
+  },
+  "var": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801391000000000,
+    "type": "directory"
+  },
+  "var/jb": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801392000000000,
+    "type": "directory"
+  },
+  "var/jb/Library": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801387000000000,
+    "type": "directory"
+  },
+  "var/jb/Library/LaunchDaemons": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1652197000000000000,
+    "type": "directory"
+  },
+  "var/jb/Library/LaunchDaemons/ai.akemi.asu_inject.plist": {
+    "mode": 420,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1652197000000000000,
+    "type": "file",
+    "size": 508,
+    "sha256": "7a2c6e0cdf08b90d55e551362731da4c788bd988eb294d8d76b12e0d06fa4cf6"
+  },
+  "var/jb/Library/MobileSubstrate": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801387000000000,
+    "type": "directory"
+  },
+  "var/jb/Library/MobileSubstrate/DynamicLibraries": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801388000000000,
+    "type": "directory"
+  },
+  "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-FrontBoard.dylib": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801388000000000,
+    "type": "file",
+    "size": 231168,
+    "sha256": "b87fc59f3f05c4656f25487f390baf14ba827ed5d98534e2678a61d6d154ac25"
+  },
+  "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-FrontBoard.plist": {
+    "mode": 420,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801388000000000,
+    "type": "file",
+    "size": 356,
+    "sha256": "6d3ddf89add8f55b6f76be878d5db6aa742470cd6c2635acff53669c2ef2162c"
+  },
+  "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-installd.dylib": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801387000000000,
+    "type": "file",
+    "size": 234800,
+    "sha256": "53e24d02429f92db5fb96673bf6ee09d7da643d54160d1d314e698bf503cc97c"
+  },
+  "var/jb/Library/MobileSubstrate/DynamicLibraries/AppSyncUnified-installd.plist": {
+    "mode": 420,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801387000000000,
+    "type": "file",
+    "size": 299,
+    "sha256": "009f939f5351d51fdc49177d68d6e8afcac303f0a7705a975f9adb9db5c4a189"
+  },
+  "var/jb/usr": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801391000000000,
+    "type": "directory"
+  },
+  "var/jb/usr/bin": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801391000000000,
+    "type": "directory"
+  },
+  "var/jb/usr/bin/asu_inject": {
+    "mode": 493,
+    "uid": 0,
+    "gid": 20,
+    "mtime_ns": 1732801391000000000,
+    "type": "file",
+    "size": 199648,
+    "sha256": "fbf2617a92db2520b47fb80ad8596ac6bda90b03b75df338ee2df111de41c1b1"
+  }
+}

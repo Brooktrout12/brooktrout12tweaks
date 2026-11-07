@@ -1,0 +1,27 @@
+--- Test1/control
++++ Test3/control
+@@ -1,18 +1,19 @@
+ Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified, ellekit (< 1.1)
+-Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<= 18.6)
++Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<< 19~)
+ Depiction: https://cydia.akemi.ai/?page/ai.akemi.appsyncunified
+ Maintainer: Unofficial local compatibility test <noreply@example.invalid>
+ Homepage: https://cydia.akemi.ai/
+ Provides: appsync, net.angelxwind.appsyncunified
+ Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+ Package: ai.akemi.appsyncunified
+-Name: AppSync Unified (iOS 18.6 Test 1)
+-Description: Unofficial iOS 18.6 firmware-limit test; original 116.0 binaries.
+- Only package metadata is changed. Runtime compatibility is unverified.
++Name: AppSync Unified (iOS 18.x Test 3)
++Description: Unofficial iOS/iPadOS 18.x firmware-limit repack of Test 1.
++ Only package metadata is changed; original 116.0 code is preserved.
++ Permits all 18.x firmware versions; runtime compatibility is not guaranteed.
+  This is not an official Karen/akemi release.
+ Section: Tweaks
+ Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+ Architecture: iphoneos-arm64
+-Version: 116.0+ios18.6test1
++Version: 116.0+ios18.x-test3
+ Installed-Size: 668
+ Original-Maintainer: Karen/あけみ <karen@akemi.ai>

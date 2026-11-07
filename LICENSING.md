@@ -7,3 +7,7 @@ Existing project LICENSE files and third-party notices are retained and take pre
 Media is not automatically relicensed as source code. Classic Lock Sound's audio remains subject to its original ownership and license, as documented in sources/ClassicLockSound/ASSET-NOTICE.md. That notice is retained unchanged. Original asset notices elsewhere also remain applicable.
 
 The prebuilt DEBs are byte-for-byte copies of the selected supplied packages. Adding source licenses here did not rebuild or change those DEBs.
+
+## AppSync Unified
+
+AppSync Unified is copyright Karen/あけみ and Linus Yang and is GPL-3.0-or-later, not MIT. Its source snapshot and original notices are in [sources/AppSync-iOS18-Test3/upstream](sources/AppSync-iOS18-Test3/upstream); the full GPL is in [COPYING](sources/AppSync-iOS18-Test3/COPYING). Original Test 3 repack/audit helpers use GPL-3.0-or-later too. The published Test 3 package is an unofficial metadata-only repack, not an upstream release.

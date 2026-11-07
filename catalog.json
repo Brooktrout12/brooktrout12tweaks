@@ -74,5 +74,9 @@
   "com.brooktrout12.ccfavorites": {
     "source": "sources/CCFavorites",
     "status": "iOS 18.x rootless; corrected 1.0.0 selector build. Reinstall if the earlier 1.0.0 is already installed. See source validation notes."
+  },
+  "ai.akemi.appsyncunified": {
+    "source": "sources/AppSync-iOS18-Test3",
+    "status": "Unofficial iOS/iPadOS 18.x rootless Test 3. Metadata-only repack; host-verified, runtime compatibility not guaranteed. Userspace reboot after installation."
   }
 }

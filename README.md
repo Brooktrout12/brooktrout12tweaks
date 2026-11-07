@@ -8,10 +8,11 @@ Add this URL in Sileo or Zebra to install compatible packages and receive update
 
 ## Included packages
 
-The repository contains 18 rootless packages (`iphoneos-arm64`), updated on 7 November 2026. Each package's dependency fields specify its supported iOS versions. Package availability does not establish device testing; consult the project's release and validation notes.
+The repository contains 19 rootless packages (`iphoneos-arm64`), updated on 7 November 2026. Each package's dependency fields specify its supported iOS versions. Package availability does not establish device testing; consult the project's release and validation notes.
 
 | Package | Version | Source | Status |
 |---|---|---|---|
+| ai.akemi.appsyncunified | 116.0+ios18.x-test3 | [Audit, rebuild scripts and upstream source](sources/AppSync-iOS18-Test3) | Unofficial iOS 18.x rootless test; metadata-only repack, runtime compatibility not guaranteed. |
 | com.brooktrout12.3dbadgeclear18 | 1.0.1 | [Source](sources/BadgeClear18) | Release build; see project notes for device validation. |
 | com.brooktrout12.batterycapacity18 | 1.0.6 | [Source](sources/BatteryCapacity18) | Release build; see project notes for device validation. |
 | com.brooktrout12.blursleep | 1.2.0 | [Source](sources/BlurSleep) | Experimental; see release notes for device validation. |
@@ -36,6 +37,8 @@ The repository contains 18 rootless packages (`iphoneos-arm64`), updated on 7 No
 Every published package links to a browsable project under `sources/`. BlurSleep 1.2.0 and CCNoRecent 1.0.0 have been unpacked from the uploaded ZIPs. The Face ID Grace 1.0.3, Clean Quick Actions 1.0.2 and ROCK ANTENNE AdBlock 0.2.0 sources match the selected DEBs. Build instructions, technical validation records, assets and historical material are retained within each project. Private device-report metadata is omitted from published notes. JB Battery Watch's source remains available, but its previously removed package has not been republished.
 
 CC17Shapes 1.0.3 and the corrected CCFavorites 1.0.0 build are included with matching source folders. Both are iOS 18.x-only rootless tweaks.
+
+AppSync Test 3 is an unofficial metadata-only repack, with its audit/rebuild files and a pinned upstream 116.0 source snapshot under `sources/AppSync-iOS18-Test3/`. AppSync retains its GPL-3.0-or-later license.
 
 ## Building tweaks
 

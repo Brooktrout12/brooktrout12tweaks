@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-07",
+  "package": "AppSync-Unified-116.0-iOS18-All-Rootless-Test3.deb",
+  "sha256": "1b823bf4b832f07ac41a661296470eb55b4fb174a52c09b974caec833f0c9896",
+  "version": "116.0+ios18.x-test3",
+  "original_deb_unchanged": true,
+  "saved_audit_package_and_payload_hashes_verified": true,
+  "saved_audit_file_hashes_and_modes_verified": 9,
+  "source": "sources/AppSync-iOS18-Test3",
+  "upstream_repository": "https://github.com/akemin-dayo/AppSync",
+  "upstream_commit": "235aca6cddfbdc9fa87fcb5b2aec2df37ed6d65a",
+  "new_device_test_performed": false,
+  "rootful_unchanged": true
+}

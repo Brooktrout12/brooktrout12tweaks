@@ -1,0 +1,84 @@
+AppSync Unified - iOS/iPadOS 18.x Rootless Test 3
+VERIFICATION REPORT
+
+Result: PASS (host-side checks only; no iPad runtime testing performed)
+
+BASE PACKAGE
+  AppSync-Unified-116.0-iOS18.6-Rootless-Test1.deb
+  SHA-256: 0dd23330c7bff2e88e45c83d31df41875a4b56c8f3f99d8417dd28991be2161c
+  Test 2 was not opened or used as a build input.
+
+OUTPUT
+  AppSync-Unified-116.0-iOS18-All-Rootless-Test3.deb
+  SHA-256: 1b823bf4b832f07ac41a661296470eb55b4fb174a52c09b974caec833f0c9896
+  Size: 49730 bytes
+  Version: 116.0+ios18.x-test3
+  Architecture: iphoneos-arm64
+  Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<< 19~)
+
+WHAT CHANGED
+  Only DEBIAN/control differs after independent dpkg-deb extraction.
+  Four fields changed: Depends, Name, Description, Version.
+  Firmware ceiling changed from <= 18.6 to << 19~.
+  Lower firmware bound, other dependencies, package ID and conflict checks retained.
+
+BYTE-FOR-BYTE VERIFICATION
+  Entire data.tar.lzma matches Test 1 AND the originally uploaded official package.
+  Compressed payload SHA-256: 630f2e6f8bd1b8e1c4de1788894e5dc5e5e28b3343791179b86e3ec1da434448
+  All 6 payload files preserved, including permissions and ownership metadata.
+  Both dylibs, the injector, postinst and prerm match Test 1 AND the original.
+  Existing code-signature bytes and entitlements are therefore unchanged.
+  Only the control archive was repacked; data.tar.lzma was copied as-is.
+  Second rebuild from Test 1 reproduced the exact output SHA-256.
+
+VERSION TESTS
+  532 firmware-version test cases passed using dpkg.
+  Synthetic values test comparison boundaries; they do not imply those OS releases exist.
+  5.0              ALLOWED
+  17.6.1           ALLOWED
+  17.7             ALLOWED
+  18               ALLOWED
+  18.0             ALLOWED
+  18.0~beta1       ALLOWED
+  18.2             ALLOWED
+  18.6             ALLOWED
+  18.6.1           ALLOWED
+  18.7             ALLOWED
+  18.7.1           ALLOWED
+  18.7.2           ALLOWED
+  18.7.99          ALLOWED
+  18.8             ALLOWED
+  18.9             ALLOWED
+  18.10            ALLOWED
+  18.99            ALLOWED
+  18.999.999       ALLOWED
+  4.9              BLOCKED
+  19~beta1         BLOCKED
+  19.0~beta1       BLOCKED
+  19               BLOCKED
+  19.0             BLOCKED
+  19.1             BLOCKED
+  20.0             BLOCKED
+  26.0             BLOCKED
+  27.0             BLOCKED
+  Also passed 505 generated 18.x strings (minor 0..100 with patch and beta suffixes).
+  New package version sorts newer than 116.0, Test 1, and the previously stated Test 2 version.
+
+LIMITATIONS
+  This is an unofficial metadata-only repack, not a new upstream release or code port.
+  Permitting installation on all 18.x versions does not prove runtime compatibility on all of them.
+  No maintainer programs were executed and no package was installed during verification.
+
+INSTALLATION
+  Open the Test 3 DEB in Filza and install it with the normal dependency checks enabled.
+  Then use a userspace reboot in the jailbreak app.
+  Test an expendable, known-good app; keep the prior working DEB for rollback.
+
+REPRODUCTION
+  python3 rebuild_from_test1.py /path/to/Test1.deb /path/to/output.deb
+  The script rejects any input whose SHA-256 does not match the verified Test 1.
+  It requires Python 3 only. Verification additionally requires ar, dpkg and dpkg-deb.
+
+REFERENCE FOR DEBIAN DEPENDENCY AND VERSION COMPARISON RULES
+  https://www.debian.org/doc/debian-policy/ch-relationships.html#syntax-of-relationship-fields
+  https://www.debian.org/doc/debian-policy/ch-controlfields.html#version
